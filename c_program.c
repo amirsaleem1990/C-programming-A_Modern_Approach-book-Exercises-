@@ -1,14 +1,9 @@
 
 #include <stdio.h>
 int main(void){
-    int height = 8;
-    int length = 12;
-    int width = 10;
-    int volume = height * length * width;
-    int weight = (volume + 165) / 166;
-    printf("Dimensions: %dx%dx%d", length, width, height);
-    printf("Volume (cubic inches): %d", volume);
-    printf("Dimensional weight (pounds): %d", weight);
-    
+    int int_1, int_2, int_3;
+    float f_1, f_2, f_3;
+    printf("%d      %d      %d\n", int_1, int_2, int_3);
+    printf("%f      %f      %f\n", f_1, f_2, f_3);
     return 0;
 }
