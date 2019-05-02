@@ -14,7 +14,7 @@ int main(void){
 
 
 	// printf("%d", five);//, , , one
-	prinf("%d", (3-(3%5))/5));
+	prinf("%d", 3%5);
 
     return 0;
 }
