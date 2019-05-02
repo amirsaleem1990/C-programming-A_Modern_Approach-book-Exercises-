@@ -12,10 +12,11 @@ int main(void){
 		} else {
 		five = 0;
 	};
+	printf("%d", (balance % 5));
 	balance = balance - (balance * 5);
 	one = (balance - (balance % 1)) / 1;
 	balance = balance - (balance * 1);
 	// printf("%d", five);//, , , one
-	printf("%d", five);
+	// printf("%d", five);
     return 0;
 }
