@@ -1,10 +1,9 @@
 #include <stdio.h>
 int main(void){
-	int radius;
-	printf("Enter radius (in integer form)\n");
-	scanf("%d", &radius);
-    float pie=3.14;
-    float volume = (4.0f/3.0f)*pie*(radius*radius*radius);
-    printf("Volume: %f\n", volume);
+	float amount;
+	float with_tax;
+	printf("Enter Amount (in float form)\n");
+	scanf("%f", &amount);
+    printf("With tax added: %f\n", amount * 1.05);
     return 0;
 }
