@@ -11,5 +11,9 @@ int main(void){
 	balance = balance - (five * 5);
 	one = (balance - (balance % 1)) / 1;
 	balance = balance - (one * 1);
+	printf("$20 Bills:     %d\n", twentys);
+	printf("$10 Bills:     %d\n", ten);
+	printf("$5 Bills:     %d\n", five);
+	printf("$1 Bills:     %d\n", one);
     return 0;
 }
