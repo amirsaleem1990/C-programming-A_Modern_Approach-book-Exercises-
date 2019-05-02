@@ -6,6 +6,6 @@ int main(void){
 	twentys = (dollers - (dollers % 20)) / 20;
 	balance = dollers - (twentys * 20);
 	// ten = (dollers - twentys)
-	prpint('%d', balance);
+	printf('%d', balance);
     return 0;
 }
