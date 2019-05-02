@@ -1,9 +1,8 @@
 #include <stdio.h>
 int main(void){
-	float amount;
-	float with_tax;
-	printf("Enter Amount\n");
-	scanf("%f", &amount);
-    printf("With tax added: %f\n", amount * 1.05);
+	int x;
+	printf("Enter a number\n");
+	scanf("%d", &x);
+    printf("Polynomial: %d\n", 3*(x*x*x*x*x)+ 2*(x*x*x*x) - 5*(x*x*x) - (x*x) + (7*x) -6);
     return 0;
 }
