@@ -2,12 +2,11 @@
 int main(void){
 	float loan, interest_rate, monthly_payment;
 	printf("Enter amount of loan:\n");
-	// scanf("%d", &loan);
+	scanf("%f", &loan);
 	printf("Enter interest rate:\n");
-	scanf("%d", &interest_rate);
-	interest_rate = interest_rate/100;
+	scanf("%f", &interest_rate);
+	interest_rate = interest_rate/100/12;
 	printf("Enter monthly payment:\n");
-	// scanf("%d", &monthly_payment);
-	printf("%d", interest_rate);
+	scanf("%f", &monthly_payment);
     return 0;
 }
