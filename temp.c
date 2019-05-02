@@ -18,11 +18,11 @@ int main(void){
 	// 	five = 0;
 	// };
 	// printf("%d%d", balance, (balance % 5));
-	balance = balance - (balance * 5);
+	balance = balance - (five * 5);
 	printf("balance %d\n", balance);
 	one = (balance - (balance % 1)) / 1;
 	printf("one %d\n", one);
-	balance = balance - (balance * 1);
+	balance = balance - (one * 1);
 	printf("balance %d\n", balance);
 	// printf("%d", five);//, , , one
 	// printf("%d", five);
