@@ -4,7 +4,8 @@ int main(void){
 	printf("Enter a number\n");
 	scanf("%d", &dollers);
 	// twentys = (dollers - (dollers % 20)) / 20;
-	printf("%d", dollers % 20);
+	dollers = dollers % 20
+	printf("%d", );
 	// printf("%d", twentys);
     return 0;
 }
