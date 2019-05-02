@@ -9,7 +9,7 @@ int main(void){
 	printf("balance %d\n", balance);
 	ten = (balance - (balance % 10)) / 10;
 	printf("ten %d\n", ten);
-	balance = balance - (balance * 10);
+	balance = balance - (ten * 10);
 	printf("balance %d\n", balance);
 	// if ((balance % 5) > 5){
 	five = (balance - (balance % 5)) / 5;
