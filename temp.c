@@ -10,7 +10,7 @@ int main(void){
 	if ((balance % 5) > 5){
 		five = (balance - (balance % 5)) / 5;
 		};
-	else{
+	ifelse{
 		five = 0;
 	};
 	balance = balance - (balance * 5);
