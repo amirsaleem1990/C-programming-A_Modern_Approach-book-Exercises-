@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main(void){
-	int dollers, twentys,i;
+	int dollers, twentys,balance;
 	// printf("Enter a number\n");
 	scanf("%d", &dollers);
 	twentys = (dollers - (dollers % 20)) / 20;
-	// printf("%d", dollers % 20);
-	// printf("%d", twentys);
-	printf("%d", twentys);
+	balance = dollers - (twentys * 20);
+	// ten = (dollers - twentys)
+	prpint('%d', balance);
     return 0;
 }
