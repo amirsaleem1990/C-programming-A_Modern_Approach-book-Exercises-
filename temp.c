@@ -3,7 +3,8 @@ int main(void){
 	int dollers;
 	printf("Enter a number\n");
 	scanf("%d", &dollers);
-	// twentys = 
-	printf("%d", dollers / 20);
+	twentys = (dollers - (dollers % 20)) / 20
+	printf("%d", dollers % 20);
+	printf("%d", twentys);
     return 0;
 }
