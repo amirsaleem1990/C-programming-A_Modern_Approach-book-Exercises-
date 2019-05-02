@@ -2,7 +2,7 @@
 int main(void){
 	int dollers, twentys,balance, ten, five, one;
 	printf("Enter a number:       ");
-	scanf("%d\n", &dollers);
+	scanf("%d", &dollers);
 	twentys = (dollers - (dollers % 20)) / 20;
 	balance = dollers - (twentys * 20);
 	ten = (balance - (balance % 10)) / 10;
