@@ -7,12 +7,12 @@ int main(void){
 	balance = dollers - (twentys * 20);
 	ten = (balance - (balance % 10)) / 10;
 	balance = balance - (balance * 10);
-	if ((balance % 5) > 5){
-		five = (balance - (balance % 5)) / 5;
-		} else {
-		five = 0;
-	};
-	printf("%d", (balance % 5));
+	// if ((balance % 5) > 5){
+	// 	five = (balance - (balance % 5)) / 5;
+	// 	} else {
+	// 	five = 0;
+	// };
+	printf("%d%d", balance, (balance % 5));
 	balance = balance - (balance * 5);
 	one = (balance - (balance % 1)) / 1;
 	balance = balance - (balance * 1);
