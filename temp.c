@@ -9,11 +9,9 @@ int main(void){
 	balance = balance - (balance * 10);
 	if ((balance % 5) > 5){
 		five = (balance - (balance % 5)) / 5;
-		else {
+		} else {
 		five = 0;
 	};
-		};
-	
 	balance = balance - (balance * 5);
 	one = (balance - (balance % 1)) / 1;
 	balance = balance - (balance * 1);
