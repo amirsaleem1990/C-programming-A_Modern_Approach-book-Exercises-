@@ -1,11 +1,8 @@
 #include <stdio.h>
 int main(void){
-	int dollers, twentys;
+	int dollers;
 	printf("Enter a number\n");
 	scanf("%d", &dollers);
-	// twentys = (dollers - (dollers % 20)) / 20;
-	dollers = dollers % 20
-	printf("%d", );
-	// printf("%d", twentys);
+	printf("%d", 14 % 3);
     return 0;
 }
