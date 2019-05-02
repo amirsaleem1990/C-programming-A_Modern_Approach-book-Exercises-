@@ -13,6 +13,7 @@ int main(void){
 	balance = balance - (balance * 1);
 
 
-	printf("%d", twentys, ten, five, one);
+	printf("%d", five);//, , , one
+	
     return 0;
 }
