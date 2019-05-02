@@ -14,7 +14,7 @@ int main(void){
 
 
 	// printf("%d", five);//, , , one
-	printf("%d", 5 % 4);
+	printf("%d", 12%5);
 
     return 0;
 }
