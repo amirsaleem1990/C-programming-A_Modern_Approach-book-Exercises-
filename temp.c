@@ -7,7 +7,12 @@ int main(void){
 	balance = dollers - (twentys * 20);
 	ten = (balance - (balance % 10)) / 10;
 	balance = balance - (balance * 10);
-	five = (balance - (balance % 5)) / 5;
+	if ((balance % 5) > 5){
+		five = (balance - (balance % 5)) / 5;
+		};
+	else{
+		five = 0;
+	};
 	balance = balance - (balance * 5);
 	one = (balance - (balance % 1)) / 1;
 	balance = balance - (balance * 1);
