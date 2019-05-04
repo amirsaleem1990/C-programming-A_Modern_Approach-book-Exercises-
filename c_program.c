@@ -1,10 +1,8 @@
 # include <stdio.h>
 int main(void){
-	int i, j;
-	float x;
-	scanf("%d%f%d", &i,&x,&j);
-	printf("%d\n", i);
-	printf("%f\n", x);
-	printf("%d\n", j);
+	float x,y;
+	int i;
+	scanf("%f%d%f",&x, &i, &y);
+	printf("%f%d%f",x, i, y);
 	return 0;
 }
