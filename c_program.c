@@ -23,12 +23,12 @@ int main(void){
     // if (c1 == c2){
     // 	printf("Both floats are same\n\n\n");
     // }
-    printf("Enter two floats, saperated by comma");
-    scanf("%f,%f", &d11, &d12);
-	printf("Please Repeat previaus two floats");
-    scanf("%f, %f", &d21, &d22);
-    if (d11 == d21 & d12 == d22){
-    	printf("Boths pairs are same");
-    }    
-	return 0;
+ //    printf("Enter two floats, saperated by comma:           ");
+ //    scanf("%f,%f", &d11, &d12);
+	// printf("Please Repeat previaus two floats   :           ");
+ //    scanf("%f, %f", &d21, &d22);
+ //    if (d11 == d21 & d12 == d22){
+ //    	printf("Boths pairs are same");
+ //    }    
+	// return 0;
 }
