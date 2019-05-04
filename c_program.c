@@ -16,14 +16,13 @@ int main(void){
   //   if (b11 == b21 & b12 == b22 & b13 == b23){
   //   	printf("All paires are same\n\n\n");
   //   }
-    printf("Enter first float number :        ");
-    scanf("%f", &c1);
-    printf("Enter second float number:        ");
-    scanf("%f ", &c2);
-    if (c1 == c2){
-    	printf("Both floats are same\n\n\n");
-    }
-    printf("\n");
+    // printf("Enter first float number :        ");
+    // scanf("%f", &c1);
+    // printf("Enter second float number:        ");
+    // scanf("%f ", &c2);
+    // if (c1 == c2){
+    // 	printf("Both floats are same\n\n\n");
+    // }
     printf("Enter two floats, saperated by comma");
     scanf("%f,%f", &d11, &d12);
 	printf("Please Repeat previaus two floats");
