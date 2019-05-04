@@ -5,9 +5,8 @@ int main(void){
     scanf("%d", &a1);
     printf("Enter a2:     ");
     scanf(" %d", &a2);
-    printf("%d%d\n", a1,a2);
     if (a1 == a2){
-    	printf("Bothe are same");
+    	printf("Bothe are same\n");
     }
     return 0;
 }
