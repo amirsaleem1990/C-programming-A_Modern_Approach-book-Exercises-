@@ -9,6 +9,6 @@ int main(void){
 	scanf("%f", &unit_price);
 	printf("Enter purchse date(mm/dd/yyyy): \n");
 	scanf("%d/%d/%d", &month, &day, &year);
-	printf("%-20s\n", );
+	printf("%-20s%-20s%-20s\n", "Item", "Unit\nPrice", "Purchase\nDate");
 	return 0;
 }
