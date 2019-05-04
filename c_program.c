@@ -5,6 +5,6 @@ int main(void){
 	printf("%d   %d   %d   %d\n", a,b,c,d);
 	printf("%d   %d   %d   %d\n", e,f,g,h);
 	printf("%d  %d  %d  %d\n", i,j,k,l);
-	printf("%d  %d  %d  %d", m,n,o,p);
+	printf("%d %d %d %d", m,n,o,p);
 	return 0;
 }
