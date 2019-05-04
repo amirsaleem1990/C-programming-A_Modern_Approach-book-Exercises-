@@ -23,6 +23,7 @@ int main(void){
     if (c1 == c2){
     	printf("Both floats are same\n\n\n");
     }
+    printf("\n");
     printf("Enter two floats, saperated by comma");
     scanf("%f,%f", &d11, &d12);
 	printf("Please Repeat previaus two floats");
