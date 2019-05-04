@@ -1,9 +1,10 @@
 # include <stdio.h>
 int main(void){
     int a1, a2, b11, b12, b13, b21, b22, b23;
-    // printf("Enter a1:     ");
+    float c1, c2;
+    // printf("Enter an integer:     ");
     // scanf("%d", &a1);
-    // printf("Enter a2:     ");
+    // printf("Enter an integer:     ");
     // scanf(" %d", &a2);
     // if (a1 == a2){
     	// printf("Bothe are same\n");
@@ -15,6 +16,12 @@ int main(void){
   //   if (b11 == b21 & b12 == b22 & b13 == b23){
   //   	printf("All paires are same\n");
   //   }
-    
+    printf("Enter first float number :        ");
+    scanf("%f", &c1);
+    printf("Enter second float number:        ");
+    scanf("%f ", &c2);
+    if (c1 == c2){
+    	printf("Both floats are same\n");
+    }
     return 0;
 }
