@@ -5,6 +5,6 @@ int main(void){
 	printf("Enter a data(mm/dd/yyyy): ");
 	scanf("%d/%d/%d", &m, &d, &y);
 	// printf("You entered the date %d%d%d", y,m,d);
-	printf(m[1]);
+	print("%d[0]", m);
 	return 0;
 }
