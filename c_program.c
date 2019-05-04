@@ -9,7 +9,7 @@ int main(void){
 	// scanf("%f", &unit_price);
 	printf("Enter purchse date(mm/dd/yyyy): \n");
 	scanf("%d/%d/%d", &month, &day, &year);
-	printf("%-30s%-30s%-30s%14s%29s\n", "Item", "Unit", "Purchase\n", "Price", "Date");
-	printf("%-30d$%-29.2f%d/%d/%d\n", item_number, unit_price, month, day, year);
+	printf("\n%-30s%-30s%-30s%14s%29s", "Item", "Unit", "Purchase\n", "Price", "Date");
+	printf("\n%-30d$%-29.2f%d/%d/%d\n", item_number, unit_price, month, day, year);
 	return 0;
 }
