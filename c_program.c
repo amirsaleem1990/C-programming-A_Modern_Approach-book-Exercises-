@@ -2,7 +2,7 @@
 # include <stdio.h>
 int main(void){
 	int item_number=583, month, day, year;
-	float unit_price;
+	float unit_price=13.5;
 	// printf("Enter item number: \n");
 	// scanf("%d", &item_number);
 	// printf("Enter unit price: \n");
