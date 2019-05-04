@@ -1,11 +1,13 @@
 # include <stdio.h>
 int main(void){
-    int a, b;
-    scanf("%d", &a);
-    scanf(" %d", &b);
-    printf("%d%d\n", a,b);
-    if (a == b){
-    	printf("equal");
+    int a1, a2;
+    print("Enter a1");
+    scanf("%d", &a1);
+    print("Enter a2");
+    scanf(" %d", &a2);
+    printf("%d%d\n", a1,a2);
+    if (a1 == a2){
+    	printf("Bothe are same");
     }
     return 0;
 }
