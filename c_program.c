@@ -10,5 +10,6 @@ int main(void){
 	// printf("Enter purchse date(mm/dd/yyyy): \n");
 	// scanf("%d/%d/%d", &month, &day, &year);
 	printf("%-30s%-30s%-30s%14s%29s\n", "Item", "Unit", "Purchase\n", "Price", "Date");
+	printf("%-30d", item_numer);
 	return 0;
 }
