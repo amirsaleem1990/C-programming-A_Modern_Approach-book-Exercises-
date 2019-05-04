@@ -1,7 +1,7 @@
 # include <stdio.h>
 int main(void){
     int a1, a2, b11, b12, b13, b21, b22, b23;
-    float c1, c2;
+    float c1, c2, d11, d12, d21, d22;
     // printf("Enter an integer:     ");
     // scanf("%d", &a1);
     // printf("Enter an integer:     ");
@@ -24,4 +24,12 @@ int main(void){
     // 	printf("Both floats are same\n");
     // }
     // return 0;
+    printf("Enter two floats, saperated by comma");
+    scanf("%f,%f", &d11, d12);
+	printf("Please Repeat previaus two floats");
+    scanf("%f, %f", &d21, d22);
+    if (d11 == d21 & d12 == d22){
+    	printf("Boths pairs are same");
+    }    
+
 }
