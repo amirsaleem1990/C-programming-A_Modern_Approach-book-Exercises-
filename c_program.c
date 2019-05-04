@@ -12,8 +12,8 @@ int main(void){
 	    scanf("%d-%d-%d", &b11, &b12, &b13);
 		printf("Enter same previaus 3 numbers");
 	    scanf("%d -%d -%d", &b21, &b22, &b23);
-    if (b11 == b21 & b12 == b23){
-    	printf("b11 and b21 are equal");
+    if (b11 == b21 & b12 == b22 & b13 == b23){
+    	printf("All paires are same");
     }
     return 0;
 }
