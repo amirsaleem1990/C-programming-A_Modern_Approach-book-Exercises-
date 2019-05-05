@@ -1,6 +1,6 @@
 # include <stdio.h>
 int main(void){
-	int i,j,k;
+	int k;
 	float i, j;
 	i = 5.0; j=3.0;
 	printf("a:  %d\n", i/j);//, i%j);
