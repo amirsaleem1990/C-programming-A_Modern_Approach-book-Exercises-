@@ -1,9 +1,9 @@
 # include <stdio.h>
 int main(void){
-	int k;
-	float i, j;
-	i = 5.0; j=3.0;
-	printf("a:  %d\n", i/j);//, i%j);
+	int k, j;
+	float i;
+	i = 5.0; j=3;
+	printf("a:  %f\n", i/j);//, i%j);
     
     i=2; j=3;
     // printf("b:  %d\n", (i+10)%j);
