@@ -1,8 +1,8 @@
 # include <stdio.h>
 int main(void){
-	int deg;
-	printf("Enter a two-digit nuber: ");
-	scanf("%d", &deg);
-	printf("The reversal is        : %d%d%d\n", deg%10, (deg/10)%10, (deg/10)/10);
+	int a,b,c;
+	printf("Enter a three-digit nuber: ");
+	scanf("%1d%1d%1d", &a, &b, &c);
+	printf("The reversal is          : %d%d%d\n", c,b,a);
 	return 0;
 }
