@@ -1,8 +1,8 @@
 # include <stdio.h>
 int main(void){
-	int k, j;
-	float i;
-	i = 5.0; j=3;
+	int i, j;
+	// float j;
+	i = 5; j=3.0;
 	printf("a:  %f\n", i/j);//, i%j);
     
     i=2; j=3;
