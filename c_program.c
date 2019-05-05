@@ -1,8 +1,8 @@
 # include <stdio.h>
 int main(void){
-	int dd;
+	int deg;
 	printf("Enter a two-digit nuber: ");
-	scanf("%d", &dd);
-	printf(dd);
+	scanf("%d", &deg);
+	printf(deg);
 	return 0;
 }
