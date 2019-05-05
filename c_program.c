@@ -8,7 +8,7 @@ int main(void){
 	cc = aa * 3 + bb;
 	dd = 1- cc;
 	ee = ee % 10;
-	ff = 9-ee
+	ff = 9-ee;
 	printf("Check digit: 5");
 	return 0;
 }
