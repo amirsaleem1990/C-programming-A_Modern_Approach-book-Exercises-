@@ -5,7 +5,7 @@ int main(void){
 	scanf("%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d", &a,&b,&c,&d,&e,&f,&g,&h,&i,&j,&k, &l);
 	aa = a+c+e+g+i+k;
 	bb = b+d+f+h+j+l;
-	cc = aa * 3 + bb;
+	cc = bb * 3 + aa;
 	dd = cc - 1;
 	ee = dd % 10;
 	ff = ee - 9;
