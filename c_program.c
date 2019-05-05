@@ -1,5 +1,14 @@
 # include <stdio.h>
 int main(void){
-	printf("\n\n%d\n\n", -8%-5);
+	int a,b,c,d,e,f,g,h,i,j,k,l, aa, bb, cc, dd, ee, ff;
+	printf("Enter the first 12 digits of an EAN: ");
+	scanf("%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d", &a,&b,&c,&d,&e,&f,&g,&h,&i,&j,&k, &l);
+	aa = a+c+e+g+i+k;
+	bb = b+d+f+h+j+l;
+	cc = aa * 3 + bb;
+	dd = cc - 1;
+	ee = dd % 10;
+	ff = ee - 9;
+	printf("Check digit: %d\n", ff);
 	return 0;
 }
