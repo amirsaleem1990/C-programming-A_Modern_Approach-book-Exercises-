@@ -5,7 +5,7 @@ int main(void){
 	// printf("%d\n", (-i)/j);
 	// printf("%d\n", -(i/j));
 	for (i; i<10; i++){
-		printf(i);
+		printf("%d\n", i);
 	}
 	return 0;
 }
