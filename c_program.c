@@ -3,10 +3,10 @@ int main(void){
 	int i,j,k;
 	
 	i = 5; j=3;
-	printf("a:  %d %d\n", i/j, i%j);
+	// printf("a:  %d %d\n", i/j, 	i%j);
     
     i=2; j=3;
-    // printf("b:  %d\n", (i+10)%j);
+    printf("b:  %d\n", (i+10)%j);
     
     i = 7; j=8, k=9;
     // printf("c:  %d\n", (i+10) % k/j);
