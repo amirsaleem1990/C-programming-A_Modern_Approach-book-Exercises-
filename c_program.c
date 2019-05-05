@@ -10,4 +10,5 @@ int main(void){
     printf("%d\n", i*j/i);  // 2*2/2
     printf("i4: %d, j4:%d\n", i,j);
     printf("%d\n", i % ++j);// 2 % 
+    printf("i5: %d, j5:%d\n", i,j);
 }
