@@ -9,7 +9,7 @@ int main(void){
     // printf("b:  %d\n", (i+10)%j);
     
     i = 7; j=8, k=9;
-    printf("c:  %d\n", (i+10) % (k/j));
+    printf("c:  %d\n", ((i+10) % k)/j);
     printf("orignal:  %d\n", (i+10) % k/j);
     
     i=1; j=2, k=3;
