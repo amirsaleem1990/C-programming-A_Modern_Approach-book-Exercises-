@@ -9,6 +9,6 @@ int main(void){
 	dd = 1- cc;
 	ee = ee % 10;
 	ff = 9-ee;
-	printf("Check digit: 5");
+	printf("Check digit: 5\n");
 	return 0;
 }
