@@ -4,7 +4,8 @@ int main(void){
 	// scanf("%1d%1d", &i, &j);
 	// printf("%d\n", (-i)/j);
 	// printf("%d\n", -(i/j));
-	for (i; i<10; i++; j--){
+	for (i; i<1000; i++){
+		j--;
 		if (!((-i)/j == -(i/j))){
 			printf("%d\n", i);
 	}}
