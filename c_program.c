@@ -6,8 +6,8 @@ int main(void){
 	aa = a+c+e+g+i+k;
 	bb = b+d+f+h+j;
 	cc = aa * 3 + bb;
-	dd = 1 - cc;
-	ee = ee % 10;
+	dd = cc - 1;
+	ee = dd % 10;
 	ff = 9 - ee;
 	printf("Check digit: %d\n", ff);
 	return 0;
