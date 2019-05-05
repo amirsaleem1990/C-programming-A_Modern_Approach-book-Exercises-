@@ -1,8 +1,8 @@
 # include <stdio.h>
 int main(void){
-	int a,b,c;
-	printf("Enter a three-digit nuber: ");
-	scanf("%1d%1d%1d", &a, &b, &c);
-	printf("The reversal is          : %d%d%d\n", c,b,a);
+	int a;
+	printf("Enter a number between 0 and 32767");
+	scanf("%d", &a);
+	printf("In octal, your number is: ");
 	return 0;
 }
