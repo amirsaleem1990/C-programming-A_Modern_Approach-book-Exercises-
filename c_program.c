@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 int main(void){
+    int i,j,k;
     i=1; 
     printf("a: %d \n", i++ - 1);
     printf("a: %d\n", i);
