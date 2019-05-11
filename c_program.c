@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main(void){
 	int m,d,y;
-	char month;
 	printf("Enter date (mm/dd/yy): \n");
 	scanf("%d/%d/%d", &m,&d,&y);
 	// switch (m){
@@ -18,7 +17,7 @@ int main(void){
 	// 	case 11: month =  "Nov"; break;
 	// 	case 12: month =  "Dec"; break;
 	// };
-	printf("%d", &d);
+	printf("%d", d);
 	// printf("Dated this %dth day of %c,%d", d, month, y);
     return 0;
 }
