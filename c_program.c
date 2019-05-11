@@ -3,7 +3,7 @@ int main(void){
 	int m,d,y;
 	char month;
 	printf("Enter date (mm/dd/yy): \n");
-	scanf("%d/%d/%d", &m,&d,&y);
+	scanf("%2d%2d%2d", &m,&d,&y);
 	// switch (m){
 	// 	case 1: month = 'Jan'; break;
 	// 	case 2: month =  "Fab"; break;
