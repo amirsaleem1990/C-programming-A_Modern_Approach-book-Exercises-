@@ -18,41 +18,42 @@ int main(void){
 	printf(" day of ");
 	switch (m){
 		case 1: 
-			printf("Jan");
+			printf("January");
 			break;
 		case 2: 
-			printf( "Fab"); 
+			printf( "Fabrury"); 
 			break;
 		case 3: 
 			printf( "March"); 
 			break;
 		case 4: 
-			printf( "Apr"); 
+			printf( "April"); 
 			break;
 		case 5: 
 			printf( "May"); 
 			break;
 		case 6: 
-			printf( "Jun"); 
+			printf( "June"); 
 			break;
 		case 7: 
-			printf( "Jul"); 
+			printf( "July"); 
 			break;
 		case 8: 
-			printf( "Aug"); 
+			printf( "Augest"); 
 			break;
 		case 9: 
-			printf( "Sep"); 
+			printf( "Septembter"); 
 			break;
 		case 10: 
-			printf( "Oct"); 
+			printf( "October"); 
 			break;
 		case 11: 
-			printf( "Nov"); 
+			printf( "November"); 
 			break;
 		case 12: 
-			printf( "Dec"); 
+			printf( "December"); 
 			break;
 	};
+	printf(", 20%d\n", y);
     return 0;
 }
