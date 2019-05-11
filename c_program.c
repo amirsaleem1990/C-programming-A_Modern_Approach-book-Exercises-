@@ -18,7 +18,7 @@ int main(void){
 	printf(" day of ");
 	switch (m){
 		case 1: 
-			printf('Jan');
+			printf("Jan");
 			break;
 		case 2: 
 			printf( "Fab"); 
