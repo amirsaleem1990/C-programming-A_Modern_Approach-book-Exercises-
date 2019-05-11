@@ -15,6 +15,8 @@ int main(void){
     	commission = 155 + amount * (0.11 / 100);
     else 
     	commission = 255 + amount * (0.09 / 100);
+    if (commission < 39)
+        commission = 39
     printf("Commision: $%f\n", commission);
     return 0;
 }
