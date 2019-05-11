@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main(void){
-    int amount, commission;
+    float amount, commission;
     printf("Enter value of trade: \n");
-    scanf("%d", &amount);
+    scanf("%f", &amount);
     if (amount < 2500)
     	commission = 30 + amount * (1.7 / 100);
     else if (amount < 6250)
@@ -15,6 +15,6 @@ int main(void){
     	commission = 155 + amount * (0.11 / 100);
     else 
     	commission = 255 + amount * (0.09 / 100);
-    printf("Commision: $%d\n", commission);
+    printf("Commision: $%f\n", commission);
     return 0;
 }
