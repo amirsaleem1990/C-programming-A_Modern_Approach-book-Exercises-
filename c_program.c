@@ -18,6 +18,7 @@ int main(void){
 		case 11: month =  "Nov"; break;
 		case 12: month =  "Dec"; break;
 	};
-	printf("Dated this %dth day of %c,%d", d, month, y);
+	printf(&month);
+	// printf("Dated this %dth day of %c,%d", d, month, y);
     return 0;
 }
