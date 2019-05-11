@@ -7,7 +7,7 @@ int main(void){
 		scanf("%d", &n);
 		if (!n){
 			printf("The sum is: %d", sum);
-			breakl
+			break;
 		}
 		sum += n;
 
