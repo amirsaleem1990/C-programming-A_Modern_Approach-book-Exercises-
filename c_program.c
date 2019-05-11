@@ -54,6 +54,6 @@ int main(void){
 			printf( "December"); 
 			break;
 	};
-	printf(", 20%d\n", y);
+	printf(", 20%.2d.\n", y);
     return 0;
 }
