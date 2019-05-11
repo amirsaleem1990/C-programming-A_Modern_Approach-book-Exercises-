@@ -1,17 +1,17 @@
 
 #include <stdio.h>
 int main(void){
-    int i,j;
-    i=5; 
-    j= ++i * 3 - 2; // j = (6 * 3) - 2
-    printf("a: i=%d j=%d\n", i, j);
-    i=5; 
-    j= 3 - 2 * i++; // j = 3 - (2 * 5)
-    printf("b: i=%d j=%d\n", i, j);
-    i=7; 
-    j= 3 * i-- + 2; // j = (3 * 7) + 2
-    printf("c: i=%d j=%d\n", i, j);
-    i=7; 
-    j=3 + --i * 2; // j= 3 + (6 * 2)
-    printf("d: i=%d j=%d\n", i, j);
-}
+    i=1; 
+    printf("a: %d \n", i++ - 1);
+    printf("a: %d\n", i);
+    i=10; j=5;
+    printf("b: %d \n", i++ - ++j);
+    printf("b: %d %d\n", i, j);
+    i=7; j=8;
+    printf("c: %d \n", i++ - --j);
+    printf("c: %d %d\n", i, j);
+    i=3; j=4; k=5;
+    printf("d: %d\n", i++ - j++ + --k);
+    printf("d: %d %d %d\n", i, j, k);
+    return 0;
+    }
