@@ -1,18 +1,20 @@
-
 #include <stdio.h>
 int main(void){
-    int i,j,k;
-    i=7; j=8;
-    i *= j + 1; // i *= (j + 1)
-    printf("a: %d %d\n", i,j);
-    i = j = k = 1;
-    i += j += k; // i += (j += k)
-    printf("b: %d %d %d\n", i,j,k);
-    i = 1; j = 2; k = 3;
-    i -= j -= k; // i -= (j -= k)
-    printf("c: %d %d %d\n", i,j,k);
-    i = 2; j = 1; k = 0;
-    i *= j *= k; // i *= (j *= k)
-    printf("c: %d %d %d\n", i,j,k);
+    int amount, commission;
+    printf("Enter value of trade: \n");
+    scanf("%d", &amount);
+    if (amount < 2500)
+    	commission = 30 + amount * 1.7
+    else if (amount < 6250)
+    	commission = 56 + amount * 0.66
+    else if (amount < 20000)
+    	commission = 76 + amount * 0.34
+    else if (amount < 50000)
+    	commission = 100 + amount * 0.22
+    else if (amount < 500000)
+    	commission = 155 + amount * 0.11
+    else 
+    	commission = 255 + amount * 0.09
+    print("Commision: $%d\n", commission)
     return 0;
 }
