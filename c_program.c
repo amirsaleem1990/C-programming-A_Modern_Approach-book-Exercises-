@@ -6,7 +6,7 @@ int main(void){
 	c = 1;
 	while (c <= n){
 		printf("%d         %d\n", c, c * c);
-
+		c++;
 	}
     return 0;
 }
