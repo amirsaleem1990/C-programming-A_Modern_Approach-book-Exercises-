@@ -42,7 +42,7 @@ int main(void){
 			month =  "Dec"; 
 			break;
 	};
-	printf("%d", m);
+	printf("%s", month);
 	// printf("Dated this %dth day of %c,%d", d, month, y);
     return 0;
 }
