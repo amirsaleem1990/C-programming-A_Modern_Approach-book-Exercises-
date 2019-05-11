@@ -4,45 +4,56 @@ int main(void){
 	char month;
 	printf("Enter date (mm/dd/yy): \n");
 	scanf("%d/%d/%d", &m,&d,&y);
+	printf("Dated this %d", d);
+	switch (d){
+		case 1: case 21: case 31:
+			printf("st"); break;
+		case 2: case 22:
+			printf("nd"); break;
+		case 3: case 23:
+			printf("rd"); break;
+		default:
+			printf("th"); break;
+	}
+	printf(" day of ");
 	switch (m){
 		case 1: 
-			month = 'Jan';
+			printf('Jan');
 			break;
 		case 2: 
-			month =  "Fab"; 
+			printf( "Fab"); 
 			break;
 		case 3: 
-			month =  "March"; 
+			printf( "March"); 
 			break;
 		case 4: 
-			month =  "Apr"; 
+			printf( "Apr"); 
 			break;
 		case 5: 
-			month =  "May"; 
+			printf( "May"); 
 			break;
 		case 6: 
-			month =  "Jun"; 
+			printf( "Jun"); 
 			break;
 		case 7: 
-			month =  "Jul"; 
+			printf( "Jul"); 
 			break;
 		case 8: 
-			month =  "Aug"; 
+			printf( "Aug"); 
 			break;
 		case 9: 
-			month =  "Sep"; 
+			printf( "Sep"); 
 			break;
 		case 10: 
-			month =  "Oct"; 
+			printf( "Oct"); 
 			break;
 		case 11: 
-			month =  "Nov"; 
+			printf( "Nov"); 
 			break;
 		case 12: 
-			month =  "Dec"; 
+			printf( "Dec"); 
 			break;
 	};
-	printf("%s", month);
-	// printf("Dated this %dth day of %c,%d", d, month, y);
+	// printf(" %dth day of %c,%d", d, month, y);
     return 0;
 }
