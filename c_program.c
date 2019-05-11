@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 int main(void){
+    int i, j;
     i = 6; 
     j = i += i;
     printf("a: %d %d\n", i, j);
