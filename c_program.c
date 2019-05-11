@@ -1,12 +1,16 @@
 #include <stdio.h>
 int main(void){
-	int n, c;
-	printf("This program prints a table of squares.\nEnter number of entries in table: ");
-	scanf("%d", &n);
-	c = 1;
-	while (c <= n){
-		printf("%d%10d\n", c, c * c);
-		c++;
+	int n, sum;
+	printf("This program sums a series of integers.\nEnter integers (0 to terminate)\n");
+	sum = 0;
+	while (1){
+		scanf("%d", &n);
+		if (!n){
+			printf("The sum is: %d", sum);
+			breakl
+		}
+		sum += n;
+
 	}
     return 0;
 }
