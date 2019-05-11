@@ -54,6 +54,5 @@ int main(void){
 			printf( "Dec"); 
 			break;
 	};
-	// printf(" %dth day of %c,%d", d, month, y);
     return 0;
 }
