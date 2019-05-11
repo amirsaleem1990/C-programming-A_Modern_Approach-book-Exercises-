@@ -1,18 +1,18 @@
 
 #include <stdio.h>
 int main(void){
-    int i, j;
-    i = 6; 
-    j = i += i;
-    printf("a: %d %d\n", i, j);
-    i=5;
-    j = (i -=2) + 1;
-    printf("b: %d %d\n", i, j);
-    i = 7;
-    j = 6 + (i = 2.5);
-    printf("c: %d %d\n", i, j);
-    i = 2; j = 8;
-    j = (i = 6) + (j = 3);
-    printf("d: %d %d\n", i, j);
+    int i,j,k;
+    i=7; j=8;
+    i *= j + 1; // i *= (j + 1)
+    printf("a: %d %d\n", i,j);
+    i = j = k = 1;
+    i += j += k; // i += (j += k)
+    printf("b: %d %d %d\n", i,j,k);
+    i = 1; j = 2; k = 3;
+    i -= j -= k; // i -= (j -= k)
+    printf("c: %d %d %d\n", i,j,k);
+    i = 2; j = 1; k = 0;
+    i *= j *= k; // i *= (j *= k)
+    printf("c: %d %d %d\n", i,j,k);
     return 0;
 }
