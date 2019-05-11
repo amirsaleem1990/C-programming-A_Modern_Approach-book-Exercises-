@@ -5,8 +5,7 @@ int main(void){
 	scanf("%d", &n);
 	c = 1;
 	while (c <= n){
-		printf("%d         %d\n", c, c * c);
-		c++;
+		printf("%d         %d\n", c, (c * c++));
 	}
     return 0;
 }
