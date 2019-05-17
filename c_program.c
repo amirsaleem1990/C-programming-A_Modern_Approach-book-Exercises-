@@ -5,7 +5,7 @@ int main(void){
 	i = 3; j = 4; k = 5;
 	printf("a: %d\n", i < j || ++j < k);
 	printf("a: %d %d %d\n", i, j, k);
-    printf("\n\n\n%d%d%d%d\n\n\n", j, j, j, j);
+    printf("\n\n\n%d%d%d%d\n\n\n", ++j, j++, ++j, j++);
 
 	i = 7; j = 8; k = 9;
 	printf("b: %d\n", i - 7 && j++ < k);
