@@ -6,21 +6,21 @@ int main(void){
 	else if (score >= 80)
 		printf("B");
 	else if (score >= 70)
-		printf("C"):
+		printf("C");
 	else if (score >= 60)
-		printf("D")
+		printf("D");
 	else
-		printf("F")
+		printf("F");
 
 
 	if (score < 60)
-		printf("F")
+		printf("F");
 	else if (score < 70)
-		printf("D")
+		printf("D");
 	else if (score < 80)
-		printf("C")
+		printf("C");
 	else if (score < 90)
-		printf("B")
+		printf("B");
 	else
-		print("A")
+		printf("A");
 }
