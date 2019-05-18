@@ -2,11 +2,11 @@
 int main(void){
 	if (age >= 13)
 		if (age < 19)
-			teenager = true;
+			teenager = 1;
 		else
-			teenager = false;
+			teenager = 0;
 	else 
 		if (age < 13)
-			teenager = false;
+			teenager = 0;
 	printf("%d\n", teenager);
 }
