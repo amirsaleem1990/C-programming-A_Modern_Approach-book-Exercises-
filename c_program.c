@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main(void){
-	int score=73;
+	int score;
+	scanf("%d", &score);
 	if (score >= 90)
 		printf("A");
 	else if (score >= 80)
