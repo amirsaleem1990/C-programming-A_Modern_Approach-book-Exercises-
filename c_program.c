@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void){
-	int n=101;
-	if (n >= 1 <= 100)
+	int n=7;
+	if (n > 7 < 7)
 		printf("n is between 1 and 10\n");
     return 0;
 }
