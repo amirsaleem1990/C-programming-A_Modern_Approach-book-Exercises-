@@ -11,7 +11,7 @@ int main(void){
 	// printf("b: %d %d %d\n", i, j, k);
 
 	i = 7; j = 8; k = 9;
-	printf("c: %d\n", (i = j) || (j = k));
+	// printf("c: %d\n", (i = j) || (j = k));
 	printf("c: %d %d %d\n", i, j, k);
 
 	i = 1; j = 1; k = 1;
