@@ -15,7 +15,7 @@ int main(void){
 	// printf("c: %d %d %d\n", i, j, k);
 
 	i = 1; j = 1; k = 1;
-	// printf("d: %d\n", ++i || ++j && ++k);
+	printf("d: %d\n", ++i || ++j && ++k);
 	printf("d: %d %d %d\n", i, j, k);
 
 
