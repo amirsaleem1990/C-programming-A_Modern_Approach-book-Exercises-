@@ -11,6 +11,6 @@ int main(void){
 		if (age < 13)
 			teenager = 0;
 	printf("%d\n", teenager);
-	age >= 13 ? age < 19 : teenage=1 ? teenage=0 : age < 13 ? teenage=0 : teenage=0;
+	teenage = age >= 13 ? age < 19 : 1 ? 0 : age < 13 ? 0 : 0;
 	printf("%d\n", teenage);
 }
