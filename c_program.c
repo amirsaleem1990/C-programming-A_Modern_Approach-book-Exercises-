@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(void){
-	int teenager, age;
+	int teenager,teenage, age;
 	scanf("%d", &age);
 	if (age >= 13)
 		if (age < 19)
@@ -11,5 +11,6 @@ int main(void){
 		if (age < 13)
 			teenager = 0;
 	printf("%d\n", teenager);
-	printf("%d\n", age >= 13 ? age < 19 : 1 ? 0 : age < 13 ? 0 : 0);
+	age >= 13 ? age < 19 : teenage=1 ? teenage=0 : age < 13 ? teenage=0 : teenage=0
+	printf("%d\n", );
 }
