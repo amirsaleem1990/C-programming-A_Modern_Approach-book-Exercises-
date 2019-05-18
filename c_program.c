@@ -1,5 +1,6 @@
 #include <stdio.h>
 int main(void){
+	int teenager; age = 20;
 	if (age >= 13)
 		if (age < 19)
 			teenager = 1;
