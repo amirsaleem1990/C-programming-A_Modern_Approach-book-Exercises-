@@ -1,16 +1,26 @@
 #include <stdio.h>
 int main(void){
-	int teenager,teenage, age;
-	scanf("%d", &age);
-	if (age >= 13)
-		if (age < 19)
-			teenager = 1;
-		else
-			teenager = 0;
-	else 
-		if (age < 13)
-			teenager = 0;
-	printf("%d\n", teenager);
-	teenage = age >= 13 ? age < 19 : 1 ? 0 : age < 13 ? 0 : 0;
-	printf("%d\n", teenage);
+	int score=73;
+	if (score >= 90)
+		printf("A");
+	else if (score >= 80)
+		printf("B");
+	else if (score >= 70)
+		printf("C"):
+	else if (score >= 60)
+		printf("D")
+	else
+		printf("F")
+
+
+	if (score < 60)
+		printf("F")
+	else if (score < 70)
+		printf("D")
+	else if (score < 80)
+		printf("C")
+	else if (score < 90)
+		printf("B")
+	else
+		print("A")
 }
