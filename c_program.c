@@ -15,5 +15,5 @@ int main(void){
 		printf("Your number is smaller than 0, please Enter a number in range 0-10000\n");
 		return 0;
 	return 0;
-	printf("%d", (num >= 0 & num < 10) ? 1 : (num < 100) : 2 ? (num < 1000) : 3 ? (num < 10000) : 4);
+	printf("%d", (num >= 0 & num < 10) ? 1 : (num < 100) ? 2 : (num < 1000) ? 3 : (num < 10000) ? 4 : 50);
 }
