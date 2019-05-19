@@ -18,6 +18,6 @@ int main(void){
 	if (n == 50)
 		printf("Your number is smaller than 0, please Enter a number in range 0-10000\n");
 	else
-		printf("The number %d has &d digits\n", num, n);
+		printf("The number %d has %d digits\n", num, n);
 	return 0;
 }
