@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 int main(void){
 	int hour, mint, I2_hours;
 	char am_pm[2];
