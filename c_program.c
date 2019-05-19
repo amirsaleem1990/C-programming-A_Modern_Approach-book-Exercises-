@@ -13,6 +13,6 @@ int main(void){
 		I2_hours = hour;
 		strcpy(am_pm, "AM");
 	}
-	printf("Equivalent 12-hour time: %d:%d %s\n", I2_hours, (mint == 00) ? 00 : 00, am_pm);
+	printf("Equivalent 12-hour time: %d:%s %s\n", I2_hours, (mint == 00) ? "00" : "00", am_pm);
 	return 0;
 }
