@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(void){
-	int hour, mint, 12_hours;
+	int hour, mint, I2_hours;
 	char am_pm;
 	printf("Enter a 24-hour time [eg: 21:11]\n");
 	scanf("%d:%d", &hour, &mint);
