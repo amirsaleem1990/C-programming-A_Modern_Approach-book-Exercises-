@@ -4,8 +4,10 @@ int main(void){
 	float tax;
 	printf("Enter the amount of taxable income\n");
 	scanf("%d", &income);
-	if (income <= 750)
+	if (income <= 750){
 		tax = income * 0.01;
+		printf("%f", tax);
+	}
 	else if(income <= 2250)
 		tax = 7.5 + (income - 750) * 0.02;
 	else if (income <= 3750)
