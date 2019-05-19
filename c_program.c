@@ -6,7 +6,7 @@ int main(void){
 	scanf("%d:%d", &hour, &mint);
 	if (hour > 12) {
 		I2_hours = hour - 12;
-		am_pm = "PM";
+		am_pm = 'PM';
 	}
 	else {
 		I2_hours = hour;
