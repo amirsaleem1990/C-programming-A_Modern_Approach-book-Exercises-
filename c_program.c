@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(void){
-	int num; 
+	int num, n; 
 	printf("Enter a number: \n");
 	scanf("%d", &num);
 	if (num >= 0 & num < 10)
@@ -14,6 +14,10 @@ int main(void){
 	else
 		printf("Your number is smaller than 0, please Enter a number in range 0-10000\n");
 		// return 0;
-	printf("%d", (num >= 0 & num < 10) ? 1 : (num < 100) ? 2 : (num < 1000) ? 3 : (num < 10000) ? 4 : 50);
+	n = (num >= 0 & num < 10) ? 1 : (num < 100) ? 2 : (num < 1000) ? 3 : (num < 10000) ? 4 : 50;
+	if (n == 50)
+		printf("Your number is smaller than 0, please Enter a number in range 0-10000\n");
+	else
+		printf("The number %d has &d digits\n", num, n);
 	return 0;
 }
