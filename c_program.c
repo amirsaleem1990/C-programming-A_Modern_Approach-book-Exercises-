@@ -5,14 +5,14 @@ int main(void){
 	printf("Enter a 24-hour time [eg: 21:11]\n");
 	scanf("%d:%d", &hour, &mint);
 	printf("%d%d", hour, mint);
-	// if hour > 12 {
-	// 	12_hours = hour - 12;
-	// 	am_pm = "PM";
-	// }
-	// else {
-	// 	12_hours = hour;
-	// 	am_pm = "AM";
-	// }
-	// printf("Equivalent 12-hour time: %d:%d %s", 12_hours, mint, am_pm);
+	if (hour > 12) {
+		I2_hours = hour - 12;
+		am_pm = "PM";
+	}
+	else {
+		I2_hours = hour;
+		am_pm = "AM";
+	}
+	printf("Equivalent 12-hour time: %d:%d %s", I2_hours, mint, am_pm);
 	return 0;
 }
