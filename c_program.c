@@ -14,5 +14,5 @@ int main(void){
 		else
 			largest = int4;
 	}
-	printf("%d", largest);	
+	printf("%d\n", largest);	
 }
