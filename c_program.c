@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void){
 	int hours, mints, time, departure, h, m;
-	char am_pm;
+	char am_pm[2];
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
@@ -37,8 +37,8 @@ int main(void){
 	m = departure % 60; 
 	if (h > 12){
 		h = h % 12;
-		am_pm = 'PPM';
+		am_pm = 'PM';
 	}else 
-		am_pm = 'AAM';
+		am_pm = 'AM';
 	printf("Closest departure time is: %d:%d %c\n",h, m, am_pm);
 }
