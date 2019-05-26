@@ -33,6 +33,6 @@ int main(void){
 	h = departure / 60;
 	m = departure % 60; 
 	printf("time: %d\n%d\n\n", time, departure);
-	printf("d3%d: \n", d3);
+	printf("d3%d  : \n", d3);
 	printf("Closest departure time is: %d:%d\n",h, m);
 }
