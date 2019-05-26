@@ -37,8 +37,8 @@ int main(void){
 	m = departure % 60; 
 	if (h > 12){
 		h = h % 12;
-		am_pm = 'PM';
+		am_pm = "PM";
 	}else 
 		am_pm = 'AM';
-	printf("Closest departure time is: %d:%d %c\n",h, m, am_pm);
+	printf("Closest departure time is: %d:%d %s\n",h, m, am_pm);
 }
