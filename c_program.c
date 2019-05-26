@@ -2,7 +2,7 @@
 #include <string.h>
 int main(void){
 	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a;
-	char am_pm_d='PM'; am_pm_a='pm';
+	char am_pm_d='PM'; am_pm_a='PM';
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
@@ -60,24 +60,23 @@ int main(void){
 	m_a = arrive % 60;	
 	
 	
-	if (h_d > 12){
-		h_d = h_d % 12;
-		am_pm_d[0]='P';
-		am_pm_d[1] = 'M';
-	}else {
-		am_pm_d[0]='A';
-		am_pm_d[1] = 'M';
-	}
+	// if (h_d > 12){
+	// 	h_d = h_d % 12;
+	// 	am_pm_d[0]='P';
+	// 	am_pm_d[1] = 'M';
+	// }else {
+	// 	am_pm_d[0]='A';
+	// 	am_pm_d[1] = 'M';
+	// }
 	
-	if (h_a > 12){
-		h_a = h_a % 12;
-	    am_pm_a[0]='P';
-		am_pm_a[1] = 'M';
-	}else{ 
-		am_pm_a[0]='A';
-		am_pm_a[1] = 'M';
-	}
+	// if (h_a > 12){
+	// 	h_a = h_a % 12;
+	//     am_pm_a[0]='P';
+	// 	am_pm_a[1] = 'M';
+	// }else{ 
+	// 	am_pm_a[0]='A';
+	// 	am_pm_a[1] = 'M';
+	// }
 
 	printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
-	printf("%s", am_pm_d);
 }
