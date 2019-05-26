@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void){
 	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a;
-	char am_pm_d[2];am_pm_a[2]
+	char am_pm_d[2], am_pm_a[2];
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
