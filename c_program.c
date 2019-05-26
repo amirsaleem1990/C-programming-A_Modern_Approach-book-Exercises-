@@ -32,5 +32,5 @@ int main(void){
 	// 	departure = d8
 	// if (departure % 12 > 0)
 	// printf("Closest departure time is: %d:%d")
-	printf("%d\n", 843%12);
+	printf("%d\n", (843/60)%12);
 }
