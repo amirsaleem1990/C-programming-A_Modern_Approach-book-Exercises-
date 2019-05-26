@@ -58,20 +58,22 @@ int main(void){
 	m_d = departure % 60; 
 	m_a = arrive % 60;	
 	
-	
+	am_pm_d = 0 // here 0 means "AM"
+	am_pm_a = 0 // here 0 means "AM"
+
 	if (h_d > 12){
-		if (h_d >= 12){
+		if (h_d == 12){
 			am_pm_d = 1; // here 1 means "PM"
-		}else am_pm_d = 0; // here 0 means "AM"
+		}
 		
 		h_d = h_d % 12;
 
 	}
 	
 	if (h_a > 12){
-		if(h_a >= 12){
+		if(h_a == 12){
 			am_pm_a = 1; // here 1 means "PM"
-		}else am_pm_a = 0; // here 0 means "AM"
+		}
 		h_a = h_a % 12;
 	}
 
