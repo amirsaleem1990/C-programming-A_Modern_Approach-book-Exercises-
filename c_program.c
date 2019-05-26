@@ -24,7 +24,7 @@ int main(void){
 			}
 		}
 	}
-	if earlear == 1{
+	if (earlear == 1){
 		printf("%d/%d/%d is earlear than %d/%d/%d", month1, day1, year1);
 	}else if(earlear ==2) 
 		printf("%d/%d/%d is earlear than %d/%d/%d", month2, day2, year2);
