@@ -6,8 +6,8 @@ int main(void){
 	first_num = number / 10;
 	second_num = number % 10;
 	printf("You entered the number ");
-	if (number < 10){
-		printf("Please restart, and enter two-digit number");
+	if (number < 10 || number > 99){
+		printf("Please restart, and enter two-digit number\n");
 		return 0;
 	} else if (number > 19){
 		switch (first_num){
