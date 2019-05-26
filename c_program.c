@@ -4,7 +4,7 @@ int main(void){
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
-	time = hours * 60 + mints
+	time = hours * 60 + mints;
 	int d1=8*60; d2=9*12+43; d3=11*60+19; d4=12*60+47;
 	int d5=(2+12)*60; d6=(3+12)*60+45; d7=(7+12)*60; d8=(9+12)*60+45;
 
