@@ -1,78 +1,33 @@
 #include <stdio.h>
 int main(void){
-	int hours, mints, time, departure, arrive,hour_departure, minute_departure, hour_arrive, minute_arrive, am_pm_departure, am_pm_arrive;
-
-	printf("Enter a 24-hour time: ");
-	scanf("%d:%d", &hours, &mints);
-
-	time = hours * 60 + mints;
-
-	int d1=8*60, d2=9*60+43, d3=11*60+19, d4=12*60+47;
-	int d5=(2+12)*60, d6=(3+12)*60+45, d7=(7+12)*60, d8=(9+12)*60+45;
-	
-	int a1=10*60+16, a2=11*60+52, a3=(1+12)*60+31, a4=(3+12)*60;
-	int a5=(4+12)*60+8, a6=(5+12)*60+55, a7=(9+12)*60+20, a8=(11+12)*60+58;
-
-
-	if (time < d1){
-		departure = d8;
-		arrive = a8;
-	}
-	else if(time > d1 && time < d2){
-		departure = d1;
-		arrive = a1;
-	}
-	else if (time > d2 && time < d3){
-		departure = d2;
-		arrive = a2;
-	}
-	else if (time > d3 && time < d4){
-		departure = d3;
-		arrive = a3;
-	}
-	else if (time > d4 && time < d5){
-		departure = d4;
-		arrive = a4;
-	}
-	else if (time > d5 && time < d6){
-		departure = d5;
-		arrive = a5;
-	}
-	else if (time > d6 && time < d7){
-		departure = d6;
-		arrive = a6;
-	}
-	else if (time > d7 && time < d8){
-		departure = d7;
-		arrive = a7;
-	}
-	else{
-		departure = d8;
-		arrive = a8;
-	}
-	hour_departure = departure / 60;
-	hour_arrive = arrive / 60;
-
-
-	minute_departure = departure % 60; 
-	minute_arrive = arrive % 60;	
-	
-	am_pm_departure = 0; // here 0 means "AM"
-	am_pm_arrive = 0; // here 0 means "AM"
-
-	if (hour_departure >= 12){
-		am_pm_departure = 1; // here 1 means "PM"
-		if (hour_departure > 12){
-			hour_departure = hour_departure % 12;	
+	int month1, month2, day1, day2, year1, year2, earlear;
+	printf("Enter first date (mm/dd/yy): ");
+	scanf("%d/%d/%d", &month1, &day1, &year1);
+	printf("Enter second date (mm/dd/yy): ")
+	scanf("%d/%d/%d", &month2, &day2, &year2);
+	if (year2 > year1){
+		earlear = 1;
+	}else if(year2 < year1){
+		earlear = 2;
+	}else if (year2 == year1){
+		if (month2 > month1){
+			earlear = 1;
+		}else if(month2 < month1){
+			earlear = 2;
+		}else if(month2 == month1){
+			if (day2 < day1){
+				earlear = 2;
+			} else if(day2 > day1){
+				earlear = 1;
+			} else if (day2 == day1){
+				earlear = 0;
+			}
 		}
 	}
-	
-	if (hour_arrive >= 12){
-		am_pm_arrive = 1; // here 1 means "PM"
-		if(hour_arrive > 12){
-			hour_arrive = hour_arrive % 12;	
-		}
-	}
-
-	printf("Closest departure time is: %d:%d %cM, arriving at %d:%d %cM\n",hour_departure, minute_departure, am_pm_departure == 1 ? 'P' : 'A', hour_arrive, minute_arrive, am_pm_arrive == 1 ? 'P' : 'A');
+	if earlear == 1{
+		printf("%d/%d/%d is earlear than %d/%d/%d", month1, day1, year1);
+	}else if(earlear ==2) 
+		printf("%d/%d/%d is earlear than %d/%d/%d", month2, day2, year2);
+	else 
+		printf("Both dates are same");
 }
