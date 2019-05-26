@@ -33,5 +33,5 @@ int main(void){
 	// h = departure / 60;
 	// m = (departure & 60) * 60; 
 	// printf("Closest departure time is: %d:%d\n",h, m);
-	printf("%d", 481 % 60);
+	printf("%d", 540 % 60);
 }
