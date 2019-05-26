@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void){
-	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a;
-	char am_pm_d[2], am_pm_a[2];
+	int hours, mints, time, departure, h, m;
+	char am_pm[2];
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
@@ -15,63 +15,33 @@ int main(void){
 	int a5=(4+12)*60+8, a6=(5+12)*60+55, a7=(9+12)*60+20, a8=(11+12)*60+58;
 
 
-	if (time < d1){
+	if (time < d1)
 		departure = d1;
-		arrive = a1;
-	}
-	else if(time > d1 && time < d2){
+	else if(time > d1 && time < d2)
 		departure = d2;
-		arrive = a2;
-	}
-	else if (time > d2 && time < d3){
+	else if (time > d2 && time < d3)
 		departure = d3;
-		arrive = a3;
-	}
-	else if (time > d3 && time < d4){
+	else if (time > d3 && time < d4)
 		departure = d4;
-		arrive = a4;
-	}
-	else if (time > d4 && time < d5){
+	else if (time > d4 && time < d5)
 		departure = d5;
-		arrive = a5;
-	}
-	else if (time > d5 && time < d6){
+	else if (time > d5 && time < d6)
 		departure = d6;
-		arrive = a6;
-	}
-	else if (time > d6 && time < d7){
+	else if (time > d6 && time < d7)
 		departure = d7;
-		arrive = a7;
-	}
-	else if (time > d7 && time < d8){
+	else if (time > d7 && time < d8)
 		departure = d8;
-		arrive = a8;
-	}
-	else{
+	else
 		departure = d1;
-		arrive = a1;
-	}
-	h_d = departure / 60;
-	h_a = arrive / 60;
-
-
-	m_d = departure % 60; 
-	m_a = arrive % 60;	
+	h = departure / 60;
+	m = departure % 60; 
 	
-	am_pm_d[0]='P';
-    am_pm_a[0]='P';
-	am_pm_d[1] = 'M';
-	am_pm_a[1] = 'M';
-	
-	if (h_d > 12){
-		h_d = h_d % 12;
-	}else 
-		am_pm_d[0]='A';
+	am_pm[0]='P';
+	am_pm[1] = 'M';
 
-	if (h_a > 12){
-		h_a = h_a % 12;
+	if (h > 12){
+		h = h % 12;
 	}else 
-		am_pm_a[0]='A';
-
-	printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
+		am_pm[0]='A';
+	printf("Closest departure time is: %d:%d %s\n",h, m, am_pm);
 }
