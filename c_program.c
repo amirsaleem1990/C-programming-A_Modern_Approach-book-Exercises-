@@ -31,6 +31,6 @@ int main(void){
 	else
 		departure = d8;
 	h = departure / 60;
-	m = departure - (hours * 60);
+	m = 60 + (departure - (hours * 60));
 	printf("Closest departure time is: %d:%d\n", h, m);
 }
