@@ -61,15 +61,18 @@ int main(void){
 	
 	if (h_d > 12){
 		h_d = h_d % 12;
-		am_pm_d = 1; // here 1 means "PM"
-	}else
-		am_pm_d = 0; // here 0 means "AM"
+	}
 	
 	if (h_a > 12){
 		h_a = h_a % 12;
-		am_pm_a = 1; // here 1 means "PM"
-	}else
-		am_pm_a = 0; // here 0 means "AM"
+	}
 
+	if (h_d >= 12){
+		am_pm_d = 1; // here 1 means "PM"
+	} else am_pm_d = 0; // here 0 means "AM"
+
+	if (h1 >= 12)
+		am_pm_a = 1; // here 1 means "PM"
+	else am_pm_a = 0; // here 0 means "AM"
 	printf("Closest departure time is: %d:%d %cM, arriving at %d:%d %cM\n",h_d, m_d, am_pm_d == 1 ? 'P' : 'A', h_a, m_a, am_pm_a == 1 ? 'P' : 'A');
 }
