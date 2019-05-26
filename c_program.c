@@ -35,7 +35,7 @@ int main(void){
 		departure = d1;
 	h = departure / 60;
 	m = departure % 60; 
-	if h > 12{
+	if (h > 12){
 		h = h % 12;
 		am_pm = "PM";
 	}else 
