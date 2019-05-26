@@ -9,8 +9,8 @@ int main(void){
 		printf("Please restart, and enter two-digit number\n");
 		return 0;
 	} else if (number > 19){
+		printf("You entered the number ");
 		switch (first_num){
-			printf("You entered the number ");
 			case 9: printf("Ninty "); break;
 			case 8: printf("Eighty "); break;
 			case 7: printf("Seventy "); break;
@@ -32,8 +32,8 @@ int main(void){
 			case 9: printf("nine\n"); break;
 		}
 	} else{
+		printf("You entered the number ");
 		switch(number){
-			printf("You entered the number ");
 			case 10: printf("Ten\n"); break;
 			case 11: printf("Eleven\n"); break;
 			case 12: printf("Twelve\n"); break;
