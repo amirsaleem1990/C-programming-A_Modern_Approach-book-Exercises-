@@ -2,7 +2,7 @@
 int main(void){
 	int number, first_num, second_num;
 	printf("Enter a two-digit number: ");
-	scanf("%2d", &number);
+	scanf("%d", &number);
 	number = 105;
 	first_num = number / 10;
 	second_num = number % 10;
