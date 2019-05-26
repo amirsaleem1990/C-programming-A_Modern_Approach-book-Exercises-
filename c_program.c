@@ -29,11 +29,10 @@ int main(void){
 	else if (time > d6 && time < d8)
 		departure = d7;
 	else
-		departure = d8
+		departure = d8;
 	if (departure > 1459){
 		hours = departure / 60;
 		mints = departure - (hours * 60);
-		printf("%d:%d", hours, mints);
 	}
-	printf("Closest departure time is: %d:%d");
+	printf("Closest departure time is: %d:%d", hours, mints);
 }
