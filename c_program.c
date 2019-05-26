@@ -40,5 +40,5 @@ int main(void){
 		am_pm = 'PM';
 	}else 
 		am_pm = 'AM';
-	printf("Closest departure time is: %d:%d\n",h, m);
+	printf("Closest departure time is: %d:%d %c\n",h, m, am_pm);
 }
