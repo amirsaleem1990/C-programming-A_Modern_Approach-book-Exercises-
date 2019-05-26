@@ -73,5 +73,6 @@ int main(void){
 	}else{ 
 		strcpy(am_pm_a, "AM");
 	}
-	printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
+	// printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
+	printf("%s", am_pm_d);
 }
