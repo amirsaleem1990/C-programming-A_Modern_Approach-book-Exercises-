@@ -34,5 +34,5 @@ int main(void){
 		hours = departure / 60;
 		mints = departure - (hours * 60);
 	}
-	printf("Closest departure time is: %d", departure);
+	printf("Closest departure time is: %d", departure - (departure/60));
 }
