@@ -1,30 +1,24 @@
 #include <stdio.h>
 int main(void){
-	int int1, int2, int3, int4, largest, smallest, i=0;
+	int hours, mints, time;
 
-	printf("Enter four integers: ");
-	scanf("%d%d%d%d", &int1, &int2, &int3, &int4);
-	if ((int1 > int2) && (int1 > int3) && (int1 > int4))
-		largest = int1;
-	else if((int2 > int1) && (int2 > int3) && (int2 > int4))
-		largest = int2;
-	else if((int3 > int1) && (int3 > int2) && (int3 > int4))
-		largest = int3;
-	else
-		largest = int4;
+	printf("Enter a 24-hour time: ");
+	scanf("%d:%d", &hours, &mints);
+	time = hours * 60 + mints
+	int d1=8*60; d2=9*12+43; d3=11*60+19; d4=12*60+47;
+	int d5=(2+12)*60; d6=(3+12)*60+45; d7=(7+12)*60; d8=(9+12)*60+45;
 
-	if ((int1 < int2) && (int1 < int3) && (int1 < int4))
-		smallest = int1;
-	else if((int2 < int1) && (int2 < int3) && (int2 < int4))
-		smallest = int2;
-	else if((int3 < int1) && (int3 < int2) && (int3 < int4))
-		smallest = int3;
-	else
-		smallest = int4;
+	int a1=10*60+16; a2=11*60+52; a3=(1+12)*60+31; a4=3*60; 
+	int a5=(4+12)*60+8; a6=(5+12)*60+55; a7=(9+12)*60+20; a8=(11+12)*60+58;
 
-
-	printf("Largest: %d\nSmallest: %d\n", largest, smallest);
-
-
+	printf("%d:%d\n", d1, a1);
+	printf("%d:%d\n", d2, a2);
+	printf("%d:%d\n", d3, a3);
+	printf("%d:%d\n", d4, a4);
+	printf("%d:%d\n", d5, a5);
+	printf("%d:%d\n", d6, a6);
+	printf("%d:%d\n", d7, a7);
+	printf("%d:%d\n", d8, a8);
+	
 
 }
