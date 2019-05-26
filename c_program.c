@@ -16,23 +16,22 @@ int main(void){
 
 	if (time < d1)
 		departure = d1;
-	else if(time > d1 && time < d3)
+	else if(time > d1 && time < d2)
 		departure = d2;
-	else if (time > d2 && time < d4)
+	else if (time > d2 && time < d3)
 		departure = d3;
-	else if (time > d3 && time < d5)
+	else if (time > d3 && time < d4)
 		departure = d4;
-	else if (time > d4 && time < d6)
+	else if (time > d4 && time < d5)
 		departure = d5;
-	else if (time > d5 && time < d7)
+	else if (time > d5 && time < d6)
 		departure = d6;
-	else if (time > d6 && time < d8)
+	else if (time > d6 && time < d7)
 		departure = d7;
 	else
 		departure = d8;
 	h = departure / 60;
 	m = departure % 60; 
 	printf("time: %d\n%d\n\n", time, departure);
-	printf("d3%d  : \n", d3);
 	printf("Closest departure time is: %d:%d\n",h, m);
 }
