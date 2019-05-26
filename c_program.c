@@ -71,5 +71,5 @@ int main(void){
 	}else
 		am_pm_a = 0; // here 0 means "AM"
 
-	printf("Closest departure time is: %d:%d %sM, arriving at %d:%d %sM\n",h_d, m_d, am_pm_d == 1 ? 'P' : 'A', h_a, m_a, am_pm_a == 1 ? 'P' : 'A');
-}
+	// printf("Closest departure time is: %d:%d %sM, arriving at %d:%d %sM\n",h_d, m_d, am_pm_d == 1 ? 'P' : 'A', h_a, m_a, am_pm_a == 1 ? 'P' : 'A');
+}	printf("%s\n", am_pm_a == 1 ? 'P' : 'A');
