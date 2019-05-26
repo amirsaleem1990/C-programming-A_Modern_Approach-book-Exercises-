@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 int main(void){
-	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a, am_pm_d, am_pm_a;
+	int hours, mints, time, departure, arrive,hour_departure, minute_departure, hour_arrive, minute_arrive, am_pm_departure, am_pm_arrive;
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
@@ -51,29 +50,29 @@ int main(void){
 		departure = d8;
 		arrive = a8;
 	}
-	h_d = departure / 60;
-	h_a = arrive / 60;
+	hour_departure = departure / 60;
+	hour_arrive = arrive / 60;
 
 
-	m_d = departure % 60; 
-	m_a = arrive % 60;	
+	minute_departure = departure % 60; 
+	minute_arrive = arrive % 60;	
 	
-	am_pm_d = 0; // here 0 means "AM"
-	am_pm_a = 0; // here 0 means "AM"
+	am_pm_departure = 0; // here 0 means "AM"
+	am_pm_arrive = 0; // here 0 means "AM"
 
-	if (h_d >= 12){
-		am_pm_d = 1; // here 1 means "PM"
-		if (h_d > 12){
-			h_d = h_d % 12;	
+	if (hour_departure >= 12){
+		am_pm_departure = 1; // here 1 means "PM"
+		if (hour_departure > 12){
+			hour_departure = hour_departure % 12;	
 		}
 	}
 	
-	if (h_a >= 12){
-		am_pm_a = 1; // here 1 means "PM"
-		if(h_a > 12){
-			h_a = h_a % 12;	
+	if (hour_arrive >= 12){
+		am_pm_arrive = 1; // here 1 means "PM"
+		if(hour_arrive > 12){
+			hour_arrive = hour_arrive % 12;	
 		}
 	}
 
-	printf("Closest departure time is: %d:%d %cM, arriving at %d:%d %cM\n",h_d, m_d, am_pm_d == 1 ? 'P' : 'A', h_a, m_a, am_pm_a == 1 ? 'P' : 'A');
+	printf("Closest departure time is: %d:%d %cM, arriving at %d:%d %cM\n",hour_departure, minute_departure, am_pm_departure == 1 ? 'P' : 'A', hour_arrive, minute_arrive, am_pm_arrive == 1 ? 'P' : 'A');
 }
