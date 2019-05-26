@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 int main(void){
 	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a;
-	char am_pm_d[2], am_pm_a[2];
+	char am_pm_d[2]='PM', am_pm_a[2]='pm';
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
@@ -76,7 +77,7 @@ int main(void){
 		am_pm_a[0]='A';
 		am_pm_a[1] = 'M';
 	}
-	
+
 	printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
 	printf("%s", am_pm_d);
 }
