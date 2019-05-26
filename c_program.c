@@ -58,8 +58,8 @@ int main(void){
 	m_d = departure % 60; 
 	m_a = arrive % 60;	
 	
-	am_pm_d = 0 // here 0 means "AM"
-	am_pm_a = 0 // here 0 means "AM"
+	am_pm_d = 0; // here 0 means "AM"
+	am_pm_a = 0; // here 0 means "AM"
 
 	if (h_d > 12){
 		if (h_d == 12){
