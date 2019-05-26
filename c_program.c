@@ -15,21 +15,21 @@ int main(void){
 
 
 	if (time < d1)
-		departure = d1;
-	else if(time > d1 && time < d2)
-		departure = d2;
-	else if (time > d2 && time < d3)
-		departure = d3;
-	else if (time > d3 && time < d4)
-		departure = d4;
-	else if (time > d4 && time < d5)
-		departure = d5;
-	else if (time > d5 && time < d6)
-		departure = d6;
-	else if (time > d6 && time < d7)
-		departure = d7;
-	else if (time > d7 && time < d8)
 		departure = d8;
+	else if(time > d1 && time < d2)
+		departure = d1;
+	else if (time > d2 && time < d3)
+		departure = d2;
+	else if (time > d3 && time < d4)
+		departure = d3;
+	else if (time > d4 && time < d5)
+		departure = d4;
+	else if (time > d5 && time < d6)
+		departure = d5;
+	else if (time > d6 && time < d7)
+		departure = d6;
+	else if (time > d7 && time < d8)
+		departure = d7;
 	else
 		departure = d1;
 	h = departure / 60;
