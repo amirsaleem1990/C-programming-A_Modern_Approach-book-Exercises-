@@ -74,4 +74,5 @@ int main(void){
 		am_pm_a[0]='A';
 
 	printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
+	printf("%s", am_pm_d);
 }
