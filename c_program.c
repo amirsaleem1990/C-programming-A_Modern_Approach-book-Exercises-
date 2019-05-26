@@ -69,7 +69,9 @@ int main(void){
 	
 	if (h_a > 12){
 		h_a = h_a % 12;
+		if (am_pm_a != "PM"){
 		strcpy(am_pm_a, "PM");
+	}
 	}else{ 
 		strcpy(am_pm_a, "AM");
 	}
