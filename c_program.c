@@ -2,7 +2,7 @@
 #include <string.h>
 int main(void){
 	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a;
-	char am_pm_d='PM'
+	char am_pm_d='PM';
 	char am_pm_a='PM';
 
 	printf("Enter a 24-hour time: ");
