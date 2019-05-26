@@ -17,7 +17,7 @@ int main(void){
 
 	if (time < d1){
 		departure = d1;
-		arrive = h1;
+		arrive = a1;
 	}
 	else if(time > d1 && time < d2){
 		departure = d2;
