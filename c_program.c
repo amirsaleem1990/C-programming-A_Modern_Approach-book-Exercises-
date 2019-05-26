@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 int main(void){
-	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a;
-	char am_pm_d[2], am_pm_a[2];
+	int hours, mints, time, departure, arrive,h_d, m_d, h_a, m_a, am_pm_d, am_pm_a;
 
 	printf("Enter a 24-hour time: ");
 	scanf("%d:%d", &hours, &mints);
@@ -62,17 +61,16 @@ int main(void){
 	
 	if (h_d > 12){
 		h_d = h_d % 12;
-		strcpy(am_pm_d, "PM");
-	}else {
-		strcpy(am_pm_d, "AM");
-	}
+		am_pm_d = 1 // here 1 means "PM"
+	}else
+		am_pm_d = 0 // here 0 means "AM"
 	
 	if (h_a > 12){
 		h_a = h_a % 12;
-		strcpy(am_pm_a, "PM");
-	}else{ 
-		strcpy(am_pm_a, "AM");
-	}
+		am_pm_a = 1 // here 1 means "PM"
+	}else
+		am_pm_a = 0 // here 0 means "AM"
+
 	// printf("Closest departure time is: %d:%d %s, arriving at %d:%d %s\n",h_d, m_d, am_pm_d, h_a, m_a, am_pm_a);
-	printf("%s", am_pm_d);
+	printf("%d", am_pm_d);
 }
