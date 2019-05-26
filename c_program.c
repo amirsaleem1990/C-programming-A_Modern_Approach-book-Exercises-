@@ -21,42 +21,42 @@ int main(void){
 	}
 	else if(time > d1 && time < d2){
 		departure = d2;
-		arrive = h2;
+		arrive = a2;
 	}
 	else if (time > d2 && time < d3){
 		departure = d3;
-		arrive = h3;
+		arrive = a3;
 	}
 	else if (time > d3 && time < d4){
 		departure = d4;
-		arrive = h4;
+		arrive = a4;
 	}
 	else if (time > d4 && time < d5){
 		departure = d5;
-		arrive = h5;
+		arrive = a5;
 	}
 	else if (time > d5 && time < d6){
 		departure = d6;
-		arrive = h6;
+		arrive = a6;
 	}
 	else if (time > d6 && time < d7){
 		departure = d7;
-		arrive = h7;
+		arrive = a7;
 	}
 	else if (time > d7 && time < d8){
 		departure = d8;
-		arrive = h8;
+		arrive = a8;
 	}
 	else{
 		departure = d1;
-		arrive = h1;
+		arrive = a1;
 	}
 	h_d = departure / 60;
-	h_a = departure / 60;
+	h_a = arrive / 60;
 
 
 	m_d = departure % 60; 
-	m_a = departure % 60;	
+	m_a = arrive % 60;	
 	
 	am_pm_d[0]='P';
     am_pm_a[0]='P';
