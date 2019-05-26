@@ -2,10 +2,11 @@
 int main(void){
 	int number, first_num, second_num;
 	printf("Enter a two-digit number: ");
-	scanf("%2d", &number);
+	// scanf("%2d", &number);
+	number = 105;
 	first_num = number / 10;
 	second_num = number % 10;
-	if (number < 10 || number > 99){
+	if ((number < 10) || (number > 99)){
 		printf("Please restart, and enter two-digit number\n");
 		return 0;
 	} else if (number > 19){
