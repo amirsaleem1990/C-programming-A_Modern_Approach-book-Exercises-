@@ -28,8 +28,10 @@ int main(void){
 		departure = d6;
 	else if (time > d6 && time < d7)
 		departure = d7;
-	else
+	else if (time > d7 && time < d8)
 		departure = d8;
+	else
+		departure = d1;
 	h = departure / 60;
 	m = departure % 60; 
 	printf("time: %d\n%d\n\n", time, departure);
