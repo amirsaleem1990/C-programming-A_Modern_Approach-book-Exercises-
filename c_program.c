@@ -4,20 +4,20 @@ int main(void){
 	printf("*** ACME checkbook-balancing program ***\n");
 	printf("Commands: 0=clear, 1=credit, 2=debit, 3=balance, 4=exit\n\n");
 	for(;;){ 
-		printf("Enter command:  ");
+		printf("\nEnter command:  ");
 		scanf("%1d", &command);
 		if (command == 0){
 			return 0;
 		}
 		switch (command){
 			case 0: balance = 0; break;
-			case 1: printf("\nEnter amount of credit: \n");
+			case 1: printf("Enter amount of credit: ");
 					scanf("%d", &amount);
 					balance -= amount; break;
-			case 2: printf("\nEnter amount of debit: \n");
+			case 2: printf("Enter amount of debit: ");
 					scanf("%d", &amount);
 					balance += amount; break;
-			case 3: printf("\nCurrent balance: $%d\n", balance);
+			case 3: printf("Current balance: $%d", balance);
 					break;
 			case 4: return 0;
 		}
