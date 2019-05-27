@@ -10,15 +10,15 @@ int main(void){
 			return 0;
 		}
 		switch (command){
-			case 0: balance = 0; continue;
+			case 0: balance = 0; break;
 			case 1: prinft("Enter amount of credit: \n");
 					scanf("%d", &amount);
-					balance += amount; continue;
+					balance += amount; break;
 			case 2: printf("Enter amount of debit: \n");
 					scanf("%d", &amount);
-					balance -= amount; continue;
+					balance -= amount; break;
 			case 3: printf("Current balance: $%d\n", balance);
-					continue;
+					break;
 			case 4: return 0;
 		}
 
