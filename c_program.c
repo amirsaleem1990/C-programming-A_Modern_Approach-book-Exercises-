@@ -5,7 +5,7 @@ int main(void){
 	printf("Commands: 0=clear, 1=credit, 2=debit, 3=balance, 4=exit");
 	for(;;) 
 		printf("Enter command: \n");
-		scanf("%1d", command);
+		scanf("%1d", &command);
 		if (command == 0){
 			return 0;
 		}
