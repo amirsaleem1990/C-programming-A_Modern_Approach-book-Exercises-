@@ -18,7 +18,7 @@ int main(void){
 			case 2: printf("Enter amount of debit: ");
 					scanf("%f", &amount);
 					balance -= amount; break;
-			case 3: printf("Current balance: $%f", balance);
+			case 3: printf("Current balance: $%.2f", balance);
 					break;
 			case 4: return 0;
 		}
