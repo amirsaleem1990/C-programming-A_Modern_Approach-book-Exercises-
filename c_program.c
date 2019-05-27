@@ -1,10 +1,10 @@
 
 #include <stdio.h>
 int main(void){
-    int i = 1;
-    while (i <= 128){
-        printf("%d ", i);
-        i *= 2;
-    }
+    int i = 9384;
+    do{
+    printf("%d ", i);
+    i /= 10;
+    } while (i > 0);
     return 0;
 }
