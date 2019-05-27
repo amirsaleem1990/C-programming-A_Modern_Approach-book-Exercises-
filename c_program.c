@@ -3,8 +3,8 @@ int main(void){
 	int command, balance, amount;
 	printf("*** ACME checkbook-balancing program ***\n");
 	printf("Commands: 0=clear, 1=credit, 2=debit, 3=balance, 4=exit");
-	for(;;;); 
-		printf("Enter command: \n")
+	for(;;) 
+		printf("Enter command: \n");
 		scanf("%1d", command);
 		if (command == 0){
 			return 0;
