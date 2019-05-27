@@ -1,7 +1,8 @@
+/* Balances a checkbook */
 #include <stdio.h>
 int main(void){
 	int command; 
-	float balance=0.0, amount;
+	float balance=0.0f, amount;
 	printf("*** ACME checkbook-balancing program ***\n");
 	printf("Commands: 0=clear, 1=credit, 2=debit, 3=balance, 4=exit\n\n");
 	for(;;){ 
@@ -23,8 +24,5 @@ int main(void){
 			case 4: return 0;
 		}
 }
-
-
-
 	return 0;
 }
