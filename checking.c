@@ -24,9 +24,8 @@ int main(void){
 
 			case 3: printf("Current balance: $%.2f", balance);
 					break;
-					
+
 			case 4: return 0;
 		}
 }
-	return 0;
 }

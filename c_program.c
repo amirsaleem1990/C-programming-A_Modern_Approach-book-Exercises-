@@ -13,16 +13,19 @@ int main(void){
 		}
 		switch (command){
 			case 0: balance = 0; break;
+
 			case 1: printf("Enter amount of credit: ");
 					scanf("%f", &amount);
 					balance += amount; break;
+
 			case 2: printf("Enter amount of debit: ");
 					scanf("%f", &amount);
 					balance -= amount; break;
+
 			case 3: printf("Current balance: $%.2f", balance);
 					break;
+
 			case 4: return 0;
 		}
 }
-	return 0;
 }
