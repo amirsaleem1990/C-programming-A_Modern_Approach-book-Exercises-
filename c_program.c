@@ -13,10 +13,10 @@ int main(void){
 			case 0: balance = 0; break;
 			case 1: printf("Enter amount of credit: ");
 					scanf("%d", &amount);
-					balance -= amount; break;
+					balance += amount; break;
 			case 2: printf("Enter amount of debit: ");
 					scanf("%d", &amount);
-					balance += amount; break;
+					balance -= amount; break;
 			case 3: printf("Current balance: $%d", balance);
 					break;
 			case 4: return 0;
