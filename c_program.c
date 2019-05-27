@@ -11,13 +11,13 @@ int main(void){
 		}
 		switch (command){
 			case 0: balance = 0; break;
-			case 1: printf("Enter amount of credit: \n");
+			case 1: printf("\nEnter amount of credit: \n");
 					scanf("%d", &amount);
 					balance -= amount; break;
-			case 2: printf("Enter amount of debit: \n");
+			case 2: printf("\nEnter amount of debit: \n");
 					scanf("%d", &amount);
 					balance += amount; break;
-			case 3: printf("Current balance: $%d\n", balance);
+			case 3: printf("\nCurrent balance: $%d\n", balance);
 					break;
 			case 4: return 0;
 		}
