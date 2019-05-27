@@ -2,7 +2,7 @@
 int main(void){
 	int command, balance, amount;
 	printf("*** ACME checkbook-balancing program ***\n");
-	printf("Commands: 0=clear, 1=credit, 2=debit, 3=balance, 4=exit\n");
+	printf("Commands: 0=clear, 1=credit, 2=debit, 3=balance, 4=exit\n\n");
 	for(;;){ 
 		printf("Enter command: \n");
 		scanf("%1d", &command);
