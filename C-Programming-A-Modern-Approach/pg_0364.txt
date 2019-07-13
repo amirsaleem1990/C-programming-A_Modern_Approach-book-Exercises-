@@ -1,0 +1,61 @@
+#1ine directive
+(form 1)
+
+œ
+
+#l1ine directive
+(form 2)
+
+14.5  Miscellaneous Directives 339
+
+#if INT MAX < 100000
+#error int type is too small
+#endif
+
+Attempting to compile the program on a machine whose integers are stored in I6
+bits will produce a message such as
+
+Error directive: int type is too small
+
+The #error directive is often found in the #else part of an #if-#eli£-
+#else series:
+
+Hif defined (WIN32)
+
+telif defined (MAC OS)
+
+#elif defined (LINUX)
+
+#else
+
+#error No operating system specified
+#endif
+
+The #1 ine Directive
+
+The #1 ine directive is used to alter the way program lines are numbered. (Lines
+are usually numbered |, 2. 3, as you'd expect.) We can also use this directive Lo
+make the compiler think that it’s reading the program from a file with a different
+name.
+
+The #1 ine directive has two forms. In one form, we specify a line number:
+
+#line n
+
+n must be a sequence of digits representing an integer between | and 32767
+(2147483647 in C99). This directive causes subsequent lines in the program to be
+numbered n, n + 1, n + 2, and so forth.
+
+In the second form of the #1 ine directive, both a line number and a file name
+are specified:
+
+#line n "file"
+
+The lîines that follow this directive are assumed to come from file, with line num-
+bers starting at n. The values of n and/or the file string can be specified using mac-
+ros.
+
+One effect of the #l ine directive is to change the value ofthe __ LINE —
+macro (and possibly the __ FILE _ macro). More importantly. most compilers
+will use the information from the #1 ine directive when generating error messages.
+

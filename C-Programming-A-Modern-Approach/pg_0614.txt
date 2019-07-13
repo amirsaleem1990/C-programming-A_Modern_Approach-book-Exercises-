@@ -1,0 +1,45 @@
+23
+
+23.1
+
+rounding direction » 23.4
+
+ 
+
+Library Support for Numbers
+and Character Data
+
+Prolonged contact with the computer turns
+mathematicians into clerks and vice versa.
+
+This chapter describes the five most important library headers that provide support
+
+for working with numbers, characters, and character strings. Sections 23.1 and
+
+23.2 cover the <float .h> and <limits.h> headers, which contain macros
+describing the characteristics of numeric and character types. Sections 23.3 and
+23.4 describe the <math. h> header, which provides mathematical functions. Sec-
+tion 23.3 discusses the C89 version of <math.h>: Section 23.4 covers the C99
+additions, which are so extensive that l’ve chosen to cover them separately. Sec-
+tions 23.5 and 23.6 are devoted to the <ctype.h> and <string.h> headers,
+which provide character functions and string functions, respectively.
+
+C99 adds several headers that also deal with numbers, characters, and strines.
+The <wchar .h> and <wctype .h> headers are discussed in Chapter 25. Chap-
+ter 27 covers <complex.h>, <fenv.h>, <inttypes.h>, <stdint.h>,
+and <tgmath.h»>.
+
+The <float.h> Header: Characteristics of
+Floating Types
+
+The <float .h> header provides macros that define the range and accuracy of
+the float, double, and 1long double types. There are no types or functions
+in cfloat.h»>.
+
+Two macros apply to all floating types. The FLT ROUNDS macro represents
+the current rounding direction for floating-point addition. Table 23.1 shows the
+possible values of FLT ROUNDS. (Values not shown in the table indicate imple-
+mentation-defined rounding behavior.)
+
+589
+

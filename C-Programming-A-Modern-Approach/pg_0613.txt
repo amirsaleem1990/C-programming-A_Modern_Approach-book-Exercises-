@@ -1,0 +1,55 @@
+588
+
+Chapter 22
+
+16.
+
+[7.
+
+18.
+
+19.
+
+Input/Output
+
+Modify the fcopy . c program of Section 22.4 so that it uses Éread and fwrite to copy
+the file in blocks of 512 bytes. (The last block may contain fewer than 512 bytes, of course.)
+
+Write à program that reads a series of phone numbers from a file and displays them in a
+standard format. Each line of the file will contain a single phone number, but the numbers
+may be in a variety of formats. You may assume that each line contains 10 digits, possibly
+mixed with other characters (which should be ignored). For example. suppose that the file
+contains the following lines:
+
+404.817.6900
+(215) 686-1776
+312-746-6000
+877 275 5273
+6173434200
+
+The output of the program should have the following appearance:
+
+(404) 817-6900
+(215) 686-1776
+(312) 746-6000
+(877) 275-5273
+(617) 343-4200
+
+Have the program obtain the file name from the command line.
+
+Write à program that reads integers from a text file whose name is given as a command-line
+argument. Each line of the file may contain any number of integers (including none) sepa-
+rated by one or more spaces. Have the program display the largest number in the file, the
+smallest number. and the median (the number closest to the middle if the integers were
+sorted). If the file contains an even number of integers, there will be two numbers in the
+middle; the program should display their average (rounded down). You may assume that the
+file contains no more than 10.000 integers. Hinr: Store the integers in an array and then sort
+the array.
+
+(a) Write a program that converts a Windows text file to a UNIX text file. (See Section 22.1
+for à discussion of the differences between Windows and UNIX text files.)
+(b) Write a program that converts a UNIX text file to a Windows text file.
+
+In each case, have the program obtain the names of both files from the command line. Hinr:
+Open the input file in "rb" mode and the output file in "wb" mode.
+

@@ -1,0 +1,65 @@
+358
+
+Chapter 15
+
+#error directives > 74.5
+
+Writing Large Programs
+
+ 
+
+ 
+
+ 
+
+A file3.h \
+
+° ° - 4 « . - Pd E )
+finclude "file3s.n" winclude "file3.h"
+
+ 
+
+ 
+
+filel.h \ file2.n
+\ 1
+& #include "filel.h"
+
+finclude "file2 .h"
+
+ 
+
+prog.c
+
+To protect à header file, we’Il enclose the contents of the file in an #i fndef-
+tendi£ pair. For example, the boolean. h file could be protected in the follow-
+ing Way:
+
+iti£ndef BOOLEAN H
+#define BOOLEAN H
+
+#define TRUE i
+#define FALSE O
+typedef int Bool;
+
+#endif
+
+When this file is included the first time, the BOOLEAN H macro won't be defined,
+so the preprocessor will allow the lines between #i fnde£ and #endif to stay.
+But 1f the file should be included a second time. the preprocessor will remove the
+lines between #i £nde£ and #endi£.
+
+The name of the macro (BOOLEAN _ H) doesn't really matter. However. mak-
+ing it resemble the name of the header file is a good way to avoid conflicts with
+other macros. Since we can‘{ name the macro BOOLEAN .H (identifiers can*t con-
+tain periods). a name such as BOOLEAN H is a g00d alternative.
+
+#error Directives in Header Files
+
+Herror dircctives are often put in hcader files to check for conditions under
+which the header file shouldn’t bc included. For example. suppose that a header
+
+ 
+
+ 
+

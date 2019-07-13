@@ -1,0 +1,68 @@
+382
+
+Chapter 16
+
+QaÂ
+
+16.2
+
+e 770
+
+type definitions » 7.5
+
+Structures, Unions, and Enumerations
+
+struct { int a[10]; } al, a2;
+
+al = a2; /* legal, since al and a2 are structures */
+
+The = opérator can be used only with structures of compatible types. Two
+structures declared at the same time (as part1 and part2 were) are compatible.
+Âs wc'1l see in the next section. structures declared using the same “structure tag”
+or the same type name are also compatible.
+
+Other than assignment, C provides no operations on entire structures. In par-
+licular, we can’t use the == and != operators to test whether two structures are
+equal or not equal.
+
+Structure Types
+
+Although the previous section showed how to declare structure vartables, it failed
+to discuss an important issue: naming structure /vpes. Suppose that a program
+needs to declare several structure variables with identical members. If all the vari-
+ables can be declared at one time. there’s no problem. But if we need to declare the
+vartables at different points in the program, then life becomes more difficult. IF we
+write
+
+struct (
+int number;
+char name [NAME LEN+1] ;
+int on hand;
+
+} part1;
+
+in one place and
+
+struct (
+int number ;
+char name [NAME _LEN+1] ;
+int on hand;
+
+} part2;
+
+in another, we'Il quickly run into problems. Repeating the structure information
+will bloat the program. Changing the program later will be risky. since we can'l
+easily guarantee that the declarations will remain consistent.
+
+But those aren't the biggest problems. According to the rules of C. parti
+and part2 don't have compatible types. As a result, part1 can*t be assigned to
+part2, and vice versa. Also, since wc don't have a name for the type of part1or
+part2, we can't use them as arguments in function calls.
+
+To avoid these difficulties. we need to be able to define a name that represents
+a fype oË structure. not a particular structure variable. As it turns out, C provides
+iwo ways to name structures: we can either declare a ‘’structure tag” or use
+typede£ to definc a type name.
+
+ 
+

@@ -1,0 +1,55 @@
+152
+
+Chapter 7  Basic Types
+
+Q & À
+
+Section 7.1 says that %o and %x arc used to write unsigned integers in octal
+and hex notation. How do I write ordinary (signed) integers in octal or hex?
+[p. 130]
+
+You can use %o and %x to print à signed integer as long as its value isn’t negative.
+These conversions cause print£ (o treat « signed integer as though it were
+unsigned; in other words, print£ will assume that the sign bit is part of the num-
+ber's magnitude. Às long as the sign bit is O, there’s no problem. If the sign bit is 1,
+print£f will print an unexpectedly large number.
+
+But what if the number /s negative? How can I write it in octal or hex?
+
+There’s no direct way Lo print a negative number in octal or hex. Fortunately, the
+need to do so is pretly rare. You can, of course. test whether the number is negative
+and print a minus sign yourself:
+if (i < O)
+
+print£("-gx", -i);
+
+else
+printf("#x", i);
+
+Why are floating constants stored in double form rather than float form?
+[p. 133]
+
+For historical reasons. C gives preference to the double type; float is treated
+as à second-class citizen. Consider, for instance. the discussion of float in Ker-
+nighan and Ritchie’s The C Programming Language: “The main reason for using
+float is to save storage in large arrays, or, less often, to save time on machines
+where double-precision arithmetic is particularly expensive.” C originally man-
+dated that all floating-point arithmetic be done in double precision. (C89 and C99
+have no such requirement.)
+
+What do hexadecimal floating constants look like, and what are they good
+for? [p. 134]
+
+À hexadecimal floating constant begins with Ox or OX and must contain an expo-
+nent, which 1s preceded by the letter P (or p). The exponent may have à sign, and
+the constant may end with £. F, 1. or L. The exponent is expressed in decimal. but
+represents à power of 2, not a power of 10. For example. Ox1 . Bp3 represents the
+number 1.6875 x 2° = 13.5. The hex digit B corresponds to the bit pattern 1011.
+The B occurs to the right of the period. so each | bit represents a negative power of
+2. Summing these powers of 2 (27" + 27* + 2*) yields .6875.
+
+Hexadecimal floating constants are primarily useful for specifying constants
+that require great precision (including mathematical constants such as e and ).
+Hex numbers have a precise binary representation, whereas a constant written in
+decimal may be subject to a tiny rounding error when converted to binary. Hexa-
+

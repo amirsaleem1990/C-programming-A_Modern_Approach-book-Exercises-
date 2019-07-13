@@ -1,0 +1,74 @@
+392 Chapter 16  Structures, Unions, and Enumerations
+
+for (;;) |
+print£f ("Enter operation code: ");
+scan£f (" %c", &code) ;
+while (getchar() != '\n') /* skips to end of line */
+
+’
+
+switch (code) (
+
+case 'i': insert ();
+break;
+case 's': search() ;
+break ;
+case 'u': update();
+break ;
+case ‘'p': print();
+break;
+
+case 'q': return D);
+default: printf("I1llegal code\n") ;
+
+;
+
+print£("\n") ;
+}
+}
+
+/******—k************************—k****—k***—k******—k**—ki—***—k**
+
+* £Find part: Looks up a parct number in the inventory *
+* array. Returns the array index if the part *
+* number is found; otherwise, returns -1. *
+
+***'À'***'k****—k************'ä"ä:************+**Ë+*******‘k**'.‘.“k**/
+
+int find_part(int number )
+
+(
+
+int i;
+for (i = 0; i < num parts; i++)
+if (inventory [i] .number == number)
+return i;
+
+return -;
+
+}
+
+/‘k*******-k*'k'k*****'k********:‘r*****************************#$:
+
+* insert: Prompts the user for information about a new *
+* part and then inserts the part into the *
+* database. Prints an error message and returns *
+* prematurelyv if the part already exists or the *
+* database is full. *
+*****‘k'æ\‘*‘k‘*‘k**‘k***‘k*+*‘P‘k********‘k‘:‘\‘****************‘k********/
+
+void insert (void)
+
+{
+
+int part number;
+
+if (num parts == MAX PARTS) {
+print£ ("Database is full; can't add more parts.\n") ;
+return;
+
+}
+
+print£ ("Enter part number: ") ;
+scan£("%d", &part number) ;
+

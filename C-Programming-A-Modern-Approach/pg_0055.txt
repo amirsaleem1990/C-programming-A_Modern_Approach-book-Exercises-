@@ -1,0 +1,23 @@
+30 Chapter2 C Fundamentals
+
+Q:
+A:
+
+Q: Why is C so terse? It seems as though programs would be more readable if C
+used begin and end instead of { and }, integer instead of int, and so
+forth. [p. 12]
+
+A:  Legend has it that the brevity of C programs 1s due to the environment that existed
+in Bell Labs at the time the language was developed. The first C compiler ran on a
+DEC PDP-11 (an early minicomputer); programmers used a teletype—essentially
+a typewriter connected to a computer—to enter programs and print listings.
+Because teletypes were very slow (they could print only 10 characters per second).
+minimizing the number of characters in a program was clearly advantageous.
+
+Q:
+À:
+
+ 
+
+A
+

@@ -1,0 +1,110 @@
+ 
+
+17.5  Linked Lists
+
+437
+
+/**—k**********—k******—k******‘****************—k***********—k*—k
+
+*
+*
+*
+
+*
+
+search: Prompts the user to enter a part number, then
+
+*
+
+looks up the part in the database. If the part *
+
+exists, prints the name and quantity on hand;
+1f not, prints an error message.
+
+*
+*
+
+*************:‘c***********‘k**************1‘:*****************/
+
+void search(void)
+
+{
+
+int number;
+struct part *p;
+
+print£f ("Enter part number: ") ;
+scanf£f ("%d"', &number) ;
+p = find part (number) ;
+if (p != NULL) {
+printf ("Part name: $s\n", p->name) ;
+printf ("Quantity on hand: %$d\n", p->on _hand) ;
+} else
+print£ ("Part not found.\n") ;
+
+/**********************************************************
+
+{
+
+*
+*
+*
+*
+
+æ
+
+update: Prompts the user to enter a part number.
+Prints an error message if the part doesn't
+exist; otherwise, prompts the user to enter
+change in quantity on hand and updates the
+database.
+
+*
+*
+*
+*
+*
+*
+
+KX KKEAEKKKKÉKAEKAEAKRAAAAERARNKAERAAKAAAAAARAK KK /
+
+void update (void)
+
+int number, change;
+struct part *p;
+
+printf ("Enter part number: ") ;
+scan£ ("%d", &number) ;
+p = find part (number) ;
+i£f (p != NULL) Ç|(
+print£ ("Enter change in quantity on hand: ") ;
+scanf ("%3d", &change) ;
+p->on hand += change;
+} else
+printf ("Part not found.\n") ;
+
+/***************1‘:******************************************
+
+{
+
+*
+*
+E
+*
+
+print: Prints a listing of all parts in the database,
+showing the part number, part name, and
+quantity on hand. Part numbers will appear in
+ascending order.
+
+*
+*
+*
+*
+
+***‘A"À'************‘k***‘k*‘k*‘k**‘k‘k*****‘k**‘À'***'k***‘k*****‘k'k**‘k*/
+
+void print (void)
+
+struct part *p;
+

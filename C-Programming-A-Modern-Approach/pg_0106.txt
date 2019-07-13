@@ -1,0 +1,80 @@
+PROGRAM
+
+broker.c
+
+5.2 The if Siatement 81
+
+Calculating a Broker’s Commission
+
+When stocks are sold or purchased through a broker, the broker’s commission 1s
+often computed using à sliding scale that depends upon the value of the stocks
+traded. Let's say that a broker charges the amounts shown in the following table:
+
+Transaction size
+Under $2,500
+$2,500-$6,250
+$6,250-$20,000
+$20.000-$50,000
+
+$50,000-$500,000
+
+Over $500,000
+
+Commission rate
+$30 + 1.7%
+
+$56 + 0.66%
+476 + 0.34%
+$100 + 0.22%
+$155 + 0.11%
+$255 + 0.09%
+
+The minimum charge is $39. Our next program asks the user to enter the amount of
+the trade, then displays the amount of the commission:
+
+Enter value of trade:
+Commission: $166.00
+
+30000
+
+The heart of the program is a cascaded i £ statement that determines which range
+the trade falls into.
+
+/* Calculates a broker's commission */
+#include <stdio.h>
+
+int main(void)
+
+(
+
+float commission, value;
+
+print£ ("Enter value of trade: ");
+scanf ("%£", &value) ;
+
+if (value < 2500.00Ë)
+
+commission = 30.00£ + .017f * value;
+else if (value < 6250.00Ë)
+
+commission = 56.00£f + .0066f£ * value;
+else if (value < 20000.00f)
+
+commission = 76.00f + .0034£ * value;
+else if (value < 50000.00£f)
+
+commission = 100.00f + .0022f * value;
+else if (value < 500000.00Ëf)
+
+commission = 155.00f + .0011£ * value;
+else
+
+commission = 255.00f + .0009£ * value;
+if (commission < 39.00f)
+
+commission = 39.00f;
+
+printf ("Commission: $%.2f\n", commission) ;
+
+return 0;
+

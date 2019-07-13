@@ -1,0 +1,62 @@
+546
+
+Chapter 22
+
+freopen
+
+QaÂÀ
+
+Input/Output
+
+or the test against NULL:
+
+if ((£fp = fopen (FILE NAME, "r")) == NULL)
+
+Attaching a File to an Open Stream
+
+FILE *Éfreopen(const char * restrict filename,
+const char * restrict mode,
+FILE * restrict stream) ;
+
+freopen attaches a different file to a stream that’s already open. The most com-
+mon use of freopen is to associate a file with one of the standard streams
+(stdin, stdout, or stderr). To cause a program to begin writing Lo the file
+Foo, for instance, we could use the following call of £reopen:
+
+if (freopen("foo", "w", stdout) == NULL) {
+/* error; foo can't be opened */
+}
+
+After closing any file previously associated with stdout (by command-line redi-
+rection or a previous call of freopen), freopen will open foo and associate it
+with stdout.
+
+Éfreopen'’s normal return value 1s its third argument (a file pointer). If it can't
+open the new file, freopen returns a null pointer. (freopen 1gnores the error 1f
+the old file can*t be closed.)
+
+C99 adds a new twist. If £ilename is a null pointer, £reopen attempts to
+change the stream’s mode to that specified by the mode parameter. Implementa-
+Lions aren’t required to support this feature. however: 1f they do, they may place
+restrictions on which mode changes are permitted.
+
+Obtaining File Names from the Command Line
+
+When we’re writing a program that will need to open a file. one problem soon
+becomes apparent: how do we supply the file name to the program” Building file
+names into the program itself docsn’t provide much flexibility, and prompting the
+üser to enter file names can be awkward. Often, the best solution 1s to have the pro-
+gram obtain file names from the command line. When we execute a program
+named demo, for example, we might supply it with file names by putting them on
+the command line:
+
+demo names.dat dates.dat
+
+In Section 13.7, we saw how to access command-line arguments by defining
+main as a function with two parameters:
+
+int main(int argc, char *argv[])
+
+{
+}
+

@@ -1,0 +1,56 @@
+474
+
+Chapter 18  Declarations
+
+The other option 1s to provide an external definition for average so that calls
+are permitted from other files. One way to do this 1s to write the average func-
+tion à second time (without using inline) and put the second definition in a dif-
+ferent source file. Doing so 1s legal, but i1t’s not a good idea to have two versions of
+the same function, because we can't guarantee that they'Il remain consistent when
+the program 1s modified.
+
+Here’s a better approach. First, we’Il put the inline definition of average in a
+header file (let's name t average. h):
+
+#ifndef AVERAGE H
+#define AVERAGE H
+
+inline double average (double a, double b)
+
+{
+}
+
+#endif
+
+return (a + b) / 2;
+
+Next, we’ll create a matching source file, average. c:
+#include "average.h"
+
+extern double average (double a, double b) ;
+
+Now, any file that needs to call the average function may simply include aver-
+age .h, which contains the inline definition of average. The average.. c file
+contains a prototype for average that uses the extern keyword, which causes
+the definition of average included from average.h to be treated as an exter-
+nal definition in average. c.
+
+The general rule in C99 1s that If all top-level declarations of a function in a
+particular file include inline but not extern, then the definition of the function
+in that file 1s inline. If the function 1s used anywhere in the program (including the
+file that contains its inline definition), then an external definition of the function
+will need to be provided by some other file. When the function 1s called, the com-
+piler may choose to perform an ordinary call (using the function’s external defini-
+tion) or perform inline expansion (using the function’s inline definition). There’s no
+way to tell which choice the compiler wil] make, so it’s crucial that the two defini-
+tions be consistent. The technique that we just discussed (using the average.h
+and average. c files) guarantees that the definitions are the same.
+
+Restrictions on Inline Functions
+
+Since inline functions are implemented in a way that’s quite different from ordi-
+nary functions, they're subject to different rules and restrictions. Variables with
+static storage duration are a particular problem for inline functions with external
+linkage. Consequently, C99 imposes the following restrictions on an inline fune-
+tion with external linkage (but not on one with internal linkage):
+

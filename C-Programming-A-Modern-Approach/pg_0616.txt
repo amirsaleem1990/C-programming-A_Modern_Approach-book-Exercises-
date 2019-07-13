@@ -1,0 +1,94 @@
+Table 23.4
+Max, Min, and Epsilon
+Macros in <float .h>
+
+æ
+
+Table 23.5
+Evaluation Methods
+
+23.2
+
+ 
+
+232  The<limits.h> Header: Sizes of Integer Types 591
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Name Value Description
+FLT MAX >10**7 _ Largest finite value
+DBL MAX >10**7
+LDBL MAX >101*7
+FLT MIN <10-77 Smallest positive value
+DBL MIN <107*”
+LDBL MIN <10-*7
+FLT EPSILON <10® _ Smallest representable difference between two numbers
+DBL EPSILON =— <10”
+LDBL EPSILON — <I0"°
+
+ 
+
+C99 provides two other macros, DECIMAL DIG and FLT_EVAL METHOD.
+DECIMAL DIG represents the number of significant digits (base 10) in the wid-
+est supported floating type; it has a minimum value of 10. The value of
+FLT _ EVAL METHOD indicates whether an implementation will perform float-
+ing-point arithmetic using greater range and precision than is strictly necessary. If
+this macro has the value O, for example, then adding two float values would be
+done in the normal way. If it has the value 1, however, then the float values
+would be converted to double before the addition is performed. Table 23.5 lists
+the possible values of FLT EVAL METHOD. (Negative values not shown in the
+table indicate implementation-defined behavior.)
+
+ 
+
+Value Meaning
+
+ 
+
+-1 Indeterminable
+
+ 
+
+0 Evaluate all opcrations and constants just to the range and precision of the type ‘
+
+ 
+
+1 Evaluate operations and constants of type Éloat and double to the range
+and precision of the double type
+
+ 
+
+2 Evaluate all operations and constants to the range and precision of the Long
+
+ 
+
+ 
+
+double type
+
+!
+
+Most of the macros in <float .h> are of interest only to experts in numeri-
+cal analysis, making it probably one of the least-used headers in the standard
+library.
+
+The <limits.h> Header: Sizes of Integer Types
+
+The <limits.h> header provides macros that define the range of each integer
+type (including the character types). <limits .h> declares no types or functions.
+One set of macros in <limits.h> deals with the character types: char,
+signed char, and unsigned char. Table 23.6 lists these macros and shows
+the maximum or minimum value of each.
+The other macros in <limits.h> deal with the remaining integer types:
+short int, unsigned short int, int, unsigned int, long int, and
+

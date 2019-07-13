@@ -1,0 +1,65 @@
+400
+
+Chapter 16  Structures, Unions, and Enumerations
+
+typedef union {
+int i;
+double d;
+
+} Number;
+
+Next, we cercate an array whose elements are Number values:
+Number number array [1000] ;
+
+Each element of number array is a Number union. À Number union can
+store either an int value or a double value, making it possible to store a mixture
+of int and double values in number array. For example, suppose that we
+want element 0 of number_array to store 5, while clement ! stores 8.395. The
+following assignments will have the desired effect:
+
+number array{[0].i = 5;
+number array{[1] .d = 8.395;
+
+Adding a ‘“Tag Field””’ to a Union
+
+Unions suffer from à major problem: there’s no easy way to tell which member of
+a union was last changed and therefore contains a meaningful value. Consider the
+problem of writing a function that displays the value currently stored in a Number
+union. This function might have the following outline:
+
+void print _number (Number n)
+
+{
+
+Lf (n contains an integer)
+print£("%d", n.i);
+else
+print£f ("%g"', n.d);
+
+}
+
+Unfortunately, there's no way for print_number to determine whether n con-
+tains an integer or a floating-point number.
+
+In order to keep track of this information, we can embed the union within à
+structure that has one other member: à “tag field” or “discriminant’ whose pur-
+pose 1s to remind us what's currently stored in the union. In the catalog item
+Structure discussed earlier in this section, item _type served this purpose.
+
+Let's convert the Number type into a structure with an embedded union:
+
+#define INT KIND O
+#define DOUBLE KIND 1
+
+typedef struct (|
+int kind; /* tag field */
+union {
+int i;
+double d;
+} u;
+} Number ;
+
+ 
+
+ 
+

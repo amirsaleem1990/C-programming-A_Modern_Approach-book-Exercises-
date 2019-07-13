@@ -1,0 +1,70 @@
+average.c
+
+PROGRAM
+
+ 
+
+9.1  Defining and Calling Functions 185
+
+avg = average(x, y);
+
+This statement calls average. then saves its return value in the variable ava.
+Now, let’s use the average function in a complete program. The followine
+program reads three numbers and computes their averages. one pair at a ume:
+
+Enter three numbers: 3.5 9.6 10.2
+Average of 3.5 and 9.6: 6.55
+Average of 9.6 and 10.2: 9.9
+Average of 3.5 and 10.2: 6.85
+
+ 
+
+Among other things, this program shows that a function can be called as often as
+we need.
+
+/* Computes pairwise averages of three numbers */
+#include <stdio.h>
+
+double average (double a, double b)
+
+(
+
+return (a + b) / 2;
+
+}
+
+int main (void)
+
+{
+
+double x, y, z;
+
+print£ ("Enter three numbers: ") ;
+scanf ("S1f51£3121", EXx, &y, EKZ) ;
+print£ ("Average of %g and %g: %g\n", x, y, average(x, y));
+printf ("Average of %g and %g: %g\n"', y, z, average(y, Zz));
+print£ ("Average of %g and %g: %g\n"', x, z, average(x, z));
+
+return 0;
+
+}
+
+Notice that l’ve put the definition of average before main. We'Il see in Section
+9.2 that putting average after main causes problems.
+
+Printing a Countdown
+
+Not every function returns a value. For example. a function whose job is to pro-
+duce output may not need to return anything. To indicate that a function has no
+return value, we specify that its return type is void. (void is a type with no val-
+ues.) Consider the following function. which prints the message T minus » and
+counting, where n is supplied when the function 1s called:
+
+void print count (int n)
+
+{
+
+printf("T minus %d and counting\n", n);
+
+}
+

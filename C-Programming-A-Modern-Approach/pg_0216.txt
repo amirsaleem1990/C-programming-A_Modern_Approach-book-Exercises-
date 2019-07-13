@@ -1,0 +1,51 @@
+9.2  Function Declarations 191
+
+return O0;
+
+}
+
+Notice that main contains a variable named n even though is prime’s
+parameter 1s also named n. In general, a function may declare a variable with the
+same name as a variable in another function. The two variables represent different
+locations in memory, so assigning a new value to one variable doesn’t change the
+other. (This property extends to parameters as well.) Section 10.1 discusses this
+point in more detail.
+
+Âs is_prime demonstrates, a function may have more than one return
+statement. However, we can execute just one of these statements during a given
+call of the function, because reaching a return statement causes the function to
+return to where it was called. We’1l learn more about the return statement in
+Section 9.4.
+
+ 
+
+#Hinclude <stdio.h>
+
+int main(void)
+
+{
+
+double x, y, Z;
+
+print£ ("Enter three numbers: ") ;
+scanf ("%1£%1£%1f", &X, &Y, E&Z);
+printf ("Average of %g and %g: %g\n"', x, y, average(x, y));
+print£ ("Average of %g and %g: %g\n", y, z, average(y, Zz));
+print£ ("Average of %g and %g: %g\n"', x, z, average(x, z))
+
+’
+
+return 0;
+
+}
+
+double average (double a, double b)
+
+{
+
+return (a + b) / 2;
+
+}
+
+ 
+

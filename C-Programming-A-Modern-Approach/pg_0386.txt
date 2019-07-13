@@ -1,0 +1,64 @@
+word.h
+
+15.3  Dividing a Program into Files 361
+
+Now that we understand what the program should do. 1ts time to think about à
+design. We*1]] start by observing that the program can*t write the words one by one
+as thev're read. Instead. 11 will have to store them in a ‘“Îine buffer” unul there are
+cnough to fill à line. After further reflection, we decide that the heart of the pro-
+gram will be a loop that goes something like this:
+
+for (;;) {
+read word ;
+if (can't read word) |
+write contents of line buffer without justification ;
+terminate program ;
+
+}
+
+if£ (word doesn't fit in line buffer) |
+write contents of line buffer with justification ;
+clear line huffer ;
+
+}
+
+add word ta line bufjer;
+
+}
+
+Since we* need functions that deal with words and functions that deal with the
+tine buffer. let's split the program into three source files, putting all functions
+related to words in one file (word. c) and all functions related to the line buffer in
+another file (line. c). À third file (justi£fy. c) will contain thé main function.
+In addition to these files. we'Il need two header files, word.h and line.h. The
+vord.h file will contain prototypes for the functions in word.c: line.h will
+play a similar role for 1ine.c.
+
+By examining the main loop. we see that the only word-related function
+that we"1l neëd iS a read _ word function. (1f read_word can'{ read a word
+because itl’s reached the end of the input file. we*ll have it signal the main Ioop
+by prétending to read an “empty” word.) Consequently. the word.h file is a
+small one:
+
+#ifndef WORD H
+idefine WORD_H
+
+/*****************‘k*‘x****‘.«'r**“k**'k*‘k****************‘k****9r—k**
+
+* read word: Reads the next word from the input and *
+* stores it in word. Makes word empty iËÉ no *
+* word could be read because of end-of-file. *
+* Truncates the word if its length exceeds *
+* len. *
+
+*
+
+AN RR A RR A ÀX A H /
+
+void read word(char *word, int len);
+fendif
+
+Notice how thé WORD_H macro protects word .h from being included more than
+once. Although word.h doesn’t really need it. itl’s good practice to protect all
+header files in this Wav.
+

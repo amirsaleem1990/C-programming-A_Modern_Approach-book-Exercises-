@@ -1,0 +1,65 @@
+100
+
+Chapter6 Loops
+
+while statement
+
+compound statements » 5.2
+
+while ( expression ) statement
+
+The expression inside the parentheses 1s the controlling expression, the statement
+after the parentheses 1s the loop body. Here’s an example:
+
+while (i < n) /* controlling expression */
+i = i * 2; /* loop body */
+
+Note that the parentheses are mandatory and that nothing goes between the right
+parenthesis and the loop body. (Some languages require the word do.)
+
+When à while statement is executed. the controlling expression is evaluated
+first. IF its value is nonzero (true), the loop body is executed and the expression is
+tested again. The process continues in this fashion—first testing the controlling
+expression, then executing the loop body—until the controlling expression eventu-
+ally has the value zero.
+
+The following example uses a while statement to compute the smallest
+power of 2 that is greater than or equal to a number n:
+
+i = 1;
+while (i < n)
+ài = à * 2;
+
+Suppose that n has the value 10. The following trace shows what happens when
+the while statement 1s executed:
+
+; =1; i isnow l.
+Is i < n’ Yes: continue.
+i =i *2; iisnow2.
+
+Is i < n’ Yes; continue.
+i =i *2; iisnowd4.
+Is ài < n’ Yes; continue.
+
+i=i*2; iisnowB.
+
+Is i < n’ Yes; continue.
+
+i =i *2; iisnow 6.
+
+Is i <n°’ No; exit from loop.
+
+Notice how the loop keeps going as long as the controlling expression (i < n) is
+true. When the expression is false, the loop terminates, and i is greater than or
+equal to n, as desired.
+
+Although the loop body must be a single statement, that's merely a technical-
+ity. If we want more than one statement, we can just use braces to create a single
+compound statement:
+
+while (i > O) {
+printf ("T minus %d and counting\n", i);
+i--;
+
+}
+

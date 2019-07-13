@@ -1,0 +1,61 @@
+466
+
+Chapter 18  Declarations
+
+18.3
+æ
+
+restricted pointers » 17.8
+
+e 1T
+
+Type Qualifiers
+
+There are two type qualifiers: const and volatile. (C99 has a third type qual-
+ifier, restrict, which is used only with pointers.) Since the use of volatile
+Is limited to low-level programming, TIl postpone discussing it until Section 20.3.
+const is used to declare objects that resemble variables but are “read-only”: a
+program may access the value of a const object, but can’t change it. For exam-
+ple, the declaration
+
+const int n = 10;
+creates a const object named n whose value is 10. The declaration
+const int tax brackets[] = {750, 2250, 3750, 5250, 7000};
+
+creates a const array named tax_brackets.
+Declaring an object to be const has several advantages:
+
+m Îts à form of documentation: it alerts anyone reading the program to the read-
+only nature of the object.
+
+m The compiler can check that the program doesn’t inadvertently attempt to
+change the value of the object.
+
+m When programs are written for certain types of applications (embedded sys-
+tems, in particular), the compiler can use the word const to identify data to
+be stored in ROM (read-only memory).
+
+At first glance, it might appear that const serves the same role as the
+#define directive, which we’ve used in previous chapters to create names for
+constants. There are significant differences between #define and const. how-
+ever:
+
+m We can use #define to create a name for a numerical, character, or string
+constant. const can be used to create read-only objects of any type, including
+arrays, pointers, structures. and unions.
+
+u const objects are subject to the same scope rules as variables; constants cre-
+ated using #define aren’{. In particular, we can*t use #define to create a
+constant with block scope.
+
+u The value of a const object, unlike the value of à macro, can be viewed in a
+debusger.
+
+u Unlike macros, const objects can’t be used in constant expressions. For
+example, we can’t write
+
+const int n = 10;
+int afn]; /*** WRONG ***/
+
+since array bounds must be constant expressions. (In C99, this example would
+

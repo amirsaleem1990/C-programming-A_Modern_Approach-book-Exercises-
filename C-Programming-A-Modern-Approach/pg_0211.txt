@@ -1,0 +1,64 @@
+186
+
+Chapter9 Functions
+
+countdown.c
+
+PROGRAM
+
+print_count has one parameter. n. of type int. lIt returns nothing, so l’ve
+specified void as the return type and omitted the return statement. Since
+print_count doesn’t return a value, we can°t call it in the same way we call
+average. Instead, a callof print count must appear in a statement by itself:
+
+print count (i) ;
+Here's a program that calls print _count 10 times inside a loop:
+/* Prints a countdown */
+
+#include <stdio.h>
+
+void print count (int n)
+
+{
+print£("T minus %d and counting\n", n);
+}
+int main(void)
+{
+int i;
+for (ài = 10; i > O; --i)
+
+print _ count (i) ;
+
+return 0;
+
+}
+
+Initially, à has the value 10. When print_count is called for the first time,
+i is copied into n, so that n takes on the value 1O as well. As a result. the first call
+ofprint count vwill print
+
+T minus 10 and counting
+print_count then returns to the point at which it was called, which happens to
+be the body of a £or statement. The £or statement resumes where it left off, dec-
+
+rementing i to 9 and testing whether it’s greater than O. Ttis, so print count is
+called again, this time printing
+
+T minus 9 and counting
+
+Each time print_count is called, i is different, so print count will print
+10 different messages.
+
+Printing a Pun (Revisited)
+
+Some functions have no parameters at all. Consider print_pun, which prints a
+bad pun each time it’s called:
+
+void print pun (void)
+
+{
+
+print£ ("To C, or not to C: that is the question.\n") ;
+
+}
+

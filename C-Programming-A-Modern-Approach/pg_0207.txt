@@ -1,0 +1,12 @@
+182 Chapter 8  Arrays
+
+Store the magic square in a two-dimensional array. Start by placing the number ! in the mid-
+dle of row 0. Place each of the remaining numbers 2, 3, …. n? by moving up one row and
+over one column. Any attempt to go outside the bounds of the array should “wrap around”
+to the opposite side of the array. For example, instead of storing the next number in row —I,
+we would store it in row n — 1 (the last row). Instead of storing the next number in column ».
+we would store it in column O. If a particular array element is already occupied, put the
+number directly below the previously stored number. IF your compiler supports variable-
+length arrays, declare the array to have n rows and n columns. !f not, declare the array to
+have 99 rows and 99 columns.
+

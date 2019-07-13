@@ -1,0 +1,65 @@
+658 Chapter 25
+
+standard streams >22.7
+
+{reopen function >22.2
+
+errno variable > 24,2
+
+fgetpos function > 227
+
+Ésetpos function »22,7
+
+International Features
+
+wide-character function. ! won't discuss the wide-character function further un-
+less there's à significant difference between it and its “non-wide” counterpart.
+
+Stream Orientation
+
+Before we look at the input/output functions provided by <wchar .h>, it’s impor-
+tant to understand stream orientation, a concept that doesn’t exist in C89.
+
+Every stream is either byte-oriented (the traditional orientation) or wide-
+oriented (data is written to the stream as wide characters). When a stream is first
+opened, it has no orientation. (In particular. the standard streams stdin, stdout,
+and stderr have no orientation at the beginning of program execution.) Perform-
+ing an operation on the stream using a byte input/output function causes the stream
+to become byte-oriented: performing an operation using a wide-character input/
+output function causes the stream to become wide-oriented. The orientation of a
+stream can also be sclected by calling the Ewide function (described later in this
+section). À stream retains its orientation as long as it remains open. Calling the
+freopen function to reopen the stream wil! remove îts orientation.
+
+When wide characters are written to a wide-oriented stream, they are con-
+verted to multibyte characters before being stored in the file that is associated with
+the stream. Conversely. when input is read from a wide-oriented stream. the multi-
+byte characters found in the stream are converted to wide characters. The multibyte
+encoding used in a file is similar to that used for characters and strines within à
+program. except that encodings used in files may contain embedded null bytes.
+
+Each wide-oriented stream has an associated mbstate_ t object, which keeps
+track of the stream’s conversion state. An encoding error occurs when a wide char-
+acter written to a stream doesn’t correspond to any multibyte character, or when a
+sequence of characters read from a stream doesn’t form a valid multibyte character.
+In either case, the value of the EILSEQ macro (defined in the <errno.h> header)
+Is stored in the errno variable to indicate the nature of the error.
+
+Once a stream is byte-oriented, il’s illegal to apply a wide-character input/out-
+put function to that stream. Similarly, its illegal to apply a byte input/output func-
+tion to a wide-oriented stream. Other stream functions may be applied to streams
+of either orientation, although there are a few special considerations for wide-ori-
+ented streams:
+
+m Binary wide-oriented streams are subject to the file-positioning restrictions of
+both text and binary streams.
+
+m After à file-positioning operation on a wide-oriented stream, à wide-character
+output function may end up overwriting part of a multibyte character. Doing
+so leaves the rest of the file in an indeterminate state.
+
+m Calling fgetpos for a wide-oriented stream retrieves the stream's
+mbstate_t object as part of the fpos_ t object associated with the stream.
+À later call of £setpos using this Épos t object will restore the
+mostate_ t object to its previous value.
+

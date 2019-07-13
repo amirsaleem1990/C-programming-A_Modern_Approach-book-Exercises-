@@ -1,0 +1,58 @@
+228
+
+Chapter 10 Program Organization
+
+block
+
+10.4
+
+It turns out that C allows compound statements to contain declarations as well:
+
+{ declarations statements }
+
+JIl use the term bloek to describe such a compound statement. Here’s an example
+of a block:
+
+i£ (i > j) |
+/* swap values of i and ; */
+int temp = i;
+L = j;
+j = temp;
+
+}
+
+By default, the storage duration of a variable declared in à block 1s automatic: stor-
+age for the variable 1s allocated when the block 1s entered and deallocated when the
+block 1s exited. The vartable has block scope; it can't be referenced outside the
+block. À variable that belongs to a block can be declared static to give 1t static
+storage duration.
+
+The body of a function is a block, Blocks are also useful inside à function
+body when we need variables for temporary use. In our last example, we needed a
+vartable temporarily so that we could swap the values of à and . Putting tempo-
+rary variables in blocks has two advantages: (1) It avoids cluttering the declara-
+Lions at the beginning of the function body with variables that are used only briefly.
+(2) It reduces name conflicts. In our example, the name temp can be used else-
+where in the same function for different purposes—the temp variable is strictly
+local to the block n which it’s declared.
+
+C99 allows variables to be declared anywhere within a block, just as it allows
+variables to be declared anywhere within a function.
+
+Scope
+
+[n a C program, the same identifier may have several different meanings. C’s scope
+rules enable the programmer (and the compiler) to determine which meaning 1s
+relevant at a given point in the program.
+
+Here's the most important scope rule: When a declaration inside a block
+names an identifier that's already visible (because it has file scope or because it’s
+declared in an enclosing block). the new declaration temporarily ‘“hides” the old
+one, and the identifier takes on a new meaning. At the end of the block, the identi-
+fier regains its old meaning.
+
+Consider the (somewhat extreme) example at the top of the next page, in
+which the identifier i has Four different meanings:
+
+m In Declaration |, à is à variable with static storage duration and file scope.
+

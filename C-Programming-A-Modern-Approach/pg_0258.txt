@@ -1,0 +1,60 @@
+poker.c
+
+10.5 Organizing a C Program 233
+
+/'k**-k********************‘k**'k**1‘r*‘********1‘:*****************
+
+* analyze hand: Determines whether the hand contains a *
+x straight, a flush, four-of-a-kind, *
+* and/or three-of-a-kind; determines the *
+* number of pairs; stores the results into *
+* external variables. +
+‘k*‘k***********‘k************************************—k******/
+
+void analyze hand (void)
+
+{
+
+/***********‘k*******‘k******‘k******************—h—k***—k******—k
+* print result: Notifies the user of the result, using *
+* the external variables set by *
+* analyze _hand. *
+
+****k*-k*****************‘k*****—k*************—k**-k——k*****—k—k*—k*/
+
+void print result (void)
+
+(
+}
+
+The most pressing question that remains 1s how to represent the hand of cards.
+Let’s see what operations read_cards and analyze_hand will perform on
+the hand. During the analysis of the hand, analyze _ hand vwill need to know
+how many cards are in cach rank and each suit. This suggests that we use two
+arrays, num_in rank and num_in _ suit. The value of num_in rank[r]
+Will be the number of cards with rank r, and the value of num_in suit [s] will
+be the number of cards with suit s. (We'II encode ranks as numbers between O and
+|2. and suits as numbers between O and 3.) We’ll also need a third array,
+card _ exists, so that read _cards can detect duplicate cards. Each time
+read_cards reads a card with rank r and suit s, it checks whether the value of
+card _exists [r] [s] is true. If so. the card was previously entered; if not,
+read _cards assigns true tocard exists[r] [s|.
+
+Both the read_cards function and the analyze_hand function will need
+access to the num_in rank and num _ in _suit arrays. so l'Il make them exter-
+nal variables. The card_exists array is used only by read_cards. so it can
+be local to that l'unction. Às a rule. variables should be made external only 1f neces-
+sary.
+
+Having decided on the major data structures, we can now finish the program:
+
+/* Classifies a poker hand */
+
+#include <stdbool.h> /* C99 only */
+#include <stdio.h>
+#include <stdlib.h>
+
+#define NUM RANKS 13
+#define NUM SUITS 4
+#define NUM _ CARDS S
+

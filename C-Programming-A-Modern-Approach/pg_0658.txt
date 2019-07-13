@@ -1,0 +1,52 @@
+243  The <signal.h> Header: Signal Handling 633
+
+orig handler = signal (SIGINT, handler) ;
+
+This statement installs handler as the handler for SIGINT and then saves a
+pointer to the original handler in the orig_handler variable. To restore the
+original handler later, we’d write
+
+signal (SIGINT, orig handler) ; /* restores original handler */
+
+Predefined Signal Handlers
+
+Instead of writing our own signal handlers, we have the option of using one of the
+predefined handlers that <signal .h> provides. There are two of these, each rep-
+resented by a macro:
+
+u SIG DFL. SIG DFL handles signals in a “default” way. To 1nstall
+SIG_DFL, we'’d use a call such as
+
+signal (SIGINT, SIG_DFL) ; /* use default handler */
+
+The effect of calling SIG_DFL is implementation-defined, but in most cases 1
+causes program termination.
+
+m SIG IGN. The call
+signal (SIGINT, SIG_IGN) ; /* ignore SIGINT signal */
+
+specifies that SIGINT is to be ignored if it should be raised later.
+
+In addition to SIG_DFL and SIG_IGN, the <signal .h> header may provide
+other signal handlers; their names must begin with SIG_ followed by an upper-
+case letter. At the beginning of program execution, the handier for each signal 1s
+initialized to either SIG _ DFL or SIG_IGN, depending on the implementation.
+
+<signal .h> defines another macro, SIG_ERR, that looks like it should be
+a signal handler. SIG_ERR is actually used to test for an error when installing a
+signal handler. If à call of signal is unsuccessful—it can°t install a handler For
+the specified signal—it returns SIG_ERR and stores à positive value in errno.
+Thus, to test whether signal has failed. we could write
+
+if (signal (SIGINT, handler) == SIG ERR) {
+perror ("signal (SIGINT, handler) failed") ;
+
+There’s one tricky aspect to the entire signal-handling mechanism: what hap-
+pens if a signal is raised by the function that handles that signal? To prevent infinite
+recursion, the C89 standard prescribes a two-step process when a signal is raised
+for which a signal-handling function has been installed by the programmer. First.
+either the handler for that signal is reset to SIG_DFL (the default handler) or else
+the signal is blocked from occurring while the handler is executing. (SIGILL is à
+special case; neither action is required when SIGILL is raised.) Only then is the
+handler provided by the programmer called.
+

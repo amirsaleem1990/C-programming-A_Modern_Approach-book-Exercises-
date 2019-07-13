@@ -1,0 +1,58 @@
+388
+
+Chapter 16  Structures, Unions, and Enumerations
+
+To access onc of the parts in the array, we’d use subscripting. To print the part
+stored in position i, for example, we could write
+
+print part (inventory [i] ) ;
+
+Accessing à member within a part structure requires a combination of sub-
+scripting and member selection. To assign 883 to the number member of
+inventory [i]. we could write
+
+inventory [i] .number = 883;
+
+Accessing a single character in a part name requires subscripting (to select a par-
+ticular part), followed by selection (to select the name member). followed by sub-
+scripting (to select a character within the part name). To change the name stored in
+inventory [i] to an empty string, we could write
+
+inventory [i] .name [(0] = '\0';
+
+Initializing an Array of Structures
+
+Initializing an array of structures is done in much the same way as initializing a
+multidimensional array. Each structure has its own brace-enclosed initializer; the
+initalizer for the array simply wraps another set of braces around the structure ini-
+tializers.
+
+One reason for initializing an array of structures is that we‘re planning to treat
+it as a database of information that won't change during program execution. For
+example. suppose that we're working on a program that will need access to the
+country codes used when making international telephonc calls. First. we*Il set up a
+structure that can store the name of a country along with its code:
+
+struct dialing code {
+char *country;
+int code;
+
+} z
+
+Note that country 1s a pointer, not an array of characters. That could be a prob-
+lem if we were planning to use dialing_code structures as variables. but we're
+not. When we initialize a dialing _ code structure, country will end up
+pointing to a string literal.
+
+Next, wc'Il declare an array of these structures and initialize it to contain the
+codes for some of the world’s most populous nations:
+
+const struct dialing_code country codes[] =
+
+{{'Argentina", 54}, {"Bangladesh", 880},
+{"Brazil", 55}, {"Burma (Myanmar)", 95},
+{"China", 86}, {"Colombia", 57},
+{"Congo, Dem. Rep. of", 243}, {"Egypt", 20},
+{"Ethiopia", 251}, {"France", 33},
+{"Germany", 49}, {"India", 91},
+

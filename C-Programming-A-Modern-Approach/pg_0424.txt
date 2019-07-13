@@ -1,0 +1,54 @@
+164  Unions 399
+
+struct |{
+char design [DESIGN LEN+1] ;
+int colors;
+int sizes;
+} shirt;
+} item;
+
+} z
+
+Notice that the union (named item) is a member of the catalog item
+structure, and the book. mug. and shirt structures are members of item. If C is
+a catalog_item structure that represents a book. we can print the book's title in
+the following way:
+
+o
+
+print£("%s", c.item.book.title) ;
+
+As this example shows, accessing a union that's nested inside a structure can be
+awkward: to locate a book title, wc had to specify the name of a structure (c). the
+name of the union member of the structure (i tem), the name of a structure mem-
+ber of thé union (book). and then the name of a member of that structure (title).
+
+We can use the catalog_item structure to illustrate an interesting aspect of
+unions. Normally. it's not a good idca to store a value into one member of a union
+and then access the data through a different member. because assigning to one
+member of a union causes the values of the other members to be undefined. How-
+ever, the C standard mentions a special case: two or more of the members of the
+union are structures, and the structures begin with onc or more matching members.
+(These members need to be in the same order and have compatible types, but need
+not have the same name.) If onc of the structures is currently valid, then the match-
+ing members in the other structures will also be valid.
+
+Consider the union embedded in the catalog_item structure. IL contains
+three structures as members. two of which (mug and shirt) begin with à match-
+ing member (design). Now, suppose that we assign a value to one of the
+design members:
+
+stropy (c.item.mug.design, "Cats*") ;
+The design member in the other structure will be defined and have the same value:
+
+print£f("%s", c.item.shirt.design}) ; /* prints "Cats" */
+
+Using Unions to Build Mixed Data Structures
+
+Unions have another important application: creating data structures that contain «
+mixture of data of different types. Let's say that we need an array whose elements
+are a mixture of int and double values. Since the elements of an array must be
+of the same type, it seems impossible to create such an array. Using unions,
+though. its relatively easy. First. we define a union type whose members represent
+the different kinds of data to be stored in the array:
+

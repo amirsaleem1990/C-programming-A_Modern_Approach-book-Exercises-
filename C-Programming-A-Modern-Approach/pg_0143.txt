@@ -1,0 +1,17 @@
+118
+
+Chapter6 Loops
+
+ 
+
+ 
+
+Q&A
+
+ 
+
+Q:  Section 6.3 says that, except in rare cases, £or loops can be converted to
+
+while loops using a standard pattern. Can you give an example of such a
+case? [p. 106]
+

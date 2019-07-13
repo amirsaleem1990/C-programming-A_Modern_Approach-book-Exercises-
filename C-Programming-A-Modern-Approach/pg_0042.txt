@@ -1,0 +1,43 @@
+2.4
+
+range of int values > 7.1
+
+QaÂA
+
+2.4  Variables and Assignment 17
+
+The newer comment style has a couple of important advantages. First, because a
+comment automatically ends at the end of a line, there’s no chance that an untermi-
+nated comment will accidentally consumepart of a program. Second, multiline
+comments stand out better, thanks to the // that’s required at the beginning of
+each line.
+
+Variables and Assignment
+
+Few programs are as simple as the one in Section 2.1. Most programs need to per-
+form a series of calculations before producing output, and thus need a way to store
+data temporarily during program execution. In C, as in most programming lan-
+ouages, these storage locations are called variables.
+
+Types
+
+Every väriable must have a fype, which specifies what kind of data it will hold. C
+has a wide variety of types. For now, we’Il limit ourselves to just two: int and
+float. Choosing the proper type is critical, since the type affects how the variable
+is stored and what operations can be performed on the variable. The type of a
+
+ 
+
+ 
+
+Declarations
+
+Variables must be declared—described for the benefit of the compiler—before
+they can Le used. To declare a variable, we first specify the rype of the variable,
+then its name. (Variable names are chosen by the programmer. subject to the rules
+described in Section 2.7.) For example, we might declare variables height and
+profit as follows:
+
+int height ;
+float profit;
+

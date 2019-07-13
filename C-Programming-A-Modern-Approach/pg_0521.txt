@@ -1,0 +1,64 @@
+496
+
+Chapter 19  Program Design
+
+stackADT.h
+(version 2)
+
+bool is full(Stack s)
+
+{
+
+return s->top == STACK SIZE;
+
+}
+
+void push(Stack s, int i)
+
+{
+
+iÉ (is full(s))
+terminate("Error in push: stack is full.");
+S->contents [s->top++] = i;
+
+}
+
+int pop(Stack s)
+
+if (is empty(s))
+terminate ("Error in pop: stack is empty.");
+return s->contents [--s->top)] ;
+
+}
+
+The most striking thing about the l'unctions in this file is that they use the -> oper-
+ator, not the . operator, to access the contents and top members of the
+stack_type structure. The s parameter is a pointer to a stack _ type struc-
+ture, not a structure itself, so using the . operator would be illegal.
+
+Changing the Item Type in the Stack ADT
+
+Now that we have a working version of the stack ADT, let’s try to improve it. First,
+note that items in the stack must be integers. That's too restrictive: in fact, the item
+type doesn't really matter. The stack items could just as easily be other basic types
+(Eloat, double, lonc. etc.) or even structures, unions, or pointers, for that
+matter.
+
+To make the stack ADT easier to modify for different item types, let‘s add a
+lype definition to the stackADT.h header. It will define a type named Item,
+representing the type of data to be stored on the stack.
+
+#ifndef STACKADT H
+#define STACKADT H
+
+#include <stdbool.h> /* C99 only */
+typedef int Item;
+typede£f struct stack type *Stack;
+
+Stack create (void) ;
+
+void destroy (Stack s) ;
+void make_empty (Stack s) ;
+bool is empty (Stack s) ;
+bool is full(Stack s) ;
+

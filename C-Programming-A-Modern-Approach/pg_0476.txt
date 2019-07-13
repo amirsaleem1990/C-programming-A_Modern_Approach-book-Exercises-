@@ -1,0 +1,55 @@
+:}:Qz
+
+incomplete types » 79,3
+
+Q & A 451
+
+may benefit from the cast, but that’s about the only reason to do it.
+
+In C89, there’s actually a small advantage to nor performing the cast. Suppose
+that we’ve forgotten to include the <stdlib.h> header in our program. When
+we call malloc, the compiler will assume that its return type is int (the default
+return value for any C function). IF we don't cast the return value of mal loc, a
+C89 compiler will produce an error (or at least à warning), since we’re trying Lo
+assign an integer value to a pointer variable. On the other hand, if we cast the
+return value to à pointer, the program may compile. but likely won’t run properly.
+With C99, this advantage disappears. Forgetting to include the <stdlib.h>
+header will cause an error when malloc is called, because C99 requires that a
+function be declared before it's called.
+
+The calloc function initializes a memory block by setting its bits to zero.
+Does this mean that all data items in the block become zero? [p. 421]
+
+Usually, but not always. Setting an integer to zero bits always makes the integer
+Zero. Setting à floating-point number to zero bits üsually makes the number zero,
+bul this isn’t guaranteed—it depends on how floating-point numbers are stored.
+The story is the same for pointers; a pointer whose bits are zero isn’t necessary a
+null pointer.
+
+I see how the structure tag mechanism allows a structure to contain a pointer
+to itself. But what if two structures each have a member that points to the
+other’? [p. 425]
+
+Here’s how we’d handle that situation:
+struct s1; /* incomplete declaration of s1 */
+struct s2 (
+
+struct sl *p;
+
+u°
+
+struct sl {
+struct s2 *g;
+
+B
+
+The first declaration of s1 creates an incomplete structure type. since we haven*t
+specified the members of s1. The second declaration of s1 “completes” the type
+by describing the members of the structure. Incomplete declarations of a structure
+type are permitted in C, although their uses are limited. Creating a pointer to such a
+type (as we did when declaring p) is one of these uses.
+
+Calling malloc with the wrong argument—causing it to allocate too much
+memory or too little memory—scems to be a common error. Is there à safer
+way to use malloc? [p. 426]
+

@@ -1,0 +1,85 @@
+10.5  Organizing a C Program
+
+235
+
+case '0': exit (EXIT SUCCESS) ;
+case '2': rank = 0; break;
+case !3': rank = 1; break;
+case '4': rank = 2; break;
+case '!5': rank = 3; break;
+case '6': rank = 4; break;
+case '7': rank = 5; break;
+case '8': rank = 6; break;
+case '!S': rank = 7; break;
+case ‘'t': case 'T': rank = 8;, break;
+case 'j': case 'J': rank = 9; break;
+case 'q': case 'Q': rank = 10; break,;
+case 'k': case 'K': rank = 11; break:;
+case 'a': case 'A': rank = 12; break;
+default : bad_card = true;
+
+}
+
+suit_ch = getchar () ;
+
+switch (suit ch) (
+case 'c': case 'C': suit = O; break;
+case 'd': case 'D': suit = 1;, break;
+case 'h': case 'H': suit = 2; break;
+case 's': case 'S': suit = 3; break;
+default : bad _card = true;
+
+}
+
+while ((ch = getchar()) != '\n')
+if (ch != ' !) bad card = true;
+
+if (bad _ card)
+printf ("Bad card; ignored.\n") ;
+
+else if (card exists [rank] [suit])
+print£ ("Duplicate card; ignored.\n") ;
+
+else {
+num_in_rank [rank] ++ ;
+num_in _ suit [suit]++;
+card_exists [rank] [suit] =
+cards read++;
+
+true;
+
+}
+}
+}
+
+/'À"k'k‘k‘A“k*****‘k***‘k*‘k**'k‘k*'k**********************************
+
+* analyze _hand:
+* straight,
+
+Determines whether the hand contains a
+a flush, four-of-a-kind,
+
+* and/or three-of-a-kind; determines the
+* number of pairs;
+
+* the external variables straight, flush,
+* four, three, and pairs.
+
+*
+*
+*
+stores the results into *
+*
+*
+*
+
+KKKKKKKAKKXARAREKRAERAAARRARAARKAAA R A A A A R A K A À X À X À K K À /
+
+void analyze _hand (void)
+
+(
+
+int num consec = 0;
+int rank, suit;
+

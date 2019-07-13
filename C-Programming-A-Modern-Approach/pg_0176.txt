@@ -1,0 +1,59 @@
+æ
+
+<stdint .h> header »27.1
+
+7.6
+
+sizeof expression
+
+e F VN
+
+7.6  The sizeof Operator 151
+
+typedef long int ptrdif£f t;
+typedef unsigned long int size t;
+typedef int wchar t;
+
+In C99, the <stdint .h> header uses typede£Ë to define names for integer
+types with a parlicular number of bits. For example, int32_ t is a signed integer
+type with exactly 32 bits. Using these types is an effective way to make programs
+more portable.
+
+The sizeof Operator
+
+The sizeof operator allows a program to determine how much memory is
+required to store values of a particular type. The value of the expression
+
+sizeof ( rfype-name )
+
+is an unsigned integer representing the number of bytes required to store a value
+belonging to type-name. sizeoË (char) is always 1, but the sizes of the other
+types may vary. On a 32-bit machine. sizeof (int) is normally 4. Note that
+sizeof is a rather unusual operator, since the compiler itself can usually deter-
+mine the value of a sizeoË expression.
+
+The sizeof operator can also be applied to constants, variables, and expres-
+sions in general. If à and j are int variables, then sizeoËf (i) is 4 on a 32-bit
+machine, as is sizeoË (i + j). When applied to an expression—as opposed to a
+type—sizeof doesn’t require parentheses; we could write sizeof i instead of
+sizeof (i). However, parentheses may be needed anyway because of operator
+precedence. The compiler would interpret sizeoËf i + j as (sizeof i) + ,
+because sizeof—a unary operator—takes precedence over the binary + opera-
+tor. To avoid problems, l always use parentheses in sizeoË expressions.
+
+Printing a sizeof value requires care, because the type of a sizeof expres-
+sion is an implementation-defined type named size_t. In C89, it's best to con-
+vert the value of the expression to a known type before printing it. size_t 1s
+guaranteed to be an unsigned integer type, so it’s safest to cast a sizeoËf expres-
+sion to unsigned long (the largest of C89’s unsigned types) and then print it
+using the Slu conversion:
+
+printf£f ("Size of int: %lu\n", (unsigned long) sizeof (int)) ;
+
+In C99, the size t type can be larger than unsigned long. However, the
+printf function in C99 is capable of displaying size_ t values directly. without
+needing a cast. The trick is to use the letter z in the conversion specification, fol-
+lowed by one of the usual integer codes (typically u):
+
+print£("Size of int: %zu\n", sizeof (int)) ; /* C99 only */
+

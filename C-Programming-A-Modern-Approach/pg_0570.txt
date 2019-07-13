@@ -1,0 +1,81 @@
+Table 22.3
+Mode Strings for
+Binary Files
+
+file-positioning funclions » 22. 7
+
+fclose
+
+QaÂÀ
+
+22.2  File Operations 545
+
+ 
+
+ 
+
+ 
+
+ 
+
+String Meaning
+
+"rb" Open for reading
+
+"wb" Open for writing (file need not exist)
+
+"ab" Open Ffor appending (file need not exist)
+tr+b" or "rb+" _ Open for rcading and writing, starting at beginnine
+"w+b" or "wb+" _ Open for reading and writing (truncate Iif file exists)
+"a+b" or "'ab+" _ Open for reading and writing (append if file exists)
+
+ 
+
+ing without first calling a file-positioning function unless the reading operation
+encountered the end of the file. Also, we can‘t switch from writing to reading with-
+out either calling fflush (covered later 1n this section) or calling a file-positioning
+function.
+
+Closing a File
+
+int fclose (FILE *stream) ;
+
+The fclose function allows à program to close « file that 1t’s no longer using.
+The argument to fclose must be a file pointer obtained from a call of fopen or
+freopen (discussed later in this section). fclose returns zero if the file was
+closed successfully; otherwise, 1t returns the error code EOF (a macro defined in
+<stdio.h>).
+
+To show how £open and fclose are used in practice, here’s the outline of a
+program that opens the file example. dat for reading, checks that it was opened
+successfully, then closes it before terminating:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define FILE NAME "example.dat"
+
+int main (void)
+
+{
+
+FILE *fp;
+
+fp = fopen (FILE NAME, "r") ;
+
+if (fp == NULL) {
+printf ("Can't open %s\n", FILE NAME) ;
+exit (EXIT FAILURE) ;
+
+}
+
+Éclose (£p) ;
+return 0;
+
+}
+
+Of course, C programmers being the way they are, it’s not unusual to see the call of
+fopen combined with the declaration of fp:
+
+FILE *fp = fopen (FILE NAME, "r");
+

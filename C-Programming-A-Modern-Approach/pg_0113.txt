@@ -1,0 +1,51 @@
+88 Chapter5  Selection Siatements
+
+ 
+
+The Role of the break Statement
+
+Now, let’s take a closer look at the mysterious break statement. Âs we've seen,
+executing a break statement causes the program to ‘’break” out of the switch
+statement; execulion continues at the next statement after the switch.
+
+The reason that we need break has to do with the fact that the swi t ch state-
+ment is really a form of “computed jump.!’ When the controlling expression is
+evaluated, control jumps to the case label matching the value of the switch
+expression. À case label is nothing more than a marker indicating a position within
+the switch. When the last statement in the case has been executed, control ‘“falls
+through” to the first statement in the following case; the case label for the next case
+is ignored. Without break (or some other jump statement), control will flow from
+one case into the next. Consider the following switch statement:
+
+switch
+case
+case printf ("Good") ;
+
+(grade) {
+4 :
+3 :
+case 2:  printf ("Average") ;
+1.
+O
+l
+
+print£ ("Excellent") ;
+
+case print£f ("Poor") ;
+case 0:  printf ("Failing") ;
+default: printf ("I11egal grade") ;
+
+}
+
+If the value of grade is 3, the message printed 1s
+
+GoodAveragePoorFailingIllegal grade
+
+ 
+
+Î Forgetting to use break is a common error. Although omitting break is some-
+times done intentionally to allow several cases to share code, it’s usually just an
+oversight.
+
+ 
+

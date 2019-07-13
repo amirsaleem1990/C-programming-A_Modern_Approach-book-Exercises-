@@ -1,0 +1,60 @@
+14
+
+Chapter2 C Fundamentals
+
+return value of main >9,5
+
+QaÂ
+
+QaA
+
+compound statement » 5.2
+
+The statement
+return 0;
+
+has two effects: it causes the main function to terminate (thus ending the program)
+and it indicates that the main function returns a value of 0. We'I1 have more to say
+about main’s return value in a later chapter. For now, we’Il always have main
+return the value O, which indicates normal program termination.
+
+If there's no return statement at the end of the main function. the program
+will still terminate. However, many compilers will produce a warning message
+(because the function was supposed to return an integer but failed to).
+
+Statements /
+
+À statement is a command to be exccuted when the program runs. We*Il explore
+statements later in the book. primarily in Chapters 5 and 6. The pun. c program
+uses only two kinds of statements. One is the return statement: the other is the
+
+function call. Asking a function to perform its assigned task is known as calling
+
+the function. The pun . c program, for example, calls the printf function to dis-
+play a string on the screen:
+
+print£f ("To C, or not to C: that is the question.\n") ;
+
+ 
+
+Printing Strings
+
+printf is a powerful function that we*Il examine in Chapter 3. So far. we've only
+used print£ to display a string literal—a series of characters enclosed in double
+quotation marks. When print£ displays a string literal, it doesn’t show the quo-
+tation marks.
+
+  
+
+Writing a new-line character termi-
+& current output line; subsequent output goes onto the next line. To illus-
+trate this point, consider the effect of replacing the statement
+
+ 
+
+printf ("To C, or not to C: that is the question. \n") ;
+by two calls of print£:
+
+printf("To C, or not to C: ");
+print£f ("that is the question.\n") ;
+

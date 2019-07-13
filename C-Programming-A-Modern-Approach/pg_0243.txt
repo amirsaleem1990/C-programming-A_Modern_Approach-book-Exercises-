@@ -1,0 +1,50 @@
+218
+
+Chapter9 Functions
+
+or 12. Any other roll is called the “point” and the game continues. On each subsequent roll,
+the player wins if he or she rolls the point again. The player loses by rolling 7. Any other roll
+is Ignored and the game continues. At the end of each game, the program will ask the user
+whether or not to play again. When the user enters à response other than y or Y. the program
+Will display the number of wins and losses and then terminate.
+
+You rolled: 8
+Your point is 8
+You rolled: 3
+You rolled: 10
+You rolled: 8
+You win!
+
+Play again? y
+
+You rolled: 6
+Your point is 6
+You rolled: 5
+You rolled: 12
+You rolled: 3
+You rolled: 7
+You lose!
+
+Play again? y
+
+You rolled: 11
+You win!
+
+Play again? n
+Wins: 2  Losses: 1
+
+Write your program as three functions: main, roll_dice. and play_game. Here are
+the prototypes for the latter two functions:
+
+int roll dice (void) ;
+bool play game (void) ;
+
+roll _dice should gcnerate two random numbers, each between ! and 6, and return their
+sum. play_game should play one craps game (calling ro1l l_dice to determine the out-
+come of each dice roll); it will return true if the player wins and fa1 se if the player loses.
+play_game is also responsible for displaying messages showing the results of the player's
+dice rolls. main will call play _game repeatedly. keeping track of the number of wins and
+losses and displaying the “you win” and “you lose” messages. Hint: Use the rand function
+to génerate random numbers. See the deal .c program in Section 8.2 for an example of
+how to call rand and the related srand function.
+

@@ -1,0 +1,58 @@
+16.55  Enumerations 403
+
+Às an alternative, we could use typede£ to make Suit a type name:
+
+typedef enum (CLUBS, DIAMONDS, HEARTS, SPADES} Suit;
+Suit sl, s2;
+
+In C89, using typedef to name an enumeration 1s an excellent way to create
+a Boolean type:
+
+typedef enum {FALSE, TRUE} Bool;
+
+C99 has a built-in Boolean type, of course. so there’s no need for a C99 program-
+mer to define a Bool type in this way.
+
+Enumerations as Integers
+
+Behind the scenes, C treats enumeration variables and constants as integers. By
+default, the compiler assigns the integers O, |, 2, … to the constants in a particular
+enumeration. In our suit enumeration, for example, CLUBS, DIAMONDS,
+HEARTS, and SPADES represent O, !, 2, and 3, respectively.
+
+We’re free to choose different values for enumeration constants if we like.
+Let’s say that we want CLUBS, DIAMONDS, HEARTS, and SPADES to stand for |,
+2, 3, and 4. We can specify these numbers when declaring the enumeration:
+
+enum suit (CLUBS = 1, DIAMONDS = 2, HEARTS = 3, SPADES = 4};
+
+The values of enumeration constants may be arbitrary integers, listed in no particu-
+
+lar order:
+
+enum dept {RESEARCH = 20, PRODUCTION = 10, SALES = 25};
+
+It’s even legal for two or more enumeration constants to have the same value.
+When no value is specified for an enumeration constant, its value is one
+
+greater than the value of the previous constant. (The first enumeration constant has
+
+the value O by default.) In the following enumeration, BLACK has the value O,
+LT GRAY is 7,DK _ GRAY 1s 8, and WHITE is |5:
+
+enum EGA colors {BLACK, LT _ GRAY = 7, DK GRAY, WHITE = 15};
+
+Since enumeration values are nothing but thinly disguised integers, C allows
+us to mix them with ordinary integers:
+
+int 1;
+enum (CLUBS, DIAMONDS, HEARTS, SPADES} s;
+
+i = DIAMONDS; /* i is now 1 */
+s = 0; /* s is now O (CLUBS) */
+s++; /* s is now 1 (DIAMONDS) */
+i = Ss + 2; /* i is now 3 */
+
+The compiler treats s as à variable of some integer type: CLUBS, DIAMONDS,
+HEARTS, and SPADES arc just names for the integers O, 1, 2, and 3.
+

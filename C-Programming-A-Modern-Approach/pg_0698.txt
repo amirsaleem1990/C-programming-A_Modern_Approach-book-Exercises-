@@ -1,0 +1,57 @@
+iswetype
+
+towlower
+itowupper
+
+wctrans
+
+25.6  The <wctype.h> Header (C99) 673
+
+current locale; the 12 strings listed above are legal in all locales. 1f wctype 1s
+passed a string that’s not supported in the current locale, 1t returns zero.
+
+À call of the iswctype function requires two parameters: wc (a wide char-
+acter) and desc (a value returned by wotype). iswctype returns a nonzero
+value rf wc belongs to the class of characters corresponding to desc. For example,
+the call
+
+iswctype (wc, wctype ("alnum'") )
+is equivalent to
+iswalnum (wc)
+
+wctype and iswctype are most useful when the argument to wctype Is à
+string other than the standard ones listed above.
+
+Wide-Character Case-Mapping Functions
+
+wint t towlower(wint t wc);
+wint t towupper (wint t wc);
+
+The towlower and towupper functions are the wide-character counterparts of
+tolower and toupper. For example. towlower returns the lower-case ver-
+sion of its argument. if the argument is an upper-case letter; otherwise. it returns
+the argument unchanged. As usual. there may be quirks when dcaling with wide
+characters. For example, more than one lower-case version of a letter may exist in
+the current locale, in which case towlower 1s allowed to return any one of them.
+
+Extensible Wide-Character Case-Mapping Functions
+
+wint t towctrans(wint t wc, wctrans t desc) ;
+wctrans t wctrans(const char *property) ;
+
+The wctrans and towctrans functions are used together to support general-
+ized wide-character mapping.
+
+The wctrans function is passed a string describing a character mapping: 1t
+returns a wctrans_ t value that represents the mapping. For example, the call
+
+wectrans ("tolower")
+
+returns àawctrans t value representing the mapping of upper-case letters to low-
+er case. The C99 standard requires that the strings "tolower" and "toupper"
+be allowed as arguments to wctrans. Additional strings may be provided by an
+implementation. Which strings are legal arguments to wctrans at a given time
+depends on the LC CTYPE category of the current locale; "tolower" and
+"coupper" are legal in all locales, lf wctrans is passed a string that's not sup-
+ported in the current locale, it returns zero.
+

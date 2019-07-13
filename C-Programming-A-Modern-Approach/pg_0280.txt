@@ -1,0 +1,73 @@
+Section 11.2
+
+Section 11.3
+
+Section 11.4
+
+@ 2.
+3.
+@ 4
+5.
+® 6
+
+Exercises 255
+
+void f (const int * const p)
+
+{
+
+int j;
+
+*p = 0; /*** WRONG ***/
+p = &j; /*** WRONG ***/
+
+Exercises
+
+If à is a variable and p points to i, which of the following expressions are aliases for i ?
+
+(a) *p (c) *&p (e) #i (g) *&i
+(b) &p (d) &*p (f) &i (h) &*i
+
+If à is an int variable and p and q are pointers to int, which of the following assignments
+are legal?
+
+(a) p = i; (d) p = &g; (g) p = *q;
+(b) *p = &i; (e) p = *&g; (h) *p = ;
+(c) & = ; (f) p = q: (1) *p = *g;
+
+The following function supposedly computes the sum and average of the numbers in the
+array a. which has length n. avg and sum point to variables that the function should mod-
+ify. Unfortunately, the function contains several errors; find and correct them.
+
+void avg_sum(double a[], int n, double *avg, double *sum)
+
+(
+
+int i;
+
+sum = 0.0;
+
+for (i = O0; i < n; i++)
+
+sum += a[i];
+
+avg = sum / n;
+Write the following function:
+void swap(int *p, int *g);
+When passed the addresses of two variables, swap should exchange the values of the vari-
+ables:
+
+swap(&i, &]) ; /* exchanges values of i and ; */
+
+Write the following function:
+void split time(long total _ sec, int *hr, int *min, int *sec);
+
+total_sec is a time represented as the number of seconds since midnight. hr, min, and
+sec are pointers to variables in which the function will store the equivalent time in hours
+(0-23), minutes (0-59). and seconds (0-59), respectively.
+
+Write the following function:
+
+void find _ two _largest (int a[], int n, int *largest,
+int *second largest) ;
+

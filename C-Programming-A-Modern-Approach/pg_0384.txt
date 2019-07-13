@@ -1,0 +1,58 @@
+__STDC___ macro » 14.3
+
+15.3
+
+PROGRAM
+
+15.3  Dividing a Program into Files 359
+
+file uses a feuture that didn’t exist prior to the original C89 standard. To prevent the
+header file from being used with older, nonstandard compilers, 1t could contain an
+#i Ende£ directive that tests for the existence of the___STDC __ Macro:
+
+tifndef __STDC __
+ferror This header requires a Standard C compiler
+#endiF
+
+Dividing a Program into Files
+
+Let's now use what we know about header files and source files to develop a sim-
+ple technique for dividing a program into files. We'1l concentrate on functions, but
+the same principles apply to external variables as well. We Il assume that the pro-
+gram has already been designed; that is. we've decided what functions the program
+will need and how to arrange the functions into logically related groups. (We"ll dis-
+cuss progrum design in Chapter 19.)
+
+Here's how we'Il procced. Each set of functions will go into a separate source
+file (letUs use the name Éoo. c for one such file). In addition, we'1l create a header
+file with the same name as the source file, but with the extension .h (foo.h. in
+our case). Into £oo.h. we'I] put prototypes for the funclions defined in foo.c.
+(Functions that are designed for use only within foo.c need not—and should
+not—be declared in £oo .h. The read char function in our next program 1s an
+example.) We'Il include £oo .h in each source file that needs to call a function
+defined in foo .c. Moreover. we'Îl include £foo.h in £oo. c so that the compiler
+can check that the function prototypes in £oo .h are consistent with the definitions
+in foo.c.
+
+The main function will go in a file whose name matches the name of the pro-
+eram—if we want the program to be known as bar. then main should be in the
+file bar.c. It's possible that there are other functions in the same file as main, so
+long as they're not called from other files in the program.
+
+ 
+
+Text Formatting
+
+To illustrate the technique that we've just discussed., let's apply it to à small text-
+formatting program named justi£fy. Às sample Input to justi£y, we Il use a
+file named quote that contains the following (poorly formatted) quotation from
+“The development of the C programming language” by Dennis M. Ritchie (in His-
+tory of Programmine Languages 11, edited by T. J. Bergin, Jr…. und R, G. Gibson.
+Jr.. Addison-Wesley. Reading, Mass., 1996, pages 67 1-687):
+
+C is quirky,  Élawed, and an
+enormous SuUCCcess. Although accidents oË history
+surely helped, it evidently satisfied a need
+
+for a system implementation language efficient
+

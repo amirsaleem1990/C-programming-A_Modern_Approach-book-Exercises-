@@ -1,0 +1,64 @@
+40 Chapter3  Formatted Input/Ouiput
+
+specillers for Integers »7. ! There are many other specifiers besides %d. %e. %£. and %g. TIl gradually
+
+specifiers for lioats 7.2 _ introduce many of them in subsequent chapters. For the f'ull list, and for a complete
+
+specifiers for characters >7.3 | explanation of the other capabilities of conversion specifications, consult Section
+specifiers for strings »133 | 22.3.
+
+PROGRAM Using print£ to Format Numbers
+
+The following program illustrates the use of print£ to print integers and float-
+ing-point numbers in various formats.
+
+tprintfe /* Prints int and float values in various formats */
+finclude <stdio.h>
+
+int main(void)
+
+{
+int i;
+float x;
+
+i
+x
+
+â0;
+839.21É;
+
+printf("|%d
+printf("|%1
+
+o\° o\°
+
+return D0;
+
+The | characters in the print£ format strings are there merely to help show
+how much space each number occupies when printed; unlike % or \, the | charac-
+ter has no special significance to print£. The output of this program is:
+
+|40| 40|40 | 040|
+| 839.210| 8.392e+02|839.21 |
+
+Let's take a closer look at the conversion specifications used in this program:
+
+O
+
+u %d — Displays i in decimal form, using a minimum amount of space.
+
+u %5d — Displays à in decimal form, using a minimum of five characters.
+Since i requires only two characters. three spaces were added.
+
+u %-5d — Displays i in decimal form, using a minimum of five characters;
+since the value of à doesn’t require five characters, the spaces are added after-
+ward (that is, i 1s left-justified in a field of length five).
+
+u %5.3d — Displays à in decimal form, using a minimum of five characters
+overall and a minimum of three digits. Since i is only two digits long, an extra
+zero was added to guarantee three digits. The resulting number is only three
+characters long, so two spaces were added, for a total of five characters (i is
+right-justified).
+
+u %10.3f — Displays x in fixed decimal form, using 10 characters overall,
+

@@ -1,0 +1,79 @@
+346 Chapter 14  The Preprocessor
+
+10.
+
+l1.
+
+Éprint£ function >22.3
+
+stderr stream > 221
+
+Section 14.4
+
+@ 12
+
+(b) strepy(s, "0123") ;
+i = 0;
+putchar (TOUPPER (s [++i] ) ) ;
+
+(a) Write a macro DISP (£,x) that expands into u call of print£ that displays the value
+of the function £ when called with argument x. For example.
+
+DISP(sgrt, 3.0);
+should expand into
+print£("sqgrt(%g) = %g\n"', 3.0, sqrt(3.0));
+
+(b) Write a macro DISP2 (£,x, y) that’s similar to DISP but works for functions with
+tlWo arguments.
+
+Let GENERIC _MAX be the following macro:
+
+#define GENERIC MAX (type)
+type typeH# _ max(type x, type y)
+
+{
+
+return x > y ? x : y;
+}
+
+(a) Show the preprocessor’s expansion of GENERIC MAX (long).
+(b) Explain why GENERIC MAX doesn’t work for basic types such as unsigned loncg.
+
+(c) Describe a technique that would allow us to use GENERIC _MAX with basic types such
+as unsigned long. Hint: Don't change the definition of GENERIC MAX.
+
+0800 SO 6C
+
+Suppose we want a macro that expands into a string containing the current line number and
+file name. In other words, we"d like to write
+
+const char *str = LINE FILE;
+and have it expand into
+const char *str = "Line 10 of file foo.c";
+
+where foo. c 1s the file containing the program and 10 is the line on which the invocation
+of LINE FILE appears. Warning: This exercise is for experts only. Be sure to read the
+Q& À section carefully before attempting!
+
+Write the following parameterized macros.
+
+(a) CHECK(x, y,n) — Has the value ! if both x and y fall between O and n — 1. inclusive.
+(b) MEDIAN (x, y, z) — Finds the median of x. y. and z.
+(c) POLYNOMIAL (x) —- Computes the polynomial 3x* + 24* — 5" —- 2 + 7x —6.
+
+Functions can often—but not always—be written as parameterized macros. Discuss what
+characteristics of a f'unction would make it unsuitable as à macro.
+
+(C99) C programmers often use the Éprint£ function to write error messages:
+
+Eprint£ (stderr, "Range error: index = %d\n", index) ;
+
+stderr is C's “standard error” stream; the remaining arguments are the same as those for
+print£, starting with the format string. Write a macro named ERROR that generates the
+call of Eprint£ shown above when given a format string and the items to be displayed:
+
+ERROR ("Range error: index = %d\n", index) ;
+
+Suppose that the macro M has been defined as follows:
+#define M 10
+

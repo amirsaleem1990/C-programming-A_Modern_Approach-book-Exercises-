@@ -1,0 +1,59 @@
+368 Chapter 15 Writing Large Programs
+
+file in the program. make cun determine which files are out of date. Tt then invokes
+the commands necessary to rebuild the program.
+If you want to give make a trv. here are u few details you’Il nced to know:
+
+u Eachcommand in à makefile must be preceded by à tab character. not a series
+of spaces. (In our example. the commands appear to be indented eight spaces,
+but 10s actually à single tab character.)
+
+u À makelile is normally stored in a lile named Makefile (or makefile).
+When the make utility is used, it automatically checks the current directory
+for « file with one of these names,
+
+w To invoke make, use the command
+make rargel
+
+wherc rarger is one of the targets listed in the makefile. To build the justi £y
+execulible using our makefile. we would use the command
+
+make justi£y
+
+u |f no target is specificd when make is invoked. it will build the target of the
+first rule. For example. the command
+
+make
+
+will build the justi£y exccutable. since justi Ey is the first tareet in our
+makefile. Except for this special property of the first rule. the order of rules in
+a makefile ts arbitrary.
+
+make 1s complicated enough that entire books have been written about it, so
+we won't attempt to delve further into its intricacies. Let’s just say that real make-
+files aren’t usually as casy to understand as our example. There are numerous
+techniques that reduce the amount of redundancy in makefiles and make them cas-
+ler to modify: at the same time. though. these techniques greatly reduce their read-
+ability.
+
+Not everyone uses makefiles, by the way. Other program maintenance tools |
+arc also popular. including the “project files” supported by some integrated devel-
+opment environments.
+
+Errors During Linking
+
+Some errors that can’t be detected during compilation will be found during linkine.
+In particular, 1f the definition of a function or variable is missineg from a program.
+the linker will be unable to resolve external reférences to it, causing à message
+such as “undefined svmbol” or “undefined reference.”
+
+Errors detected by the linker are usually easy to fix. Here arc some of the most ‘
+common causes:
+
+= Misspellings. T the name of a variable or function is misspelled. the linker
+will report it as missing. For example. if the function read_char is defined
+
+ 
+
+À
+

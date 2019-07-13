@@ -1,0 +1,92 @@
+614
+
+Chapter 23  Library Support for Numbers and Character Data
+
+tolower
+toupper
+
+PROGRAM
+
+£or (p = "azAZO !\t";
+
+if (isentrl(*p))
+
+print£ ("\\x302x:",
+else
+
+print£ (" +c:",
+TEST (isalnum) ;
+TEST (isalpha) ;
+TEST (iscntr1) ;
+TEST (isdigit) ;
+TEST (isgraph) ;
+TEST (islower) ;
+TEST (isprint) ;
+TEST (ispunct) ;
+TEST (isspace) ;
+TEST (isupper) ;
+TEST (isxdigit) ;
+print£("\n") ;
+
+*p != '"\0'; p++) |
+*p) ;
+
+*p) ;
+
+}
+
+return 0;
+
+}
+
+The program produces the following output:
+
+alnum ecntrl
+alpha
+x
+
+graph print space
+digit lower punct
+x
+x
+
+xdigit
+upper
+
+ON PF N 9
+1 KN XX
+» e
+
+“ %
+
+“ %n
+nN N À K %
+
+r
+
+*
+
+l :
+\x09 :
+
+S
+2
+=
+P
+
+*
+
+Character Case-Mapping Functions
+
+int tolower (int c);
+int toupper (int c);
+
+The tolower function returns the lower-case version of a letter passed to it as an
+argument, while toupper returns the upper-case version. If the argument to
+either function is not a letter, it returns the character unchanged.
+
+Testing the Case-Mapping Functions
+
+The following program applies the case-mapping functions to the characters in the
+string "aAO ! ".
+

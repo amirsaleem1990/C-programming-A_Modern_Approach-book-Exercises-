@@ -1,0 +1,53 @@
+416
+
+Chapter 17  Advanced Uses of Pointers
+
+17.2
+
+size t lype »7.6
+
+Q&AÀ
+
+Dynamically Allocated Strings
+
+Dynamic storage allocation is often uscful for working with strines. Strings are
+stored in character arrays. and it can be hard to anticipate how long these arrays
+need to be. By allocating strings dynamically, we can postpone the decision until
+the program 1s runnine.
+
+Using malloc to Allocate Memory for a String
+
+The malloc function has the following prototype:
+void *malloc(size t size);
+
+malloc allocates a block of size bytes and returns a pointer to it. Note that
+size has type size t, an unsigned integer type defined in the C library. Unless
+we*re allocating a very large block of memory, we can just think of size as an
+ordinary integer.
+
+Using malloc to allocate memory for a string 1s easy, because C guarantees
+that a char value requires exactly one byte of storage (sizeof (char) 1s |, in
+other words). To allocate space for a string of n characters, we'd write
+
+p = malloc(n + 1);
+
+where p is a char * variable. (The argument is n + 1 rather than n to allow room
+for the null character.) The generic pointer that malloc returns will be converted
+to char * when the assignment 1s performed; no cast 1s necessary. (In general, we
+can assign a void * value to a variable of any pointer type and vice versa.) Never-
+theless, some programmers prefer to cast malloc's return value:
+
+p = (char *) malloc(n + 1);
+
+ 
+
+When using malloc lo allocate space for à string, don’t forget to include room for
+the null character.
+
+ 
+
+Memory allocated using malloc isn’t cleared or initialized in any way, s0 p
+will point to an uninitialized array of n + | characters:
+
+ 
+

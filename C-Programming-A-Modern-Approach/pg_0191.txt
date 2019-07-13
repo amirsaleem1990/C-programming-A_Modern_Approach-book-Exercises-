@@ -1,0 +1,66 @@
+166
+
+Chapter 8  Arrays
+
+QaÂÀ
+
+PROGRAM
+
+repdigit.c
+
+In the following example, the fact that 23 appears as a designator will force the
+array to have leneth 24:
+
+int b[] = {[5] 10, [23] = 13, [11] 36, [15] = 29};
+
+An initializer may use both the older (element-by-element) technique and the
+newer (designated) technique:
+
+int c[10] = (5, 1, 9, [4] = 3, 7, 2, [8] = 6};,
+
+This initializer specifies that the array’s first three elements will be 5, |. and 9. Ele-
+ment 4 will have the value 3. The two elements after element 4 will be 7 and 2.
+Finally. element 8 will have the value 6. AIl elements for which no value is speci-
+filed will default to zero.
+
+Checking a Number for Repeated Digits
+
+Our next program checks whether any of the digits in a number appear more than
+once. After the user enters a number, the program prints either Repeated digit
+or No repeated digit:
+
+Enter a number: 28212
+Repeated digit
+
+ 
+
+The number 28212 has a repeated digit (2): a number like 9357 doesn’t.
+
+The program uses an array of Boolean values to keep track of which digits
+appear in a number. The array, named digit_seen, is indexed from O to 9 to
+correspond to the 10 possible digits. Initially, every element of the array is false.
+(The initializer for digit_seen is {£alse }, which only initializes the first ele-
+ment of the array. However. the compiler will automatically make the remaining
+elements zero, which is equivalent to false.)
+
+When given a number n, the program examines n°s digits one at a time, stor-
+ing each into the digit variable and then using it as an index into digit seen.
+Ifdigit_seen [digit] is true, then digit appears at least twice in n. On the
+other hand, if digit seen [digit] is false, then digit has not been seen
+before, so the program sets digit seen [digit] to true and keeps going.
+
+/* Checks numbers for repeated digits */
+
+finclude <stdbool.h> /* C99 only */
+Hinclude <stdio.h>
+
+int main (void)
+
+{
+bool digit seen[10] = {false},
+int digit;
+long n;
+
+print£ ("Enter a number: ") ;
+scan£("%1d", &n) ;
+

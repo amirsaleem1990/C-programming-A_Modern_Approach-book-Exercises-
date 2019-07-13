@@ -1,0 +1,131 @@
+Qa&A
+
+122  Using Pointers for Array Processing 261
+
+p initially points to a [0]. Each time through the loop, p is incremented: as a
+result, it points to a [1], then a [2], and so forth. The loop terminates when p
+steps past the last element of a.
+
+#define N 10
+int a[N], sum, *p;
+sum = O
+
+for (p &a[0]; p < &a[N] ; p++)
+sum += *p;
+
+|I w.
+
+The following figures show the contents of a, sum, and p at the end of the first
+three loop iterations (before p has been incremented).
+
+prmeeeet-225
+
+At the end of the first iteration:
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+”1]
+[
+a | 11 | 34 | B2 7 6—1'98 47 | 18 1 79 | 20
+0 1 2 3 4 S ô 7 8 9
+sum 11
+
+ 
+
+ 
+
+ 
+
+At the end of the second iteration:
+
+ 
+
+ 
+
+ 
+
+ 
+
+mjw]w[z]
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+gum â5
+Àt the end of the third itération: 14
+; à d Ç ;
+a| 1l l 34 | 82 7 6+ l 98 | 47 l 18 | 79 | 20
+
+ 
+
+ 
+
+ 
+
+0 1 2 3 4 5 6 7 B 9
+
+ 
+
+seum 127
+
+ 
+
+ 
+
+ 
+
+The condition p < &a [N] in the £or slatement deserves special mention.
+Strange as il may seem, it’s legal to apply the address operator to a [N] , even
+though this element doesn’t exist (a is indexed from O to N — 1). Using a [N] in
+this fashion is perfectly safe, since the loop doesn°t attempt to examine its value.
+The body of the loop will be executed with p equal to &a[0], &a[1], …
+&a [N-1]. but when p is equal to &a [N] , the loop terminates.
+
+We could just as easily have written the loop without pointers, of course, using
+subscripting instead. The argument most often cited in support of pointer arithmetic
+is that it can save execution time. However, that depends on the implementation—
+some C compilers actually produce better code for loops that rely on subscripting.
+

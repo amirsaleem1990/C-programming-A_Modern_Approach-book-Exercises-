@@ -1,0 +1,17 @@
+3 Formatted Input/Output
+
+In seeking the unattainable, simplicity only gets in the way.
+
+scanf and print£, which support formatted reading and writing, are two of the
+most frequently used functions in C. As this chapter shows, both are powerful but
+tricky to use properly. Section 3.1 describes printf, and Section 3.2 covers
+scanf. Neither section gives complete details, which will have to wait until Chap-
+
+ter 22.
+
+3.1 The print£ Function
+
+ 
+
+37
+

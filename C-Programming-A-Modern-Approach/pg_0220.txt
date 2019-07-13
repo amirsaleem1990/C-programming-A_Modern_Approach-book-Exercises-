@@ -1,0 +1,23 @@
+9.3  Arguments 195
+
+ 
+
+ 
+
+Array Arguments
+
+Arrays are often used as arguments. When a function parameter is a one-dimen-
+e{740 _ sional array, the length of the array can be (and 1s normally) left unspecified:
+
+int f(int a[]) /* no length specified */
+
+{
+}
+
+The argument can be any one-dimensional array whose elements are of the proper
+type. There’s just one problem: how will £ know how long the array is? Unfortu-
+nately, C doesn’t provide any easy way for a function to determine the length of an
+
+array passed Lo it. Instead, we’I] have to supply the length—if the function needs
+it—as an additional argument.
+

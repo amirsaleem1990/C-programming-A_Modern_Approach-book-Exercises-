@@ -1,0 +1,55 @@
+304
+
+Chapter 13  Strings
+
+planet.c
+
+The program will indicate whether or not each string is a planet name; if it is, the
+program will also display the planet's number (with planet ! being the one closest
+to the Sun):
+
+Jupiter is planet 5
+venus is not a planet
+Earth is planet 3
+Éred is not a planet
+
+Notice that the program doesn’t recognize a string as a planet name unless its first
+letter 1s upper-case and its remaining letters are lower-case.
+
+/* Checks planet names */
+
+#finclude <stdio.h>
+Hinclude <string.h>
+
+#define NUM PLANETS 9
+
+int main(int argc, char *argv[])
+
+{
+char *planets[] = {"Mercury", "Venus", "Earth",
+"Mars", "Jupiter", "Saturn",
+"Uranus", "Neptune", "Pluto"};
+int i, j;
+for (i = 1; i < argc; i++) (
+for (j = 0; j < NUM PLANETS; j++)
+if (stromp(argv[i], planets[j]) == 0) (
+printf("%s is planet %d\n", argv[i], j + 1);
+break ;
+}
+if (j == NUM PLANETS)
+print£("%s is not a planet\n", arqgv [i]) ;
+}
+return 0;
+}
+
+The program visits each command-line argument in turn, comparing it with
+the strings in the planets array until it finds a match or reaches the end of
+the array. The most interesting part of the program is the call of stromp, in
+which the arguments are argv [i] (a pointer to a command-line argument) and
+planets [y] (a pointer to a planet name).
+
+Q & À
+
+How long can a string literal be?
+According to the C89 standard, compilers must allow string literals to be at least
+

@@ -1,0 +1,22 @@
+42
+
+Chapter 3  Formatted Input/Ouiput
+
+3.2
+
+ 
+
+ 
+
+Forgetting to put the & symbol in front of a variable in à call of scan£ will have
+unpredictable—and possibly disastrous—results. À program crash 1s a common
+outcome. Ât the very least, the value that ts read from the input won't be stored in
+the variable: instead, the variable will retain its old value (which may be meaning-
+less if the variable wasn°’t given an initial value). Omitting the & is an extremely
+common error—be careful! Some compilers can spot this error and produce a
+warning message such as “format argument is not a pointer.” (The term pointer is
+defined in Chapter 11; the & symbol is used to create à pointer to à variable.) IF you
+get a warning, check for a missing &.
+
+ 
+

@@ -1,0 +1,54 @@
+detecting errors in scanf£ >22.3
+
+3.2  The scanf Function 43
+
+Calling scan£ is a powerful but unforgiving way to read data. Many profes-
+sional C programmers avoid scan£, instead reading all data in character form and
+conveiting it to numeric form later. We'll use scan£ quite a bit, especially in the
+early chapters of this book, because it provides a simple way to read numbers. Be
+aware, however, that many of our programs won°t behave properly 1f the user
+enters unexpected input. As we'll see later, il’s possible to have a program test
+whether scanf successfully read the requested data (and attempt to recover 1if 1t
+didn’t). Such tests are impractical for the programs in this book—they would add
+too many statements and obscure the point of the examples.
+
+How scan£ Works
+
+scanf can actually do much more than l’ve indicated so far. It 1s essentially a
+“pattern-matching” function that tries to match up groups of input characters with
+conversion specifications.
+
+Like the print£f function, scan£ is controlled by the format string. When it
+is called, scan£ begins processing the information in the string, starting at the
+left. For each conversion specification in the format string, scan£ tries to locate
+an item of the appropriate type in the input data. skipping blank space 1f necessary.
+scanf then reads the item, stopping when it encounters a character that can’t pos-
+sibly belong to the item. If the item was read successfully, scan£ continues pro-
+cessing the rest of the format string. If any item is not read successfully, scanf
+returns immediately without looking at the rest of the format string (or the remain-
+ing Iinput data).
+
+As it searches for the beginning of a number, scan£ ignores white-space
+characters (the space, horizontal and vertical tab, form-feed. and new-line charac-
+ters). As a result, numbers can be put on a single line or spread out over several
+lines. Consider the following call of scanf£:
+
+scanf ("3d%d%$£3f", &i, &]j, &X, &y);
+Suppose that the user enters three lines of input:
+
+1
+-20 .3
+-à4 .0e3
+
+scanf sees one continuous stream of characters:
+ee11-2()e0e0e 3M1000e-4 ()E3N
+
+(l'm using e to represent the space character and @ to represent the new-line char-
+acter.) Since it skips over white-space characters as it looks for the beginning of
+each number, scan£ will be able to read the numbers successfully. In the follow-
+ing diagram, an s under a character indicates that it was skipped. and an r indi-
+cates it was read as part of an input item:
+
+ee10-2)000 31000e-4 ()e30
+SSISYYYrsSSrIrssssrrrrrr
+

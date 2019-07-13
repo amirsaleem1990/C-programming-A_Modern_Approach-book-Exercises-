@@ -1,0 +1,58 @@
+Q & À 253
+
+When memory 1s divided into words, each word has an address. An integer
+usually occupies one word, so a pointer to an integer can just be an address. How-
+ever, a word can store more than one character. For example. a 36-bit word might
+store six 6-bit characters:
+
+ 
+
+ 
+
+l010011 ‘110101' 210011 100001l 101110l 000011
+
+or four 9-bit characters:
+
+0010130011 l001110101 |001110011 |001100001
+
+For this reason, a pointer to a character may need to be stored in à différent form
+than other pointers. À pointer to a character might consist of an address (the word
+in which the character 1s stored) plus à small integer (the position of the character
+within the word).
+
+On some computers, pointers may be ‘offsets” rather than complete
+addresses. For example, CPUs in the Intel x86 family (used in many personal com-
+puters) can execute programs In several modes. The oldest of these, which dates
+back to the 8086 processor of 1978, is called real mode. In this mode, addresses
+are sometimes represented by a single 16-bit number (an of/fset) and sometimes by
+two 16-bit numbers (a segment:offset pair). An offset isn’t a true memory address:
+the CPU must combine 1t with a segment value stored in a special register. To sup-
+port real mode, older C compilers often provide two kinds of pointers: near point-
+ers (16-bit offsets) and far pointers (32-bit segment:offset pairs). These compilers
+usually reserve the words near and far as nonstandard keywords that can be
+used to declare pointer variables.
+
+If a pointer can point to data in a program, is it possible to have a pointer to
+program code?
+
+Yes. We'1l cover pointers to functions in Section 17.7.
+
+It seems to me that there’s an inconsistency between the declaration
+
+int *p = &i;
+
+and the statement
+
+p = &i;
+
+Why isn’t p preceded by a * symbol in the statement, as it is in the declara-
+tion? [p. 244]
+
+The source of the confusion is the fact that the * symbol can have different mean-
+ings in C, depending on the context in which 1t’s used. In the declaration
+
+int *p = &i;
+
+the * symbol 1s not the indirection operator. Instead, it helps specify the type of p,
+informing the compiler that p is a pointerto an int. When it appears In a statement,
+

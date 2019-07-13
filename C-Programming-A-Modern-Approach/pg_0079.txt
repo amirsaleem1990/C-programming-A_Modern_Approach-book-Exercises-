@@ -1,0 +1,70 @@
+54
+
+Chapter4  Expressions
+
+4.1
+
+Table 4.1
+Arithmetic Operators
+
+e 13N
+
+undefined behavior > 4.4
+
+QaA
+
+Arithmetic Operators
+
+The arithmetic operators—operators that perform addition, subtraction, multipli-
+cation, and division—are the workhorses of many programming languages, includ-
+ing C. Table 4.1 shows C*s arithmetic operators.
+
+ 
+
+ 
+
+ 
+
+Unary Binary
+Additive Multiplicative
++  unary plus +  addition *  multiplication
+-  Unaryminus | -  Subtraction | /  division
+% remainder
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+The additive and multiplicative operators are said to be binary because they
+require /wo operands. The r#nary operators require one operand:
+
+i = +1; /* + used as a unary operator */
+j = -i; /* - used as a unary operator */
+
+The unary + operator does nothing; in fact. it didn’t even exist in K&R C. It's used
+primarily to emphasize that a numeric constant is positive.
+
+The binary operators probably look familiar. The only one that might not is %,
+the remainder operator. The value of à % j is the remainder when i is divided by
+j. For example, the value of 10 % 3 is I, and the value of 12 % 4 is O.
+
+The binary operators in Table 4.1—with the exception of %—allow either inte-
+ger or floating-point operands, with mixing allowed. When int and float oper-
+ands are mixed. the result has type float. Thus, 9 + 2 .5f has the value 11.5.
+and 6.7£ / 2 has the value 3.35.
+
+The / and % operators require special care:
+
+ 
+
+u Using zero as the risht operand of either / or % causes undefined behavior.
+È ©
+
+ 
+

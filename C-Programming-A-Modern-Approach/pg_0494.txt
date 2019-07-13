@@ -1,0 +1,69 @@
+184  Declarators 469
+
+u When there’s a choice, always favor [) and () over *. If * precedes the
+identifier and [] follows it, the identifier represents an array. not a pointer.
+Likewise, if * precedes the identifier and () follows it, the identifier repre-
+sents a function, not a pointer. (Of course, we can always use parentheses to
+override the normal priority of [] and () over *.)
+
+Let’s apply these rules to our simple examples first. In the declaration
+int *ap [10] ;
+
+the identifier is ap. Since * precedes ap and [] follows it. we give preference to
+[] , s0 ap 1s an array of pointers. In the declaration
+
+float *fp(float) ;
+
+the identifier is £p. Since #* precedes £p and () follows 1it, we give preference to
+() , s0 Ép 1s a function that returns a pointer.
+The declaration
+
+void (*pf) (int) ;
+
+is a little trickier. Since *p£ 1s enclosed in parentheses, p£ must be a pointer, But
+(*pf) is followed by (int), so p£ must point to a function with an int argu-
+ment. The word void represents the return type of this function.
+
+Âs the last example shows, understanding a complex declarator often involves
+zigzagging from one side of the identifier to the other:
+
+void (*p£) (int);
+
+y Type of p£:
+
+1\‘ 2 â $uîäËnïvith int argument
+. 1n
+
+—— 3. returning voi d
+
+ 
+
+ 
+
+3
+
+Let’s use this zigzagging technique to decipher the declaration given earlier:
+int *(*x[10]) (void) ;
+
+First, we locate the identifier being declared (x). We see that x 1s preceded by *
+and followed by []; since [] have priority over *, we go right (x 1s an array).
+Next, we go left to find out the type of the elements in the array (pointers). Next.
+we go right to find out what kind of data the pointers point to (functions with no
+arguments). Finally, we go left to see what each function returns (a pointer to an
+int). Graphically, here’s what the process looks like:
+
+int *(Îx[10])(void);
+
+ 
+
+ 
+
+ 
+
+\\ Type of x:
+e 1 1. array of
+
+2. pointers to
+/> 3 3. functions with no arguments
+4 < 4. returning pointer to int
+

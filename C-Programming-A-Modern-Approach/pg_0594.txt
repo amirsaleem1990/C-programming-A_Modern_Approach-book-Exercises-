@@ -1,0 +1,53 @@
+ 
+
+22.5  Line [/0 569
+
+if (arge != 3) (
+Éprintf (stderr, "usage: fcopy source dest\n") ;
+exit (EXIT FAILURE) ;
+
+}
+
+i£ ((source fp = fopen(argv{1], "rb")) == NULL) {
+Eprint£ (stderr, "Can't open %s\n", argv[1]);
+exit (EXIT FAILURE) ;
+
+}
+
+if ((dest_fp = fopen(argv[2], "wb")) == NULL) {
+Eprintf(stderr, "Can't open %s\n", argv[2]);
+fclose(source_fp);
+exit (EXIT FAILURE) ;
+
+}
+
+while ((ch = getc(source fp)) != EOF)
+putc(ch, dest fp);
+
+Éclose (source _Ep) ;
+fclose (dest Ep);
+return 0;
+
+Using "rb" and "wb" us the file modes enables fcopy to copy both text and
+binary files. If we used "r" and "w" instead. the program wouldn't necessarily be
+able to copy binary files.
+
+22.5 Line I/O
+
+We'IL now turn to library functions that read and write lines. These functions are
+Used mostly with text streams, although it's lesal to use them with binäry streams
+as well.
+
+Output Functions
+
+int fputs(const char * restrict s,
+FILE * restrict stream) ;
+int puts(const char *s);
+
+puts  We encountered the puts function in Section 13.3: it writes a string of characters
+to stdout:
+
+puts("Hi, there!”") ; /* writes to stdout */
+
+After it writes the characters in the string, puts always adds a new-line character.
+

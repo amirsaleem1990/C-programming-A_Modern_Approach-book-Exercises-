@@ -1,0 +1,142 @@
+646 Chapter 25
+
+Table 25.3
+
+char Members of
+
+lconv Structure
+(International Formatting)
+
+Table 25.4
+
+Values of
+…Sep_by _ space
+Members
+
+Table 25.5
+Values of
+…Sign_posn
+Members
+
+International Features
+
+ 
+
+Name
+
+Value in
+"c" Locale
+
+Description
+
+ 
+
+int_frac digits
+int p _ cs precedes’
+
+int n cs precedes!
+
+int _;>_sep__by_space’r
+
+int _n _ sep _ by_space’
+
+int p _sign posn'
+
+int n sign posn*
+
+ 
+
+CHAR MAX
+CHAR MAX
+
+CHAR MAX
+
+CHAR MAX
+
+CHAR MAX
+
+CHAR MAX
+
+CHAR MAX
+
+Number of digits after decimal point
+lifint _ curr symbol precedes
+nonnegative quantity: O if it succeeds
+quantity
+
+lifint _ curr symbol precedes
+negative quantity; O if it succeeds
+quantity
+
+Separation of int_curr symbol
+and sign string from nonnegative
+quantity (see Table 25.4)
+
+Separation of int_curr symbol
+and sign string from negative quantity
+(see Table 25.4)
+
+Position of positive _sign for
+nonnegative quantity (see Table 25.5)
+Position of negative_sign for
+negative quantity (see Table 25.5)
+
+ 
+
+*C99 only
+
+Table 25.4 explains the meaning of the values of the p_sep_by space.
+n _sep by space, int_p_sep by _ space, and int _n sep by space
+members. The meaning of p_sep _ by _ space and n sep by space has
+
+changed in C99. In C89, there are only two possible values for these members: |
+
+(if there’s a space between currency _ symbol and a monetary quantity) or O (if
+
+there’s not).
+
+ 
+
+ 
+
+ 
+
+Value Meaning
+0 No space separates currency symbol and quantity.
+1 If currency symbol and sign are adjacent, à space separates them from
+quantity; otherwise, a space separates currency symbol from quantity.
+2 If currency symbol and sign are adjacent, a spacè separates them:
+otherwise, a space separates sign from quantity.
+
+ 
+
+ 
+
+Table 25.5 explains the meaning of the values of the p sign posn,
+
+n sign posn,int p _sign posnand iint n sign posn members.
+
+ 
+
+ 
+
+ 
+
+Value Meaning
+0 Parentheses surround quantity and currency symbol
+1 Sign precedes quantity and currency symbol
+2 Sign succeeds quantity and currency symbol
+3 Sign immediately precedes currency symbol
+4 Sign immediately succeeds currency symbol
+
+ 
+
+ 
+
+To see how the members of the 1conv structure might vary from one locale to
+
+another, let’s look at two examples. Table 25.6 shows typical values of the monetary
+1conv members for the U.S.A. and Finland (which uses the euro as its currency).
+
+ 
+

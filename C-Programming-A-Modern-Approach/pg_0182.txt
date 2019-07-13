@@ -1,0 +1,70 @@
+Section 7.5
+
+13.
+
+|5.
+
+9
+
+Programming Projects 157
+
+Assume that à program contains the following declarations:
+
+char c = '\1';
+short s = 2;
+int i = -3;
+
+long m = 5;
+float £ = 6.5ËÉ;
+double d = 7.5;
+
+Give the value and the type of each expression listed below.
+
+(a) c * i (c) £ / € (e) £ - d
+(b) Ss + m (d) d / s (F) (int) £
+
+Does the following statement always compute the fractional part of £ correctty (assuming
+that £ and frac_part are float variables)”?
+
+frac _ part = £ - (int) f;
+
+If not, what's the problem”
+
+Use typedef to create types named Int8, Int16. und Int32. Define the types so that
+they represent 8-bit, 16-bit. and 32-bit intégers on your machine.
+
+Programming Projects
+
+The square2. c program of Section 6.3 will fail (usually by printing strange answers) if
+i * i exceeds the maximum int value. Run the program and determine the smallest value
+of n that causes failure. Try changing the type of i to short and running the progräm
+again. (Don’t forget to update the conversion specifications in the call of print£!) Then
+try lJong. From these experiments. what can you conclude about the number of bits used Lo
+storc integer types on your machine?
+
+Modify the square2 . c program of Section 6.3 so that it pauses after every 24 squares and
+displays the following message:
+
+Press Enter to continue...
+
+After displaying the message, the program should use getchar to read a character.
+getchar won't allow the program to continue unuil thèe user presses the Enter key.
+
+Modify the sum2 . c program of Section 7.1 to sum a series of double values.
+
+Write a program that translates an alphabetic phone number into numerie form:
+
+Enter phone number: CALLATT
+2255288
+
+(In case you don't have a tclephone nearby. here are the letters on the keys: 2=ABC, 3=DEF,
+4=GHT, 5=JKL, 6=MNO, 7=PRS, 8=TUV. 9=WXY.) If the original phone number contains
+nonalphabetic characters (digits Or punctuation, for example), leave them unchanged:
+
+Enter phone number: 1-800-COL-LECT
+1-800-265-5328
+
+ 
+
+You may assume that any letters entered by the user are upper case.
+

@@ -1,0 +1,80 @@
+19.1 Modules 485
+
+ 
+
+#include <stdbool.h>
+
+void make empty (void) ;
+bool is_empty (void) ;
+bool is f£ull (void) ;
+void push(int i);
+
+int pop (void) ;
+
+ 
+
+ 
+
+///’ stack.h ‘\\
+
+ 
+
+ 
+
+t/ 4
+#include "stack.h" #include "stack.h"
+int main(void) int contents [100] ;
+{ int top = 0;
+
+make empty () ;
+
+void make_empty (void)
+
+{ …. }
+
+bool is empty (void)
+calc.c {
+
+ 
+
+ 
+
+bool is_full (void)
+
+{ … }
+
+void push(int i)
+
+}
+
+int pop (void)
+[}
+
+ 
+
+ 
+
+stack.c
+
+ular person. Team members can then work largely independently of one
+another.
+
+u Reusability. Any module that provides services 1s potentially reusable in other
+programs. Our stack module, for example, is reusable. Since it’s often hard to
+anticipate the future uses of a module, it’s a good idea to design modules for
+reusability.
+
+u Maintainability. À small bug will usually affect only a single module imple-
+mentation. making the bug easier to locate and fix. Once the bug has been
+fixed, rebuilding the program requires only a recompilation of the module
+implementation (followed by linking the entire program). On a larger scale.
+we could replace an entire module implementation, perhaps to improve per-
+formance or when transporting the program to a different platform.
+
+Although all these advantages are important, maintainability is the most criti-
+cal. Most real-world programs are in service over a period of years, during which
+bugs are discovered, enhancements are made, and modifications are made to meet
+changing requirements. Designing à program in a modular fashion makes mainte-
+nance much easier. Maintaining a program should be like maintaining a car—fixing
+à flat tire shouldn’t require overhauling the engine.
+

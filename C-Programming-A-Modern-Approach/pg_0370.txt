@@ -1,0 +1,63 @@
+Section 14.3
+
+l.
+
+e
+
+© »5.
+
+Exercises 345
+
+I wanted to compile a program that [ hadn*t finished writing, so I ‘“condi-
+tioned out” the unfinished part:
+
+Hif O
+#endif
+
+When I compiled the program, I got an error message referring to one of the
+lines between #if and #endi£. Doesn’t the preprocessor just ignore these
+lines? [p. 338]
+
+No, the lines aren’t completely ignored. Comments are processed before prepro-
+cessing directives are executed, and the source code is divided into preprocessing
+tokens. Thus, an unterminated comment between #if and #endi £ may cause an
+error message. Also, an unpaired single quote or double quote character may cause
+undefined behavior.
+
+Exercises
+
+Write parameterized macros that compute the following values.
+
+(a) The cube of x.
+(b) The remainder when n 1s divided by 4.
+(c) 1 if the produet of x and y is less than 100, À otherwise.
+
+Do your macros always work? If not, describe what arguments would make them fail.
+
+Write a macro NELEMS (a) that computes the number of elements in a one-dimensional
+array a. Hint: See the discussion of the sizeof operator in Section 5.1.
+
+Let DOUBLE be the following macro:
+#define DOUBLE(x) 2*x
+
+(a) What is the value of DOUBLE (1+2) ?
+(b) What 1s the value of 4/DOUBLE (2) ?
+(c) Fix the definition of DOUBLE.
+
+For each of the following macros, give an example that illustrates à problem with the macro
+
+and show how to fix it.
+
+(a) #define AVG(x,y) (x-y)/2
+(b) #define AREA(x,y) (x)*(y)
+
+Let TOUPPER be the following macro:
+#define TOUPPER(c) ('a'<=(c)&&(c)<='z'?(c)-'a'+'A':(c))
+
+Let s be a string and let i be an int variable. Show the output produced by each of the fol-
+lowing program fragments.
+
+(a) strocpy(s, "abcd") ;
+i = 0;
+putchar (TOUPPER(s[++i] ) ) ;
+

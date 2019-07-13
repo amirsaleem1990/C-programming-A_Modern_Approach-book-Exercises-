@@ -1,0 +1,65 @@
+568 Chapter 22
+
+ungetc
+
+isdigit function »23.5
+
+file-positioning functions » 22. 7
+
+PROGRAM
+
+fcopy.c
+
+Input/Ouitput
+
+ 
+
+Always store the return value of fgetc. getc, or getchar in an int variable,
+not à char variable. Testing à char variable against EOF may give the wrong
+result.
+
+ 
+
+There’s one other character input function, ungetc, which “pushes back”
+a character read from a stream and clears the stream’s end-of-file indicator.
+This capability can be handy if we need a “lookahead” character during input.
+For instance, to read a series of digits, stopping at the first nondigit, we could
+Write
+
+while (isdigit(ch = getc(fp))) |
+
+}
+
+ungetc (ch, £fp); /* pushes back last character read */
+
+The number of characters that can be pushed back by consecutive calls of
+ungetc—with no intervening read operations—depends on the implementation
+and the type of stream involved; only the first call is guaranteed to succeed. Calling
+à file-positioning function (Eseek, fsetpos. or rewind) causes the pushed-
+back characters Lo be lost.
+
+ungetc returns the character it was asked to push back. However, it returns
+EOF if an attempt is made to push back EOF or to push back more characters than
+the implementation allows.
+
+Copying a File
+
+The following program makes a copy of a file. The names of the original file and
+Lhe new file will be specified on the command line when the program is executed.
+For example, Lo copy the file £1 .c to f2. c. we'd use the command
+
+fcopy Él.c £2.c
+
+Écopy will issue an error message if there aren’t exactly two file names on the
+command line or if either file can‘t be opened.
+
+/* Copies a EFile */
+
+finclude <stdio.h>
+finclude <stdlib.h>
+
+int main(int argc, char *argv[])
+
+FILE *source _fp, *dest fp;
+int ch;
+

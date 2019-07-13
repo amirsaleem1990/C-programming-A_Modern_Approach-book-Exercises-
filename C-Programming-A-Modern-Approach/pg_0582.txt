@@ -1,0 +1,102 @@
+Table 22.8
+Effect of the # Flag
+
+Table 22.9
+
+Effect of Minimum Field
+Width and Precision on
+the &s Conversion
+
+Table 22.10
+Examples of the
+%g Conversion
+
+22.3  Formatted |/0 557
+
+Table 22.8 shows the effect of the # llag on the o. x, X, g. and G conversions.
+
+ 
+
+ 
+
+ 
+
+Conversion — Result of Applying — Result of Applying
+Specification = Conversion to 123 _ Conversion to 123.0
+380 …….73
+*#B0 oo.0(0)1]"73
+2.8x 0.00h
+=#8x o0o0e0x7b
+s&x e…0….0/FRr
+z#ax <……0X7B
+389 ...3
+s#8g 123.000
+*8G eoooo]223
+N <#B8G e123.000
+
+ 
+
+ 
+
+ 
+
+In previous chapters, we‘ve used the minimum field width and precision
+when displaying numbers, so there’s no point in more examples here. Instead,
+Table 22.9 shows the effect of the minimum field width and precision on the %s
+
+ 
+
+ 
+
+conversion.
+Result of Applying = Result of Applying
+Conversion Conversion to Conversion to
+Specification "bogus" "buzzword"
++6S eboqus buzzword
++-6S bogus®e buzzword
+.4S bogu buzz
+$6.4S eebogu eebuzz
++-6.4S boguee buzzee
+
+ 
+
+ 
+
+ 
+
+ 
+
+Table 22.10 illustrates how the %g conversion displays some numbers in e
+form and others in $f form. AIl numbers in the table were written using the % . 49
+conversion specification. The first two numbers have exponents of at least 4, so
+they’re displayed in $e form. The next eight numbers are displayed in $£ form.
+The last two numbers have exponents less than —4, so they’re displayed in %e
+
+ 
+
+ 
+
+ 
+
+form.
+Result of Applying % . 4g
+Number Conversion to Number
+123456. 1.235e+05
+12345.6 1.235e+04
+1234.56 1235
+123.456 123.5
+12.3456 12.35
+1.23456 1.235
+123456 0.1235
+0123456 0.01235
+.00123456 0.001235
+.000123456 0.0001235
+.0000123456 1.235e-05
+00000 123456 1.235e-06
+
+ 
+
+ 
+
+ 
+

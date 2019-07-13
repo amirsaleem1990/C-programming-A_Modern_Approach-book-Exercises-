@@ -1,0 +1,70 @@
+ 
+
+28
+
+Chapter2 C Fundamentais
+
+C allows us to insert any amount of space—blanks, tabs, and new-line characters—
+between tokens. This rule has several important consequences for program layout:
+
+CEIN
+
+u Statements can be divided over any number of lines. The following statement,
+
+for example, is so long that it would be hard to squeeze it onto a single line:
+
+printf ("Dimensional weight (pounds): %d\n",
+(volume + INCHES PER POUND - 1) / INCHES PER POUND) ;
+
+m Space between tokens makes it easier for the eye to separate them. For this
+
+reason, l usually put a space before and after each operator:
+volume = height * length * width;
+
+] also put a space after each comma. Some programmers go even further, put-
+ting spaces around parentheses and other punctuation.
+
+u /ndentation can make nesting easier to spot. For example, we should indent
+
+declarations and statements to make it clear that they’re nested inside main.
+
+w Blank lines can divide a program into logical units, making it easier for the
+
+reader to discern the program's structure. À program with no blank lines 1s as
+hard to read as a book with no chapters.
+
+The celsius.c program of Section 2.6 illustrates several of these guide-
+
+lines. Let’s take a closer look at the main function in that program:
+
+int main (void)
+
+(
+
+}
+
+float fahrenheit, celsius;
+
+printf ("Enter Fahrenheit temperature: ") ;
+scanf ("%$f", &fahrenheit) ;
+
+celsius = (fahrenheit - FREEZING PT) * SCALE FACTOR;
+printf("Celsius equivalent: %.1£\n", celsius) ;
+
+return 0;
+
+First, observe how the space around =. -, and * makes these operators stand out.
+Second, notice how the indentation of declarations and statements makes it obvi-
+ous that they all belong to main. Finally, note how blank lines divide main into
+five parts: (1) declaring the £ahrenheit and celsius variables; (2) obtaining
+the Fahrenheit temperature; (3) calculating the value of celsius; (4) printing the
+Celsius temperature; and (5) returning to the operating system.
+
+While we>re on the subject of program layout, notice how l've placed the {
+
+token underneath main () and put the matching } on a separate line, aligned with
+{. Putting } on a separate line lets us insert or delete statements at the end of the
+function; aligning it with { makes it easy to spot the end of main.
+
+ÀA final note: Although extra spaces can be added berween tokens, it's not pos-
+

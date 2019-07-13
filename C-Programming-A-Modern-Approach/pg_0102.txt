@@ -1,0 +1,60 @@
+e F3N
+
+idiom
+
+idiom
+
+compound statement
+
+5.2 The if Statement 77
+
+When an i f statement is executed, the expression in the parentheses 1s evalu-
+ated; if the value of the expression is nonzero—which C interprets as true—the
+statement after the parentheses is executed. Here’s an example:
+
+if (line num == MAX LINES)
+line num = O0;
+
+The statement line num = 0; is executed if the condition line num ==
+MAX LINES is true (has a nonzero value).
+
+ 
+
+Don’t confuse == (equality) with = (assignment). The statement
+if (i == O)
+
+tests whether i is equal to 0. However, the statement
+
+i£ (ài = O)
+
+assigns 0 to i, then tests whether the result is nonzero. In this case, the test always
+fails.
+
+Confusing == with = is perhaps the most common C programming error,
+probably because = means “is equal to” in mathematics (and in certain program-
+ming languages). Some compilers issue a warning if they notice = where == would
+normally appear.
+
+ 
+
+Ofiten the expression in an if statement will test whether a variable falls
+within a range of values. To test whether O € i < n, for example, we’d write
+
+if (O <= 1 & i < n)
+To test the opposite condition (i is outside the range), we'd write
+if (i < O || i >= n)
+
+Note the use of the | | operator instead of the && operator.
+
+Compound Statements
+In our i f statement template, notice that statement is singular, not plural:
+if ( expression ) statement
+
+What if we want an i f statement to control Avo or more statements? That’s where
+the compound statement comes in. A compound statement has the form
+
+{ statements }
+
+By putting braces around a group of statements, we can force the compiler to treal
+it as a single statement.
+

@@ -1,0 +1,82 @@
+external varnables > 70.2
+
+15.2  Header Files 355
+
+int is _ full (void) ;
+void push(int i);
+int pop (void) ;
+
+(To avoid complicating the example. is_ empty and is _ f£full will return int
+values instead of Boolean values.) We'll include stack.h in calc. c to allow
+the compiler to check any calls of stack functions that appear in the latter file.
+We'll also include stack .h in stack. c so the compiler can verify that the pro-
+totypes in stack.h match the definitions in stack.c. The following figure
+shows stack.h, stack.c, and calc.c:
+
+ 
+
+r
+
+| void make_empty (void) ;
+int is _ empty (void) ;
+
+| int is £ull (void) ;
+void push(int i);
+
+lint pop (void) ;
+
+ 
+
+ 
+
+ 
+
+stack.h
+4 A
+finclude "stack.h" | Hinclude "stack.h"
+
+int main (void) lint contents [100] ;
+{ int ton = O0;
+
+make _empty () ;
+
+void make empty(void)
+
+{ —
+
+int is empty (void)
+
+{ . )
+
+int is £ull (void)
+
+(— }
+
+void push(int 1)
+
+}
+
+int pop(void)
+
+ 
+
+ 
+
+ 
+
+ 
+
+stack.c
+
+Sharing Variable Declarations
+
+External variables can be shared among files in much the same way functions are.
+To share a function. we put its definition in one source file. then put declarations in
+other files that need to call the function. Sharing an external variable is donc in
+much the same way.
+
+Up to this point, we haven't needed to distinguish between a variable's decla-
+ration and its definition. To declare a variable i, we've written
+
+int i; /* declares i and defines it as well */
+

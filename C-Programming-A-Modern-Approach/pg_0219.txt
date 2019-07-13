@@ -1,0 +1,17 @@
+194 Chapter9 Functions
+
+int power (int x, int n)
+
+{
+
+int result = 1;
+
+while (n-- > O)
+result = result * x;
+
+return result:;
+
+}
+
+ 
+

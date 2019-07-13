@@ -1,0 +1,52 @@
+25.2  Multibyte Characters and Wide Characters 649
+
+Any string may contain multibyte characters, although the length of such a
+string (as determined by the strlen function) is the number of bytes in the string,
+not the number of characters. In particular, the format strings in calls of the
+«print£ and …scan£ functions may contain multibyte characters. As a result.
+the C99 standard defines the term multibyre string to be a synonym for string.
+
+Wide Characters
+
+The other way to encode an extended character set is to use wide characters. À
+wide character is an integer whose value represents a character. Unlike multibyte
+characters, which may vary in length. all wide characters supported by a particular
+implementation require the same number of bytes. À wide string is a string con-
+sisting of wide characters, with a null wide character at the end. (A null wide char-
+acter is a wide character whose numerical value is zero.)
+
+Wide characters have the type wchar_t (declared in <stddef .h> and cer-
+tain other headers). which must be an integer type able to represent the largest
+extended character set For any supported locale. For example, if two bytes are
+enough to represent any extendecl character set, then wchar t could be defined
+às unsigned short int.
+
+C supports both wide character constants and wide string literals. Wide char-
+acter constants resemble ordinary character constants but are prefixed by the letter
+L:
+
+L'a'
+Wide string literals are also prefixed by L:
+L » abÇ U
+
+This string represents an array containing the wide characters L'a'. L'b*. and
+L'c', followed by a null wide character.
+
+Unicode and the Universal Character Set
+
+The differences between multibyte characters and wide characters become appar-
+ent when discussing Unicode. Unicode is an enormous character set developed by
+the Unicode Consortium, an organization established by a group of computer man-
+üfacturers to create an international character set for computer use. The first 256
+characters of Unicode are identical to Latin-! (and therefore the first 128 charac-
+lers of Unicode match the ASCIT character set). However, Unicode goes far
+beyond Latin-], providing the characters needed for nearly all modern and ancient
+languages. Unicode also includes a number of specialized symbols. such as those
+used in mathematics and music. The Unicode standard was first published in 1991.
+
+Unicode is closely related to international standard ISO/IEC 10646. which
+defines a character encoding known as the Universal Character Set (UCS). UCS
+was developed by the International Organization for Standardization (1SO). start-
+ing at about the same time that Unicode was initially defined. Although UCS orig-
+inally differed from Unicode. the two character sets were later unified. ISO now
+

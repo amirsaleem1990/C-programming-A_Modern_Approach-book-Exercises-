@@ -1,0 +1,72 @@
+exp2
+expm1
+
+logb
+iIlogb
+
+log1p
+log2
+
+scalbn
+scalblin
+
+cbrt
+
+ 
+
+23.4  The <math.h> Header (C99): Mathematics 605
+
+double scalbn (double x, int n);
+
+float scalbnf (float x, int n);
+
+long double scalbnl (long double x, int n);
+double scalbln (double x, long int n);
+
+float scalbln£ (float x, long int n);
+
+long double scalblnl{(long double x, long int n);
+
+In additional to new versions of exp, frexp., 1dexp, log. log10, and modf,
+there are several entirely new functions in this category. Two of these, exp2 and
+expml, are variations on the exp function. When applied to the argument x, the
+exp2 function returns 2*. and expm1 returns e* — 1.
+
+The 1logb lf'unction returns the exponent of its argument. More precisely. the
+call 1ogb (x) returns log (Ixl), where » is the radix of floating-point arithmetic
+(defined by the macro FLT_RADIX. which typically has the value 2). The ilogb
+function returns the value of 10gb after it has been cast to int type. The 1og1p
+function returns In(! + x) when given x as its argument. The 10og2 function com-
+putes the base-2 logarithm of its argument.
+
+The scalbn function returns x x FLT RADIX", which it computes in an
+efficient way (not by explicitly raising FLT RADIX to the nth power). scalbln
+is the same as scalbn, except that its second parameter has type long int
+instead of int.
+
+Power and Absolute Value Functions
+
+double cbrt (double x) ;
+float cbrtf(float x);
+long double cbrtl (long double x);
+
+float fabs£ (float x); see fabs
+long double fabsl (long double x); see fabs
+
+double hypot (double x, double y);
+float hypotf (float x, float y);
+Jong double hypotl(long double x, long double y);
+
+float powf (float x, float y); see pow
+long double powl (long double x,
+
+long double y); see pow
+float sqrtf(float x); see sqrt
+Jong double sgrtl (long double x) ; see sqrt
+
+Several functions in this group are new versions of old ones (fabs, pow, and
+sqrt). Only the functions cbrt and hypot (and their variants) are entirely new.
+
+The cbrt function computes the cube root of its argument. The pow function
+can also be used for this purpose, but pow is unable to handle negative arguments
+

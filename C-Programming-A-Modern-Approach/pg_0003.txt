@@ -1,0 +1,37 @@
+PREFAC
+
+ 
+
+In computing, turning the obvious into the useful
+is a living definition of the word “frustration.”
+
+In the years since the first edition of C Programming: À Modern Approach was
+published, a host of new C-based languages have sprung up—Java and C# foremost
+among them—and related languages such as C++ and Perl have achieved greater
+prominence. Still, C remains as popular as ever, plugging away in the background,
+quietly powering much of the world’s software. It remains the lingua franca of the
+computer universe, as it was in 1996.
+
+But even C must change with the times. The need for a new edition of C Pro-
+gramming: À Modern Approach became apparent when the C99 standard was pub-
+lished. Moreover, the first edition. with its references to DOS and |6-bit processors,
+was becoming dated. The second edition is fully up-to-date and has been improved
+in many other ways as well.
+
+What’s New in the Second Edition
+
+Here’s a list of new features and improvements in the second edition:
+
+= Complete coverage of both the C&9 standard and the C99 standard. The big-
+gest difference between the first and second editions is coverage of the C99 stan-
+dard. My goal was to cover every significant difference between C89 and C99,
+including all the language features and library functions added in C99. Each
+C99 change is clearly marked, either with “C99” in the heading of a section or—
+in the case of shorter discussions—with a special icon in the left margin. I did
+this partly to draw attention to the changes and partly so that readers who aren’t
+interested in C99 or don*t have access to a C99 compiler will know what to skip.
+Many of the C99 additions are of interest only to a specialized audience, but
+some of the new features will be of use to nearly all C programmers.
+
+xXi
+

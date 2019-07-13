@@ -1,0 +1,24 @@
+86
+
+Chapter5  Selection Statements
+
+break statement > 6.4
+
+ 
+
+The switch Statement
+
+[n everyday programming, we'll often necd to compare an expression against a
+series of values to see which one it currently matches. We saw in Section 5.2 that a
+cascaded i £ statement can be used for this purpose. For example, the following
+cascaded i£ statement prints the English word that corresponds to a numerical
+grade:
+
+ 
+
+When this statement 1s executed, the value of the variable grade 1s tested against
+4, 3, 2, 1, and O. If it matches 4, for example, the message Excellent is printed,
+then the break statement transfers control to the statement following the
+switch. If the value of grade doesn’t match any of the choices listed, the
+default case applies, and the message I1legal grade 1s printed.
+

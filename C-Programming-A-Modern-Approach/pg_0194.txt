@@ -1,0 +1,57 @@
+82  Multidimensional Arrays 169
+
+interest.c _ /* Prints a table of compound interest */
+#include <stdio.h>
+
+#define NUM RATES ((int) (sizeof (value) / sizeof (value [0])))
+#define INITIAL BALANCE 100.00
+
+int main (void)
+int i, low rate, num years, year;
+double value [5] ;
+
+print£ ("Enter interest rate: ");
+scan£ ("=d", &low rate) ;
+
+print£f ("Enter number of years: ") ;
+scanf ("5d", &num years) ;
+
+print£ ("\nYears") ;
+for (i = 0; i < NUM RATES; i++) (
+
+print£f ("%6d%%", low rate + i);
+value[i] = INITIAL BALANCE;
+
+}
+
+print£ ("\n") ;
+
+for (year = 1; year <= num years; year++) {
+printf ("%3d , year) ;
+for (i = 0; i < NUM RATES; i++) |
+value[i] += (low rate + i) / 100.0 * value[i];
+print£ ("7.2f£", value[i]) ;
+
+}
+
+print£("\n") ;
+
+}
+
+return 0;
+
+;
+
+Note the use of NUM _RATES to control two of the for loops. If we later
+change the size of the value array, the loops will adjust automatically.
+
+8.2 Multidimensional Arrays
+
+An array may have any number of dimensions. For example, the following declara-
+tion creates a two-dimensional array (a matrix, in mathematical terminology):
+
+int m{[5] [9] ;
+
+The array m 'has 5 rows and 9 columns. Both rows and columns are indexed from O,
+as the following figure shows:
+

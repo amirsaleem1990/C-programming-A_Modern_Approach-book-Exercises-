@@ -1,0 +1,29 @@
+4.3 _ Increment and Decrement Operators 61
+
+program will still compile. Unfortunately, the latter expression is equivalent to
+i = (+), which merely copies the value of  into i.
+
+ 
+
+ 
+
+4.3 Increment and Decrement Operators
+
+Two of the most common operations on a variable are ‘“incrementing” (adding 1)
+
+and “decrementing” (subtracting 1). We can, of course, accomplish these tasks by
+writing
+
+ 
+
+e 14
+
+At first glance, the increment and decrement operators are simplicity itself: ++
+adds | to its operand, whereas - - subtracts |. Unfortunately, this simplicity 1S mis-
+leading—the increment and decrement operators can be tricky to use. One compli-
+cation is that ++ and -- can be used as prefix operators (++i and --i, for
+example) or postfix operators (i++ and i--). The correctness of a program may
+hinge on picking the proper version.
+
+ 
+

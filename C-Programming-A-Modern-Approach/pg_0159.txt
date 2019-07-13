@@ -1,0 +1,68 @@
+134 Chapter 7  Basic Types
+
+8
+
+QaÂ
+
+QaÂ
+
+@
+
+7.3
+
+QaÂ
+
+ASCII character set » Appendix E
+
+On occasion. it may be necessary to force the compiler to store a floating con-
+stant in £loat or long double format. To indicate that only single precision is
+desired, put the letter F (or £) at the end of the constant (for example, 57 . OF). To
+indicate that a constant should be stored in long double format, put the letter L
+(or 1) at the end (57 . OL).
+
+C99 has a provision for writing floating constants in hexadecimal. Such a con-
+stant begins with Ox or OX (like a hexadecimal integer constant). This feature is
+rarely used.
+
+Reading and Writing Floating-Point Numbers
+
+Âs we’ve discussed, the conversion specifications %e, f, and %g are used for
+reading and writing single-precision floating-point numbers. Values of types dou -
+ble and long double require slightly different conversions:
+
+m When reading a value of type double, put the letter 1 in front of e, f, or g:
+
+double d;
+
+scanf ("31f", &d);
+
+Note: Use 1 only in a scan£ format string, not a printf string. In a
+print£ format string, the e, f, and g conversions can be used to write either
+float or double values. (C99 legalizes the use of %le, %1F, and %1g in
+calls of print£, although the 1 has no effect.)
+
+= When reading or writing a value of type long double, put the letter L in
+front of e, £, or g:
+
+long double 1d;
+
+scanf£ ("%$Lf", &ld);
+print£ ("%Lf", 1d);
+
+Character Types
+
+The only remaining basic type is char, the character type. The values of type
+char can vary from one computer to another, because different machines may
+have different underlying character sets.
+
+ 
+
+ 
+
+Character Sets
+
+Today's most popular character set is ASCII (American Standard Code for Informa-
+tion Interchange), a 7-bit code capable of representing 128 characters. In ASCII,
+the digits O to 9 are represented by the codes 0110000-0111001, and the upper-
+case letters À to Z are represented by 1000001—1011010. ASCII is often extended
+

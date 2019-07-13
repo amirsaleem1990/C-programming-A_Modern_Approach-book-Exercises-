@@ -1,0 +1,56 @@
+FILE type > 22.17
+
+16.2  Structure Types 385
+
+print£("Part name: %s\n", p.name) ;
+print£ ("Quantity on hand: %d\n", p.on hand}) ;
+
+Here's how print _part might be called:
+print part (part1l) ;
+Our second function returns a part structure that it constructs from its arguments:
+
+struct part build part (int number, const char *name,
+int on hand)
+
+struct part p;
+
+p.number = number;
+strcopy(p.name, name) ;
+p.on hand = on hand;
+return p;
+
+!
+
+Notice that it’s legal for build _part's parameters to have names that match the
+members of the part structure, since the structure has its own name space. Here's
+how build_part might be called:
+
+parti = build part (528, "Disk drive", 10);
+
+Passing a structure to à function and returning à structure from a Function both
+require making a copy of all members in the structure. Às à result. these operations
+impose à fair amount of overhead on a program, especially 1f the structure 1s large.
+To avoid this overhead. it’s sometimes advisable to pass à pointer to à structure
+instead of passing the structure itself. Similarly, we might have a function return a
+pointer to a structure instead of returning an actual structure. Section 17.5 gives
+examples of functions that have a pointer to a structure as an areument and/or
+leturn à pointer to à structure.
+
+There are other reasons to avoid copying structures besides efficiency. For
+example, the <stdio .h> header defines à type named FILE. which 1s typically a
+structure. Each FILE structure stores information about the state of an open file
+and therefore must be unique in a program. Every function in <stdio.h> that
+opens a file returns a pointer to a FILE structure, and every function that performs
+an opcration on an open file requires a FILE pointer as an argument.
+
+On occasion, we may want to initialize a structure variable inside à function to
+match another structure, possibly supplied as a parameter to the function. In the
+following example, the initializer for part2 is the parameter passed to the £ func-
+tion:
+
+void f(struct part partl)
+
+(
+
+struct part part2 = partl;
+

@@ -1,0 +1,61 @@
+576
+
+Chapter 22
+
+sprintf
+
+snprintf
+
+Input/Ouitput
+
+Output Functions
+
+int sprintf (char * restrict s,
+
+const char * restrict format, ...);
+int snprintf(char * restrict s, size t n,
+const char * restrict format, ...) ;
+
+Note: In this and subsequent chapters, the prototype for a function that 1s new In
+C99 will be in italics, Also, the name of the function will be italicized when it
+appears in the left margin.
+
+The sprint£ function 1s similar to print£ and fprintE£. except that it writes
+output into a character array (pointed to by its first argument) instead of à stream.
+sprint£'s second argument is a format string identical to that used by printf
+and fprint£. For example. the call
+
+sprintf (datec, "%d/%d/$d", 9, 20, 2010);
+
+will write "9/20/2010" into date. When it’s finished writing into a string,
+sprint£ adds a null character and returns the number of characters stored (not
+counting the null character). If an encoding error occurs (a wide character could
+not be translated into a valid multibyte character), sprint£ returns a negative
+value.
+
+sprintf has à variety of uses. For example. we might occasionally want to
+format data for output without actually writing 1t. We can use sprintf to do the
+formatting, then save the result in à string until il’'s time to produce output.
+sprintf 1s also convenient for converting numbers to character form.
+
+The snprintf function 1s the same as sprintf, except for the additional
+parameter n. No more than n — | characters will be written to the string. not count-
+ing the terminating null character. which 1s always written unless n is zero. (Equiv-
+alently, we could say that snprint£ writes at most n characters to the string, the
+last of which 1s a null character.) For example, the call
+
+snprint£ (name, 13, "%s, %s", "Einstein", "Albert") ;
+
+will write "Einstein, Al" intoname.
+
+snprint£ returns the number of characters that would have been written
+(not including the null character) had there been no length restriction. If an encod-
+Ing error occurs. snprinté returns a negative number. To see if snprintE£ had
+room to write all the requested characters, we can test whether its return value was
+nonnegative anc less than n.
+
+Input Functions
+
+int sscanf (const char * restrict s,
+const char * restrict format, ...) ;
+

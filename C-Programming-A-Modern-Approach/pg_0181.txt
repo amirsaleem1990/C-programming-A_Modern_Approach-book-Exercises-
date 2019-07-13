@@ -1,0 +1,78 @@
+156 Chapter 7  Basic Types
+
+® 3.
+
+Section 7.3 © 4
+
+Qn
+
+Section 7.4 0.
+
+@ 10.
+
+[l.
+
+Which of the following are not legal types in C?
+
+(a) short unsigned int
+(b) short float
+
+(c) long double
+(d) unsigned long
+
+I c is a variable of type char, which one of the following statements is illegal?
+(a) i += c; /* i has type int */
+
+(b) ce = 2 * c - 1;
+
+(c) putchar (c) ;
+
+(d) print£ (c) ;
+
+Which one of the following is not a legal way to write the number 65? (Assume that the
+character set 1s ASCII.)
+
+(Zl) À!
+
+(b) 0b1000001
+
+(c) 0101
+
+(d) Ox41
+
+For each of the following 1tems of data, specify which one of the types char, short, int.
+or long is the smallest one guarantced to be large enough to store the item.
+
+(a) Days in a month
+
+(b) Days in a year
+
+(c) Minutes in a day
+
+(d) Seconds in a day
+
+For each of the following character escapes, give the equivalent octal escape. (Assume that
+the character set is ASCII.) You may wish to consult Appendix E, which lists the numerical
+codes for ASCIT characters.
+
+(a) \b
+(b) \n
+(c) \r
+(d) \t
+
+Repeat Exercise 7, but give the equivalent hexadecimal escape.
+Suppose that i and j arc variables of type int. What is the type of thc expression i / j +
+'a'?
+
+Suppose that i is a variable of type int, j is à variable of type 1ong, and k is a variable of
+type unsigned int. What is the type of the expression i + (int) j * kK?
+
+Suppose that i is a variable of type int,. £ is a variable of type float. and d is a variable
+of type double. What is the type of the expression i * £ / d?
+
+Suppose that i is à variable of type int, £ is a variable of type Float, and d is a variable
+of type double. Explain what conversions take place during the execution of the following
+statement:
+
+d = à + f;
+

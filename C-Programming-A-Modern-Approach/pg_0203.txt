@@ -1,0 +1,64 @@
+178
+
+Chapter8  Arrays
+
+@ 7.
+
+10.
+
+[l.
+
+ue
+
+Using the shorteuts described in Section 8.2, shrink the initializer for the segments array
+(Exercise 6) as much as you can.
+
+Write a declaration for a two-dimensional array named temperature readings that
+stores one month of hourly temperature readings. (For simplicity. assume that a month has
+30 days.) The rows of the array should represent days of the month; the columns should rep-
+resent hours of the day.
+
+Using the array of Exercise 8. write a program fragment that computes the average tempera-
+ture for a month (averaged over all days of the month and all hours of the day).
+
+Write à declaration for an 8 x 8 char array named chess _board. Include an initializer
+that puts the following data into the array (one character per array clement):
+
+r nbgqkbnr
+PPPPPPPP
+
+PPPPPPPP
+RNBOQOKBNR
+Write à program fragment that declares an 8 x 8 char array named checker board and
+then uses a loop to store the l'ollowing data into the array (one character per array element):
+
+BRBRBRBR
+RBRBRBRB
+BRBRBRBR
+RBRBRBRB
+BRBRBRBR
+RBRBRBRRB
+BRBRBRBR
+RBRBRERB
+
+Hint: The element in row /, column j, should be the letter B if / + / is an even number.
+
+Programming Projects
+
+Modify the repdigit .c program of Section 8.1 so that it shows which digits (if any)
+were repeated:
+
+Enter a number: 939577
+Repeated digit (s): 7 9
+
+Modify the repdigit .c program of Section 8.1 so that it prints à table showing how
+many times each digit appears in the number:
+
+Enter a number: 41271092
+Digit : 0 12 3 4 5 6 7 8 89
+Occurrences : 1. 2 2 01000101
+
+Modify the repdigit .c program of Section 8.1 so that the user can enter more than one
+number to be tested l'or repeated digits. The program should terminate when the user enters
+a number thats less than or equal to 0.
+

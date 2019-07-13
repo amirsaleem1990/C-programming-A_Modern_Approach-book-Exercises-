@@ -1,0 +1,102 @@
+592
+
+Table 23.6
+Character Macros
+in <limits.hs>
+
+æ
+
+Table 23.7
+Integer Macros in
+<limits.h»>
+
+#error directive > 14.5
+
+Chapter 23  Library Support for Numbers and Character Data
+
+ 
+
+ 
+
+ 
+
+ 
+
+Name Value Description
+CHAR BIT 28 _ Number of bits per byte
+SCHAR MIN <—|27  Minimum signed char value
+SCHAR MAX >+127 _ Maximum signed char value
+UCHAR MAX 2255  Maximum unsigned char value
+CHAR MIN { - Minimum char value
+CHAR MAX T — Maximum char value
+MB_LEN MAX 21 - Maximum number of bytes per multibyte character
+in any supported locale (see Section 25.2)
+
+ 
+
+1ECHAR_MIN is equal to SCHAR MIN if char is treated as à signed type: otherwise.
+CHAR MIN is 0.
+
+HCHZÀ.R_I‘/IAX has the same valuc as either SCHAR MAX or UCHAR MAX, depending on
+whether char is treated as a signed type or an unsigned type.
+
+unsigned long int. Table 23.7 lists these macros and shows the maximum or
+minimum value of each; the formula used to compute each value is also given.
+Note that C99 provides three macros that describe the characteristics of the 1l ong
+long int types.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Name Value Formula Description
+SHRT_MIN <-32767  —(2'*°-1) Minimum short int value
+SHRT MAX 2+32767 2°_1 Maximum short int value
+USHRT MAX 265535 2'6_] Maximum unsigned
+short int value
+
+INT MIN <—32767  —2'>—1) Minimum int value
+
+INT _ MAX 2+32767 2151 Maximum int value
+
+UINT_MAX 265535 2'°_1  Maximum unsigned int
+value
+
+LONG MIN <—2147483647  —(2°!-1) Minimum long int value
+
+LONG_MAX >+2147483647 23!-1  Maximum long int value
+
+ULONG MAX 24294967295 2°_1 Maximumunsigned long
+int value
+
+LLONG_MINT <—9223372036854775807  —(2%-1) Minimum long long int
+value
+
+LLONG MAX'" — >+9223372036854775807 23_1  Maximum long long int
+value
+
+ULLONG MAX' >18446744073709551615 2_|  Maximum unsigned long
+
+long int value
+
+ 
+
+*C99 only
+
+The macros in <limits .h> are handy for checking whether a compiler sup-
+ports integers of a particular size. For example, to determine whether the int type
+can store numbers as large as 100,000, we might use the following preprocessing
+directives:
+
+#i£f INT MAX < 100000
+
+#error int type is too small
+#endif
+
+If the int type isn’t adequate, the #error directive will cause the preprocessor
+to display an error message.
+

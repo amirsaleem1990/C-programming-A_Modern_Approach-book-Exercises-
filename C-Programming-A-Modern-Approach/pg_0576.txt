@@ -1,0 +1,58 @@
+remove
+
+rename
+
+22.3
+
+22.3  Formatted I/O 551
+
+ 
+
+When using setvbuË or setbuË, be sure to close the stream before its buffer 1s
+deallocated. In particular, if the buffer 1s local to a function and has automatic stor-
+age duration, be sure to close the stream before the l'unction returns.
+
+ 
+
+Miscellancous File Operations
+
+int remove (const char *filename) ;
+int rename (const char *old, const char *nevw) ;
+
+The functions remove and rename allow a program to perform basic file man-
+agement operations. Unlike most other functions in this section, remove and
+rename work with file names instead of file pointers. Both functions return zero
+if they succeed and a nonzero value 1f they fail.
+
+remove deletes a file:
+
+remove (" foo") ; /* deletes the file named "foo" */
+
+lf a program uses fopen (instead of tmp£file) to create à temporary file, it can
+use remove to delete the file before the program terminates. Be sure that the file
+to be removed has been closed; the effect of removing a file that’s currently open 1s
+implementation-defined.
+
+rename changes the name of a file:
+
+rename ("foo", "bar") ; /* renames "foo" to "bar" */
+
+rename is handy for renaming à temporary file created using £open if a program
+should decide to make it permanent. If à file with the new name already exists, the
+effect is implementation-defined.
+
+ 
+
+If the file to be renamed is open, be sure to close it before calling rename: the
+function may fail if asked to rename an open file.
+
+ 
+
+Formatted I/O
+
+In this section, we*1l examine library functions that use format strings to control
+reading and writing. These functions, which include our old friends print£ and
+scanf, have the ability to convert data from character form to numeric form dur-
+ing input and from numeric form to character form during output. None of the
+other O functions can do such conversions.
+

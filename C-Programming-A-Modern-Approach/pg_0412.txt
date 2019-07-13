@@ -1,0 +1,55 @@
+16.3  Nested Arrays and Structures 387
+
+name member of the part structure). Let's explore the other possibilities: struc-
+tures whose members are structures and arrays whose elements are structures.
+
+Nested Structures
+
+Nesting one kind of structure inside another is often useful. For example, suppose
+that we’ve declared the following structure, which can store a person's first name,
+middle initial, and last name:
+
+struct person_name {
+char first [FIRST NAME _LEN+1] ;
+char middle initaial;
+char last [LAST NAME LEN+1] ;
+
+} ;
+We can use the person _name structure as part of a larger structure:
+
+struct student {
+struct person _name name ;
+int id, age;
+char sex;
+
+} student1l, student2;
+
+Accessing student1's first name, middle initial, or last name requires two appli-
+cations of the . operator:
+
+stropy (studentl.name.first, "Fred") ;
+
+One advantage of making name a structure (instead of having first.
+middle initial, and last be members of the student structure) is that
+we can more casily treat names as units of data. For example, if we were lo
+write a function that displays a name. we could pass it just one argument—a
+person _name structure—instead of three arguments:
+
+display _ name (studentl.name) ;
+
+Likewise, copying the information from a person_name structure to the name
+member of a student structure would take one assignment instead of three:
+
+Struct person_name new_name ;
+
+studentl.name = new name;
+
+Arrays of Structures
+
+Onc of the most common combinations of arrays and structures is an array whose
+elements are structures. An array of this kind can serve as a simple database. For
+example, the following array of part structures 1s capable of storing information
+about 100 parts:
+
+struct part inventory [100] ;
+

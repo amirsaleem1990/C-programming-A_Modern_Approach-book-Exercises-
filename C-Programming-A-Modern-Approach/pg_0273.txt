@@ -1,0 +1,55 @@
+ 
+
+248 Chapter 11  Pointers
+
+ 
+
+x | 3.14159 l
+int _ part ——I—— ? l i
+frac part *—l——* ? ld
+
+The first assignment in the body of decompose converts the value of x to type
+long and stores it in the object pointed to by int _part. Since int part
+points to i, the assignment puts the value 3 in i:
+
+x | 3.14159 I
+int_part °—l—' 3 I i
+frac _part j—> ? |d
+
+The second assignment fetches the value that int part points to (the value of
+i), which 1s 3. This value is converted to type double and subtracted from x, giv-
+ing .14159, which 1s then stored in the object that frac_part points to:
+
+x | 3.14159 l
+int part 3—* 3 Ii
+frac_part 3—* ,.14159 ld
+
+When decompose returns. i and d will have the values 3 and .14159, just as we
+originally wanted.
+
+Using pointers as arguments to functions 1s actually nothine new; we’ve been
+doing it in calls of scan£ since Chapter 2. Consider the following example:
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+int i;
+scanf ("$d", &i) ;
+
+We must put the & operator in front of à so that scantf 1s given a pointer to i; that
+pointer tells scan£ where to put the value that it reads. Without the & scanf
+would be supplied with the value of i.
+
+Although scan£'s arguments must be pointers, il’s not always true that every
+aregument needs the & operator. In the following example, scanf is passed a
+pointer variable:
+

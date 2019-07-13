@@ -1,0 +1,145 @@
+ 
+
+X Contents
+
+7.4
+
+7.5
+
+7.6
+
+Arithmetic Types
+
+Escape Sequences
+
+Character-Handling Functions
+
+Reading and Writing Characters using scan£ and printf
+Reading and Writing Characters using getchar and
+putchar
+
+Program: Determining the Length of a Message
+Type Conversion
+
+The Usual Arithmetic Conversions
+
+Conversion During Assignment
+
+Implicit Conversions in C99
+
+Casting
+
+Type Definitions
+
+Advantages of Type Definitions
+
+Type Definitions and Portability
+
+The sizeo£f Operator
+
+8 _ ARRAYS
+
+8.1
+
+8.2
+
+8.3
+
+One-Dimensional Arrays
+
+Array Subscripting
+
+Program: Reversing a Series of Numbers
+Array Initialization
+
+Designated Initializers
+
+Program: Checking a Number for Repeated Digits
+Using the sizeo£ Operator with Arrays
+Program: Computing Interest
+Multidimensional Arrays
+
+Initializing a Multidimensional Array
+Constant Arrays
+
+Program: Dealing a Hand of Cards
+
+Variable-Lenagth Arrays (C99)
+
+9 - FUNCTIONS
+
+9.1
+
+9.2
+9.3
+
+Defining and Calling Functions
+
+Program: Computing Averages
+
+Program: Printing a Countdown
+
+Program: Printing a Pun (Revisited)
+
+Function Definitions
+
+Function Calls
+
+Program: Testing Whether a Number Is Prime
+Function Declarations
+
+Arguments
+
+Argument Conversions
+Array Arguments
+Variable-Length Array Parameters
+
+136
+137
+138
+139
+
+140
+141
+142
+143
+145
+146
+147
+149
+149
+150
+151
+
+161
+
+161
+162
+164
+164
+165
+166
+167
+168
+169
+171
+172
+172
+
+174
+
+183
+
+183
+184
+185
+186
+187
+189
+190
+191
+193
+194
+195
+198
+

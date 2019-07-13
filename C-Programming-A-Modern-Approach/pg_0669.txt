@@ -1,0 +1,68 @@
+644
+
+Chapter 25
+
+UTF-8 >25.2
+
+QaÂ
+
+localeconv
+
+International Features
+
+"en IE.iso885915@euro" (usingthe |ISO/EC 8859-15 character set andthe euro
+currency), and "en IE.utf8" (using the UTF-8 encoding of the Unicode character
+set).
+
+Linux and other versions of UNIX support the 1ocale command, which can be
+used to get locale information. One use of the 1ocale command is to get a list of
+all available locales, which can be done by entering
+
+locale -a
+
+at the command line.
+
+Because locale information is becoming increasingly important, the Unicode
+Consortium created the Common Locale Data Repository (CLDR) project to estab-
+lish a standard set of locales. More information about the CLDR project can be
+found at www.unicode.org/cldr/.
+
+ 
+
+ 
+
+When a call of setlocale succeeds, 11 returns a pointer to a string associ-
+ated with the category in the new locale. (The string might be the locale name
+itself, for example.) On failure, setlocale returns a null pointer.
+
+setlocale can also be used as a query function. If its second argument is a
+null] pointer, setlocale returns à pointer to à string associated with the category
+in the cuwrrent locale. This feature is especially useful 1f the first argument 1s
+LC ALL, since it allows us to fetch the current settings for all categories. À string
+returned by setlocale can be saved (by copying it into a variable) and then
+used in à later call of setlocale.
+
+The 1ocaleconv Function
+
+struct lconv *localeconv (void) ;
+
+Although we can ask setlocale about the current locale, the information that it
+returns isn’t necessarily in the most useful form. To find out highly specific infor-
+mation about the current locale (What’s the decimal-point character? What’s the
+currency symbol?), we need localeconv, the only other function declared in
+<locale.h»>.
+
+localeconv returns à pointer to a structure of type struct Iconv. The
+members of this structure contain detailed information about the current locale.
+The structure has static storage duration and may be modified by a later call of
+localeconv or setlocale. Be sure to extract the desired information from
+the 1conv structure before it’s wiped out by one of these functions.
+
+Some members of the 1conv structure have char * type: other members
+have char type. Table 25.1 lists the char * members. The first three members
+describe the formatting of nonmonetary quantities, while the others deal with mon-
+etary quantities. The table also shows the value of each member in the "C" locale
+(the default); a value of "" means “not available.”
+
+The grouping and mon_grouping members deserve special mention.
+

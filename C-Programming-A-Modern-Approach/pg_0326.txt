@@ -1,0 +1,186 @@
+13.7  Arrays of Strings 301
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+_i 1 2 ; 5 6 7
+Oj M | e |r u |r | y |\o l
+11V|e |n s |\0 |\0 | \0 l
+21E / a r h |\0 | \6 | \0
+3/ #% |a |r \0 | \0 | \0 | \O
+4| J u |Pp t 2 r |\o
+5| S |a |ct r |n |\0 | \0
+6] U | r | a u | 8 |\0 | \0O
+7|N|# |Pp u |n |e \0
+81 P |1 | u o |\0j\0 |\0
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+The inefficiency that’s apparent in these examples is common when working
+with strines, since most collections of strings will have à mixture of long strings
+and short strines. What we need is a ragged array: à two-dimensional array whose
+rows can have different lengths. C doesn’t provide a ‘’ragged array type,” but it
+does give us the tools to simulate one. The secret is to create an array whose ele-
+
+ments are pointers t Strings.
+
+Here’s the planets array again. this time as an array of pointers to strings:
+
+char *planets{] = {"Mercury",
+l|Mars l ‘
+
+"Uranus",
+
+"Venus",
+"Jupiter",
+"Neptune”",
+
+"Earth",
+
+"Saturn",
+
+"pluto"};
+
+Not much of a change, eh? We simply removed one pair of brackets and put an aster-
+isk in front of planet s. The effect on how planets is stored is dramatic, though:
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+nplanets
+
+0 -—'——*{M e|r|ec Ul rl Yl\0
+— .
+
+1| » ——w{V e|n|u|s l\0l
+
+2| >—t-—- E l|alrl|e|h [\0]
+
+3 -———*{M a|r s]\E]
+
+3| <-#- " J_ u|p|i|tjejr \0l
+
+5 _Î:.-—+ S|a|t|u|r|n \0]
+
+61 —l—U|r aﬂÎn u |s \ol
+
+71 ——N ]|e|p|t|u|n e-Î;5]
+
+8 -;:]__… P|1|u|t|o|\o
+
+Each element of planets is a pointer to a null-terminated string. There are no
+longer any wasted characters in the strings, although we’ve had to allocate space
+for the pointers in the planets array.
+
+To access one of the planet names, all we need do 1s subscript the planets
+array. Because of the relationship between pointers and arrays, accessing a charac-
+ter in a planet name is done in the same way as accessing an element of a two-
+

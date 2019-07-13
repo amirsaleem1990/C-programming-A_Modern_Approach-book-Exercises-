@@ -1,0 +1,69 @@
+IEEE floating-point standard > 7.2
+
+wchar_t type »25.2
+ISO/IEC 10646 standard »25.2
+
+æ
+
+14.3  Macro Definitions 331
+
+integer constant 199409L (representing the year and month of the amendment). If
+a compiler conforms to the C99 standard, the value is 199901L. For each subse-
+quent version of the standard (and each amendment to the standard), this macro
+will have a different value.
+
+A C99 compiler may (or may not) define three additional macros. Each macro
+is defined only 1f the compiler meets à certain requirement:
+
+u — STDC IEC 559 __ is defined (and has the value !) if the compiler per-
+forms floating-point arithmetic according to the IEC 60559 standard (another
+name for the IEEE 754 standard).
+
+=s — STDC IEC 559 COMPLEX __ is defined (and has the value 1) if the
+
+compiler performs complex arithmetic according to the IEC 60559 standard.
+n STDC _ ISO 10646 __ is defined as an integer constant of the form
+
+y_ÎyymmL (for example, 199712L) 1f values of type wchar _ t are repre-
+sented by the codes in the ISO/IEC 10646 standard (with revisions as of the
+
+specified year and month).
+
+ 
+
+ 
+
+Empty Macro Arguments
+
+C99 allows any or all of the arguments in a macro call to be empty. Such a call will
+contain the same number of commas as a normal call, however. (That way, 1t's easy
+to sce which arguments have been omitted.)
+
+In most cases, the effect of an empty argument is clear. Wherever the corre-
+sponding parameter name appears in the replacement list. il’s replaced by noth-
+ing—it simply disappears from the replacement list. Herc’s an example:
+
+#define ADD(x,y) (x+y)
+After preprocessing, the statement
+i = ADD(j,k);
+
+becomes
+
+i = (j+k);
+
+whereas the statement
+
+i = ADD(,k);
+
+becomes
+
+i = (+k);
+
+When an empty argument is an operand of the # or ## operators, special rules
+apply. If an empty argument is “stringized” by the # operator. the result 1s "" (the
+empty string):
+
+#define MK STR(x) #x
+
+char empty _string[] = MK _STR() ;
+

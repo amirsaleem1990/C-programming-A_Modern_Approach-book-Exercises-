@@ -1,0 +1,81 @@
+70 Chapter 4  Expressions
+
+Section 4.3
+
+Section 4.4
+
+10.
+
+“11.
+
+12,
+
+@ 13.
+
+14.
+
+Show the output produced by each of the following program fragments. Assume that i and
+j are int variables.
+
+(a) i = 6;
+Jj = i + ji;
+printf("%d $d", i, 3);
+(b) i = 5;
+j=(i—-=2)+l;
+print£("%d %*d", i, j);
+(c) 1 = 7;
+
+j = 6 + (i = 2.5);
+
+print£f("%d %d", i, j);
+(d) i = 2; j = 8;
+
+j = (i = 6) + (3 = 3);
+
+printf("%d %d", i, j);
+
+Show the output produced by each of the following program fragments. Assume that i, j,
+and k are int variables.
+
+(a) i = 1;
+print£("%d ", i++ - 1);
+print£("%d", i);
+
+(b) i = 10; j = 5;
+print£("%d ", i++ - ++]);
+print£("%d %d", i, j);
+
+(c) i = 7; j = 8B8;
+print£("%d ", i++ - --]) ;
+printf£f ("%d %“d", i, j);
+
+(d) i = 3; j = 4; k = 5;
+print£("%d ", i++ - j++ + --K);
+printf ("%d %d %d", i, j, kK);
+
+Show the output produced by each of the following program fragments. Assume that i and
+jare int variables.
+
+(a) i = 5;
+j = ++i * 3 - 2;
+printf("%d *d", i, j);
+(b) i = 5;
+Jj = 3 - 2 * i++;
+printf("%d %d", i, j);
+(c) i = 7;
+
+j = 3 * i-- + 2;
+
+printf£("%d %d", i, j);
+(d) i = 7;
+
+j = 3 + --i * 2;
+
+printf ("%d sd", i, ]j);
+
+Only one of the expressions ++i and i++ 1s exactly the same as (i += 1): which 1s it?
+Justify your answer.
+
+Supply parentheses to show how a C compiler would interpret each of the following expres-
+sions.
+

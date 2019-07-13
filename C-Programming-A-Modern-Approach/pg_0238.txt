@@ -1,0 +1,63 @@
+Q
+
+>
+
+ 
+
+Q & À 213
+
+contribute nothing to readability. (Kernighan and Ritchie apparently agree: the
+return statements in the second edition of The C Programmine Language lack
+parentheses.)
+
+What happens if a non-void function attempts to execute a return state-
+ment that has no expression? [p. 202]
+
+That depends on the version of C. In C89, executing a return statement without
+an expression in a non-void function causes undefined behavior (but only 1f the
+program attempts to use the value returned by the l'unction). In C99. such a state-
+ment 1s illegal and should be detected as an error by the compiler.
+
+How can I test main°s return value to see if a program has terminated nor-
+mally? |p. 203]
+
+That depends on your operating system. Many operating systems allow this value
+to be tested within a “batch file” or “shell script” that contains commands to run
+several programs. For example, the line
+
+if errorlevel 1 command
+
+in a Windows batch file will execute command 1f the last program terminated with
+a status code greater than or equal to |.
+
+In UNIX, each shell has its own method for testing the status code. In the
+Bourne shell, the variable $? contains the status of the last program run. The C
+shell has a similar variable, but its name 1s Sstatus.
+
+Why does my compiler produce a “control reaches end of non-void function”
+warning when it compiles main?
+
+The compiler has noticed that ma in, despite having int as its return type, doesn't
+have a return statement. Putting the statement
+
+return 0;
+
+at the end of main will keep the compiler happy. Incidentally, this iS good practice
+even if your compiler doesn'1 object to the lack of à return statement.
+
+When a program is compiled using a C99 compiler, this warnine shouldn’t
+occur. In C99, it’s OK to “‘fall off” the end of main without returning a value; the
+standard states that main automatically returns O in this situation.
+
+With regard to the previous question: Why not just define main°s return type
+to be void?
+
+Although this practice is fairly common, it’s illegal according to the C89 standard.
+Even Iif it weren’tillegal, it wouldn’t be à good 1idea, since 1l presumes that no one
+will ever test the program’s status upon termination.
+
+C99 opens the door to legalizing this practice, by allowing main to be
+declared ‘“in some other implementation-defined manner” (with a return type other
+than int or parameters other than those specified by the standard). HMowever. any
+such usage isn’t portable, so it’s best to declare main's return type to be int.
+

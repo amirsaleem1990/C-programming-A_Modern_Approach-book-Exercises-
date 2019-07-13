@@ -1,0 +1,59 @@
+668
+
+Chapter 25
+
+btowc
+
+wctob
+
+mbsinit
+
+International Features
+
+Passing &state to one of the restartable functions causes the conversion to begin
+in the initial conversion state. Once an mbstate t variable has been altered by
+one of these functions, it should not be used to convert a different multibyte char-
+acter sequence, nor should 1t be used to perform a conversion in the opposite direc-
+tion. Attempting to perform either action causes undefined behavior. Using the
+variable after a change in the LC _ CTYPE category of a locale also causes unde-
+fined behavior.
+
+Single-Byte/Wide-Character Conversion Functions
+
+wint t btowc(int c);
+int wctob(wint t c);
+
+The functions in this group convert single-byte characters to wide characters and
+vice versa.
+
+The btowc function returns WEOF 1f c is equal to EOF or if c (when cast to
+unsigned char) isn’t a valid single-byte character in the initial shift state. Oth-
+erwise, btowc returns the wide-character representation of c.
+
+The wctob function is the opposite of btowc. Ît returns EOF if c doesn’t
+correspond to one multibyte character in the initial shift state. Otherwise, it returns
+the single-byte representation of c.
+
+Conversion-State Functions
+
+int mbsinit (const mbstate t *ps);
+
+This group consists of a single function, mbsinit, which returns a nonzero value
+If ps 1s a null pointer or it points to an mbstate_ t variable that describes an ini-
+tial conversion state.
+
+Restartable Multibyte/Wide-Character Conversion Functions
+
+size t mbrlen(const char * restrict s, size t n,
+mbstate t * restrict ps);
+size t mbrtowc(wchar t * restrict pwc,
+const char * restrict s, size t n,
+mbstate t * restrict ps);
+size t wcertomb(char * restrict s, wchar t wc,
+mbstate t * restrict ps);
+
+The functions in this group are restartable versions of the mblen. mbtowc, and
+wctomb functions, which belong to <stdlib.h> and are discussed in Section
+25.2. The newer mbrlen, mbrtowc, and wertomb functions differ from their
+<stdlib.h> counterparts in several ways:
+

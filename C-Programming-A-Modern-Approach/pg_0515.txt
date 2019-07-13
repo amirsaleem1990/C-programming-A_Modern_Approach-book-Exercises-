@@ -1,0 +1,78 @@
+490
+
+Chapter 19
+
+Program Design
+
+static void terminate (const char *message)
+
+{
+
+printf("%s\n"', message) ;
+exit (EXIT FAILURE) ;
+
+}
+
+void make_empty (void)
+
+{
+
+while (!is empty())
+, pop () ;
+
+bool is empty (void)
+
+{
+
+return top == NULL;
+
+}
+
+bool is full (void)
+
+{
+
+return f£alse;
+
+}
+
+void push(int i)
+
+{
+
+struct node *new_node = malloc (sizeof (struct node) ) ;
+if (new node == NULL)
+terminate ("Error in push: stack is full.") ;
+
+new _node->data = i;
+new _node->next = top;
+top = new _ node;
+
+}
+
+int pop(void)
+
+{
+
+struct node *old top;
+int i;
+
+i£ (is empty())
+terminate ("Error in pop: stack is empty. ") ;
+
+old top = top;
+
+i = Eop->data;
+top = top->next;
+free (old_top) ;
+return i;
+
+}
+
+Note that the is £ull function retums false every time it’s called. À linked
+list has no limit on its size, so the stack will never be full. Is possible (but not
+likely) that the program might run out of memory, which will cause the push
+function to fail, but there’s no easy way to test for that condition in advance.
+
+Our stack example shows clearly the advantage of information hiding: it
+

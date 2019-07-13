@@ -1,0 +1,55 @@
+cast expression
+
+7.4  Type Conversion 147
+
+operand whose type has lesser integer conversion rank to the type of the
+operand with greater rank.
+
+e If the unsigned operand has rank greater or equal to the rank of the type of
+the signed operand, convert the signed operand to the type of the unsigned
+operand.
+
+e If the type of the signed operand can represent all of the values of the type
+of the unsigned operand, convert the unsigned operand to the type of the
+signed operand.
+
+e Otherwise, convert both operands to the unsigned type corresponding to the
+type of the signed operand.
+
+Incidentally, all arithmetic types can be converted to _Bool type. The result
+of the conversion is O if the original value is 0; otherwise, the result is I.
+
+Casting
+
+Although C’s implicit conversions are convenient, we sometimes need a greater
+degree of control over type conversion. For this reason, C provides casfs. À cast
+expression has the form
+
+( tvpe-name ) expression
+
+type-name specifies the type to which the expression should be converted.
+The following example shows how to use a cast expression to compute the
+fractional part of a float value:
+
+float f, frac part;
+frac _ part = £ - (int) £;
+
+The cast expression (int) £ represents the result of converting the value of £ to
+type int. C*s usual arithmetic conversions then require that (int) £ be con-
+verted back to type float before the subtraction can be performed. The differ-
+ence between f and (int) £ is the fractional part of £. which was dropped
+during the cast.
+
+Cast expressions enable us to document type conversions that would take
+place anyway:
+
+i = (int) f; /* f is converted to int */
+
+They also enable us to overrule the compiler and force it to do conversions that we
+want. Consider the following example:
+
+float quotient ;
+int dividend, divisor;
+
+quotient dividend / divisor;
+

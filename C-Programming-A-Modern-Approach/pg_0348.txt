@@ -1,0 +1,60 @@
+14.3  Macro Definitions 323
+
+m Arguments aren’t type-checked. When a function 1s called, the compiler
+
+checks each argument to see if it has the appropriate type. If not, either the
+argument Is converted to the proper type or the compiler produces an error
+message. Macro arguments aren't checked by the preprocessor, nor are they
+converted.
+
+u Ît’s not possible to have a pointer to a macro. As we'll see in Section 17.7, C
+
+allows pointers to functions, a concept thal’s quite useful in certain program-
+ming situations. Macros are removed during preprocessing, so there’s no cor-
+responding notion of “pointer to à macro”; as a result, macros can’t be used in
+these situations.
+
+u À macro may evaluate its arguments more than once. À function evaluates
+
+its arguments only once; a macro may evaluate its arguments two or more
+times. Evaluating an argument more than once can cause unexpected behavior
+if the argument has side effects. Consider what happens if one of MAX’s argu-
+ments has a side effect:
+
+n = MAX(i++, j) ;
+Here’s the same line after preprocessineg:
+n = ((à++)>(3)?(i++):(9));
+
+If à 1s larger than j, then i will be (incorrectly) incremented twice and n will
+be assigned an unexpected value.
+
+ 
+
+Errors caused by cvaluatine a macro argument more than once can be difficult to
+find, because a macro invocation looks the same as a function call. To make mat-
+ters worse, a macro may work properly most of the time, failing only for certain
+arguments that have side effects. For self-protection, it’s a good idea to avoid side
+effects in arguments.
+
+ 
+
+Parameterized macros are good for more than just simulating functions. In
+
+particular, they’re often used as patterns for segments of code that we find our-
+selves repeating. Suppose that we grow tired of writing
+
+print£f ("$d\n", i);
+
+every time we need to print an integer i. We might define the following macro,
+which makes 1t easier to display integers:
+
+#define PRINT INT(n) printf("%d\n", n)
+
+Once PRINT_INT has been defined, the preprocessor will turn the line
+
+PRINT INT(i/j) ;
+
+into
+
+print£ ("*d\n", i/j);
+

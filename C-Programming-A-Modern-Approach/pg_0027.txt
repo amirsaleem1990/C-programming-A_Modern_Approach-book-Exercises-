@@ -1,0 +1,54 @@
+2
+
+Chapter 1
+
+introducing C
+
+language was needed for the further development of UNIX. so he designed a small
+language named B. Thompson based B on BCPL, a systems programming lan-
+guage developed in the mid-1960s. BCPL, in turn, traces its ancestry to Algol 60,
+one of the carliest (and most influential) programming languages.
+
+Ritchie soon joined the UNIX project and began programming in B. In 1970.
+Bell Labs acquired « PDP-1 1 for the UNIX project. Once B was up and running on
+the PDP-11, Thompson rewrote a portion of UNIX in B. By 1971, it became
+apparent that B was not well-suited to the PDP-11, so Ritchie began to develop an
+extended version of B. He called his language NB (“New B”) at first, and then, as
+it began to diverge more from B, he changed the name to C. The language was sta-
+ble enough by 1973 that UNIX could be rewritten in C. The switch to C provided
+an important benefit: portability. By writine C compilers for other computers at
+Bell Labs, the team could get UNIX running on those machines as well.
+
+Standardization
+
+C continued to evolve during the 1970s, especially between 1977 and 1979. It was
+during this period that the first book on C appeared. The C Programming Lan-
+guage. written by Brian Kernighan and Dennis Ritchie and published in 1978.
+quickly became the bible of C programmers. In the absence of an official standard
+for C, this book—known as K&R or the “White Book” to aficionados—served as a
+de facto standard.
+
+During the 1970s, there were relatively few C programmers, and most of them
+were UNIX users, By the 1980s, however, C had expanded beyond the narrow con-
+fines of the UNIX world. C compilers became available on a variety of machines
+running under different operating systems. In particular, C began to establish itself
+on the fast-growing IBM PC platform.
+
+With C's increasing popularity came problems. Programmers who wrote new
+C compilers relied on K&R as a reference. Unfortunately, K&R was fuzzy about
+some language features, so compilers often treated these features differently. Also,
+K&R failed to make a clear distinction between which features belonged to C and
+which were part of UNIX. To make matters worse, C continued to change after
+K&R was published, with new features being added and a few older features
+removed. The need for a thorough, precise, and up-to-date description of the lan-
+guage soon became apparent. Without such a standard, numerous dialects would
+have arisen, threatening the portability of C programs, one of the language’s major
+strengths.
+
+The development of a U.S. standard for C began in 1983 under the auspices of
+the American National Standards Institute (ANSI). After many revisions, the stan-
+dard was completed in 1988 and formally approved in December 1989 as ANSI
+standard X3.159-1989. In 1990, it was approved by the International Organization
+for Standardization (ISO) as international standard ISO/IEC 9899:1990. This ver-
+sion of the language 1s usually referred to as C89 or C90, to distinguish it from the
+

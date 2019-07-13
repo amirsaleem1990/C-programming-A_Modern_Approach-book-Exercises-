@@ -1,0 +1,68 @@
+vsnprintf
+
+æ
+
+vfscanf
+vscanf
+vsscanf
+
+ 
+
+V
+
+26.1  The <stdarg.h> Header: Variable Arguments 681
+
+its output and always writes to stderr instead of stdout. We'll have errorf
+call v£print£ to do most of the actual output. Here’s what error£ might look
+Hike:
+
+int errorf (const char *format, ...)
+static int num errors = 0;
+int n:
+
+va_list ap;
+
+num_errors++;
+Eprint£f(stderr, "** Error %d: ", num errors) ;
+va_start (ap, format) ;
+
+n vfprintf (stderr, £ormat, ap) ;
+
+va_end (ap) ;
+
+fprint£f (stderr, "\n") ;
+
+return n;
+
+The wrapper function—error£, in our example—is responsible for calling
+va_start prior to calling the v.….print£ function and for calling va_end after
+the v.….print£ function returns. The wrapper function 1s allowed to call va_arg
+
+one or more times before calling the v.….print£ function.
+The vsnprint£ function was added to the C99 version of <stdio.h>. lIt
+
+corresponds to snprint£ (discussed in Section 22.8), which 1s also a C99 func-
+tion.
+
+The v.….scanf Functions
+
+int vfscanf (FILE * restrict stream,
+const char * restrict format,
+
+va_list arg); from <stdio.h>
+int vscanf (const char * restrict format,
+va_list arg); from <stdio.h>
+
+int vsscanf (const char * restrict s,
+const char * restrict format,
+va_list arg); from <stdio.h>
+
+C99 adds a set of ‘“v….scanf functions” to the <stdio.h> header. vÉfscanft,
+vscanf. and vsscanf are equivalent to fscan£. scan£. and sscanf.
+respectively, except that they have a va_list parameter through which a variable
+areument list can be passed. Like the v….print£ functions, each v….scan£ func-
+tion is designed to be called by a wrapper function that accepts a variable number
+of arguments, which it then passes to the v.….scanf function. The wrapper func-
+tion is responsible for calling va_start prior to calling the v….scan£ function
+and for calling va_end after the v….scan£ function returns.
+

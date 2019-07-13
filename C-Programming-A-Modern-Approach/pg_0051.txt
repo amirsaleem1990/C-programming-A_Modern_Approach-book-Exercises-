@@ -1,0 +1,47 @@
+ 
+
+26
+
+Chapter2 C Fundamentals
+
+Qaâ
+
+æ
+
+Table 2.1
+Keywords
+
+These cight identifiers could all be used simultancously, each for a completely dif-
+ferent purpose. (Talk about obfuscation!) Sensible programmers try to make identi-
+fiers look different unless they're somehow related.
+
+Since case matters in C, many programmers follow the convention of using
+only lower-case letters in identifiers (other than macros), with underscores inseried
+when necessary for legibility:
+
+symbol table current page name _and address
+
+Other programmers avoid underscores, instead using an upper-case letter to begin
+each word within an identifier:
+
+symbolTable  currentPage nameAndAddress
+
+(The first letter is sometimes capitalized as well.) Although the former style 1s
+common in traditional C, the latter style is becoming more popular thanks to its
+widespread use in Java and C# (and. to a lesser extent, C++). Other reasonable
+conventions exist; just be sure to capitalize an identifier the same way each time it
+appears in a program. .
+
+C places no limit on the maximum length of an identifier, so don’t be afraid to
+use long, descriptive names. À name such as current page is a lot easier to
+understand than a name like cp.
+
+ 
+
+Because of C’s case-sensitivity, keywords must appear in programs exactly as
+shown in Table 2.1, with all letters in lower case. Names of functions in the stan-
+dard library (such as printf) contain only lower-case letters also. Avoid the
+plight of the unfortunate programmer who enters an entire program in upper case,
+only to find that the compiler can’t recognize keywords and calls of library func-
+tIions.
+

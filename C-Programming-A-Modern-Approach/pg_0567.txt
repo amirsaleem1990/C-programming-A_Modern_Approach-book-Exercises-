@@ -1,0 +1,67 @@
+542
+
+Chapter 22
+
+QaÂ
+
+Q&ÂÀ
+
+little-endian order > 20.3
+
+Input/Ouiput
+
+The source code for a C program is stored in a text file, for example. In a binary
+file, on the other hand, bytes don’t necessarily represent characters; groups of
+bytes might represent other types of data, such as integers and floating-point num-
+bers. An executable C program 1s stored in a binary file, as you’Il quickly realize if
+you try to look at the contents of one.
+
+Text files have two characteristics that binary files don’t possess:
+
+m Text files are divided into lines. Each line in a text file normally ends with
+one or two special characters; the choice of characters depends on the operat-
+ing system. In Windows, the end-of-line marker is a carriage-return character
+("\x0d') followed immediately by a line-feed character (" \x0a'). In
+UNIX and newer versions of the Macintosh operating system (Mac OS). the
+end-of-line marker is a single line-feed character. Older versions of Mac OS
+use a single carriage-return character.
+
+wm Text files may contain a special ““end-of-file” marker. Some operating sys-
+tems allow a special byte to be used as a marker at the end of a text file. In
+Windows, the marker 1s " \x1a' (Ctrl-Z). There’s no requirement that Ctrl-Z
+be present, but 1f it 18, 1t marks the end of the file; any bytes after Ctrl-Z are to
+be ignored. The Ctrl-Z convention is a holdover from DOS, which in turn
+inherited it from CP/M, an early operating system for personal computers.
+Most other operating systems, including UNIX, have no special end-of-file
+character.
+
+Binary files aren’t divided into lines. In a binary file, there are no end-of-line or
+end-of-file markers; all bytes are treated equally.
+
+When we write data to a file, we'Il need to consider whether to store it in text
+form or in binary form. To see the difference, consider how we might store the
+number 32767 in a file. One option would be to write the number in text form as
+the characters 3, 2, 7, 6, and 7. IË the character set is ASCII. we'd have the follow-
+ing five bytes:
+
+00110011‘00110010|00110111,00110110‘00110111
+
+ 
+
+I3l l2l l7l l6l I7l
+
+The other option 1s to store the number in binary, which would take as few as two
+
+bytes:
+'01111111|11111111l
+
+(The bytes will be reversed on systems that store data in little-endian order.) Às
+this example shows, storing numbers in binary can often save quite a bit of
+space.
+
+When we're writing a program that reads from a file or writes to a file, we
+need to take into account whether 1Cs à text file or a binary file. À program that dis-
+plays the contents of a file on the screen will probably assume it’s a text file. À file-
+
+ 
+

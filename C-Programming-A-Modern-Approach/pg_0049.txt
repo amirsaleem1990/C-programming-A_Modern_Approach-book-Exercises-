@@ -1,0 +1,38 @@
+24
+
+Chapter2 C Fundamentals
+
+parentheses in macros » 14,3
+
+PROGRAM
+
+celsius.c
+
+ 
+
+Converting from Fahrenheit to Celsius
+
+The following program prompts the user to enter a Fahrenheit temperature; it then
+prints the equivalent Celsius temperature. The output of the program will have the
+following appearance (as usual, input entered by the user is underlined):
+
+Enter Fahrenheit temperature: 212
+Celsius equivalent: 100.0
+
+The program will allow temperatures that aren’{ integers; that’s why the Celsius
+temperature is displayed as 100.0 instead of 100. Let’s look first at the entire
+program, then see how it’s put together.
+
+/* Converts a Fahrenheit temperature to Celsius */
+#include <stdio.h>
+
+#define FREEZING PT 32.0Ë
+#define SCALE FACTOR (5.0f£ / 9.0Ë)
+
+int main (void)
+{
+
+float fahrenheit, celsius;
+
+print£ ("Enter Fahrenheit temperature: ");
+

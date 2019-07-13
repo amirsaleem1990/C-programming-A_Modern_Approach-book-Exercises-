@@ -1,0 +1,52 @@
+144  Conditional Compilation 337
+
+Uses of Conditional Compilation
+
+Conditional compilation is certainly handy for debugging, but its uses don't stop
+there. Here are a few other common applications:
+
+= Writing programs that are portable to several machines or operating sys-
+tems. The following example includes one of three groups of lines depending
+on whether WIN32, MAC_OS, or LINUX is defined as a macro:
+
+#if£f defined (WIN32)
+gelif defined (MAC_OS)
+Âelif defined (LINUX)
+%endif
+
+A program might contain many of these #i£ blocks. Ât the beginning of the
+program, one (and only one) of the macros will be defined, thereby sclecting a
+particular operating system. For example, defining the LINUX macro might
+indicate that the program is to run under the Linux operating system.
+
+= Writing programs that can be compiled with different compilers. Different
+compilers often recognize somewhat different versions of C. Some accept a
+standard version of C. some don’t. Somé provide machine-specific language
+extensions: some don’t. or provide a different set of extensions. Conditional
+compilation can allow a program to adjust to different compilers. Consider the
+problem of writing à program that might have to be compiled using an older,
+nonstandard compiler. The __ STDC __ macro allows the preprocessor to
+detect whether a compiler conforms to the standard (either C89 or C99): 1f 1t
+doesn‘t, we may need to change certain aspects of the program. In particular,
+we may have to use old-style function declarations (discussed in the Q&A at
+the end of Chapter 9) instead of function prototypes. At each point where
+functions are declared. we can put the following lines:
+
+#i£ _ STDC _
+
+Function prototypes
+
+#else
+
+Old-style function declarations
+Hendif
+
+= Providing a default definition for a macro. Conditional compilation allows
+us to check whether a macro is currently defined and, if not, give it a default
+definition. For example, the following lines will define the macro
+BUFFER SIZE if it wasn’t previously defined:
+
+#ifndef BUFFER SIZE
+#define BUFFER SIZE 256
+#endif
+

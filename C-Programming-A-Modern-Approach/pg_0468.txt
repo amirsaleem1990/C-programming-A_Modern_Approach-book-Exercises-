@@ -1,0 +1,57 @@
+PROGRAM
+
+<math.h>header »23.3
+
+ 
+
+17.7  Pointers to Functions 443
+
+ments of an array or as members of a structure or union. We can even write func-
+tions that return function pointers.
+Here's an example of a variable that can store à pointer to a function:
+
+void (*pf) (int) ;
+
+p£ can point lo any function with an int parameter and à return type of void. If
+E is such a function, we can make p£ point to £ in the following way:
+
+Notice that therc’s no ampersand preceding f£. Once p£ points to £, we can call f
+by writing either
+
+(*p£) (i) ;
+or
+p£(i) ;
+
+Arrays whose elements are function pointers have a surprising number of
+applications. For example, suppose that we’re writing a program that displays a
+menu of commands for the user to choose from. We can write functions that imple-
+ment these commands, then store pointers to the functions in an array:
+
+void (*file cmd[]) (void) = {new cmd,
+open cmd,
+close _cmd,
+close_all _cmd,
+save_cmd,
+save _as cmd,
+save all _ cmd,
+print cmd,
+exit cmd
+
+} ;
+
+IF the user selects command n, where n falls between O and 8, we can subscript the
+file cmd array and call the corresponding function:
+
+(*file cmd [n] ) () ; /* or file cmd{[n] () ; */
+
+Of course, we could get a similar effect with a switch statement. Using an array
+of function pointers gives us more flexibility, however, since the elements of the
+array can be changed as the program is runnine.
+
+Tabulating the Trigonometric Functions
+
+The following program prints tables showing the values of the cos, sin, and tan
+functions (all three belong to <math.h>). The program is built around a funetion
+named tabulate that, when passed a function pointer £, prints a table showing
+the values of £.
+

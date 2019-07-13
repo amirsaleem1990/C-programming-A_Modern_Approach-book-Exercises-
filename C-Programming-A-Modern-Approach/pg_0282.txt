@@ -1,0 +1,40 @@
+12
+
+12.1
+
+Pointers and Arrays
+
+Optimization hinders evolution.
+
+Chapter 11 introduced pointers and showed how they’re used as function aregu-
+ments and as values returned by functions. This chapter covers another application
+for pointers. When pointers point to array elements, C allows us to perform arith-
+metic—addition and subtraction—on the pointers, which leads to an alternative
+way of processing arrays in which pointers take the place of array subseripts.
+
+The relationship between pointers and arrays in C 1s a close one, as we'll soon
+see. We'll exploit this relationship in subsequent chapters, including Chapter 13
+(Strings) and Chapter 17 (Advanced Uses of Pointers). Understanding the connec-
+tion between pointers and arrays 1s critical for mastering C: it will give you insight
+into how C was designed and help you understand existing programs. Be aware,
+however, that one of the primary reasons for using pointers to process arrays—effi-
+clency—Is no longer as important as it once was, thanks to improved compilers.
+
+Section 12.1 discusses pointer arithmetic and shows how pointers can be com-
+pared using the relational and equality operators. Section 12.2 then demonstrates
+how we can use pointer arithmetic for processing array clements. Section 12.3
+reveals a key fact about arrays—an array name can serve as a pointer to the array's
+first element—and uses 1t Lo show how array arguments really work. Section 12.4
+shows how the topics of the first three sections apply to multidimensional arrays.
+Section 12.5 wraps up the chapter by exploring the relationship between pointers
+and variable-length arrays, a C99 feature.
+
+ 
+
+Pointer Arithmetic
+
+We saw in Section 11.535 that pointers can point to array elements. For example,
+suppose that a and p have been declared as follows:
+
+257
+

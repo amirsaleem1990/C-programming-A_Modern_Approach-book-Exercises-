@@ -1,0 +1,44 @@
+XXVIII
+
+Preface
+
+Acknowledgments
+
+First, P’d like to thank my editors at Norton, Fred McFarland and Aaron Javsicas.
+Fred got the second edition underway and Aaron stepped in with brisk efficiency to
+bring it to completion. l’d also like to thank associate managing editor Kim Yi, copy
+editor Mary Kelly, production manager Roy Tedoff, and editorial assistant Carly
+Fraser.
+
+1 owe a huge debt to the following colleagues, who reviewed some or all of the
+manuscript for the second edition:
+
+Markus Bussmann, University of Toronto
+
+Jim Clarke, University of Toronto
+
+Karen Reid, University of Toronto
+
+Peter Seebach, moderator of comp.lang.c.moderated
+
+Jim and Peter deserve special mention for their detailed reviews, which saved me
+from a number of embarrassing stips. The reviewers for the first edition, in alpha-
+betical order, were: Susan Anderson-Freed, Manuel E. Bermudez, Lisa J. Brown,
+Steven C. Cater, Patrick Harrison, Brian Harvey, Henry H. Leitner, Darrell Long.
+Arthur B. Maccabe. Carolyn Rosner. and Patrick Terry.
+
+I received many useful comments from readers of the first edition; T thank
+everyone who took the time to write. Students and collcagues at Georgia State Uni-
+versity also provided valuable feedback. Ed Bullwinkel and his wife Nancy were
+kind enough to read much of the manuscript. l’m particularly grateful to my depart-
+ment chair, Yi Pan, who was very supportive of the project.
+
+My wife, Susan Cole, was a pitlar of strength as always. Our cats, Dennis,
+Pounce, and Tex, were also instrumental in the completion of the book. Pounce and
+Tex were happy to contribute the occasional catfight to help keep me awake while
+| was working late at night.
+
+Finally, l’d like to acknowledge the late Alan J. Perlis, whose epigrams appear
+at the beginning of each chapter. ! had the privilege of studying briefly under Alan
+at Yale in the mid-70s. T think he'd be amused at finding his epigrams in a C book.
+

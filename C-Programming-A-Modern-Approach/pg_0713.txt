@@ -1,0 +1,71 @@
+688 Chapter 26
+
+Q
+
+exit
+
+atexit
+
+_ Exit
+
+signal function >24.3
+
+abort
+
+getenv
+
+Miscellaneous Library Functions
+
+void exit (int status) ;
+
+void _Exit (int status) ;
+
+char *getenv (const char *name) ;
+int system(const char *string) ;
+
+The functions in this group provide a simple interface to the operating system,
+allowing programs to (1) terminate, either normally or abnormally, and return à
+status code to the operaling system. (2) fetch information from the user’s environ-
+ment, and (3) execute opcrating system commands. One of the functions, Exit,
+is « C99 addition.
+
+Pertorming the call exit (n) anywhere in a program is normally equivalent
+to exceuting the stalement return n; in main: the program terminates. and n is
+returned to the operating system as a status code. <stdlib.h> defines the mac-
+ros EXIT_FAILURE and EXIT _SUCCESS. which can be used as arguments to
+exit. The only other portable argument to exit is O, which has the same mcan-
+Ing as EXIT_SUCCESS. Returning status codes other than these is legal but not
+necessarily portable to all operating systems.
+
+When a program terminates, it usually performs a few final actions behind the
+scenes, including flushing output buffers that contain unwritten data, closing open
+streams, and deleting temporary files. We may have other “clean-up” actions that
+we'd like à program to perform at termination. The atexit function allows us to
+“register” a function Lo be called upon program termination. To register à function
+named cleanup, for example, we could call atexit as follows:
+
+atexit (cleanup) ;
+
+When we pass a function pointer to atexit, it stores the pointer away for future
+reference. If the program later terminates normally (via a call of exit or a
+return statement in the main function). any function registered with atexit
+will be called automatically. (If two or more functions have been registered, they're
+called in the reverse of the order in which they were registered.)
+
+The _Exit function is similar to exit. However. Exit doesn't call func-
+tions that have been registered with atexit, nor does it call any signal handlers
+previously passed to the signal function. Also. _ Exit doesn't necessarily flush
+output buffers, close open streams, or delete temporary files—whether these
+actions are performed is implementation-defined.
+
+abort 1s also similar to exit. but calling it causes abnormal program termi-
+nation. Functions registered with atexit aren’t called. Depending on the imple-
+mentation, it may be the case that output buffers containing unwritten data aren‘t
+flushed, streams aren°t closed, and temporary files aren*t deleted. abort returns
+an implementation-defined status code indicating unsuccessful termination.
+
+Many operating systems provide an “environment”: a set of strings that
+describe the user’s characteristics. These strings typically include the path to be
+searched when the user runs a program. the type of the user's terminal (in the case
+of à multi-user system), and so on. For example, a UNTX search path might look
+

@@ -1,0 +1,77 @@
+602 Chapter 23  Library Support for Numbers and Character Data
+
+fpclassify
+
+Table 23.9
+Number-Classification
+Macros
+
+isfinite
+isinf
+isnan
+isnormal
+
+signbit
+
+The C99 version of <math.h> also includes a number of completely new
+l'unctions (and function-like macros). PIl give a brief description of each one. As in
+Section 23.3, 1 won’t discuss error conditions for these functions, but Appendix
+D—which lists all standard library functions in alphabetical order—provides this
+information. ! won’t list the names of all the new functions in the left margin:
+instead, TIl show just the name of the primary function. For example. there are
+three new functions that compute the arc hyperbolic cosine: acosh, acosh£. and
+acoshl. l'Il describe acosh and display only its name in the left margin.
+
+Keep in mind that many of the new functions are highly specialized. As a
+result, the descriptions of these functions may seem sketchy. À discussion of what
+these functions are used for is outside the scope of this book.
+
+Classification Macros
+
+int fpclassify (real-floatine x) ;
+int isfinite (real-floating x) ;
+int isinf (real-floating x) ;
+
+int isnan (real-floating x) ;
+
+int isnormal (real-floating x) ;
+int signbit (real-floatinge x) ;
+
+Our first category consists of function-like macros that are used to determine
+whether a floating-point value is a “normal” number or a special value such as
+infinity or NaN. The macros in this group aré designed to accept areuments of any
+real floating type (£loat, double, or 1ong double).
+
+The fpclassify macro classifies its argument, returning the value of one
+of the number-classification macros shown in Table 23.9. An implementation may
+support other classifications by defining additional macros whose names begin
+with FP_ and an upper-case letter.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Name Meaning
+FP INFINITE Infinity (positive or negative)
+FP NAN Not a number
+FP NORMAL Normal (not zero, subnormal. infinite, or NaN)
+FP SUBNORMAL Subnormal
+FP ZERO /ero (positive or negative)
+
+ 
+
+The isfinite macro returns a nonzero value if its argument has a finite
+value (zero, subnormal, or normal, but not infinite or NaN). isinf returns à non-
+zero value if its argument has the value infinity (positive or negative). isnan
+returns a nonzero value if its argument is a NaN value. isnormal returns a non-
+zero value if its argument has a normal value (not zero, subnormal, infinite, or
+NaN).
+
+The last classification macro is a bit different from the others. signbit
+returns a nonzero value 1f the sign of its argument is negative. The argument need
+not be a finite number; signbit also works for infinity and NaN.
+

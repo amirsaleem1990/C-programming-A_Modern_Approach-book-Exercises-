@@ -1,0 +1,68 @@
+172
+
+Chapter8  Arrays
+
+const type qualifier > 78.3
+
+PROGRAM
+
+time function »26.3
+
+srand funclion »> 26.2
+
+rand function »26.2
+
+double ident [2) [2) = {[0] (0] = 1.0, [(1) [1] = 1.0};
+
+Às usual, all elements for which no value 1s specified will default to zero.
+
+Constant Arrays
+
+Any array, whether one-dimensional or multidimensional. can be made ‘’constant”
+by starting its declaration with the word const:
+
+const char hex chars[] =
+{'o', '1', '2', ‘3', ‘4', ‘5*, !6', ‘7', '8', ‘9',
+
+'A', ‘B', ‘C', 'D', 'E', ‘F'};
+
+An array that’s been declared const should not be modified by the program; the
+compiler will detect direct attempts to modify an clement.
+
+Declaring an array to be const has a couple of primary advantages. It docu-
+ments that the program won°t change the array, which can be valuable information
+for someone reading the code later. It also helps the compiler catch errors, by
+informing it that we don't intend to modify the array.
+
+const isn’t limited to arrays; it works with any variable, as we'll see later.
+However, const 1s particularly useful in array declarations, because arrays may
+contain reference information that won’t change during program execution.
+
+Dealing a Hand of Cards
+
+Our nexl program illustrates both two-dimensional arrays and constant arrays. The
+program deals à random hand from a standard deck of playing cards. (In case you
+haven't had time to play games recently, each card in a standard deck has a suir—
+clubs, diamonds, hearts, or spades—and a rank—two, three, four, five, six, seven,
+eight, nine, ten, jack, queen, king, or ace.) We'Il have the user specify how many
+cards should be in the hand:
+
+Enter number of cards in hand: S
+Your hand: 7c 2s 5d as 2h
+
+It’s not immediately obvious how we’d write such a program. How do we pick
+cards randomly from the deck? And how do we avoid picking the same card twice?
+Let’s tackle these problems separately.
+
+To pick cards randomly, we'1l use several C library functions. The t ime func-
+tion (from <time .h>) returns the current time, encoded in a single number. The
+srand function (from <stdlib.h>) initializes C’s random number generator.
+Passing the return value of time to srand prèvents the program from dealing the
+same cards every time we run it. The rand function (also from <stdlib.h>)
+produces an apparently random number each time it’s called. By using the % oper-
+ator, we can scale the return value from rand so that it falls between O and 3 (for
+suits) or between O and 12 (for ranks).
+
+To avoid picking the same card twice. we’1l need to keep track of which cards
+have already been chosen. For that purpose, we’Il use an array named in_hand
+

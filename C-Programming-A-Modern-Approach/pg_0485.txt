@@ -1,0 +1,60 @@
+460
+
+Chapter 18  Declarations
+
+Q&AÀ
+
+Q&A
+
+block is executed: storage 1s deallocated when the block terminates, causing
+the variable to lose its value. À variable with static storage duration stays at
+the same storage location as long as the program is running, allowing it to
+retain its value indefinitely.
+
+m Scope. The scope of a variable is the portion of the program text in which the
+variable can be referenced. À variable can have either block scope (the vari-
+able is visible from its point of declaration to the end of the enclosing block)
+or file scope (the variable 1s visible from its point of declaration to the end of
+the enclosing file).
+
+m Linkage. The linkage of a variable determines the extent to which it can be
+shared by different parts of a program. À variable with external linkage may
+be shared by several (perhaps all) files in a program. À variable with internal
+linkage is restricted to a single file. but may be shared by the functions in that
+file. (If a variable with the same name appears in another file, it’s treated as a
+different variable.) À variable with no linkage belongs to a single function and
+can’t be shared at all.
+
+The default storage duration, scope, and linkage of a variable depend on where
+il’s declared:
+
+m Variables declared inside a block (including a function body) have automatic
+storage duration, block scope, and no linkage.
+
+u Variables declared outside any block, at the outermost level of a program, have
+static storage duration, file scope, and external linkage.
+
+The following example shows the default properties of the variables i and j:
+_— Static storage duration
+int i;, — file scope
+
+external linkage
+
+void f (void)
+
+{ automatic storage duration
+int j ; I—— block scope
+no linkage
+}
+
+For many variables, the default storage duration, scope, and linkage are satis-
+factory. When they aren’t, we can alter these properties by specifying an explicit
+storage class: auto, static, extern, orregister.
+
+The auto Storage Class
+
+The auto storage class is legal only for variables that belong to a block. An auto
+variable has automatic storage duration (not surprisingly), block scope. and no
+linkage. The auto storage class is almost never specified explicitly. since it’s the
+default for variables declared inside a block.
+

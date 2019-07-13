@@ -1,0 +1,72 @@
+Section 18.5
+
+l1.
+
+#12
+
+® 13.
+
+14.
+
+@ 15.
+
+Exercises 481
+
+(b) £ is a function with two arguments: p. à pointer to a structure with tag t, and n, a long
+integer. £ returns a pointer to à function that has no arguments and returns nothing.
+
+(c) a is an array of four pointers to functions that have no arguments and return nothing.
+The elements of à initially point to functions named insert, search, update, and
+print.
+
+(d) b is an array of 10 pointers to functions with two int arguments that return structures
+with tag t.
+
+In Section 18.4, we saw that the following declarations are illegal:
+
+int f (int) [] ; /* functions can't return arrays */
+int g(int) (int) ; /* functions can't return functions */
+int a(10] (ant) ; /* array elements can't be functions */
+
+We can, however, achieve similar effects by using pointers: à function can return a pointer to
+the first clement in an array, a function can return a pointer to a function, and the elements
+of an array can bc pointers to functions. Revise each of these declarations accordingly.
+
+(a) Write a complete description of the type of the function £. assuming that it’s declared as
+follows:
+
+int (*f(float (*) (long), char *)) (double) ;
+
+(b) Give an example showing how £ would be called.
+
+Which of the following declarations are legal? (Assume that PI 1S à macro that represents
+3.14159.)
+
+(a) char c 65;
+
+(b) static int i = 5, j = i * i;
+
+(c) double d = 2 * PI;
+
+(d) double angles[] = {o, PI / 2, PI, 3 # PI / 2};
+
+Which kind of variables cannot be initialized?
+(a) Array variables
+
+(b) Enumeration variables
+
+(c) Structure variables
+
+(d) Union variables
+
+(e) None of the above
+
+Which property of à variable determines whether or not it has a default initial value?
+(a) Storage duration
+
+(b) Scope
+
+(c) Linkage
+
+(d) Type
+

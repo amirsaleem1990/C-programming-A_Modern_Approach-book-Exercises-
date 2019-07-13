@@ -1,0 +1,38 @@
+76 Chapter5  Selection Statements
+
+u exprl | | expr2 hasthe value | if either expr/ or expr2 (or both) has a nonzero
+value.
+
+In all other cases, these operators produce the value 0.
+Both && and | | perform “short-circuit” evaluation of their operands. That is,
+
+ 
+
+ 
+
+Î Be wary of side effects in logical expressions. Thanks to the short-circuit nature of
+the && and | | operators, side effects in operands may not always occur. Consider
+the following expression:
+
+i > O && +j > O
+
+Although 3 1s apparently incremented as a side effect of evaluating the expression,
+that isn’t always the case. If i > O is false, then ++j > O is not evaluated, so j isn’t
+incremented. The problem can be fixed by changing the condition to ++j > O &&
+i > O or, even better, by incrementing j separately.
+
+ 
+
+ 
+
+5.2 The i£f Statement
+
+The i £ statement allows a program to choose between two alternatives by testing
+the value of an expression. In its simplest form, the i £ statement has the form
+
+i £ statement 1f ( expression ) statement
+
+Notice that the parentheses around the expression are mandatory; they’re part of
+the 1 £ statement, not part of the expression. Also note that the word then doesn't
+come after the parentheses, as it would in some programming languages.
+

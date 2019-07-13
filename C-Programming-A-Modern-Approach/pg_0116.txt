@@ -1,0 +1,62 @@
+Q & À 91
+
+check if the -Wparentheses option is used or if -Wall (all warnings) is
+selected. GCC allows the programmer to suppress the warning in a particular case
+by enclosing the i £ condition in a second set of parentheses:
+
+i£ ((i = j))
+
+C books seem to use several different styles of indentation and brace place-
+ment for compound statements. Which style is best?
+
+According to The New Hacker’s Dictionary (Cambridge, Mass.: MIT Press, 1996),
+there are four common styles of indentation and brace placement:
+
+m The K&R style, used in Kernighan and Ritchie’s The C Programming Lan-
+guage, is the one l’ve chosen for the programs in this book. In the K&R style,
+the left brace appears at the end of a line:
+
+if (line num == MAX LINES) {
+line num = O0;
+page_num++;
+
+}
+
+The K&R style keeps programs compact by not putting the left brace on a line
+by itself. À disadvantage: the left brace can be hard to find. (I don’t consider
+this a problem, since the indentatièon of the inner statements makes it clear
+where the left brace should be.) The K&R style is the one most often used in
+Java, by the way.
+
+m The A/lman style, named after Eric Allman (the author of sendmail and
+other UNIX utilities), puts the left brace on a separate line:
+
+if (line num == MAX LINES)
+
+line num = 0;
+page_num++;
+
+;
+
+This style makes it easy to check that braces come in matchins pairs.
+
+u The Whitesmiths style, popularized by the Whitesmiths C compiler, dictates
+that braces be indented:
+
+if (line num == MAX LINES)
+
+line num = 0;
+page_num++ ;
+
+}
+
+m The GNU style, used in software developed by the GNU Project, indents the
+braces, then further indents the inner statements:
+
+if (line num == MAX LINES)
+
+line num = 0;
+page_num++;
+
+;
+

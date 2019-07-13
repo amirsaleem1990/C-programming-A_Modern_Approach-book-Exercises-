@@ -1,0 +1,56 @@
+172  Dynamically Allocated Strings _ 417
+
+Callinge strcpy is one way to initialize this array:
+strcpy(p, "abc”") ;
+
+The first four characters in the array will now be a, b. c, and \ 0:
+
+ 
+
+ 
+
+Using Dynamic Storage Allocation in String Functions
+
+Dynamic storage allocation makes it possible to write functions that return a
+pointer to a “new” string—a string that didn’t exist before the l'unction was called.
+Consider the problem of writing a function that concatenates two strings without
+changing either one. C's standard library doesn’t include such a function (strcat
+isn°t quite what we want, since it modifies one of the strings passed to it), but we
+can easily write our own.
+
+Our function will measure the lengths of the two strings to be concatenated.
+then call malloc to allocate just the right amount of space for the result. The
+function next copies the first string into the new space and then calls strcat lo
+concatenate the second string.
+
+char *concat (const char *s1, const char *s2)
+
+{
+
+char *result;
+
+result = malloc(strlen(s1) + strlen(s2) + 1);
+if (result == NULL) |{
+printf ("Error: malloc failed in concat\n") ;
+exit (EXIT FAILURE) ;
+
+}
+
+strcopy(result, s1l);
+strcat (result, s2);
+return result ;
+
+}
+
+f malloc returns à null pointer, concat prints an error message and terminates
+the program. That’s not always the right action to take: some programs need to
+recover from memory allocation failures and continue runnine.
+
+Here’s how the concat f'unction might be called:
+
+p = concat ("abc", "def") ;
+
+After the call, p will point to the string "abcde£". which is stored in a dynami-
+cally allocated array. The array is seven characters long, including the null charac-
+ter at the end.
+

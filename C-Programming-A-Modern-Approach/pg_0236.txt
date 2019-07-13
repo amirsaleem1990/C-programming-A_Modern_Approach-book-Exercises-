@@ -1,0 +1,59 @@
+> .Q
+
+Q & À 211
+
+double average () ;
+
+Is this practice legal? [p. 192]
+
+Yes. This declaration informs the compiler that average returns a double value
+but provides no information about the number and types of its parameters. (Leav-
+ing the parentheses empty doesn’t necessarily mean that average has no param-
+eters.)
+
+In K&R C, this form of function declaration is the only one allowed: the form
+that we’ve been usinge—the function prototype, in which parameter information às
+included—was introduced in C89. The older kind of function declaration is now
+obsolescent, although still allowed.
+
+Why would a programmer deliberately omit parameter names in a function
+prototype? Isn°t it easier to just leave the names? [p. 193]
+
+Omitting parameter names in prototypes is typically done for defensive purposes.
+If a macro happens to have the same name as a parameter. the parameter name will
+be replaced during preprocessing, thereby damaging the prototype in which t
+appears. This isn°t likely to be à problem in a small program written by one person
+but can occur in large applications written by many people.
+
+Is it legal to put a function declaration inside the body of another function?
+Yes. Here’s an example:
+
+int main(void)
+
+(
+
+double average (double a, double b);
+
+}
+
+This declaration of average is valid only for the body of main: if other func-
+tions need to call average, they'll each have to declare it.
+
+The advantage of this practice is that il’s clearer to the reader which functions
+call which other functions. (In this example, we see that main will be calling
+average.) On the other hand, it can be a nuisance if several functions need to call
+the same function. Even worse, trying to add and remove declarations during pro-
+oram maintenance can be a real pain. For these reasons, l'Il always put function
+declarations outside l'unction bodies.
+
+If several functions have the same return type, can their declarations be com-
+bined? For example, since both print _ pun and print count have void
+as their return type, is the following declaration legal?
+
+void print pun(void), print _ count (int n) ;
+
+Yes. In fact, C even allows us to combine function declarations with variable decla-
+rations:
+
+double x, y, average (double a, double b);
+

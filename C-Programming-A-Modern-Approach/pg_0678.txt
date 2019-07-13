@@ -1,0 +1,60 @@
+wctomb
+
+mbstowecs
+
+25.2  Multibyte Characters and Wide Characters 653
+
+The wctomb function converts a wide character (the second argument) into a
+multibyte character, which it stores into the array pointed to by the first argument.
+wctomb may store as many as MB_LEN MAX characters in the array, but doesn’t
+append a null character. wctomb returns the number of bytes in the multibyte
+character or —1 1f the wide character doesn’t correspond to any valid multibyte
+character. (Note that wctomb returns ! 1f asked to convert a null wide character.)
+
+The following function (also from Plauger’s The Standard C Library) uses
+wctomb to determine whether a stWing of wide characters can be converted to
+valid multibyte characters:
+
+int wccheck (wchar t *wcs)
+
+{
+char buf [MB_LEN MAX] ;
+int n;
+for (wctomb (NULL, 0); ; ++wcCs)
+Lif ((n = wctomb(buf, *wcs)) <= O)
+return -1; /* invalid character */
+else if (bu£f[n-1] == '\0')
+return 0; /* all characters are valid */
+}
+
+Incidentally, all three functions—mblen, mbtowc, and woctomb—can be
+USed to test whether a multubyte encoding is state-dependent. When passed a null
+pointer as its char * argument, each function returns à nonzero value if multibyte
+characters have state-dependent encodings or zero if they don’t.
+
+Multibyte/Wide-String Conversion Functions
+
+size t mbstowcs (wchar t * restrict pwces,
+
+const char * restrict s,
+
+size t n); from<stdlib.h>
+size t wcstombs(char * restrict s,
+
+const wchar t * restrict pwcs,
+
+size t n); from <stdlib.h>
+
+The remaining C69 multibyte/wide-character functions convert a string containing
+multibyte characters to a wide-character string and vice versa. How the conversion
+is performed depends on the LC _ CTYPE category of the current locale.
+
+The mbstowcs function converts a sequence of multibyte characters into
+wide characters. The second argument points to an array containing the multibyte
+characters to be converted. The first argument points to a wide-character array: the
+third argument limits the number of wide characters that can be stored in the array.
+mbstowcs stops when it reaches the limit or encounters a null character (which it
+stores in the wide-character array). It returns the number of array elements modi-
+fied, not including the terminatine null] wide character, 1f any. mbstowes returns
+—| (cast to type size_t) if1tencounters an invalid multibyte character.
+

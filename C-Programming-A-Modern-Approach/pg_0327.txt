@@ -1,0 +1,65 @@
+302
+
+Chapter 13  Strings
+
+e 7.70
+
+QaÂ
+
+null pointers » 17.71
+
+dimensional array. To search the planets array for strings beginning with the
+letter M, for example, we could use the following loop:
+
+for (i = 0; i < 9; i++)
+if (planets[i] [0] == ‘'M')
+printf ("%s begins with M\n", planets [i] ) ;
+
+Command-Line Arguments
+
+When we run a program, we’Il often need to supply it with information—a file
+name, perhaps, or a switch that modifies the program”s behavior. Consider the
+UNIX 1s command. If we run 1s by typing
+
+ls
+
+at the command line, it will display the names of the files in the current directory.
+But if we instead type
+
+1s -l
+
+then 1s will display a “long” (detailed) listing of files, showing the size of each file,
+the file's owner, the date and time the file was last modified, and so forth. To modify
+the behavior of 1s further, we can specify that it show details for just one file:
+
+ls -1 remind.c
+
+1s will display detailed information about the file named remind. c.
+
+Command-line information is available to all programs, not just operating sys-
+tem commands. To obtain access to these command-line arguments (called pro-
+gram parameters in the C standard). we must define main as a function with two
+parameters, which are customarily named argc and argv:
+
+int main(int argc, char *argv[])
+
+(
+}
+
+argc (‘argument count”) is the number of command-line arguments (including
+the name of the program itself). argv (“argument vector”) is an array of pointers
+to the command-line arguments, which are stored in string form. argv [0] points
+to the name of the program, while argv [1] through argv [argc-1] point to
+the remaining command-line arguments.
+
+argv has one additional element, argv [argec], which is always a null
+pointer—a special pointer that points to nothing. We*I! discuss null pointers in a
+later chapter; For now, all we need to know is that the macro NULL represents a null
+pointer.
+
+If the user enters the command line
+
+ls -l remind.c
+
+then argc will be 3, argv [0] will point to a string containing the program
+

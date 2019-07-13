@@ -1,0 +1,65 @@
+ 
+
+volatile type qualifier »20.3
+
+Section 18.1
+
+Section 18.2
+
+@ 2.
+
+Exercises 479
+
+If that’s not enough to convince you, consider this: If a const object is also
+declared to be volatile, its value may change at any time during execution.
+Here’s an example from the C standard:
+
+extern const volatile int real time _ clock;
+
+The real time clock variable may not be changed by the program (because
+il’s declared const), yel its value may change via some other mechanism
+(because il’s declared volatile).
+
+Why is the syntax of declarators so odd?
+
+Declarations are intended to mimic use. À pointer declarator has the form *p.
+which matches the way the indirection operator will later be applied to p. An array
+declarator has the form a [...] . which matches the way the array will later be sub-
+scripted. À function declarator has the form £ (… ) . which matches the syntax of a
+function call. This reasoning extends to even the most complicated declarators.
+Consider the £ile cmd array of Section 17.7, whose elements are pointers to
+functions. The declarator for £ile cmd has the form
+
+(*file _cmd[]) (void)
+and a call of one of the functions has the form
+(*file cmd[n]) () ;
+
+The parentheses, brackets, and * are in identical positions.
+
+Exercises
+
+For each of the following declarations, identify the storage class, type qualifiers, type speci-
+fiers, declarators, and initializers.
+
+(a) static char **lookup (int level) ;
+
+(b) volatile unsigned long io flags;
+
+(c) extern char *file name [MAX FILES), path[] ;
+
+(d) static const char token bu£f[] = "";
+
+Answer each of the following questions with auto. extern. register. and/or
+static.
+
+(a) Which storage class is used primarily to indicate that a variable or function can be
+shared by several files”
+
+(b) Suppose that a variable x 1s to be shared by several functions in one file but hidden from
+functions in other files. Which storage class should x be declared to have?
+
+(c) Which storage classes can affcet the storage duration of u variable?
+
+List the storage duration (static or automatic), scope (block or file), and linkage (internal,
+external, or nonc) of each vartable and parameter in the following file:
+

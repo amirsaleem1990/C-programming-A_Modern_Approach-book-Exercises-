@@ -1,0 +1,64 @@
+680
+
+Chapter 26 Miscellaneous Library Functions
+
+vfprintf
+vprintf
+vsprintf
+
+æ
+
+assumes that the arguments are of type int. Functions such as print£ and
+scan£ rely on the format string, which describes the number of additional argu-
+ments and the type of each.
+
+Another problem has to do with passing NULL as an argument. NULL is usu-
+ally defined to represent O. When O is passed to a function with a variable argu-
+ment list, the compiler assumes that it represents an integer—there’s no way it can
+tell that we want it to represent the null pointer. The solution is to add a cast, writ-
+ing (void *) NULL or (void *) O instead of NULL. (See the Q&AÀ section at
+the end of Chapter 17 for more discussion of this point.)
+
+The v..print£ Functions
+
+int v£printf (FILE * restrict stream,
+const char * restrict format,
+
+va _list arg) ; from <stdio.h>
+int vprintf (const char * restrict £ormat,
+va list arg) ; from <stdio.h>
+
+int vsnprintf (char * restrict s, size t n,
+
+const char * restrict format,
+
+va_list arg); from <stdio.h>
+int vsprint£ (char * restrict s,
+
+const char * restrict format,
+
+va_list arg) ; from <stdio.h>
+
+The vfprint£, vprintE. and vsprint£ functions (the “v…print£ func-
+tions’’) belong to <stdio.h>. We*re discussing them in this section because
+they’re invariably used in conjunction with the macros in <stdarg.h>. C99 adds
+the vsnprint£ function.
+
+The v…printf functions are closely related to fprint£, print£, and
+sprint£. Unlike these functions, however, the v….printf functions have a
+fixed number of arguments. Each function’s last argument is a va_list value.
+which implies that it will be called by a function with a variable argument list. In
+practice, the v….printf functions are used primarily for writing “wrapper” func-
+tions that accept a variable number of arguments, which are then passed to a
+v..print£ function.
+
+As an example, let’s say that we’re working on a program that needs to display
+error messages from time to time. We’d like each message to begin with à prefix of
+the form
+
+** Error n:
+
+where n is 1 for the first error message and increases by one for each subsequent
+error. To make it easier to produce error messages, we’Il write a function named
+error£ that’s similar to print£, but adds ** Error n: to the beginning of
+

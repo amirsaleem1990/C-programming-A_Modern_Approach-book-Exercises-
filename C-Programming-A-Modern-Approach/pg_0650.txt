@@ -1,0 +1,68 @@
+® 1.
+
+Programming Projects 625
+
+Write a call of memset that replaces the last n characters in a null-terminated string s with
+! characters.
+
+Many versions of <string.h> provide additional (nonstandard) functions, such as those
+listed below. Write each function using only the fcatures of the C standard.
+
+(a) strdup (s) — Returns a pointer to a copy of s stored in memory obtained by calling
+malloc. Returns a null pointer 1f enough memory couldn’t be allocated.
+
+(b) stricmp(s1, s2) — Similar to stromp, but ignores the case of letters.
+
+(c) strlwr (s) — Converts upper-case letters in s to lower case. leaving other characters
+unchanged; returns s.
+
+(d) strrev (s) — Reverses the characters in s (except the null character); returns s.
+
+(e) strset (s, ch) Fills s with copies of the character ch: returns s.
+
+ 
+
+If you test any of these functions, you may need to alter its name. Functions whose names
+begin with str are reserved by the C standard.
+
+Use strtok to write the following function:
+int count words (char *sentence) ;
+
+count _words returns the number of words in the string sentence, where a ‘’word”’ is
+any sequence of non-white-space characters. count _ words 1s allowed to modify the
+string.
+
+Programming Projects
+
+° n . ” ° .
+Write a program that finds the roots of the equation ax* + bx + c = 0 using the formula
+
+L- —h + Jb? — dac
+
+2a
+
+ 
+
+Have the program prompt for the values of a, b, and c, then print both values of x. f b* —
+dac is negative, the program should instead print a message to the effect that the roots are
+complex.)
+
+Write a program that copies a text file from standard input to standard output, removing all
+white-space characters from the beginning of cach line. À Iime consisting entirely of white-
+space characters will not be copied.
+
+Write à program that copies a text file from standard input to standard output, capitalizing
+the first letter in each word.
+
+Write a program that prompts the user to enter a series of words separated by single spaces,
+then prints the words in reverse order. Read the input as à string, and then use strtok to
+break 1t into words.
+
+Suppose that money 1s deposited into à savings account and left for / years. Assume that the
+annual interest rate is r and that interest is compounded continuously. The formula A(r) =
+Pe"* can be used to calculate the final value of the account. where P is the original amount
+deposited. For example, $1000 left on deposit for 10 years at 6% interest would be worth
+$1000 x e°°*10 Z $1000 x e° = $1000 x 1.8221188 = $1.822.12. Write a program that dis-
+plays the result of this calculation after prompting the user to enter the original amount
+deposited, the interest rate, and the number of years.
+

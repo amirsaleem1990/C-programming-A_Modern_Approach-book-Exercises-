@@ -1,0 +1,58 @@
+520
+
+Chapter 20  Low-Level Programming
+
+QahÀ
+
+union (
+struct |
+WORD ax, bx, cx, dx;
+} word;
+struct {
+BYTE al, ah, bl, bh, cl, ch, dl, dh;
+} byte;
+regs;
+
+The members of the word structure will be overlaid with the members of the
+byte structure; for example, ax will occupy the same memory as al and ah. And
+that, of course, is exactly what we wanted. Here’s an example showing how the
+regs union might be used:
+
+regs.byte.ah = 0x12;
+regs.byte.al = 0Ox34;
+printf ("AX: %hx\n"', regs.word.ax) ;
+
+Changing ah and al affects ax, so the output wilt be
+AX: 1234
+
+Note that the byte structure lists al before ah. even though the AL register
+is the “low” half of AX and AH is the “high” half. Here’s the reason. When a data
+item consists of more than one byte, there are two logical ways to store it in mem-
+ory: with the bytes in the ‘‘natural” order (with the leftmost byte stored first) or
+with the bytes in reverse order (the leftmost byte 1s stored last). The first alternative
+is called big-endian; the second is known as little-endian. C doesn’t require a spe-
+cific byte ordering. since that depends on the CPU on which à program will be exe-
+cuted. Some CPUs use the big-endian approach and some use the little-endian
+approach. What does this have to do with the byte structure” Ît turns out that x86
+processors assume that data is stored in little-endian order. so the first byte of
+regs.word.ax isthe low byte.
+
+We don't normally need to worry about byte ordering. However, programs that
+deal with memory at a low level must be aware of the order in which bytes are
+stored (as the regs example illustrates). lls also relevant when working with files
+that contain non-character data.
+
+ 
+
+Be careful when using unions to provide multiple views of data. Data that is valid
+in its original format may be invalid when viewed as a different type, causing
+unexpected problems.
+
+ 
+
+Using Pointers as Addresses
+
+We saw in Section 11.1 that à pointer is really some kind of memory address,
+although we usually don't need to know the details. When we do low-level pro-
+grammine, however. the details matter.
+

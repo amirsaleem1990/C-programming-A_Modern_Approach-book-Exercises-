@@ -1,0 +1,44 @@
+ 
+
+- S Ÿ
+
+18
+
+18.1
+
+Declarations
+
+Making something variable is easy.
+Controlling duration of constancy is the trick.
+
+Declarations play à central role in C programming. By declaring variables and
+functions. we furnish vital information that the compiler will need in order to
+check a program for potential errors and translate it into object code.
+
+Previous chapters have provided examples of declarations without going Into
+full details; this chapter fills in the gaps. It explores the sophisticated options that
+can be used in declarations and reveals that variable declarations and function dec-
+larations have quite a bit in common. It also provides a firm grounding in the
+important concepts of storage duration, scope. and linkage.
+
+Section 18.1 examines the syntax of declarations in their most general form,
+a topic that we've avoided up to this point. The next four sections focus on the
+ilems that appear in declarations: storage classes (Section 18.2). type qualifiers
+(Section 18.3), declarators (Section 18.4), and initializers (Section 18.5). Section
+18.6 discusses the inline keyword, which can appear in C99 function declara-
+tions.
+
+Declaration Syntax
+
+Declarations furnish information to the compiler about the meaning of identifiers.
+When we write
+
+int i;
+
+we're informing the compiler that, in the current scope, the name i represents a
+variable of type int. The declaration
+
+float £ (float) ;
+
+457
+

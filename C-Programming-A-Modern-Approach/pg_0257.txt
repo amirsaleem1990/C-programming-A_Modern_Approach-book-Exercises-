@@ -1,0 +1,58 @@
+232
+
+Chapter 10  Program Organization
+
+High card
+
+Enter a card: O
+
+From this description of the program, we see that it has three tasks:
+
+Read a hand of five cards.
+Analyze the hand for pairs, straights, and so forth.
+Print the classification of the hand.
+
+We'1l divide the program into three functions—read _cards, analyze hand,
+and print _result—that perform these three tasks. main does nothing but call
+these functions inside an endless loop. The functions will need to share a fairly
+large amount of information, so we’ll have them communicate through external
+variables. read_cards will store information about the hand into several exter-
+nal variables. analyze_hand will then examine these variables. storing its find-
+ings into other external variables for the benefit of print result.
+
+Based on this preliminary design, we can begin to sketch an outline of the pro-
+gram:
+
+/* finclude directives go here */
+/* #define directives go here */
+/* declarations of external variables go here */
+
+/* prototypes */
+
+void read _ cards (void) ;
+void analyze _hand (void) ;
+void print result (void) ;
+
+/*'k'k***************—k********************‘f:***'k*‘k‘k‘k**‘k*******
+
+* main: Calls read cards, analyze hand, and print result *
+* repeatedly. *
+**********************************************************/
+
+int main(void)
+
+for (;:) {
+read_cards () ;
+analyze _hand () ;
+print _result () ;
+/*********-k*—k******—#*************—k—k**‘k*'ä:*******************
+* read cards:  Reads the cards into external variables; *
+* checks for bad cards and duplicate cards. *
+
+**‘k*****************‘k*******‘:‘:*****************************/
+
+void read_cards (void)
+
+{
+}
+

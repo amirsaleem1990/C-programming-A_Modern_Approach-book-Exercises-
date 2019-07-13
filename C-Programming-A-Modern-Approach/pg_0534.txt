@@ -1,0 +1,38 @@
+20
+
+20.1
+
+Low-Level Programming
+
+À programming language is low level when its
+programs require attention to the irrelevant.
+
+Previous chapters have described C’s high-level, machine-independent features.
+Although these features are adequate for many applications, some programs need
+Lo perform operations at the bit level. Bit manipulation and other low-level opera-
+tions are especially useful for writing systems programs (including compilers and
+operating systems), encryption programs, graphics programs, and programs for
+which f'ast execution and/or efficient use of space is critical.
+
+Section 20.1 covers C’s bitwisc operators. which provide easy access to both
+individual bits and bit-fields. Section 20.2 then shows how to declare structures
+that contain bit-ficlds. Finally. Section 20.3 describes how certain ordinary C fea-
+tures (type definitions, unions, and pointers) can help in writing low-level pro-
+grams.
+
+Some of the techniques described in this chapter depend on knowledge of how
+data is stored in memory, which can vary depending on the machine and the com-
+piler. Relying on these techniques will most likely make a program nonportable. so
+it's best to avoid them unless absolutely necessary. If you do need them, try to limit
+their use to certain modules in your program; don’t spread them around. And,
+above all, be sure to document what you*re doine!
+
+Bitwise Operators
+
+C provides six bifwise operators, which operate on integer data at the bit level.
+We'Il discuss the two bitwise shift operators first, followed by the four other bit-
+wise operators (bitwise complement, bitwise and. bitwise exclusive or, and bitwise
+inclusive or).
+
+509
+

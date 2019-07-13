@@ -1,0 +1,152 @@
+ 
+
+XVi
+
+Contents
+
+20
+
+21
+
+22
+
+19.5
+
+Design Issues for Abstract Data Types
+Naming Conventions
+
+Error Handling
+
+Generic ADTs
+
+ADTs in Newer Languages
+
+LOW-LEVEL PROGRAMMING
+
+20.1
+
+20.2
+
+20.3
+
+Bitwise Operators
+
+Bitwise Shift Operators
+
+Bitwise Complement, And, Exclusive Or, and Inclusive Or
+Using the Bitwise Operators to Access Bits
+Using the Bitwise Operators to Access Bit-Fields
+Program: XOR Encryption
+
+Bit-Fields in Structures
+
+How Bit-Fields Are Stored
+
+Other Low-Level Techniques
+
+Defining Machine-Dependent Types
+
+Using Unions to Provide Multiple Views of Data
+Using Pointers as Addresses
+
+Program: Viewing Memory Locations
+
+The volatile Type Qualifier
+
+THE STANDARD LIBRARY
+
+211
+
+21.2
+21.3
+21.4
+21.5
+
+Using the Library
+
+Restrictions on Names Used in the Library
+Functions Hidden by Macros
+
+C89 Library Overview
+C99 Library Changes
+The <stddef .h> Header: Common Definitions
+
+The <stdboo1 .h> Header (C99): Boolean Type and
+Values
+
+INPUT/OUTPUT
+
+22.1
+
+22.2
+
+Streams
+
+File Pointers
+
+Standard Streams and Redirection
+
+Text Files versus Binary Files
+
+File Operations
+
+Opening a File
+
+Modes
+
+Closing a File
+
+Attaching a File to an Open Stream
+
+Obtaining File Names from the Command Line
+Program: Checking Whether a File Can Be Opened
+
+502
+502
+502
+503
+503
+
+509
+
+509
+510
+Si1l
+5i2
+513
+514
+516
+517
+518
+518
+519
+520
+521
+523
+
+529
+
+529
+530
+531
+531
+534
+
+535
+
+536
+
+539
+
+540
+540
+540
+541
+543
+543
+544
+545
+546
+546
+547
+

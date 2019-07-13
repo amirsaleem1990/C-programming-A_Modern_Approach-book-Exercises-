@@ -1,0 +1,94 @@
+170
+
+Chaptier8  Arrays
+
+/N
+
+comma operator > 6.3
+
+arrays ot pointers » 73.7
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+To access the element of m in row i, column j. we must write m[{i] [7 ]. The
+expression m[i] designates row i of m, and m[i] [j] then selects element j in
+this row,.
+
+ 
+
+Resist the temptation to write m[i,j] instead of m[i] [j]. C treats the comma
+as an operator in this context, som[i,j] 1s the same asm[j].
+
+ 
+
+Although we visualize two-dimensional arrays as tables, thal's not the way
+they’re actually stored in computer memory. C stores arrays in row-major order, with
+row 0 first, then row !, and so forth. For example, here’s how the m array 1s stored:
+
+row 0 row 1 row 4
+
+ 
+
+ 
+
+ 
+
+ 
+
+We'1l usually ignore this detail, but sometimes 1t will affect our code.
+
+Just as £or loops go hand-in-hand with one-dimensional arrays, nested for
+loops are ideal for processing multidimensional arrays. Consider. for example, the
+problem of inmitializing an array for use as an identity matrix. (In mathematics, an
+identity matrix has l’s on the main diagonal. where the row and column index are
+the same, and 0s everywhere else.) We'11 need to visit each element in the array in
+some systematic fashion. À pair of nested £or loops—one that steps through every
+row index and one that steps through each column index—is perfect for the job:
+
+#define N 10
+
+double ident [N] [N] ;
+int row, col;
+
+for (row = 0; row < N; row++)
+for (col = 0; col < N; col++)
+if (row == col)
+ident [row] [col] = 1.0;
+else
+
+ident [row] [co1] = 0.0;
+
+Multidimensional arrays play a lesser role in C than in many other program-
+ming languages, primarily because C provides a more flexible way to store multi-
+dimensional data: arrays of pointers.
+

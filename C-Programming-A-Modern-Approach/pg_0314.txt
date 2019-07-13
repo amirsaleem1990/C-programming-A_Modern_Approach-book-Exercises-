@@ -1,0 +1,59 @@
+13.5
+
+<string.h>header »23.6
+
+13.5  Using the C String Library — 289
+
+Using the C String Library
+
+Some programming languages provide operators that can copy strings, compare
+strings, concatenate strings, select substrings, and the like. C’s operators. in con-
+trast. are essentially useless for working with strings. Strings are treated as arrays
+in C. so they're restricted in the same ways as arrays—in particular, they can’t be
+copied or compared using operators.
+
+ 
+
+Direct attempts to copy or compare strings will fail. For example, suppose that
+str1 and str2 have been declared as follows:
+
+char str1(10], str2[10] ;
+Copying a string into a character array using the = operator 1s not possible:
+
+stril = "abc"; /*** WRONG ***/
+str2 = str]l; /*** WRONG ***/
+
+We saw in Section 12.3 that usins an array name as the left operand of = 1s illegal.
+D &
+Initializing à character array using = 1s legal, though:
+
+char str1[(10] = "abc";
+
+In the context of a declaration, = 1s not the assignment operator.
+Attempting to compare strings using a relational or equality operator 1s legal
+but won’t produce the desired result:
+
+if (stril == str2) … /*** WRONG ***/
+
+This statement compares str1 and str2 as pointers; it doesn't compare the con-
+tents of the two arrays. Since str1 and str2 have different addresses. the
+expression str1 == str2 must have the value 0.
+
+ 
+
+Fortunately, all is not lost: the C library provides a rich set of functions for
+performing operations on strings. Prototypes for these functions reside in the
+<string.h> header, so programs that need string operations should contain the
+following line:
+
+#include <string.h>
+
+Most of the functions declared in <string. h> require at least one string as
+an argument. String parameters are declared to have type char *, allowing the
+argument to be a character array, à variable of type char *, or a string literal—all
+are suitable as strings. Watch out for string parameters that aren’t declared const,
+however. Such a parameter may be modified when the function is called, so the
+corresponding argument shouldn’t be a string literal.
+
+ 
+

@@ -1,0 +1,62 @@
+550 Chapter 22
+
+setvbuf
+
+setbuf
+
+Input/Ouitput
+
+setvbuf allows us to change the way a stream is buffered and to control the
+size and location of the buffer. The f'unction’s third argument. which specifies the
+Kind of buffering desired, should bc one of the following macros:
+
+u _IOFBF (full buffering). Data is read from the stream when the buffer is
+empty or written to the stream when it's full.
+
+u _IOLBF (line buffering). Data is read from the stream or written to the stream
+one line at a time.
+
+u _IONBF (no buffering). Data is read from the stream or written to the stream
+directly, without a buffer.
+
+(AIL three macros are defined in <stdio.h>.) Full buffering is the default for
+streams that aren’t connected to interactive devices.
+
+setvbu£'s second argument (if it’s not a null pointer) is the address of the
+desired buffer. The buffer might have static storage duration, automatic storage
+duration, or even be allocated dynamically. Making the buffer automatie allows its
+space to be reclaimed automatically at block exit: allocating it dynamically enables
+us to free the buffer when it’s no longer needed. setvbu£'s last argument is the
+number of bytes in the buffer. À larger buffer may give better performance: a
+smaller buffer saves space.
+
+For example, the following call of setvbuf changes the buffering of
+stream to full buffering, using the N bytes in the buf fer array as the buffer:
+
+char buf£er (N] ;
+
+setvbuf (stream, buffer, _IOFBF, N);
+
+ 
+
+setvbu£ must be called after stream 1s opened but before any other operations
+arc performed on 1t.
+
+ 
+
+It’s also legal to call setvbu£ with a null pointer as the second argument.
+which requests that setvbuf create a buffer with the specified size. setvbuf
+returns Zero If it’s successful. It returns a nonzero value if the mode argument is
+invalid or the request can*t be honored.
+
+setbuf 1s an older function that assumes default values for the buffering
+mode and buffer size. If bu£ is à null pointer, the call setbuf (stream, buËf)
+is equivalent to
+
+(void) setvbuf (stream, NULL, _IONBF, O);
+Otherwise, it’s equivalent to
+(void) setvbuf (stream, buf, _IOFBF, BUFSIZ) ;
+
+where BUFSIZ is à macro defined in <stdio.h>. The setbuf f'unction is con-
+sidered obsolete; it’s not recommended for use in new programs.
+

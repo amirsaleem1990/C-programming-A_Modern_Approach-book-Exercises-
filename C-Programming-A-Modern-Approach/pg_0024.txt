@@ -1,0 +1,136 @@
+26
+
+25.3
+
+25.4
+25.5
+
+25.6
+
+Contents
+
+Multibyte Characters
+
+Wide Characters
+
+Unicode and the Universal Character Set
+Encodings of Unicode
+Multibyte/Wide-Character Conversion Functions
+Multibyte/Wide-String Conversion Functions
+Digraphs and Trigraphs
+
+Trigraphs
+
+Digraphs
+
+The <iso646.h> Header: Alternative Spellings
+Universal Character Names (C99)
+
+The <wchar .h> Header (C99): Extended Multibyte and
+
+Wide-Character Utilities
+
+Stream Orientation
+
+Formatted Wide-Character Input/Output Functions
+Wide-Character Input/Output Functions
+
+General Wide-String Utilities
+
+Wide-Character Time-Conversion Functions
+Extended Multibyte/Wide-Character Conversion Utilities
+The <wctype .h> Header (C99): Wide-Character
+Classification and Mapping Utilities
+Wide-Character Classification Functions
+
+Extensible Wide-Character Classification Functions
+Wide-Character Case-Mapping Functions
+
+Extensible Wide-Character Case-Mapping Functions
+
+MISCELLANEOUS LIBRARY FUNCTIONS
+
+26.1
+
+26.2
+
+26.3
+
+The <stdarg.h> Header: Variable Arguments
+Calling a Function with a Variable Argument List
+The v..….print£ Functions
+
+The v.….scan£ Functions
+
+The <stdlib.h> Header: General Utilities
+Numeric Conversion Functions
+
+Program: Testing the Numeric Conversion Functions
+Pseudo-Random Sequence Generation Functions
+
+Program: Testing the Pseudo-Random Sequence Generation
+
+Functions
+
+Communication with the Environment
+Searching and Sorting Utilities
+
+Program: Determining Air Mileage
+Integer Arithmetic Functions
+
+The <time.h> Header: Date and Time
+Time Manipulation Functions
+
+Time Conversion Functions
+
+Program: Displaying the Date and Time
+
+xix
+
+648
+649
+649
+650
+651
+653
+654
+654
+655
+656
+656
+
+657
+658
+659
+661
+662
+667
+667
+
+671
+671
+672
+673
+673
+
+677
+
+677
+679
+680
+681
+682
+682
+684
+686
+
+687
+687
+689
+690
+691
+692
+693
+695
+698
+

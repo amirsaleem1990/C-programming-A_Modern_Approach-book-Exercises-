@@ -1,0 +1,52 @@
+9.3  Arguments 199
+
+There arc several ways to write the prototype for our new version of
+sum _ array. One possibility is to make it look exactly like the function defini-
+tion:
+
+int sum array(int n, int aln]); /* Version 1 */
+Another possibility is to replace the array length by an asterisk (* ):
+int sum array(int n, int a[*]); /* Version 2a */
+
+The rcason for using the * notation 1s that parameter names are optional in func-
+tion declarations. If the name of the first parameter is omitted. it wouldn’t be possi-
+ble to specify that the length of the array is n, but the * provides a clue that the
+length of the array is related to parameters that come earlier in the list:
+
+int sum array(int, int [*]); /* Version 2b */
+
+It’s also legal to leave the brackets empty, as we normally do when declaring an
+array parameter:
+
+int sum array(int n, int a[]); /* Version 3a */
+int sum array(int, int [(l):; /* Version 3b */
+
+Leaving the brackets empty isn’t a good choice, because it doesn’t expose the rela-
+tionship between n and a.
+
+In general, the length of a variable-length array parameter can be any expres-
+sion. For example, suppose that we were to write a function that concatenates two
+arrays a and b by copying the elements of a, followed by the elements of b, into a
+third array named c:
+
+int concatenate (int m, int n, int a[m], int b[n], int c[m+n])
+
+{
+}
+
+The length of c is the sum of the lengths of à and b. The expression used to spec-
+ify the length of c involves two other parameters, but in general it could refer to
+variables outside the function or even call other f'unctions.
+
+Variable-length array parameters with a single dimension—as In all our exam-
+ples so far—have limited usefulness. They make à function declaration or defini-
+tion more descriptive by stating the desired length of an array argument. However,
+no additional error-checking 1s performed: 1t’s still possible for an array argument
+to be too long or too short.
+
+[L turns out that variable-leneth array parameters are most useful for multidi-
+mensional arrays. Earlier in this section, we tried to write a function that sums the
+elements in à two-dimensional array. Our original function was limited to arrays
+with a fixed number of columns. Tf we use a variable-length array parameter, we
+can generalize the function to any number of columns:
+

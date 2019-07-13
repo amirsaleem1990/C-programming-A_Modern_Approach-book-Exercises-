@@ -1,0 +1,72 @@
+676 Chapter 25
+
+Section 25.3
+
+® 6.
+T.
+® !
+2.
+
+International Features
+
+Modify the following program fragment by replacing as many characters as possible by tri-
+graphs.
+
+while ((orig char = getchar()) != EOF) {
+new char = orig char “ KEY;
+if (isprint (orig char) && isprint (new_char))
+putchar (new _char) ;
+else
+putchar (orig_char) ;
+
+}
+
+(C99) Modify the program fragment in Exercise 6 by replacing as many tokens as possible
+by digraphs and macros defined in <iso646.h>.
+
+Programming Projects
+
+Write a program that tests whether your compiler*s "" (native) locale is the same as its "C"
+locale.
+
+Write à program that obtains the name of a locale from the command line and then displays
+the values stored in the corresponding 1conv structure. For example, if the locale is
+"f£fi FI" (Finland), the output of the program might look like this:
+
+decimal_point = ","
+thousands sep = " "
+grouping = 3
+
+mon _ decimal _point = ","
+mon thousands _ sep "
+mon grouping 3
+positive _sign = ""
+negative sign = "-"
+currency _ symbol = "EUR"
+frac_digits = 2
+p cs precedes =
+n cs precedes = O
+p_sep by space = 2
+n sep by space
+p _sign posn = l
+n sign posn = l
+int curr symbol = "EUR "
+int frac _ digits = 2
+int_p_cs _ precedes = O
+int n cs precedes = O
+int_p_sep by space = 2
+int _n sep by space
+int p sign posn = l
+int n sign posn = l
+
+O
+
+H
+V
+
+Il
+&
+
+For readability, the characters in grouping and mon_grouping should be displayed as
+decimal numbers.
+

@@ -1,0 +1,60 @@
+24.4
+
+24.4  The <setjmp.h> Header: Nonlocal Jumps 635
+
+printf ("Installing handler for signal %d\n", SIGINT) ;
+orig handler = signal (SIGINT, handler) ;
+raise sig();
+
+print£ ("Changing handler to SIG IGN\n") ;
+signal (SIGINT, SIG _ IGN) ;
+raise sig();
+
+printf ("Restoring original handler\n") ;
+signal (SIGINT, orig handler) ;
+raise sig() ;
+
+print£ ("Program terminates normally\n") ;
+return 0;
+
+}
+
+void handler (int sig)
+
+{
+
+printf ("Handler called for signal %d\n", sig) ;
+
+}
+
+void raise sig(void)
+
+{
+
+raise (SIGINT) ;
+
+}
+
+Incidentally, the call of raise doesn’t need to be in a separate function. |
+defined raise sig simply to make a point: regardiess of where a signal 1s
+raised—whether it’s in main or in some other function—it will be caught by the
+most recently installed handier for that signal.
+
+The output of this program can vary somewhat. Here’s one possibility:
+
+Installing handler for signal 2
+Handler called for signal 2
+Changing handler to SIG IGN
+Restoring original handler
+
+From this output, we see that our implementation defines SIGINT to be 2 and that
+the original handler for SIGINT must have been SIG DFL. (If it had been
+SIG _ IGN, we’d also see the message Program terminates normally.)
+Finally, we observe that SIG DFL caused the program to terminate without dis-
+playing an error message.
+
+The <setjmp.h> Header: Nonlocal Jumps
+
+int setjmp(jmp _ buf env) ;
+void longjmp (jmp _ buf env, int val);
+

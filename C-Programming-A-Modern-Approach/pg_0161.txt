@@ -1,0 +1,64 @@
+136
+
+Chapter 7  Basic Types
+
+QaAÀ
+
+portability tip
+
+enumerated types > 16.5
+
+æ
+
+_Bool type »5.2
+
+On the other hand, treating characters as numbers can lead to various programmine
+errors that won't be caught by the compiler, and lets us write meaningless expres-
+sions such as 'a' * 'b' / 'c'. t can also hamper portability. since our pro-
+grams may be based on assumptions about the underlying character set. (Our for
+loop, for example, assumes that the letters from À to Z have consecutive codes.)
+
+Signed and Unsigned Characters
+
+Since C allows characters to be used as integers, it shouldn’t be surprising that the
+char type—like the integer types—exists in both signed and unsigned versions.
+Signed characters normally have values between —128 and 127. while unsigned
+characters have values between O and 255.
+
+The C standard doesn't specify whether ordinary char is a signed or an
+unsigned type; some compilers treat it as a signed type. while others treat it as an
+unsigned type. (Some even allow the programmer to select, via a compiler option,
+whether char should be signed or unsigned.)
+
+Most of the time, we don’t really care whether char is signed or unsigned.
+Once in a while, though. we do. especially if we're using a character variable to
+store a small integer. For this reason, C allows the use of the words signed and
+unsigned to modify char:
+
+signed char sch;
+unsigned char uch;
+
+Don't assume that char is either signed or unsigned by default. If it mat-
+ters, use signed char or unsigned char ‘nstead of char.
+
+In light of the close relationship between characters and integers, C89 uses the
+term integral types to refer to both the integer types and the character types. Enu-
+merated types are also integral types.
+
+C99 doesn't use the term ‘’integral types.” Instead, it expands the meaning of
+“integer types” to include the character types and the enumerated types. C99’s
+_Bool type 1s considered to be an unsigned integer type.
+
+Arithmetic Types
+
+The integer types and floating types are collectively known as arithmetic types.
+Here's a summary of the arithmetic types in C89, divided into categories and sub-
+categories:
+
+m Intecral types
+e char
+e Signed integer types (signed char, short int, int. long int)
+
+e Unsigned integer types (unsigned char, unsigned short int.
+unsigned int, unsigned long int)
+

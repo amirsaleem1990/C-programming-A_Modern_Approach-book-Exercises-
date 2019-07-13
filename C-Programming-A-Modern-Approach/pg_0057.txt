@@ -1,0 +1,36 @@
+32
+
+Chapter2 C Fundamentals
+
+disabling code » /4.4
+
+Q:
+À:
+
+external linkage > /8.2
+
+æ
+
+In any event, there’s a better way to disable portions of a program, as we’ll see
+later.
+
+Where does the £loat type get its name? [p. 17]
+
+float 1s short for “floating-point.” a technique for storing numbers in which the
+decimal point “floats.”” À float value 1s usually stored in two parts: the fraction
+(or mantissa) and the exponent. The number 12.0 might be stored as 1.5 x 2°, for
+example, where 1.5 1s the fraction and 3 1s the exponent. Some programming lan-
+guages call this type real instead of float.
+
+ 
+
+How many spaces should I use for indentation? [p. 28]
+
+That’s a tough question. Leave too little space, and the eye has trouble detecting
+indentation. Leave too much, and lines run off the screen (or page). Many C pro-
+grammers indent nested statements eight spaces (one tab stop), which 1s probably
+too much. Studies have shown that the optimum amount of indentation 1s three
+spaces, but many programmers feel uncomfortable with numbers that aren°t a
+power of two. Although ! normally préfer to indent three or four spaces, l’Il use
+two spaces in this book so that my programs will fit within the margins.
+

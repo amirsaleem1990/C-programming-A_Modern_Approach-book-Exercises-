@@ -1,0 +1,69 @@
+Table 25.18
+Miscellaneous Wide-String
+Functions and Their
+<string.h> Equivalents
+
+wesftime
+
+ 
+
+25.5  The <wchar. h> Header (C99) 667
+
+The functions in this group are wide-character versions of the miscellaneous
+string functions found in <string.h> and described in Section 23.6. The
+<wchar .h> functions have arguments of type wchar t * instead of char *,
+but their behavior is mostly the same as the <string.h> functions. Table 25.18
+shows the correspondence between the <string.h> functions and their wide-
+character counterparts.
+
+ 
+
+<wchar.h> Function _ <string.h> Equivalent
+
+ 
+
+wcslen strlen
+wmemset memset
+
+ 
+
+ 
+
+ 
+
+Wide-Character Time-Conversion Functions
+
+size t wesftime (wchar t * restrict s, size t maxsize,
+const wchar t * restrict format,
+const struct tm * restrict timeptr) ;
+
+The wesftime function is the wide-character version of strftime, which
+bclongs to the <t ime .h> header and is described in Section 26.3.
+
+Fxtended Multibyte/Wide-Character Conversion Utilities
+
+We'll now examine <wchar.h> functions that perform conversions between
+multibyte characters and wide characters. Five of these functions (mbrlen,
+mbrtowc, wertomb, mbsrtowcs, and wcsrtombs) correspond to the multi-
+byte/wide-character and _multibyte/wide-string conversion functions declared in
+<stdlib.h>. The <wchar.h> functions have an additional parameter, a
+pointer to a variable of typc mbstate t. This variable keeps track of the state of
+the conversion of a multibyte character sequence to a wide-character sequence (or
+vice versa), based on the current locale. As a result, the <wchar .h> functions are
+“restartable”; by passing a pointer to an mbstate t variable modified by a previ-
+ous function call, we can “restart”’ the function using the conversion state from that
+call. One advantage of this arrangement is that it allows two functions to share the
+same conversion state. For example, calls of mbrtowc and mbsrtowcs that are
+Used to process a single multibyte character string could share an mbstate t
+variable.
+
+The conversion state stored in an mbstate_t variable consists of the current
+shift state plus the current position within a multibyte character. Setting the bytes
+of an mbstate_t variable to zero puts it in the initial conversion state, signifying
+that no multibyte character is yet in progress and that the initial shift state is in
+effect:
+
+mbstate t state;
+
+memset (&state, '\0', sizeof (state) ) ;
+

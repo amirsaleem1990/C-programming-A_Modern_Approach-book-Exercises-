@@ -1,0 +1,61 @@
+616 Chapter 23  Library Support for Numbers and Character Data
+
+QaAâ
+
+memcpy
+memmove
+
+strcpy
+strncpy
+
+Copying Functions
+
+void *memcpy (void * restrict sl,
+const void * restrict s2, size t n);
+void *memmove (void *s1, const void *s2, size t n);
+char *strcpy (char * restrict s1l,
+const char * restrict s2);
+char *strncpy (char * restrict sl,
+const char * restrict s2, size t n');
+
+The functions in this category copy characters (bytes) from one place in memory
+(the “source”) to another (the “destination’’). Each function requires that the first
+argument point to the destination and the second point to the source. AIl copying
+functions return the first argument (a pointer to the destination).
+
+memcpy copies n characters from the source to the destination. where n 1s the
+function’s third argument. If the source and destination overlap. the behavior of
+memcpy 1s undefined. memmove 1s the same as memcpy, except that 1t works cor-
+rectly when the source and destination overlap.
+
+strcpy copies a null-terminated string from the source to the destination.
+strncepy 1s similar to stropy, but it won’t copy more than n characters, where
+n is the function’s third argument. (If n is too small, strnopy won°t be able to
+copy a terminating null character.) If it encounters a null character in the source,
+strncopy adds null characters to the destination until it has written a total of n
+characters. stropy and strnopy, like memopy, aren’t guaranteed to work if the
+source and destination overlap.
+
+The following examples illustrate the copying functions: the comments show
+which characters are copied.
+
+char SOUICE[] — {|hl, 'o', ‘t', I\Ol, ‘t', 'e'a lal};
+char dest [7] ;
+
+memcpy (dest, source, 3); /* h, o, t */
+memcpy (dest, source, 4); /* h, o, t, \0O */
+memcpy (dest, source, 7); /+ h, o, t, \0, t, e, a */
+memmove (dest, source, 3) ; /* h, o, t */
+memmove (dest, source, 4); /* h, o, t, \0O */
+memmove (dest, source, 7) ; /* h, o, t, \0, t, e, a */
+stropy (dest, source) ; /* h, o, t, \0O */
+strncopy (dest, source, 3); /* h, o, t */
+strncpy (dest, source, 4); /* h, o, t, \0O * /
+
+strncpy (dest, source, 7) ; /* h, o, t, \0, \0, \0, \0 */
+
+Note that memcpy, memmove, and strnopy don't require a null-terminated
+string; they work just as well with any block of memory. The strcpy function, on
+the other hand, doesn’t stop copying until it reaches a null character. so 1t works
+only with null-terminated strings.
+

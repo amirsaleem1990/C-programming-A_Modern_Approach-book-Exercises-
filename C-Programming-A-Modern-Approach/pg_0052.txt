@@ -1,0 +1,17 @@
+2.8 Layout ofa C Program 27
+
+ 
+
+AN
+
+restrictions on identifiers > 27.17
+
+ 
+
+ 
+
+ 
+
+Compressing programs in this fashion isn’t a good idea. In fact, adding spaces
+and blank lines to a program can make it easier to read and understand. Fortunately,
+

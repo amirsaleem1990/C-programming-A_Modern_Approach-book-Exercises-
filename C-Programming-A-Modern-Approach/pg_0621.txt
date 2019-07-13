@@ -1,0 +1,65 @@
+596
+
+Chapter 23 _ Library Support for Numbers and Character Data
+
+frexp
+
+ldexp
+
+pow
+
+sqrt
+
+mod£f (3.14159, &int part) > 0.14159 (int part is assigned 3.0)
+
+Although int_part must have type double, we can always cast it to int or
+
+long int later.
+The frexp function splits a floating-point number into a fractional part f and
+
+an exponent n in such a way that the original number equats # x 2”, where either
+0.5 <f< l orf= 0. £rexp returns f and stores n in the (integer) object pointed to
+by the second areument:
+
+frexp(12.0, &exp) — .T5 (exp is assigned 4)
+frexp(0.25, &exp) > 0.5 (exp is assigned —1)
+
+1dexp undoes the work of £rexp by combining a fraction and an exponent
+into a single number:
+
+ldexp(.75, 4) => 12.00
+ldexp(0.5, -1) > 0.25
+
+In general, the call 1dexp (x, exp) returns x x 2°*P,
+The mod£, frexp, and 1dexp functions are primarily used by other func-
+tions in <math.h>. They are rarely called directly by programs.
+
+Power Functions
+
+double pow(double x, double y) ;
+double sgrt (double x) ;
+
+The pow function raises its first argument to the power specified by its second
+argument:
+
+pow(3.0,2.0) = 9.0
+pow(3.0,0.5) = |1.73205
+pow(3.0, -3.0) — 0.037037
+
+sqrt computes the square root:
+
+sart(3.0) = 1.73205
+
+Using sqrt to find square roots is preferable to calling pow, since sart is usu-
+ally a much faster function.
+
+Nearest Integer, Absolute Value, and Remainder Functions
+
+double ceil (double x) ;
+
+double fabs (double x) ;
+
+double floor (double x) ;
+
+double fmod (double x, double y) ;
+

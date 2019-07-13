@@ -1,0 +1,63 @@
+266
+
+Chapter 12  Pointers and Arrays
+
+QeÀ
+
+>
+
+If const 1s present, the compiler will check that no assignment to an element
+of a appears in the body of f£ind _ largest.
+
+u The time required to pass an array to a function doesn’t depend on the size of
+the array. Therc’s no penalty for passing a large array, since no copy of the
+array 1s made.
+
+w An array parameter can be declared as a pointer if desired. For example,
+£find largest could be defined as follows:
+
+int find _ largest (int *a, int n)
+
+{
+}
+
+Declaring a to be a pointer 1s equivalent to declaring it to be an array; the
+compiler treats the declarations as though they were identical.
+
+ 
+
+Although declaring a parameter to be an array is the same as declaring it to be a
+pointer, the same isn’t true for a variable. The declaration
+
+int a[(10];
+causes the compiler to set aside space for 10 integers. In contrast, the declaration
+int *a;
+
+causes the compiler to allocate space for a pointer variable. In the latter case, à 1s
+not an array; attempting to use it as an array can have disastrous results. For exam-
+ple, the assignment
+
+*a = 0; /*** WRONG ***/
+
+will store O where a 1s pointing. Since we don’t know where a is pointing, the
+effect on the program 1s undefined.
+
+ 
+
+ 
+
+u À function with an array parameter can be passed an array ‘“slice”—a sequence
+of consecutive elements. Suppose that we want £ind_largest to locate the
+largest element in some portion of an array b, say elements b [5], …. b[14].
+When we call find_largest, we'll pass it the address of b [5] and the
+number 10, indicating that we want find _ largest to examine 10 array
+elements, starting at b [5] :
+
+largest = find largest (&b[5], 10);
+
+Using a Pointer as an Array Name
+
+If we can use an array name as a pointer, will C allow us to subscript a pointer as
+though it were an array name? By now, you’d probably expect the answer to be
+yes, and you’d be right. Here’s an example:
+

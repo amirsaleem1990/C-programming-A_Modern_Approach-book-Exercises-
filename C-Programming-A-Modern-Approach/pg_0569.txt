@@ -1,0 +1,80 @@
+544
+
+Chapter 22
+
+Table 22.2
+Mode Strings
+for Text Files
+
+Input/Output
+
+undefined.) There are two ways to avoid the problem. One is to use \\ instead of
+
+\:
+Fopen ("c:\\project\\testl.dat", "r")
+The other technique is even easier—just use the / character instead of \:
+
+fopen ("c:/project/testl.dat", "r")
+
+Windows will happily accept / instead of \ as the directory separator.
+
+ 
+
+fopen returns a file pointer that the program can (and usually will) save in a
+variable and use later whenever 1t needs to perform an operation on the file. Here’s
+à typical call of fopen, where É£p is a variable of type FILE *:
+
+p = fopen("in.dat", "r") ; /* opens in.dat for reading */
+
+When the program calls an input function to read from in.dat later, it will sup-
+ply £p as an argument.
+
+When it can1 open a file, fopen returns a null pointer. Perhaps the file
+doesn't exist, or it’s in the wrong place, or we don‘t have permission to open it.
+
+ 
+
+Never assume that a file can be opened; always test the return value of fopen to
+make sure 1t’s nol a null pointer.
+
+ 
+
+Modes
+
+Which mode string we'Il pass to Éopen depends not only on what operations we
+plan to perform on the file later but also on whether the file contains text or binary
+data. To open a text file, we’d use one of the mode strines in Table 22.2.
+
+ 
+
+ 
+
+ 
+
+ 
+
+String Meaning
+
+"r" Open for readine
+
+w" Open for writing (file need not exist)
+
+"a" Open for appending (file necd not exist)
+
+"r+" _ Open for reading and writine. starting at beginning
+"y+" ; Open for reading and writing (truncate 1f file exists)
+"a+" - Open for reading and writing (append if file exists)
+
+ 
+
+When we use fopen to open a binary file, we'll need to include the letter b in
+the mode string. Table 22.3 lists mode strines for binary files.
+
+From Tables 22.2 and 22.3, we see that <stdio.h> distinguishes between
+writing data and appending data. When data 1s written to a file, it normally over-
+writes what was previously there. When a file 1s opened for appending. however.
+data written to the file 1s added at the end, thus preserving the file’s original contents.
+
+By the way, special rules apply when a file is opened for both reading and writ-
+ing (the mode string contains the + character). We can‘tswitch from reading to writ-
+

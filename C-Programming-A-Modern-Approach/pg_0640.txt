@@ -1,0 +1,66 @@
+{casemap.c
+
+23.6
+
+23.6  Ihe<string.h> Header: String Handling
+
+/* Tests the case-mapping functions */
+
+finclude <ctype.h>
+#include <stdio.h>
+
+int main (void)
+
+{
+char *p;
+for (p = "aAO!"; *p != '\0'; p++) (
+print£ ("tolower('%c') is '%c'; ", *p,
+print£ ("toupper('%c') is '$c'\n", *p,
+}
+return 0;
+}
+
+The program produces the following output:
+
+tolower('a') is 'a'; toupper('a') is 'A'
+tolower('A') is 'a'; toupper('A') is 'a'
+tolower('0') is 'O'; toupper('0') is "'0'
+tolower ('!') is '!'; toupper('!') is "!"
+
+tolower (*p) ) ;
+toupper (*p)) ;
+
+The <string.h> Header: String Handling
+
+615
+
+We first encountered the <string. h> header in Section 13.5, which covered the
+most basic string operations: copying strings, concatenating strings, comparing
+strings, and finding the length of a string. As we*I1 see now, there are quite a few
+string-handling functions in <string.h>, as well as functions that operate on
+character arrays that aren*t necessarily null-terminated. Functions in the latter cate-
+gory have names that begin with mem, to suggest that these functions deal with
+blocks of memory rather than strings. These memory blocks may contain data of
+any type, hence the arguments to the mem functions have type void * rather than
+
+char *.
+<string.h> provides five kinds of functions:
+
+= Copying functions. Functions that copy characters from one place in memory
+
+to another place.
+
+=n Concatenation functions. Functions that add characters to the end of a string.
+
+= Comparison functions. Functions that compare character arrays.
+
+m Search functions. Functions that search an array for a particular character, a
+
+set of characters, or a string.
+
+m Miscellaneous functions. Functions that initialize a memory block or com-
+
+pute the length of a strine.
+
+We'll now discuss these functions, one group at a time.
+

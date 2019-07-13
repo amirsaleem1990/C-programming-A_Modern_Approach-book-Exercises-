@@ -1,0 +1,62 @@
+354 Chapter 15  Writing Large Programs
+
+dofault argument promotions » 93
+
+/\
+
+Sharing Function Prototypes
+
+Suppose that a source file contains a call of a function £ that’s defined in another
+file. Éoo.c. Calling £ without declaring 1t first 1S risky. Without a prototype to
+rely on, the compiler is forced to assume that £°s return type is int and that the
+number of parameters matches the number of arguments In the call of £. The argu-
+ments themselves are converted automatically to a kind of “standard form” by the
+default argument promotions, The compiler's assumptions may well be wrong, but
+it has no way to check them, since it compiles only one file at a time. If the
+assumptions are incorrect. the program probably won't work. and there won't be
+any clues as to why it doesn't. (For this reason, C99 prohibits calline a function for
+which the compiler has not yet seen a declaration or definition.)
+
+ 
+
+When calling à function £ that's defined in another file. always make sure that the
+compiler has seen à prototype for f prior to the call.
+
+ 
+
+Our first impulse 1s to declare £ in the file where it’s called. That solves the
+problem but can create a maintenance nightmare. Suppose that the function 1s
+called in fifty different source files. How can we ensure that £'s prototypes are the
+same In all the files? How can we guarantee that they match the definition of £ in
+foo.c” If £ should change later. how can we find all the files where 1t's used?
+
+The solution is obvious: put £'s prototype in a header file, then include the
+header file in all the places where £ 1s called. Since £ 1s defined in £oo. c. let's
+name the header file £oo.h. In addition to including foo .h in the source files
+where £ 1s called, we’ll need to include it in £oo.c. enabling the compliler to
+check that £°s prototype In foo .h matches 1ts definition in foo.c.
+
+ 
+
+Always include the header file declaring a function £ in the source file that con-
+tains £ s definition. Failure to do so can cause hard-to-find bugs. since calls of f
+elsewhere In the program may not match £*s definition.
+
+ 
+
+If foo.c contains other functions. most of them should be declared in the
+same header file as £. After all. the other functions in foo.c arè presumably
+related to £; any file that contains a call of £ probably needs some of the other
+functions in foo.c. Functions that are intended for use only within foo.c
+shouldn’t be declared in a header file. however: to do so would be misleadine.
+
+To 1llustrate the use of function prototypes in header files, let's return to the
+RPN calculator of Section 15.1. The stack. c file will contain definitions of the
+make empty. is empty.is f£ull. push. and pop functions. The followimng
+prototypes for these functions should go in the stack. h header file:
+
+void make _ empty (void) ;
+int is _ empty (void) ;
+
+ 
+

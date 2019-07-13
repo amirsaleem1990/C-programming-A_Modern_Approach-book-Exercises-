@@ -1,0 +1,75 @@
+Section 3.1
+
+Section 3.2
+
+*4,
+
+O *.
+
+6.
+
+Exercises 49
+
+Exercises
+
+What output do the following calls of printf produce?
+
+(a) printf("%6d,%4d", 86, 1040) ;
+(b) print£f("%12.5e", 30.253) ;
+
+(c) printf("%.4f£", 83.162) ;
+
+(d) printf("%-6.2g", .0000009979) ;
+
+Write calls of printf that display a float variable x in the following formats.
+
+(a) Exponential notation; left-justified in à field of size 8: one digit after the decimal point.
+
+(b) Exponential notation: right-justified in a field of size 10: six digits after the decimal
+point.
+
+(c) Fixed decimal notation: left-justified in à field of size 8: three digits after the decimal
+point.
+
+(d) Fixed decimal notation; right-justified in à field of size 6: no digits after the decimal
+point.
+
+For each of the following pairs of scanf format strings, indicate whether or not the two
+strings arc equivalent. If they*re not, show how they can be distinguished.
+
+(u) "Zd" versus " %d"
+
+(b) "%Sd-%$d-%d" versus "%=d -%d -%d"
+(c) "Sf" versus "%£ "
+
+(d) "Sf,=f" versus "S£, %f"
+
+Suppose that we call scan£ as follows:
+scanf ("$d%f%d", &i, &Xx, &]);
+If the user enters
+
+10.3 5 6
+
+what will be the values of i, x, and j after the call? (Assume that i and j are int variables
+and x is a float variable.)
+
+Suppose that we call scan£ as follows:
+
+scanf ("%f%d%£{", &x, &i, &y) ;
+
+If the user enters
+
+12.3 45.6 789
+
+what will be the values of x, i. and y after the call? (Assume that x and y are float vari-
+
+ables and i is an int variable.)
+
+Show how to modify the addfrac. c program of Section 3.2 so that the user is allowed to
+enter fractions that contain spaces before and after each / character.
+
+ 
+
+*Starred exercises are tricky—the correct answer is usually not the obvious one, Read the question
+thoroughly, review the relevant section if necessary, and be careful!
+

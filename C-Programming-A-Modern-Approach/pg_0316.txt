@@ -1,0 +1,53 @@
+size t type »7.6
+
+135  Using the C String Library — 291
+
+strnocpy(str1, str2, sizeof(str1)) ;
+
+Âs long as str1 1s large enough to hold the string stored in str2 (including the
+null character), the copy will be done correetly. strnepy 1tself isn*t without dan-
+ger, though. For one thing, it will leave the string in str1 without a terminating
+null character if the length of the strine stored in str2 is greater than or equal to
+the size of the str1 array. Here's à safer way to use strncpy:
+
+strnopy(str1I, str2, sizeof(str1) - 1);
+strl (sizeof (str1i1)-1] = '\0';
+
+The second statement guarantees that str1 1s always null-terminated, even if
+strncopy fails to copy a null character from str2.
+
+The strlen (String Length) Function
+The strlen function has the following prototype:
+size t strlen(const char *s) ;
+
+size t. which is defined in the C library, is a typede£ name that represents
+one of C's unsigned integer types. Unless we’re dealing with extremely long
+strings, this technicality need not concern us—we can simply treat the return value
+of strlen as an integer.
+
+strlen returns the lengih of à string s: the number of characters in s up lo.
+but not including, the first null character, Here are a few examples:
+
+int len;
+
+len = strlen ("abc") ; /* len is now 3 */
+len = strlen("") ; /* len is now 0 */
+stropy(str1, "abc”) ;
+
+len = strlen(strl) ; /* len is now 3 */
+
+The last example illustrates an important point. When given an array as its argu-
+ment, strlen doesn't measure the length of the array itself; instead, it returns the
+length of the string stored in the array.
+
+The strcat (String Concatenation) Function
+The strcat function has the following prototype:
+char *strcat (char *sl, const char *s2) ;
+
+strcat appends the contents of the string s2 to the end of the string s1; 1l
+returns sl (a pointer to the resulting string).
+Here are some examples of strcat in action:
+
+strcopy (str1, "abc") ;
+strcat (stri, "def") ; /* strl now contains "abcdef" */
+

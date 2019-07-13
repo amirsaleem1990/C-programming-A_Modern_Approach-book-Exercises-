@@ -1,0 +1,62 @@
+352 Chapter 15 Writing Large Programs
+
+portability tip
+
+#include directive
+(form 3)
+
+preprocessing tokens » 14.37
+
+The File name in an finclude directive may include information that helps
+locate the file. such as a directory path or drive specifier:
+
+rinclude "c:\cprogs\utils.h" /* Windows path */
+#include "/cprogs/utils.h" /* UNIX path */
+
+Although the quotation marks in the #include directive make file names look
+like string hitcrals. the preprocessor doesn't treat them that way. (That's fortunate.
+since \c and \u—which appear in the Windows example—would be treated as
+escape sequences In à strimg literal.)
+
+Is usually best not to include path or drive information in Hinclude
+directives. Such information makes it difficult to compile a program when
+its transported to another machine or, worse, another operating system.
+
+For example, the following Windows #include directives specify drive and/or
+path information that may not always be valid:
+
+finclude "d:utils.h"
+#include "\cprogs\include\utils.h"
+finclude "d:\cprogs\include\utils.h"
+
+The followine directives are better: they don’t mention specific drives, and paths
+are relative rather than absolute:
+
+finclude "utils.h"
+#include ". .\include\utils.h"
+
+The Hinclude directive has third Formn that's used less often than the other
+two:
+
+#include tokens
+
+where fokens 1s any sequence of preprocessine tokens. The preprocessor will scan
+the tokens and replace any macros that it finds. Affer macro replacement, the
+resulune directive must match one of the other forms of #include. The advan-
+tage of the third kind of Finclude 1s that the file name can be defined by a macro
+rather than being ‘hard-coded” into the directive itsclf, as the following example
+shows:
+
+#if defined(IA32)
+
+tdefine CPU FILE "ia32.h"
+#elif defined (IA64)
+
+#define CPU FILE "ia64.h"
+Heli£f defined (AMD64 )
+
+tdefine CPU FILE "amd64.h"
+#endif
+
+#include CPU FILE
+

@@ -1,0 +1,65 @@
+copysign
+
+nan
+
+ls Lud flunclion » 28.2
+
+nextafter
+
+Qa&Â
+nexttoward
+
+23.4  The <math.h> Header (C99): Mathematics 609
+
+long double nextafterl (long double x, long double y);
+
+double nexttoward (double x, long double y);
+float nexttowardf (float x, long double y);
+long double nexttowardl (long double x,
+
+Ilong double y);
+
+The mysteriously named ‘“manipulation functions” are all new in C99. They pro-
+vide access to the low-level details of floating-point numbers.
+
+The copysign function copies the sign of one number to another number.
+The call copysign (x, y) returns a value with the magnitude oï x and the sign
+of y.
+
+The nan function converts a string to a NaN value. The call nan ( "n-char-
+sequence") 1s equivalent to strtod ("NAN (n-char-sequence) ", (char**)
+NULL). (Sec the discussion of strtod for a description of the format of n-char-
+sequence.) The call nan ("") 1s equivalent to strtod("NAN()", (char**)
+NULL). 1f the argument in à call of nan doesn’t have the value "n-char-
+sequence" or "", the call is equivalent to strtod ("NAN", (char**) NULL).
+If quiet NaNs aren't supported. nan returns zero. Calls of nanf and nanl are
+equivalent to calls of strtof and strtold, respectively. This function 1s used
+to construct a NaN value containing a specific binary pattern. (Recall from earlier
+in this section that the fraction part of a NaN value 1s arbitrary.)
+
+The nextafter function determines the next representable value of a num-
+ber x (if all values of x’s type were listed in order, the number that would come
+just before or just after x). The value of y determines the direction: if y < x, then
+the function returns the value just before x; if x < y, it returns the value just after x.
+If x and y are equal. nextafter returns y.
+
+The nexttoward function is the same as nextaËter, except that the y
+parameter has type long double instead of double. If x and y are equal,
+nexttoward returns y converted to the function’s return type. The advantage of
+nexttoward is that a value of any (real) floating type can be passed as the second
+argument without the danger of it being incorrectly converted to a narrower type.
+
+Maximum, Minimum, and Positive Difference Functions
+
+double fdim(double x, double y);
+float fdimf (float x, float y);
+long double fdiml (long double x, long double y);
+
+double fmax (double x, double y);
+float fmaxf (float x, Éloat y);
+long double fmax]l (long double x, l1ong double y);
+
+double fmin (double x, double y);
+float fminf (float x, float y);
+long double fminl (long double x, long double y);
+

@@ -1,0 +1,59 @@
+286
+
+Chapter 13  Strings
+
+AN
+
+Égets function » 22.5
+
+Suppose thal after the prompt
+Enter a sentence :
+the user enters the line
+To C, or not to C: that is the question.
+
+scan£ vwill store the string "To" in sentence. The next call of scanf will
+resume reading the line at the space after the word To.
+Now suppose that we replace scanf by gets:
+
+gets (sentence) ;
+When the user enters the same input as before, gets will store the string
+K To C, or not to C: that is the question. "
+
+In sentence.
+
+ 
+
+Âs they read characters into an array, scanf and gets have no way to detect
+when it’s full. Consequently, they may store characters past the end of the array.
+causing undefined behavior. scanf can bc made safer by using the conversion
+specification %ns instead of %s, where n is an integer indicating the maximum
+number of characters to be stored. gets, unfortunately, is inherently unsafe:
+fÊgets is a much better alternative,
+
+ 
+
+Reading Strings Character by Character
+
+Since both scanf and gets are risky and insufficiently flexible for many appli-
+cations, C programmers often write their own input functions. By reading strines
+one character at a time, these functions provide a greater degree of control than the
+standard input functions.
+
+IF we decide to design our own input function, we’!! need to consider the fol-
+lowing issues:
+
+#s Should the function skip white space before beginning to store the string?
+
+=s What character causes the function to stop reading: a new-line character, any
+white-space character, or some other character? Is this character stored in the
+string or discarded?
+
+u What should the function do 1f the input string is too long to store: discard the
+extra characters or leave them for the next input operation?
+
+Suppose we need a function that doesn’t skip white-space characters. stops
+reading at the first new-line character (which isn’t stored in the string), and dis-
+cards extra characters. The function might have the following prototype:
+
+int read _line(char str[], int n);
+

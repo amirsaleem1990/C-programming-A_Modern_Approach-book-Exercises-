@@ -1,0 +1,90 @@
+PROGRAM
+
+canopen.c
+
+ 
+
+22.2  File Operations 547
+
+argc is the number of command-line arguments; argv is an array of pointers to
+the argument strings. argv [0] points to the program name, argv[1] through
+argv [argc-1] point to the remaining arguments. and argv [argc] is a null
+pointer. In the example above, argc is 3, argv [0] points Lo a string containine
+the program name, argv [1] points to the string "names.dat". and argv(2)
+points to the string "dates. dat":
+
+argv
+
+—* program name
+
+ 
+
+ 
+
+——> n|/a|m|e |s | ..|d|a|t \o
+
+ 
+
+—_—»; d|a|t |e|s|.|d{|a|t \o
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Checking Whether a File Can Be Opened
+
+The following program determines if à file exists and can be opened for reading.
+When the program is run, the user will give it a file name to check:
+
+canopen file
+
+The program will then print cither file can be opened or file can't be
+opened. If the user enters the wrong number of arguments on the command line,
+the program will print the message usage : canopen filename to remind the
+user that canopen requires a single file name.
+
+/* Checks whether a file can be opened for reading */
+
+fiinclude <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+
+(
+
+FILE *fp;
+
+if£ (argc != 2) (
+print£ ("usage: canopen filename\n'") ;
+exit(EXIT_FAILURE):
+
+}
+
+L£ ((fp = fopen(argv[1], "r")) == NULL) {
+print£f("%s can't be opened\n", argv/[1]) ;
+exit (EXIT FAILURE) ;
+
+;
+
+print£("%s can be opened\n", argv[1]) ;
+Éclose (£p) ;
+return 0;
+

@@ -1,0 +1,55 @@
+23.4  The <math.h> Header (C99): Mathematics — 601
+
+result. In addition, ERANGE is stored in errno. The C99 standard describes a
+more complicated set of actions when overflow occurs:
+
+m If default roundinsg is in effect or if the return value is an “exact infinity” (such
+as 1og (0.0) ), then the function returns either HUGE VAL, HUGE _VALF, r
+HUGE VALL, depending on the function’s return type. (HUGE VALF and
+HUGE VALL—1the float and long double versions of HUGE_VAL-—are
+new in C99. Like HUGE VAL, they may represent positive infinity.) The value
+returned has the sign of the correct result.
+
+u If the value ofmath errhandling & MATH _ERRNO is nonzero, ERANGE
+1S stored in errno.
+
+m If the value of math errhandling & MATH_ERREXCEPT is nonzero, the
+divide-by-zero floating-point exception is raised if the mathematical result 18
+an exact infinity. Otherwise, the overflow exception 1s raised.
+
+Underflow. IË the magnitude is too small to represent, the C89 standard
+requires the function to return zero; some implementations may also store
+ERANGE in errno. The C99 standard prescribes a somewhat different set of
+actions:
+
+u The function returns a value whose magnitude is less than or equal to the
+smallest normalized positive number belonging to the function’s return type.
+(This value might be zero or a subnormal number.)
+
+u If the value of math errhandling & MATH ERRNO is nonzero, an imple-
+mentation may store ERANGE in errno.
+
+u |f the value of math errhandling & MATH_ERREXCEPT is nonzero, an
+implementation may raise the uniderflow Floatine-point exception.
+
+Notice the word “may” in the latter two cases. For reasons of efficiency, an imple-
+mentation is not required to modify errno or raise the r#nderflow exception.
+
+Functions
+
+We're now ready to tackle the functions that C99 adds to <math.h>. l’Il present the
+functions in groups, using the same calegories as the C99 standard. These categories
+differ somewhat from the ones in Section 23.3, which came from the C89 standard.
+
+One of the biggest changes in the C99 version of <math.h> is the addition
+of two more versions of most functions. In C89, there’s only a single version of
+each math function; typically, it takes at least one argument of type double and/
+or returns a double value. In C99, however. there are two additional versions:
+one for £loat and one for long double. The names of these functions are
+identical to the name of the original function except for the addition of an É or 1
+suffix. For example, the original sqrt function, which takes the square root of a
+double value, is now joined by sqrt£ (the Float version) and sqrt1l (the
+long double version). DIl list the prototypes for the new versions (in italics, as
+is my custom for functions that are new in C99). | won°’t describe the functions
+further. though. since they're virtually identical to their C89 counterparts.
+

@@ -1,0 +1,87 @@
+480 Chapter 18  Declarations
+
+Section 18.3
+
+Section 18.4
+
+L à
+
+6.
+
+T.
+
+@ s.
+
+@ 10.
+
+extern float a;
+
+void f (register double b)
+
+(
+
+static int C;
+auto char d;
+
+}
+
+Let £ be the following f'unction. What will be the value of £ (10) 1f £ has never been called
+before? What will be the value of £ (10) 1f £ has been called Live times previously?
+
+int f(int i)
+static int y = O;
+return i * j++;
+
+}
+
+State whether each of the following statements is true or faise. Justify cach answer.
+(a) Every variable with static storage duration has file scope.
+
+(b) Every variable declared inside à function has no linkage.
+
+(c) Every variable with internal linkage has static storage duration.
+
+(d) Every parameter has block scope.
+
+The following function is supposed to print an error message. Each message is prececled by
+an integer, indicating the number of times the function has been called. Unfortunately. the
+function always displays ! as the number of the error message. [Locate the error and show
+how to fix it without making any changes outside the function.
+
+void print error(const char *message)
+
+{
+
+int n = 1;
+print£f ("Error %d: %s\n", n++, message) ;
+
+}
+
+Suppose that we declare x to be a const object. Which one of the following statements
+about x 1s false”
+
+(a) If x is of type int, it can be used as the value of a case label in a switch statement.
+(b) The compiler will check that no assignment is made to x.
+
+(c) x is subject to the same scope rules as variables.,
+
+(d) x can be of any type.
+
+Write a complete description of the type of x as specified by each of the following declara-
+tions.
+
+(a) char (*x[10]) (int) ;
+
+(b) int (*x(int)) [5] ;
+
+(c) float * (*x(void) ) (int) ;
+
+(d) void (*x(int, void (*y) (int))) (int) ;
+
+Use à series of type definitions to simplify each of the declarations in Exercise 8.
+
+Write declarations for the following variables and functions:
+
+(a) p is a pointer to u function with a character pointer argument that returns a character
+pointer.
+

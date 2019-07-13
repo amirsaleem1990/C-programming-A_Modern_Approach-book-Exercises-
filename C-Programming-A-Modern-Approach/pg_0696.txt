@@ -1,0 +1,77 @@
+25.6
+
+<ctype .h> header »23.5
+
+25.6 The <wctype.h> Header (C99) 671
+
+The <wctype.h> Header (C99)
+Wide-Character Classification and Mapping Utilities
+
+The <wctype.h> header is the wide-character version of the <ctype.h>
+header. <ctype.h> provides two kinds of functions: character-classification
+functions (like isdigit, which tests whether a character is a digit) and character
+case-mapping functions (like toupper, which converts a lower-case letter to
+upper case). <wctype.h> provides similar functions for wide characters.
+although it differs from <ctype .h> in one important way: some of the functions
+in <wctype .h> are ““extensible”’ meaning that they can perform custom charac-
+ter classification or case mappineg.
+
+<wctype .h> declares three types and a macro. The wint_ t type and the
+WEOF macro were discussed in Section 25.5. The remaining types are wctype _t,
+whose values represent locale-specific character classifications, and wctrans t,
+whose values represent locale-specific character mappings.
+
+Most of the functions in <wctype .h> require a wint t argument. The
+value of this argument must be a wide character (a wchar t valuëe) or WEOF.
+Passing any other argument causes undefined behavior.
+
+The behavior of the functions in <wctype .h> is affected by the LC_CTYPE
+category of the current locale.
+
+Wide-Character Classification Functions
+
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+
+iswalnum(wint_t
+iswalpha (wint t
+iswblank (wint t
+iswentrl (wint t
+iswdigit (wint t
+iswgraph(wint t
+iswlower (wint t
+iswprint (wint t
+iswpunct (wint t
+iswspace (wint t
+iswupper (wint t
+
+wc) ;
+wc) ;
+Wc ) ;
+wc) ;
+wWc) ;
+Wc ) ;
+wWCc) ;
+wC ) ;
+wc) ;
+Wc) ;
+wc) ;
+
+iswxdigit (wint t wc);
+
+Each wide-character classification function returns a nonzero value if its argument
+has a particular property. Table 25.19 lists the property that each function tests.
+The descriptions in Table 25.19 1gnore some of the subtleties of wide charac-
+ters. For example, the definition of iswgraph in the C99 standard states that it
+“tests for any wide character for which iswprint 1s true and iswspace is false,”
+

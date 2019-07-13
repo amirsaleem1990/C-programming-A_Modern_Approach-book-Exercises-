@@ -1,0 +1,60 @@
+206
+
+Chapter9 Functions
+
+that's casy to understand but not particularly efficient. Hl first describe the parti-
+tioning algorithm informally; later, we’Il translate it into C code.
+
+The algorithm relies on two “markers” named /ow and high, which keep track
+of positions within the array. Initially, /ow points to the first element of the array
+and high points to the last clement. We start by copying the first element (the parti-
+tioning element) into a temporary location elsewhere, leaving a “hole” in the array.
+Next, we move high across the array from right to left until it points to an element
+that’s smaller than the partitioning element. We then copy the element into the hole
+that /ow points to, which creates a new hole (pointed to by high). We now move
+low from left to right, looking for an element that’s larger than the partitioning ele-
+ment. When we find one. we copy it into the hole that high points to. The process
+repeats, with /ow and high taking turns, until they meet somewhere in the middle
+of the array. Ât that time, both will point to a hole; all we need do is copy the parti-
+tioning eclement into the hole. The following diagrams illustrate how Quicksort
+would sort an array of integers:
+
+Let’s start with an array contuining seven
+
+elements. low points to the first element; 12 l 3 l S | 18 l 7 Ï15 [ 10
+
+ 
+
+ 
+
+ 
+
+ 
+
+high points to the last one. î î
+low high
+The first element, 12. is the partitioning - '
+element. Copying it somewhere else leaves [ 3 | 6 1178| 7 (15 110 p 12
+à hole at the beginning of the array. î î
+low high
+We now compare the element pointed to by { j
+high with 12. Since 10 is smaller than 12. 10 | 3 6 181 7 | 15 12
+ls on the wrong side of the array. so we î î
+move 11 to the hole and shifti /Jow to the [
+, low high
+right.
+low points to the number 3. which is less TS e
+than 12 and therefore doesn't nced to be 1013 | 6 118| 7 | 15 12
+moved. We shift /ow to the right instead. î î
+low high
+Since 6 is also less than 12, we shift low ; ;
+again. 10 6 |18| 7 |15 1
+à 4
+| |
+low high
+low now points to 18, which is larger than
+12 and therefore out of position. After 1LOj 3 | 6 7 11518 p 12
+moving 18 to the hole, we shift Nigh to the & À
+
+left. | |
+

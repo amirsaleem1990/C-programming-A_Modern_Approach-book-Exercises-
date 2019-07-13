@@ -1,0 +1,55 @@
+16.1  Structure Variables 379
+
+Usually it’s not necessary to draw structures in such detail. l'Il normally show
+them more abstractly, as a series of boxes:
+
+number
+naine
+
+on_hand
+
+] may sometimes draw the boxes horizontally instead of vertically:
+
+001
+
+number s/ name on hand
+
+ 
+
+Member values will go in the boxes later; for now, l’ve left them emply.
+
+Each structure represents à new scope: any names declared in that scope won t
+conflict with other names in a program. (In C terminology. we say that cach struc-
+ture has à separate name space for its members.) For example, the following decla-
+rations can appear in the same program:
+
+struct |
+int number;
+char name [NAME LEN+1] ;
+int on hand;
+
+} partl, part2:;
+
+struct (
+char name [NAME LEN+1] ;
+int number;
+char sex;
+
+} employeel, employee2;
+
+The number and name members in the part1 and part2 structures don't con-
+flict with the number and name members in employeel and employee2.
+
+Initializing Structure Variables
+
+Like an array, à structure variable may be initialized at the time it’s declared. To
+initialize à structure, we prepare a list of valucs to be stored in the structure and
+enclose 11 in braces:
+
+struct {
+int number ;
+char name [NAME _ LEN+1}] ;
+int on hand;
+} part1 = {528, "Disk drive"”, 10},
+part2 = {914, "Printer cable", 5};
+

@@ -1,0 +1,67 @@
+tV
+
+6.
+
+Programming Projects 217
+
+Modify Programming Project 5 from Chapter 5 so that it uses a function to compute the
+amount of income tax. When passed an amount of taxable income. the function will return
+the tax due.
+
+Modify Programming Project 9 from Chapter 8 so that it includes the following functions:
+
+void generate _ random _walk (char walk [10] [10]) ;
+void print array (char walk [10] [10]) ;
+
+main first calls generate _random_walk. which initializes the array to contain ‘ ."
+characters and then replaces some of these characters by the letters A through Z, as
+described in the original project. main then calls print_array to display the array on
+the screen.
+
+Modify Programming Project 16 from Chapter $ so that it includes the following f'unctions:
+
+void read word(int counts [26]) ;
+bool equal array(int counts1[(26], int counts2 [26]) ;
+
+main will call read_word twice, once for each of the two words entered by the user. Às 1t
+reads a word. read_word will use the lctters in the word to update the counts array, às
+described in the original project. (main will declare two arrays. one for cach word. These
+arrays are used to track how many limes each letter occeurs in the words.) main will then
+call equal _ array, passing it the two arrays. equal_array will return true if the ele-
+ments in the two arrays are identical (indicating that the words arc anagrams) and £alse
+otherwise.
+
+Modify Programming Project 17 from Chapter 8 so that it includes the following f'unctions:
+
+void create magic_square (int n, char magic_square [n] [n]) ;
+void print magic square(int n, char magic_square [n] [n]) ;
+
+After obtaining the number » from the user, main will call create _magic_square.
+passing it an n x n array that is declared inside main. create_magic_square will fill
+the array with the numbers }, 2, .… n7 as described in the original project. main will then
+call print magic_square. which will display the array in the format described in the
+original project. Nore: T your compiler doesn*t support variable-length arrays, declare the
+array in main to be 99 x 99 instead of n x n and use the following prototypes instead:
+
+void create magic_square(int n, char magic_square [99] [99] ) ;
+void print magic square(int n, char magic_square[99] [99] ) ;
+
+Write à function that computes the value of the following polynomial:
+34 204-S00- 0047x —6
+
+Write a program that asks the user to enter a value for x, calls the function to compute the
+value of thé polynomial, and then displays the value returned by the function.
+
+The power function of Section 9.6 cun be made faster by having it calculate x" in a differ-
+ent way. We first notice that if » 1s a power of 2, then x" can be computed by squaring. For
+example, x* is the square of , so x* can be computed using only two multiplications instead
+of three. As it happens. this technique can be used even when n is not a power of 2. If n is
+even. we use the formula x" = (xF 1F n is odd, then x" = x x x"}; Write à recursive func-
+tion that computes x". (The recursion ends when n = 0,in which case the function returns |.)
+To test your function, write a program that asks the user Lo enter values for x and n, calls
+
+power to compute x”, and then displays the value returned by the function.
+
+Write a program that simulates the game of craps. which is played with two dice. On the
+first roll, the player wins if the sum of the dicc is 7 or ! 1. The player loses 1f the sum is 2, 3.
+

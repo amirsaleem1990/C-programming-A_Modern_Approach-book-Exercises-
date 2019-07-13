@@ -1,0 +1,104 @@
+Table 25.1
+char * Members of
+1conv Structure
+
+æ
+
+Table 25.2
+
+char Members of
+lconv Structure
+(Local Formatting)
+
+25.1  The <1ocale. h> Header: Localization 645
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Value in
+Name "C" Locale Description
+
+»| decimal_point ." Decimal-point character
+8| thousands sep " Character used to separate groups of
+ë digits before decimal point
+= | grouping " Sizes of digit groups
+S
+=
+
+mon_decimal _point " Mecimal-point character
+
+mon thousands sep "n Character used to separate groups of
+E digits before decimal point
+= | mon grouping nn Sizes of digit groups
+S | positive sign . String indicating nonnegative quantity
+= | negative sign nn String indicating negative quantity
+
+currency symbol " Local currency symbol
+
+int _ curr symbol " International currency symbolŸ
+
+ 
+
+ 
+
+TA three-letter abbreviation followed by a separator (often a space or à period). For example, the
+international currency symbols for Switzerland. the United Kingdom. and the United States are
+"CHF "."GBP ",and "USD ", respectively,
+
+Each character in these strings specifies the size of one group of digits. (Grouping
+takes place from right to left, starting at the decimal point.) À value of CHAR MAX
+indicates that no further grouping is to be performed; O indicates that the previous
+clement should be used for the remaining digits. For example, the string "\3" (\3
+followed by \0O) indicates that the first group should have 3 digits. then all other
+digits should be grouped in 3's as well.
+
+The char members of the 1conv structure are divided into two groups. The
+members of the first group (Table 25.2) affect the /ocal formatting of monetary
+quantities. The members of the second group (Table 25.3) affect the international
+formatting of monetary quantities. AIl but one of the members in Table 25.3 were
+added in C99. As Tables 25.2 and 25.3 show, the value of each char member in
+the "C" locale is CHAR MAX, which means “not available.”
+
+ 
+
+Value in
+Name C" Locale Description
+
+ 
+
+frac _ digits CHAR MAX — Number of digits after decimal point
+
+p cs precedes CHAR MAX — lifcurrency_symbol precedes
+nonnegative quantity; O 1f it succeeds quantity
+
+n cs precedes CHAR MAX — li/Currency_symbol precedes negative
+quantity: O 1f it succeeds quantity
+
+p_sep _ by _ space … CHAR MAX — Separation of currency_symbol and sign
+string from nonnegative quantity (see Table
+25.4)
+
+n sep by space — CHAR MAX _ Scparation of currency_symbol and sign
+string from negative quantity (see Table 25.4)
+
+p sign posn CHAR MAX — Position of positive sign for
+nonnegative quantity (see Table 25.5)
+n_sign posn CHAR MAX _ Position ofnegative sign for negative
+
+ 
+
+ 
+
+quantity (sec Table 25.5)
+
+ 
+
+e -—
+

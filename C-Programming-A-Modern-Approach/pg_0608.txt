@@ -1,0 +1,83 @@
+Section 22.4
+
+O *.
+
+*.
+
+0.
+
+@ 10.
+
+ll.
+
+12.
+
+Exercises 583
+
+Write a call of print£ that prints
+
+1 widget
+
+if the widget variable (of type int) has the value !. and
+N widgets
+
+otherwise, where n is the value of widget. You are not allowed to use the i £ statement or
+any other statement; the answer must be a single call of print£.
+
+Suppose that we call scan£ as follows:
+n = scanf ("3d%f£%d", &i, &X, &]);
+
+(à, j, and n are int variables and x is a float variable.) Assuming that the input stream
+contains the characters shown, give the values of i, j,. n, and x after the call. In addition,
+indicate which characters were consumed by the call.
+
+(a) 10e20e3078
+
+(b) 1.0e2.0e3.,00
+
+(c) 0.1e0.2e0.370
+
+(d) .1e.2+e,370
+
+In previous chapters, wc've used the scan£f format string " %c" when we wanted to skip
+white-space characters and read a nonblank character. Some programmers use "%1s"
+instead. Are the two techniques equivalent’ If not, what are the differences?
+
+Which one of the following calls 1s not a valid way of reading one character from the stan-
+dard input stream?
+
+(a) getch()
+
+(b) getchar ()
+
+(c) getc (stdin)
+
+(d) fgetc(stdin)
+
+The fcopy. c program has one minor flaw: it doesn't check for errors as it’s writing to the
+destination file. Errors during writing are rare, but do occasionally oceur (the disk might
+become full, for example). Show how to add the missing error check to the program, assum-
+ing that we want it to display a message and terminate immediately if an error oceurs.
+
+The following loop appcars in the fcopy . c program:
+
+while ((ch = getc(source fp)) != EOF)
+putc(ch, dest fp);
+
+Suppose that we neglected to put parentheses around ch = getc (source_fp):
+
+while (ch = getc(source fp) != EOF)
+putc(ch, dest fp);
+
+Would the program compile without an error? If so, what would the program do when it’s
+run?
+
+Find the error in the following function and show how to fix it.
+
+int count periods (const char *filename)
+
+{
+
+FILE *fp;
+int n = O0;
+

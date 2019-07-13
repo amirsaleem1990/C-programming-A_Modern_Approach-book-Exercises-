@@ -1,0 +1,64 @@
+Section 24.1
+
+Â:
+
+B e
+
+ID
+
+Exercises 639
+
+À signal-handling funetion invoked as a result of raise or abort may call
+library l'unctions. tsignal .c uses raise to invoke the signal handiler.
+
+How can setjmp modify the argument that’s passed to it? T thought that C
+always passed arguments by value. [p. 636]
+
+The C standard says that jmp_buf must be an array type, so setjmp is actually
+being passed a pointer.
+
+P’m having trouble with setjmp. Are there any restrictions on how it can be
+used?
+
+According to the C standard, there are only two legal ways to use set jmp:
+
+u Às the expression in an expression statement (possibly cast to void).
+
+= Às parl of the controlling expression in an if. switch, while, do, or for
+statement. The entire controlling expression must have one of the following
+forms, where constexpr is an integer constant expression and 0> is a relational
+or equality operator:
+
+setjmp (...)
+
+! setjmp (.…..)
+
+constexpr op setjmp (...)
+setjmp (...) op constexpr
+
+Using setjmp in any other way causes undefined behavior.
+
+After a program has executed a call of 1longjmp, what are the values of the
+variables in the program?
+
+Most variables retain the values they had at the time of the 1longjmp. However, an
+automatic variable inside the function that contains the set jmp has an indetermi-
+nate value unless it was declared volatile or it hasn’t been modified since the
+setjmp was performed.
+
+Is it legal to call Longjmp inside a signal handler?
+
+Yes, provided that the signal handler wasn’t invoked because of a signal raised dur-
+ing the execution of a signal handler. (C99 removes this restriction.)
+
+Exercises
+
+(a) Assertions can be used to test for two kinds of problems: (1) problems that should never
+occur if the program is correct, and (2) problems that are beyond the control of the program.
+Explain why assert is best suited for problems in the first category.
+
+(b) Give three examples of problems that are beyond the control of the program.
+
+Write a call of assert that causes a program to terminate if a variable named top has the
+value NULL.
+

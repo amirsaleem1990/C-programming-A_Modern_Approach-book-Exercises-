@@ -1,0 +1,62 @@
+536
+
+Chapter 21
+
+fwrite function » 226
+
+21.5
+
+The Standard Library
+
+offsetof computes the number of bytes between the beginning of the structure
+and the specified member.
+Consider the following structure:
+
+struct s (
+char a;
+int b[2];
+float c;
+
+}
+
+The value of of fsetof (struct s, a) must be 0: C guarantees that the first
+member of a structure has the same address as the structure itself. We can't say for
+sure what the offsets of b and c are. One possibility is that of fsetof (struct
+s, b) is | (since a is one byte long), and of fsetof (struct s, c) is 9
+(assuming 32-bit integers). However, some compilers leave ‘“holes’—unused
+bytes—in structures (see the Q&A section at the end of Chapter 16), which can
+affect the value produced by of fsetoË. If a compiler should leave a three-byte
+hole after a, for example, then the offsets of b and c would be 4 and 12, respec-
+tively. But that’'s the beauty of offsetoË: it produces the correct offsets for any
+compiler, enabling us to write portable programs.
+
+There are various uses for of fsetoË. For example. suppose that we want to
+save the first two members of an s structure in a file. ignoring the c member.
+Instead of having the £write function write sizeof (struct s) bytes, which
+would save the entire structure, we'Il tell it to write only of fsetof (struct s,
+c) bytes.
+
+À final remark: Some of the types and macros defined in <stddef.h>
+appear in other headers as well. (The NULL macro, for example. is also defined in
+<locale.h>, <stdio.h>, <stdlib.h»>. <string.h>, and <time.hs.
+as well as in the C99 header <wchar.h>.) As a result, few programs need 1o
+include <stddef.h>.
+
+The <stdbool.h> Header (C99): Boolean Type
+and Values
+
+The <stdbool .h> header defines four macros:
+
+m bool (defined tobe Bool)
+
+m true (defined to be 1)
+
+u false (defined to be O)
+
+um — bool true false are defined (defined to be 1)
+
+We've seen many examples of how bool, true, and false are used. Potential
+uses ofthe _ bool true false are defined macro are more limited. À
+program could use a preprocessing directive (such as #i £ or #i FdeF) to test this
+macro before attempting to define its own version of bool, true, or false.
+

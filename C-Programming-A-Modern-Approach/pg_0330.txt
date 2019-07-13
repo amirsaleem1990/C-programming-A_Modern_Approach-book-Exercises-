@@ -1,0 +1,58 @@
+>.
+
+> ©
+
+Q & À 305
+
+509 characters lons. (Yes, you read that right—509. Don’t ask.) C99 increases the
+minimum to 4095 characters.
+
+Wlhy aren°t string literals called ‘“‘string constants’”?
+
+Because they‘re not necessarily constant. Since string literals are accessed through
+pointers. there’s nothing to prevent a program from attempting to modify the char-
+acters In a string literal.
+
+How do we write a string literal that represents ‘“über” if "\xfcber" doesn°t
+work? [p. 278]
+
+The secret is to write two adjacent string literals and let the compiler join them into
+one. In this example, writing "\xfc" "ber" will give us à string literal that rep-
+resents the word ‘“iiber.”
+
+Modifying a string literal seems harmless enough. Why does it cause unde-
+fined behavior? [p. 280]
+
+Some compilers try to reduce memory requirements by storing single copies of
+identical string literals. Consider the following example:
+
+char *p = "8bC", *q — ”âbC",‘
+
+À compiler might choose to store "abc" just once, making both p and q point to
+it. If we were to change "abc*" through the pointer p, the string that q points to
+would also be affected. Needless to say, this could lead to some annoying bugs.
+Another potential problem is that string literals might be stored in a “read-only”
+area of memory; a program that attempts to modify such a literal will simply crash.
+
+Should every array of characters include room for a null character?
+
+Not necessarily, since not every array of characters 1s used as a string. Including
+room for the null character (and actually putting one into the array) is necessary
+only if you’re planning to pass it to a function that requires a null-terminated
+string.
+
+You do not need a null character if you’I! only be performing operations on
+individual characters. For example, a program might have an array of characters
+that it will use to translate from one character set to another:
+
+char translation _table (128] ;
+
+The only operation that the program will perform on this array is subscripting.
+(The value of translation table [ch] will be the translated version of the
+character ch.) We would not consider translation table to be a string: it
+need not contain a null character, and no string operations will be performed on it.
+
+If printf and scan£ expect their first argument to have type char *, does
+that mean that the argument can be a string variable instead of a string lit-
+eral?
+

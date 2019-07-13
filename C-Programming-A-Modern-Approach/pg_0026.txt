@@ -1,0 +1,37 @@
+4
+
+1.1
+
+Introducing C
+
+When someone says "| want a programming language in which
+| need only say what | wish done," give him a lollipop.*
+
+What is C? The simple answer—a widely used programming language developed
+in the early 1970s at Bell Laboratories—conveys little of C*s special flavor. Before
+we become immersed in the details of the language, let's take a look at where C
+came from, what it was designed for, and how it has changed over the years (Sec-
+tion 1.1). We'Il also discuss Cs strengths and weaknesses and see how to get the
+most out of the language (Section 1.2).
+
+History of C
+
+Let's take a quick look at C’s history, from its origins, to its coming of age as a
+standardized language, to its influence on recent languages.
+
+Origins
+
+C is a by-product of the UNIX operating system, which was developed at Bell Lab-
+oratories by Ken Thompson, Dennis Ritchie, and others. Thompson single-hand-
+edly wrote the original version of UNIX, which ran on the DEC PDP-7 computer,
+an early minicomputer with only 8K words of main memory (this was 1969. after
+all!). ,
+Like other operating systems of the time, UNIX was written in assembly lan-
+guage. Programs written in assembly language are usually painful to debug and
+hard to enhance; UNIX was no exception. Thompson decided that a higher-level
+
+ 
+
+“The epigrams at the beginning of each chapter arc from “Epigrams on Programmine” by Alan J. Perlis
+(ACM SIGPLAN Notices (September, 1982): 7-13),
+

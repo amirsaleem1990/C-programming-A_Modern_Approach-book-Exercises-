@@ -1,0 +1,140 @@
+15
+
+16
+
+14.4
+
+14.5
+
+Contents
+
+The # Operator
+
+The ## Operator
+
+General Properties of Macros
+Parentheses in Macro Definitions
+Creating Longer Macros
+
+Predefined Macros
+
+Additional Predefined Macros in C99
+Empty Macro Arguments
+
+Macros with a Variable Number of Arguments
+The _ f£func__ |ldentifier
+Conditional Compilation
+
+The #i£f and #endi£ Directives
+The defined Operator
+
+The #ifde£ and #i£nde£ Directives
+The #eli£f and #e1se Directives
+Uses of Conditional Compilation
+Miscellaneous Directives
+
+The #error Directive
+
+The #1ine Directive
+
+The #pragma Directive
+
+The Pragma Operator
+
+WRITING LARGE PROGRAMS
+
+15.1
+15.2
+
+15.3
+
+15.4
+
+Source Files
+
+Header Files
+
+The #include Directive
+
+Sharing Macro Definitions and Type Definitions
+Sharing Function Prototypes
+Sharing Variable Declarations
+Nested Includes
+
+Protecting Header Files
+
+#error Directives in Header Files
+Dividing a Program into Files
+Program: Text Formatting
+
+Building a Multiple-File Program
+Makefiles
+
+Errors During Linking
+
+Rebuilding a Program
+
+Defining Macros Outside a Program
+
+STRUCTURES, UNIONS, AND ENUMERATIONS
+
+16.1
+
+Structure Variables
+Declaring Structure Variables
+Initializing Structure Variables
+Designated Initializers
+Operations on Structures
+
+xiii
+
+324
+324
+325
+326
+328
+329
+330
+331
+332
+333
+
+333
+334
+335
+335
+336
+337
+338
+338
+339
+340
+341
+
+349
+349
+
+350
+351
+353
+354
+355
+357
+357
+358
+359
+359
+366
+366
+368
+369
+371
+
+377
+
+377
+378
+379
+380
+381
+

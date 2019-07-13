@@ -1,0 +1,59 @@
+QeÂA
+
+ 
+
+17.1  Dynamic Storage Allocation 415
+
+that should happen, the function will return a null pointer. À null pointer is a
+“pointèr to nothing”—a special value that can be distinguished from all valid
+pointers. After we’ve stored the function’s return value in a pointer variable, we
+must test to see 1f it’s à null pointer.
+
+ 
+
+It’'s the programmer’s responsibility to test the return value of any memory alloca-
+tion function and take appropriate action if it’s a null pointer. The effect of attempt-
+ing to access memory through a null pointer is undefined: the program may crash
+or behave unpredictably.
+
+ 
+
+The null pointer 1s represented by à macro named NULL, so we can test
+malloc’s return value in the following way:
+
+p = malloc (10000) ;
+if (p == NULL) {
+/* allocation failed; take appropriate action */
+
+}
+
+Some programmers combine the call of malloc with the NULL test:
+
+if ((p = malloc(10000)) == NULL) (
+/* allocation failed; take appropriate action */
+
+}
+
+The NULL macro 1s defined in six headers: <locale.h>. <stddef.h>.
+<stdio.h>, <stdlib.h>. <string.h>, and <time.h>. (The C99 header
+<wchar .h> also defines NULL.) Às long as one of these headers is included in à
+program, the compiler will recognize NULL. À program that uses any of the mem-
+ory allocation functions will include <stdlib.h>. of course, making NULL
+available.
+
+In C, pointers test true or false in the same way as numbers. All non-null
+pointers test true; only null pointers are false. Thus, instead of writing
+
+if (p == NULI)
+we could write
+
+if (!p)
+
+and instead of writing
+if (p != NULL)
+we could write
+
+if (p)
+
+Às a matter of style, I prefer the explicit comparison with NULL.
+

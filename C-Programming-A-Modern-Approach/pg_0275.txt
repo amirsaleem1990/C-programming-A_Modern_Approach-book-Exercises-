@@ -1,0 +1,52 @@
+250 Chapter 11  Pointers
+
+Enter 10 numbers: 34 82 49 102 7 94 23 11 50 31
+Largest: 102
+Smallest: 7
+
+Here’s the complete program:
+maxmin.c _ /* Finds the largest and smallest elements in an array */
+#include <stdio.h>
+#define N 10
+void max_min(int a([], int n, int *max, int *min) ;
+
+int main(void)
+
+{
+
+int b[N], i, big, small;
+
+print£f ("Enter %d numbers: ", N);
+for (i = O0; i < N; i++)
+scan£ ("=d", &b[il]);
+
+max_min(b, N, &big, &small) ;
+
+print£f ("Largest: %d\n", big) ;
+print£("Smallest: %“d\n", small) ;
+
+return O0;
+
+}
+
+void max min(int a[], int n, int *max, int *min)
+
+{
+
+int i;
+
+*max = *min = a[0}];
+for (i = 1; i < n; i++) {
+Lif (a[i] > *max)
+*max = a[il];
+else if (a[i] < *min)
+*min = a[i}];
+
+Using const to Protect Arguments
+
+When we call a function and pass it a pointer to à variable, we normally assume
+that the function will modify the variable (otherwise, why would the function
+require a pointer?). For example. if we see a statement like
+
+Ë (&X) ;
+

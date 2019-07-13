@@ -1,0 +1,50 @@
+12.4
+
+12.4  Pointers and Multidimensional Arrays 267
+
+#define N 10
+int a[N], i, sum = O, *p = a;
+
+for (i = 0; i < N; i++)
+sum += plil;
+
+The compiler treats p [i] as * (p+i), which 1s a perfectly legal use of pointer
+arithmetic. Although the ability to subscript a pointer may seem to be little more
+than a curiosity, we’Il see in Section 17.3 that it’s actually quite useful.
+
+Pointers and Multidimensional Arrays
+
+Just as pointers can point to elements of one-dimensional arrays. they can also
+point to elements of multidimensional arrays. In this section, we’I1 explore com-
+mon techniques for using pointers to process the elements of multidimensional
+arrays. For simplicity, l’Il stick to two-dimensional arrays, but everything we'Il do
+applies equally to higher-dimensional arrays.
+
+Processing the Elements of a Multidimensional Array
+
+We saw in Section 8.2 that C stores two-dimensional arrays in row-major order; in
+other words, the elements of row O come first, followed by the elements of row |,
+and so forth. An array with r rows would have the following appearance:
+
+row 0 row | rowr—1
+
+ 
+
+ 
+
+We can take advantage of this layout when working with pointers. M we make a
+pointer p point to the first element in a two-dimensional array (the element in row
+O, column 0), we can visit every element in the array by incrementing p repeatedly.
+Às an example, let’s look at the problem of initializing all elements of a two-
+dimensional array to zero. Suppose that the array has been declared as follows:
+
+int a [NUM ROWS] [NUM COLS] ;
+
+The obvious technique would be to use nested £or loops:
+int row, col;
+
+Éor (row = 0; row < NUM ROWS; row++)
+
+for (col = 0; col < NUM COLS; col++)
+a [row] [(co1] = 0;
+

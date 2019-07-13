@@ -1,0 +1,39 @@
+58 Chapter4  Expressions
+
+first_sum = d + i2 + i4 + j1 + j3 + j5;
+second_sum = il + i3 + i5 + j2 + j4;
+total = 3 * first sum + second _sum;
+
+print£ ("Check digit: %d\n", 9 - ((total - 1) % 10));
+
+return 0;
+
+Note that the expression 9 - ( (total - 1) % 10) could have been written
+as 9 - (total - 1) % 10, but the extra set of parentheses makes it easier to
+understand.
+
+4.2 Assignment Operators
+
+Once the value of an expression has been computed, we*I1 often need to store it in
+a variable for later use. C's = (simple assignment) operator is used for that pur-
+pose. For updating a value already stored in a variable, C provides an assortment of
+compound assignment operators.
+
+Simple Assignment
+
+The effect of the assignment v = e is to evaluate the expression e and copy its value
+into v. Às the following examples show, e can bc a constant. a variable, or a more
+complicated expression:
+
+5 ; /* i is now 5 */
+j = i; /* j is now 5 */
+k = 10 * i + j; /* k is now 55 */
+
+i
+
+ 
+
+conversion during assignment 7.4 | We'1l return to the topic of type conversion later.
+
+   
+

@@ -1,0 +1,71 @@
+QaÂ
+
+9.3  Arguments 197
+
+An important point about array arguments: À function has no way to check
+that we've passed it the correct array length. We can exploit this fact by telling the
+function that the array is smaller than 1t really 1s. Suppose that we’ve only stored
+50 numbers in the b array, even though it can hold 100. We can sum just the first
+50 elements by writing
+
+total = sum array(b, 50); /* sums first 50 elements */
+
+sum _ array will ignore the other 50 elements. (Indeed, 11 won't know that they
+even exist!)
+
+ 
+
+Be careful not to tell à function that an array argument 1s /arger than 1t really 1s:
+total = sum array(b, 150); /*** WRONG ***/
+
+In this example, sum_array will go past the end of the array. causing undefined
+behavior.
+
+ 
+
+Another important thing to know is that a function is allowed to change the
+elements of an array parameter. and the change 1s reflected in the corresponding
+argument. For example. the following function modifies an array by storing zero
+into each of its elements:
+
+void store zeros(int a[], int n)
+
+{
+
+int i;
+
+Il
+©Êo
+H-
+A
+J
+H-
++
++
+
+for (i
+a[i] = O;
+
+}
+The call
+
+store zeros(b, 100);
+
+will store zero into the first 100 elements of the array b. This ability to modify the
+elements of an array argument may seem to contradict the fact that C passes argu-
+ments by value. In fact, there’s no contradiction, but ! won’t be able to explain why
+until Section 12.3.
+
+If a parameter is a multidimensional array, only the length of the first dimen-
+sion may be omitted when the parameter is declared. For example, 1f we revise the
+sum_array function so that à is a two-dimensional array, we must specify the
+number of columns in a. although we don’t have to indicate the number of rows:
+
+#define LEN 10
+
+int sum two dimensional array(int a[) [LEN], int n)
+
+(
+
+int i, j, sum = O0;
+

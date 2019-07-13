@@ -1,0 +1,57 @@
+Qa&À
+
+3.1 The printf Function 39
+
+task to tackle this early in the book. Instead, we'l1 just take a brief look at some of
+their more important capabilities.
+
+In Chapter 2, we saw that a conversion specification can include formatting
+information. In particular, we used % .1£ to display a float value with one digit
+after the decimal point. More generally, à conversion specification can have the
+form %m.pX or %-m.pX, where m and p are integer constants and X 1s a letter.
+Both mn and p are optional; if p is omitted, the period that separates m and p is also
+dropped. In the conversion specification %10.2£. m is 10, p is 2, and X is £. In
+the specification %10f. m is 10 and p (along with the period) 1s missing, but in the
+specification % . 2£, p is 2 and mn 1s missing.
+
+The minimum field width, m, specifies the minimum number of characters to
+print. If the value to be printed requires fewer than /n characters, the value 1s right-
+justified within the field. (In other words, extra spaces precede the value.) For
+example, the specification %4d would display the number 123 as e123. (In this
+chapter, l'Il use e to represent the space character.) If the value to be printed
+requires more than m characters, the field width automatically expands to the nec-
+essary size. Thus, the specification %4d would display the number 12345 as
+12345—no digits are lost. Putting à minus sign in front of /n causes left justifica-
+tion; the specification %-4d would display 123 as 123e.
+
+The meaning of the precision, p, isn’t as easily described, since 1t depends on
+the choice of X, the conversion specifier. X indicates which conversion should be
+applied to the value before it’s printed. The most common conversion specifiers for
+numbers are:
+
+u d — Displays an integer in decimal (base 10) form. p indicates the minimum
+number of digits to display (extra zeros are added to the beginning of the num-
+ber if necessary); if » is omitted, it is assumed to have the value |. (In other
+words, 3d 1s the same as % .1d.)
+
+u e — Displays a floating-point number in exponential format (scientific nota-
+tion). p indicates how many digits should appear after the decimal point (the
+default is 6). If p is O, the decimal point 1s not displayed.
+
+u £ — Displays a floating-point number in “fixed decimal” format, without an
+exponent. p has the same meaning as for the e specifier.
+
+u g — Displays a floating-point number in either exponential format or fixed
+decimal format, depending on the number’s size. p indicates the maximum
+number of significant digits (not digits after the decimal point) to be dis-
+played. Unlike the £ conversion, the g conversion won’t show trailing zeros.
+Furthermore, if the value to be printed has no digits after the decimal point, 9
+doesn°t display the decimal point.
+
+The g specifier is especially usefu! for displaying numbers whose size can’t be
+predicted when the program is written or that tend to vary widely in size. When
+used to print a moderately large or moderately small number, the g specifier uses
+fixed decimal format. But when used to print a very large or very small number,
+the g specifier switches to exponential format so that the number will require fewer
+characters.
+

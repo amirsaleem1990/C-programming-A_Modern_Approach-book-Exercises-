@@ -1,0 +1,9 @@
+626 Chapter 23  Library Support for Numbers and Character Data
+
+6.  Write a program that copies a text file from standard input to standard output, replacing each
+control character (other than \n) by à question mark.
+
+1. Write a program that counts the number of sentences in a text file (obtained from standard
+input). Assume that each sentence ends witha .. ?, or ! followed by a white-space charac-
+ter (including \n).
+

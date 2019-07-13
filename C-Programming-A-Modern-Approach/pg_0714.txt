@@ -1,0 +1,54 @@
+system
+
+bsearch
+
+26.2 The <stdlib.h> Header: General Utilities 689
+
+something like this:
+PATH=/usr/local/bin:/bin:/usr/bin:.
+
+getenv provides access to any string in the user’s environment. To find the cur-
+rent value of the PATH string, For example, we could write
+
+char *p = getenv ("PATH") ;
+
+p now points to the string "/usr/l1ocal/bin:/bin:/usr/bin: .". Be care-
+ful with getenv: it returns a pointer to a statically allocated string that may be
+changed by a later call of the function.
+
+The system function allows a C program to run another program (possibly
+an operating system command). The argument to system is à string containing à
+command, similar to one that we’d enter at the operating system prompt. For
+example, suppose that we’re writing a program that needs a listing of the files in
+the current directory. À UNIX program would call system in the following way:
+
+system("1s >myfiles") ;
+
+This call invokes the UNIX command 1s and asks it to write a listing of the cur-
+rent directory into the file named myfiles.
+
+The return value of system is implementation-defined. system typically
+returns the termination status code from the program that we asked 1it to run; test-
+ing this value allows us to check whether the program worked properly. Calling
+system with a null pointer has à special meaning: the function returns à nonzero
+value if a command processor 1s available.
+
+Searching and Sorting Utilities
+
+void *bsearch(const void *key, const void *base,
+size t nmemb, size t size,
+int (*compar) (const void *,
+const void *));
+void qsort (void *base, size t nmemb, size t size,
+int (*compar) (const void *, const void *));
+
+The bsearch function searches a sorted array for a particular value (the “’key”).
+When bsearch is called, the key parameter points to the key, base points to the
+array, nmemb is the number of elements in the array, size is the size of each ele-
+ment (in bytes), and compar is a pointer to a comparison function. The compari-
+son function is similar to the one required by qsort: when passed pointers to the
+key and an array element (in that order). the function must return a negative, Zero,
+or positive integer depending on whether the key is less than, equal to, or greater
+than the array element. bsearch returns a pointer to an element that matches the
+key: if it doesn’{ find a match, bsearch returns a null pointer.
+

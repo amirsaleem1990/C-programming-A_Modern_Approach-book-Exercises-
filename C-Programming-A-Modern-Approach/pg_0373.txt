@@ -1,0 +1,36 @@
+348 Chapter 14  The Preprocessor
+
+i = SUB(j, kK);
+i = SQOR(SQR(j)) ;
+i = CUBE() ;
+
+i = M1(3j, kK);
+puts (M2 (i, j)) ;
+
+Hundef SOR
+
+i = SOR(j) ;
+#define SOR
+
+i = SOR(j) ;
+
+return 0;
+
+}
+
+[5.  Suppose that a program necds to display messages in either English. French, or Spanish.
+Using conditional compilation, write à program fragment that displays one of the following
+three messages, depending on whether or not the specified macro is defined:
+
+Insert Disk 1 ( f ENGLISH 1s defined)
+Inserez Le Disque 1 (if FRENCH 1s defined)
+Inserte El Disco 1 — (if SPANISH 1s defined)
+
+Section 14.5 *16.  (C99) Assume that the following macro definitions arc in effect:
+
+#define IDENT(x) PRAGMA (ident #x)
+#define PRAGMA(x) _Pragma (#x)
+
+What will the following line look like after macro expansion?
+IDENT (foo)
+

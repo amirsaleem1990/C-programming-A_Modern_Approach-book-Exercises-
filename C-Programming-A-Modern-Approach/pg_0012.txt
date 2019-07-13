@@ -1,0 +1,81 @@
+CONTENTS
+
+Preface
+
+1.1
+
+1.2
+
+2.1
+
+2.2
+
+2.3
+2.4
+
+INTRODUCING C
+
+History of C
+
+Origins
+
+Standardization
+
+C-Based Languages
+
+Strengths and Weaknesses of C
+Strengths
+
+Weaknesses
+
+Effective Use of C
+
+C FUNDAMENTALS
+
+Writing a Simple Program
+
+Program: Printing a Pun
+
+Compiling and Linking
+
+Integrated Development Environments
+The General Form of a Simple Program
+Directives
+
+Functions
+
+Statements
+
+Printing Strings
+
+Comments
+
+Variables and Assignment
+
+Types
+
+Declarations
+
+Assignment
+
+*
+ë.
+
+QU S SSDSONDNUA 4 —
+
+10
+11
+12
+12
+
+13
+14
+14
+15
+17
+17
+17
+18
+
+vil
+

@@ -1,0 +1,73 @@
+<signal.h>
+
+<signal .h> header »24.3
+
+<stdarg.h>
+
+<stdarg.h> header »26.1
+
+<stdde£.h>
+
+<stdde£ .h> header » 27.4
+
+<stdio.h>
+
+<stdio.h> header » 2?2.1-22.8
+
+<stdlib.h>
+
+<stdälib.h> header >26.2
+
+<string.h>
+
+<string .h> header »23.6
+
+<time.h>
+
+<time .h> headar »26.3
+
+212  C89 Library Overview 533
+
+make it possible to jump from one function into another, still-active function.
+bypassing the normal function-return mechanism, setjmp and Iongjmp are
+used primarily for handling serious problems that arise during program execution.
+
+Signal Handling
+
+Provides functions that deal with exceptional conditions (signals), including inter-
+rupts and run-time errors. The signal function installs a l'unction to be called if a
+given signal should occur later. The rai se function causes a signal to occur.
+
+Variable Arguments
+
+Provides tools for writing functions that, like print£f and scan£, can have a
+variable number of arguments.
+
+Common Definitions
+
+Provides definitions of frequently used types and macros.
+
+Input/Ouiput
+
+Provides a large assortment of input/output functions. including operations on both
+scquential and random-access files.
+
+General Utilities
+
+A “catchall* header for functions that don't fit into any of the other headers. The
+functions in this header can convert strings to numbers, generate pseudo-random
+numbers. perform memory management tasks, communicate with the operating
+system. do searching and sorting. and perform conversions between multibyte
+characters and wide characters.
+
+String Handling
+Provides functions that perform string operations, including copying, concatena-
+
+tion, comparison, and searching, as well às functions that operate on arbitrary
+blocks of memory.
+
+Date and Time
+
+Provides functions for determining the time (and date), manipulating times, and
+formatting times for display.
+

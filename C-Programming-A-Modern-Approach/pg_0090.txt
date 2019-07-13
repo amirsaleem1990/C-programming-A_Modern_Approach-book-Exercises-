@@ -1,0 +1,37 @@
+registers » 18.2
+
+4.5
+
+Qa&ÂÀ
+
+45  Expression Sitatements 65
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Expression Statements
+
+C has the unusual rule that ary expression can be used as a statement. That 1s, any
+expression—regardless of its Lype or what 1t computes—can be turned into a state-
+ment by appending a semicolon. For example, we could turn the expression ++i
+into a statement:
+
+++i;
+
+When this statement 1s executed, i is first incremented. then the new value of i is
+fetched (as though it were to be used in an enclosing expression). However, since
+++i ISN’( part of à larger expression, its value 1s discarded and the next statement
+executed. (The change to i is permanent, of course.)
+
+Since its value 1s discarded, there’s little point in using an expression as a
+statement unless the expression has a side effect. Let’s look at three examples. In
+

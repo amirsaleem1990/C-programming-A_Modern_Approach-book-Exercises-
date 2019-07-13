@@ -1,0 +1,55 @@
+414 Chapter 17  Advanced Uses of Pointers
+
+171
+
+variable-length arrays > 8.3
+
+<stdlib.h>header »26.2
+
+Dynamic Storage Allocation
+
+C’s data structures are normally fixed in size. For example, the number of elements
+in an array 1s fixed once the program has been compiled. (In C99, the length of a
+variable-length array 1s determined at run time, but it remains fixed for the rest of
+the array’s lifetime.) Fixed-size data structures can be a problem, since we're
+forced to choose their sizes when writing a program; we can’t change the sizes
+without modifying the program and compiling it again.
+
+Consider the inventory program of Section 16.3, which allows the user to
+add parts to a database. The database is stored in an array of length 100. To en-
+large the capacity of the database, we can increase the size of the array and recom-
+pile the program. But no matter how large we make the array, there’s always the
+possibility that it will fil] up. Fortunately, all 1s not lost. C supports dynamic stor-
+age allocation: the ability to allocate storage during program execution. Using dy-
+namic storage allocation, we can design data structures that grow (and shrink) as
+needed.
+
+Although 1t’s available for all types of data, dynamic storage allocation 1s used
+most often for strings, arrays, and structures. Dynamically allocated structures are
+of particular interest, since we can link them together to form lists, trees, and other
+data structures.
+
+Memory Allocation Functions
+
+To allocate storage dynamnically. we'Il need to call one of the three memory alloca-
+tion functions declared in the <stdlib.h> header:
+
+u malloc—Allocates a block of memory but doesn’t initialize it.
+u Calloc—Allocates a block of memory and clears it.
+
+# realloc—Resizes a previously allocated block of memory.
+
+Of the three, malloc is the most used. It’s more efficient than calloc, since it
+doesn’t have to clear the memory block that :t allocates.
+
+When we call a memory allocation function to request a block of memory. the
+function has no idea what type of data we’re planning to store in the block, so it
+can*t return a pointer to an ordinary type such as int or char. Instead, the func-
+tion returns a value of type void *. À void * value is a “generic” pointer—
+essentially, just a memory address.
+
+Null Pointers
+
+When a memory allocation function is called, there’s always a possibility that it
+won’t be able to locate a block of memory large enough to satisfy our request. If
+

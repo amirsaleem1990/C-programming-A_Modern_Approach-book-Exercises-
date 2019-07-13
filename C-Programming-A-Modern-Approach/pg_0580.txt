@@ -1,0 +1,117 @@
+Table 22.6
+Conversion Specifiers for
+…print£ Functions
+
+æ
+
+greatest-width integers >27,7
+
+22.3  Formatted I/0 555
+
+ 
+
+Conversion
+Specifier
+
+iMeaning
+
+ 
+
+d,i
+
+Converts an int value to decimail form.
+
+ 
+
+o,u,.x, X
+
+Converts an unsigned int value to base 8 (0o). base ! (u). or base 16
+(x, X). x displays the hexadecimal digits a—£ in lower case: X displays
+them in upper case,
+
+ 
+
+f, F!
+
+Converts à double vulue to decimal form, putting the decimal point in
+the correct position. If no precision 1s specified, displays six digits after
+the decimal point.
+
+ 
+
+e E
+
+Converts a double value to scientific notation. If no precision is speci- |
+fied, displays sIx digits after the decimal point. If @ 1s chosen. the expo-
+nent is preceded by the letter e; if E 1s chosen, the exponent is preceded
+
+by E.
+
+ 
+
+g. G
+
+g converts a double value to cither £ form or e form. € forin is selected
+if the number’s exponent 1s less than — or greater than or equal to the
+precision. Trailing zeros are not displayed (unless the # fag 1s used); a
+decimal point appears only when followed by à digit. G chooses between
+F and E forms.
+
+ 
+
+Converts a double value to hexadecimal scientific notation using the
+form [-]0xA.hhhhpxd, where [-] 1s an optional minus sign, the hs rep-
+resent hex digits, + 1s either à plus or minus sign, and d is the exponent. d
+is a decimal number that represents a power of 2. If no precision is speci-
+filed. enough digits are displayed after the decimal point to represent the
+exact value of the number (1f possible). à displays the hex digits a—£ in
+lower case; A displays them in upper case. The choice of à or À also
+affects the case of the letters x and p.
+
+ 
+
+Displays an int value as an unsigned character.
+
+ 
+
+Writes the characters pointed to by the argument. Stops writing when the
+number of bytes specified by the precision (1f present) 1s reached or a null
+character is encountered.
+
+ 
+
+"O
+
+Converts a void * value to printable form.
+
+ 
+
+J
+
+The corresponding argument must point to an object of type int. Stores
+in this object the number of characters written so far by this call of
+…printÉ; produces no output.
+
+ 
+
+°
+<
+
+ 
+
+Writes the character %.
+
+ 
+
+*C99 only
+
+C99 Changes to ….print£ Conversion Specifications
+
+The conversion specifications for print£ and fprint£ have undergone à num-
+ber of changes in C99:
+
+= Additional length modifiers. C99 adds the hh. 11, j, z, and t leneth modifi-
+ers. hh and 11 provide additional length options, j allows greatest-width inte-
+gers to be written. and z and t make it easier to write values of type size t
+and ptrdif£ t, respectively.
+

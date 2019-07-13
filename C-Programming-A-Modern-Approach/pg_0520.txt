@@ -1,0 +1,72 @@
+stackADT.c
+
+194 ÀA Stitack Abstract Daita Type 495
+
+Implementing the Stack ADT Using a Fixed-Length Array
+
+There are several ways to implement the stack ADT. Our first approach 1s the sim-
+
+plest. We*Il have the stackADT. c file define the stack_type structure so thal
+it contains a fixed-length array (to hold the contents of the stack) along with an
+integer that keeps track of the top of the stack:
+
+struct stack type Ç
+int contents [STACK SIZE] ;
+int top;
+
+}
+Here’s what stackADT. c will look like:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "stackADT.h"
+
+#define STACK SIZE 100
+
+struct stack _ type {
+int contents (STACK SIZE] ;
+
+int top;
+static void terminate (const char *message)
+
+printf ("$s\n", message) ;
+exit (EXIT FAILURE) ;
+
+}
+
+Stack create (void)
+
+{
+
+Stack s = malloc(sizeof (struct stack_type));
+if (s == NULL)
+terminate ("Error in create: stack could not be created.") ;
+s->top = O0;
+return s;
+
+}
+
+void destroy (Stack s)
+
+(
+
+£ree (s) ;
+
+}
+
+void make empty (Stack s)
+
+(
+
+s->top = Q0;
+
+Î
+
+bool is empty(Stack s)
+
+(
+
+return s->top == D0;
+
+}
+

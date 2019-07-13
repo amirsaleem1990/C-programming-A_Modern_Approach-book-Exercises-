@@ -1,0 +1,70 @@
+256 Chapter 11
+
+Section 11.5
+
+S.
+
+tJ
+
+e
+
+Pointers
+
+When passed an array a of length n. the function will search a for its largest and second-
+largest elements, storing them in the variables pointed to by largest and
+second _largest, respectively.
+
+Write the following function:
+
+void split date(int day _ of year, int year,
+int *month, int *day) ;
+
+day_of year is an integer between ! and 366, specifying a particular day within the year
+designated by year. month and day point to variables in which the function will store the
+equivalent month (1—12) and day within that month (1=31).
+
+Write the following function:
+int *find _ largest (int a[], int n);
+
+When passed an array a of length n. the function will return à pointer to the array’s largest
+element.
+
+Programming Projects
+
+Modify Programming Project 7 from Chapter 2 so that it includes the following function:
+
+void pay_amount (int dollars, int *twenties, int *tens,
+int *fives, int *ones) ;
+
+The function determines the smallest number of $20, $10. $5, and $1 bills necessary to pay
+the amount represented by the dollars parameter. The twenties parameter points to à
+variable in which the function will store the number of S20 bills required. The tens,
+fives. and ones parameters are similar.
+
+Modify Programming Project 8 from Chapter 5 so that it includes the following function:
+
+void find closest flight (int desired time,
+int *departure time,
+int *arrival time) ;
+
+This function will find the flight whose departure time is closest to desired _time
+(expressed in minutes since midnight). Ît will store the departure and arrival times of this
+flight (also expressed in minutes since midnight) in the variables pointed to by
+departure _ time andarrival time, respectively.
+
+Modify Programming Project 3 from Chapter 6 so that it includes the following function:
+
+void reduce (int numerator, int denominator,
+int *reduced _ numerator,
+int *reduced _denominator) ;
+
+numerator and denominator areë the numerator and denominator of a fraction.
+reduced_numerator and reduced_denominator are pointers to variables in
+which the function will store the numerator and denominator of the fraction once it has been
+reduced to lowest terms.
+
+Modify the poker .c program of Section 10.5 by moving all external variables into main
+and modifying functions so that they communicate by passing arguments. The
+analyze_hand function nécds to change the straight, flush, four, three, and
+pairs variables, so it will have to be passed pointers to those variables.
+

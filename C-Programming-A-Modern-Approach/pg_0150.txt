@@ -1,0 +1,48 @@
+7
+
+fA
+
+ 
+
+Basic Types
+
+Make no mistake about it: Computers process numbers—
+not symbols. We measure our understanding (and control)
+by the extent to which we can arithmetize an activity.
+
+So far, we’ve used only two of C’s basic (built-in) types: int and float. (We've
+also seen _Bool. which is a basic type in C99.) This chapter describes the rest of
+
+the basic types and discusses important issues about types in general. Section 7.1
+reveals the full range of integer types. which include_
+
+andrunsignedrintegers: Section 7.2 introduces the
+
+  
+ 
+
+  
+
+ 
+
+ection 7.3 covers the char type, which we'll need in order to work with charac-
+ter data. Section 7.4 tackles the thorny topic of converting à value of one type to an
+equivalent value of another. Section 7.5 shows how to use typedef to define new
+type names. Finally, Section 7.6 describes the sizeoË£ operator. which measures
+the amount of storage required for a type.
+
+Integer Types
+
+C supports two fundamentally different kinds of numeric types: integer types and
+floating types. Values of an integer type are whole numbers, while values of a
+
+floating type can have a fractional part as well. Theinteger types, in tum, are
+
+ 
+
+ 
+
+ 
+
+125
+

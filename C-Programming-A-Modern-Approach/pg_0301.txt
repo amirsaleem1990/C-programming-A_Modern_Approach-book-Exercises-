@@ -1,0 +1,28 @@
+216
+
+Chapter 12  Pointers and Arrays
+
+_Ul
+
+Ignorc all characters that aren’t letters. Use integer variables to keep track of positions in the
+array.
+
+(b) Revise the program to use pointers instead of integers to kcep track of positions in the
+array.
+
+Simplify Programming Project 1(b) by taking advantage of the fact that an array name can
+be used as a pointer.
+
+Simplify Programming Project 2(b) by taking advantage of the fact that an airay name can
+be used as a pointer.
+
+Modify Programming Project 14 from Chapter 8 so that it uses a pointer instead of an inte-
+ger to keep track of the current position in the array that contains the sentence.
+
+Modify the gsort . c program of Section 9.6 so that 1ow, high, and middle are pointers
+lo array clements rather than integers. The split function will need to return a pointer. not
+an integer.
+
+Modify the maxmin.c program of Section 11.4 so that the max_min function uses a
+pointer instead of an integer to keep track of the current position in the array.
+

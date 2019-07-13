@@ -1,0 +1,57 @@
+142 Chapter 7  Basic Types
+
+length.e _ /* Determines the length of a message */
+#include <stdio.h>
+
+int main(void)
+
+{
+
+char ch;
+int len = O0;
+
+printf ("Enter a message: ") ;
+ch = getchar () ;
+while (ch != '\n') {
+
+len++;
+
+ch = getchar ();
+
+}
+
+print£ ("Your message was %d character(s) long.\n", len) ;
+
+return 0;
+
+Recalling our discussion of idioms involving while loops and getchar. we
+realize that the program can be shortened:
+
+lengih2.c _ /* Determines the length of a message */
+#finclude <stdio.h>
+
+int main(void)
+
+{
+
+int len = O0;
+
+print£ ("Enter a message: ") ;
+while (getchar() != '\n')
+len++;
+printf ("Your message was %d character(s) long.\n", len) ;
+
+return 0;
+
+7.4 Type Conversion
+
+Computers tend to be more restrictive than C when it comes to arithmetic. For a
+computer to perform an arithmetic operation, the operands must usually be of the
+same size (the same number of bits) and be stored in the same way. À computer
+may be able to add two 16-bit integers directly. but not a 16-bit integer and a 32-bit
+Integer or a 32-bit integer and a 32-bit floating-point number.
+
+Ç, on the other hand, allows the basic types to be mixed in expressions. We
+can combinc integers, floating-point numbers, and even characters in a single
+expression. The C compiler may then have to generate instructions that convert
+

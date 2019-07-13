@@ -1,0 +1,62 @@
+2170
+
+Chapter 12  Pointers and Arrays
+
+eF3 1
+
+12.5
+
+variable-length arrays > 8.3
+
+Another situation in which this knowledge comes in handy is when we want
+to “trick” a function into thinking that a multidimensional array is really one-
+dimensional. For example, consider how we might use find_largest to find
+the largest element in a. As the first argument to find largest, let’s try
+passing a (the address of the array); as the second, we’ll pass NUM ROWS *
+NUM_COLS (the total number of elements in a):
+
+largest = find largest (a, NUM ROWS * NUM COLS) ; /* WRONG */
+
+Unfortunately, the compiler will object to this statement, because the type of a is
+int (#) [NUM COLS] but £ind largest is expecting an argument of type
+int *. The correct call 1s
+
+largest = find _ largest (a[0], NUM ROWS * NUM COLS) ;
+
+a [0] points to element 0 in row O, and it has type int * (after conversion by the
+compiler), so the latter call will work correctly.
+
+Pointers and Variable-Length Arrays (C99)
+
+Pointers are allowed to point to elements of variable-length arrays (VLAs), a fea-
+ture of C99. An ordinary pointer variable would be used to point to an element of à
+one-dimensional VLA:
+
+void f (int n)
+
+{
+
+int a[n], *p;
+p =a;
+
+When the VLA has more than one dimension, the type of the pointer de-
+pends on the length of each dimension except for the first. Let’s look at the two-
+dimensional case:
+
+void f(int m, int n)
+
+{
+
+int a(m] ([n], (*p) [n] ;
+p = a;
+
+}
+
+Since the type of p depends on n, which isn’t constant, p is said to have a variably
+modified type. Note that the validity of an assignment such as p = a can’t always
+be determined by the compiler. For example, the following code will compile but is
+correct only if m and n are equal:
+
+int a[m] [n], (*p) [m] ;
+p = a;
+

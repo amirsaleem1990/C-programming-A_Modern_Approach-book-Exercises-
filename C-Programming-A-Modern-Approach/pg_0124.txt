@@ -1,0 +1,39 @@
+G Loops
+
+À program without a loop and a structured
+variable isn’t worth writing.
+
+Chapter 5 covered C”s selection statements, i£ and switch. This chapter intro-
+duces C's iteration statements, which allow us to set up loops.
+
+À loop 1s a statement whose job is to repeatedly execute some other statement
+(the loop body). In C, every loop has a controlling expression. Each time the loop
+body is executed (an iteration of the loop), the controlling expression is evaluated:;
+if the expression is true—has a value that’s not zero—the loop continues to exe-
+cute.
+
+ 
+
+The last two sections of this chapter are devoted to C features that are used in
+conjunction with loops. Section 6.4 describes the break, continue. and goto
+
+ 
+ 
+
+Stalements.
+
+any statement within afunction. Section 6.5 covers the null statement, which can
+
+be used to create loops with empty bodies.
+
+ 
+ 
+   
+
+6.1 The while Statement
+
+Of all the ways to set up loops in C, the while statement is the simplest and most
+fundamental. The while statement has the form
+
+99
+

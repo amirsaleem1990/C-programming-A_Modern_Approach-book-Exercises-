@@ -1,0 +1,71 @@
+406
+
+Chapter 16  Structures, Unions, and Enumerations
+
+Q:
+A.
+
+protecting header files » 75.2
+
+> .Q
+
+-8-
+
+Q»
+
+How can I share a structure type among several files in a program?
+
+Put a declaration of the structure tag (or a typedeË. if you prefer) in a header file.
+then include the header file where the structure is needed. To share the part struc-
+ture, for example, we’d put the following lines in a header file:
+
+struct part {
+int number;
+char name [NAME LEN+1] ;
+int on hand;
+
+} ;
+
+Notice that we’re declaring only the structure /ag, not variables of this type.
+
+Incidentally, à header file that contains a declaration of a structure tag or struc-
+ture type may need protection against multiple inclusion. Declaring a tag or
+typedef name twice in the same file is an error. Similar remarks apply to unions
+and enumerations.
+
+If I include the declaration of thé part structure into two different files, will
+part variables in one file be of the same type as part variables in the other
+ile?
+
+Technically. no. However, the C standard says that the part variables in one file
+have à type that’s compatible with the type of the part variables in the other file.
+Variables with compatible types can be assigned to each other, so there’s little
+practical difference betwcen types being ‘“compatible” and being “the same”
+
+The rules for structure compatibility in C89 and C99 are slightly different. In
+C89, structures defined in different files are compatible if their members have the
+same names ancl appear in the same order, with corresponding members having
+compatible types. C99 goes one step further: it requires that either both structures
+have the same tag or neither has a tag.
+
+Similar compatibility rules apply to unions and enumerations (with the same
+difference between C89 and C99).
+
+Is it legal to have a pointer to a compound literal?
+
+Yes. Consider the print part function of Section 16.2. Currently, thè parame-
+ter to this function is a part structure. The function would be more efficient 1f 1t
+were modified to accept a pointer to à part structure instead. Using the function
+to print a compound literal would then be done by prefixing the argument with the
+& (address) operator:
+
+print part (&(struct part) {528, "Disk drive", 10});
+
+Allowing a pointer to a compound literal would seem to make it possible to
+modify the literal. Is that the case?
+
+Yes. Compound literals are Ivalues that can be modified, although doing so is rare.
+
+I saw a program in which the last constant in an enumeration was followed by
+a comma, like this:
+

@@ -1,0 +1,65 @@
+106
+
+Chapter 6 Loops
+
+Q&ÂÀ
+
+counting 1s printed, then i is decremented. The condition i > O is then tested
+again. The loop body will be executed 10 times in all, with i varyine from 10
+down to |.
+
+The for statement is closely related to the while statement. In fact, except
+in a few rare cases, a for loop can always be replaced by an equivalent while
+loop:
+
+exprl ;
+
+while ( expr2 ) |
+statement
+expr3 ;
+
+}
+
+Às this pattern shows, expr/ is an initialization step that’s performed only once.
+before the loop begins to execute, expr2 controls loop termination (the loop contin-
+ues executing as long as the value of expr2 is nonzero), and expr3 is an operation
+to be performed at the end of each loop iteration. Applying this pattern to our pre-
+vious £or loop example, we arrive at the following:
+
+i = 10;
+
+while (i > O) |
+printf ("T minus %d and counting\n", i);
+i--;
+
+}
+
+Studying the equivalent while statement can help us understand the fine
+points of a £or statement. For example, suppose that we replace i-- by --i in
+our £or loop example:
+
+for (i = 10; i > O; --i)
+print£f("T minus %d and counting\n", i);
+
+How does this change affect the loop? Looking at the equivalent while loop, we
+see that it has no effect:
+
+i = 10;
+
+while (i > 0O) |
+printf ("T minus %d and counting\n", i);
+--j;
+
+}
+
+Since the first and third expressions in a for statement are executed as statements,
+their values are irrelevant—they*re useful only for their side effects. Consequently,
+these two expressions are usually assignments or increment/decrement expres-
+sions.
+
+for Statement Idioms
+
+The £or statement is usually the best choice for loops that “count up” (increment
+a variable) or ‘‘count down” (decrement a variable). À for statement that counts
+up or down a total of n times will usually have one of the following forms:
+

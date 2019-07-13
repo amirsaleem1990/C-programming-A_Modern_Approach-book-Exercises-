@@ -1,0 +1,142 @@
+Chapter 17  Advanced Uses of Pointers
+
+new_node->value = 10;
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+nev_node | <T
+
+new node->next = first; ;
+— first
+
+ 
+
+ 
+
+ 
+
+new_node
+
+first = new node,; firet
+— re
+
+——
+new_node | <T
+
+£irst —— _
+
+ 
+
+ 
+
+ 
+
+new_node = malloc(sizeof (struct node) ) ;
+
+ 
+
+ 
+
+.
+Ë
+
+new_node
+
+Hl A
+\
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+new node->value = 20; ;
+— fairst
+J20 l 10_//q
+AN
+new_node
+new node->next = Éfirst; _,
+— rIirst
+
+ 
+
+ 
+
+A_
+|
+|
+<
+
+ 
+
+ 
+
+ 
+
+m7—Jw
+
+new_node
+
+ï
+J
+
+first = new _ node;
+
+ 
+
+first
+
+ 
+
+Ëw
+E
+£
+
+ 
+
+«
+\
+
+LU L
+-
+
+newv_node
+
+ 
+
+Inserting a node into a linked list is such a common operation that we’1l probably
+want to write à function for that purpose. Let’s name the function add_to list.
+[t will have two parameters: 1ist (a pointer to the first node in the old list) and n
+(the integer to be stored in the new node).
+
+struct node *add to list (struct node *list, int n)
+
+{
+
+struct node *new _node;
+
+new_node = malloc(sizeof (struct node) ) ;
+
+if (new node == NULL) {
+print£f ("Error: malloc failed in add to list\n") ;
+exit (EXIT FAILURE) ;
+
+}
+
+ 
+

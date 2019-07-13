@@ -1,0 +1,65 @@
+386 Chapter 16 Structures, Unions, and Enumerations
+
+automatic storage duration > 70.7
+
+æ
+
+16.3
+
+C permits initializers of this kind, provided that the structure we’re initializing
+(part2, in this case) has automatic storage duration (itl's local to à function and
+hasn’t been declared static). The initializer can be any expression of the proper
+type, including a function call that retums a structure.
+
+Compound Literals
+
+Section 9.3 introduced the C99 feature known as the compound literal, In that sec-
+tion, compound literals were used to create unnamed arrays, usually for the pur-
+pose of passing the array to a function. À compound literal can also be uscd to
+create a structure “on the fly.” without first storing it In à variable. The resulting
+structure can be passed as a parameter, returned by a function. or assigned to à
+variable. Let's look at a couple of examples.
+
+First, we can use a compound literal to create a structure that will be passed to
+à function. For example, we could call the print part function as follows:
+
+print part ((struct part) {528, "Disk drive", 10}) ;
+
+The compound literal (Shown in bold) creates a part structure containing the
+members 528, "Disk drive*", and 10. in that order. This structure 1s then passed
+to print part, which displays 1t.
+
+Here’s how a compound literal might be assigned to a variable:
+
+parti = (sLrucL pazl) ({(528, "Disk drive", 10};
+
+This statement resembles a declaration containing an initializer. but 1tl’s not the
+same—initializers can appear only in declarations, not in statements such as this
+one.
+
+In general. a compound literal consists of a type name within parentheses, fol-
+lowed by a set of values enclosed by braces. In the case of a compound literal that
+represents a structure, the type name can be a structure tag preceded by the word
+
+struct—as In our examples—or a typedef namè. À compound literal may —
+
+contain designators, just like a designated initializer:
+
+print part ((struct part) {.on _ hand = 10,
+.name = "Disk drive",
+.number = 528});
+
+À compound literal may fail to provide full initialization, in which case any unini-
+tialized members default to zero.
+
+Nested Arrays and Structures
+
+Structures and arrays can be combined without restriction. Arrays may have struc-
+tures as their elements, and structures may contain arrays and structures as mem-
+bers. Wc've already seen an example of an array nested inside a structure (the
+
+ 
+
+ 
+   
+

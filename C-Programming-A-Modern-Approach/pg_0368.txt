@@ -1,0 +1,57 @@
+saqrt function »23.3
+
+Q & À 343
+
+the time of substitution. As a result. CONCAT (a, CONCAT (b, c) ) expands to
+aCONCAT (b, c). which can’t be expanded further, since there’s no macro named
+acoONCAT.
+
+There’s a way to solve the problem, but it’s not pretty. The trick is to define a
+second macro that simply calls the first one:
+
+#define CONCAT2(x,y) CONCAT (x,y)
+
+Writing CONCAT2 (a, CONCAT2 (b, c) ) now yields the desired result. As the
+preprocessor expands the outer call of CONCAT2, it will expand CONCAT2 (b, C)
+as well: the difference is that CONCAT2’s replacement list doesn't contain ##. If
+none of this makes any sense, don‘t worry; it’s not a problem that arises often.
+
+The # operator has a similar difficulty, by the way. If #x appears in a replace-
+ment list, where x is a macro parameter, the corresponding argument is not
+expanded. Thus, if N is a macro representing 10, and STR (x) has the replacement
+list #x, expanding STR(N) yields "N", not "10". The solution is similar to the
+one we used with CONCAT: defining a second macro whose job 1s to call STR.
+
+Suppose that the preprocessor encounters the original macro name during
+rescanning, as in the following example:
+
+#define N (2*M)
+#define M (N+1)
+
+i = N; /* infinite 1oop? */
+
+The preprocessor will replace N by (2*M), then replace M by (N+1). Will the
+preprocessor replace N again, thus going into an infinite loop? [p. 326]
+
+Some old preprocessors will indeed go into an infinite loop, but newer ones
+shouldn*t. According to the C standard, if the original macro name reappears dur-
+ing the expansion of a macro, the name is not replaced again. Here’s how the
+assignment to i will look after preprocessing:
+
+i = (2*(N+1));
+
+Some enterprising programmers take advantage of this behavior by writing
+macros whose names match reserved words or functions in the standard library.
+Consider the sqrt library function. sqrt computes the square root of its argu-
+ment, returning an implementation-defined value if the argument is negative. Per-
+haps we would prefer that sqrt return O if its argument is negative. Since sqrt£ is
+part of the standard library. we can°t easily change it. We can, however, define a
+sart macro that evaluates to 0 when given a negative argument:
+
+fundef£ sqrt
+#define sqrt (x) ((x)>=0?sgrt (x) :0)
+
+ÀA later call of sqrt will be intercepted by the preprocessor, which expands 1t into
+the conditional expression shown here. The call of sqrt inside the conditional
+expression won't be replaced during rescanning, so it will remain for the compiler
+

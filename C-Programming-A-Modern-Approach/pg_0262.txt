@@ -1,0 +1,64 @@
+Section 10.4
+
+O
+
+Q & À 237
+
+Q & À
+
+What impact do local variables with static storage duration have on recursive
+functions? [p. 220]
+
+When a function is called recursively, fresh copies are made of its automatic vari-
+ables for each call. This doesn*t occur for static variables, though. Instead, all calls
+of the function share the same static variables.
+
+In the following example, j is initialized to the same value as i, but there are
+two variables named i:
+
+int 1 = 1l;
+
+void f (void)
+
+int à ;
+int i = 2;
+
+n
+
+Is this code legal? If so, what is j°s initial value, l or 2?
+
+The code is indeed legal. The scope of a local variable doesn't begin until its decla-
+ration. Therefore, the declaration of j refers to the external variable named i. The
+initial value of j will be 1.
+
+Exercises
+
+The following program outline shows only function definitions and variable declarations.
+int a;
+
+void f (int b)
+
+{
+}
+
+void g(void)
+
+{
+
+int C;
+
+int d;
+
+{
+
+int e;
+}
+}
+
+int main(void)
+
+{
+}
+
+int Ëf;
+

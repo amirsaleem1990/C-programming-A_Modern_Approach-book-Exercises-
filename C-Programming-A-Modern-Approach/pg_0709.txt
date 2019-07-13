@@ -1,0 +1,74 @@
+684 Chapter 26 Miscellaneous Library Functions
+
+<limits.h> macros » 23.2
+
+atoll
+strtof
+striold
+strioll
+strtoull
+
+e F3 1
+
+PROGRAM
+
+it&numconv.c
+
+strtol and strtoul functions return the smallest or largest values of their
+respective return types. (strtol returns either LONG MIN or LONG MAX, and
+strtoul returns ULONG _ MAX.)
+
+C99 adds the atoll, strtof, strtold, strtoll, and strtoull
+functions. atoll is the same as the atol function. except that it converts a
+string to a long long int value. strtof and strtold are the same as
+strtod, except that they convert a string to a £float or long double value,
+respectively. strtoll 1s the same as strtol, except that it converts a string to
+à long long int value. strtoull 1s the same as strtoul, except that it
+converts a string to an unsigned long long int value. C99 also makes a
+small change to the floating-point numeric conversion functions: the string passed
+to strtod (as well as its newer cousins, strtof and strtold) may contain a
+hexadecimal floating-point number, infinity, or NaN.
+
+Testing the Numeric Conversion Functions
+
+The following program converts a string to numeric form by applying each of the
+six numeric conversion functions that exist in C89. After calling the strtod.
+strtol. and strtoul functions, the program also shows whether each conver-
+sion produced a valid result and whether it was able to consume the entire string.
+The program obtains the input string from the command line.
+
+/* Tests C89 numeric conversion functions */
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define CHK VALID printf(" %s gs\n",
+errno != ERANGE ? "Yes" : "No ",
+*ptr —— I\Ol ? "Yes"! . "NO")
+
+\
+\
+
+int main(int argec, char *argv[])
+
+{
+
+char *ptr;
+
+if (argc != 2) |
+printf ("usage: tnumconv string\n") ;
+exit (EXIT FAILURE) ;
+
+}
+
+printf ("Function Return Value\n") ;
+printf(r-------- _ ------------ \n") ;
+
+print£ ("atof 3g\n", atof (argv[1] )) ;
+print£ ("atoi sd\n", atoi (argv[1])) ;
+print£ ("atol 71d\n\n", atol (argv [1] ) ) ;
+
+print£ ("Function Return Value Valid? "
+"String Consumed?\n"
+

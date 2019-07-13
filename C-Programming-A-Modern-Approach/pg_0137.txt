@@ -1,0 +1,41 @@
+112 Chapter6 Loops
+
+if (d < n)
+print£("%d is divisible by gd\n', n, d);
+else
+
+print£f("%d is prime\n", n) ;
+
+The break statement is particularly usefu! for writing loops in which the exit
+point is in the middle of the body rather than at the beginning or end. Loops that
+read user input, terminating when a particular value is entered. often fall into this
+category:
+
+for (;;) {
+printf ("Enter a number (enter O to stop): ");
+scanf ("d", &n) ;
+if (n == O)
+break ;
+printf£f ("%d cubed is %d\n"', n, n * n * n});
+
+)
+
+ 
+
+The continue Statement
+
+The continue statement doesn’t really belong here, because it doesn’t exit from
+a loop. lt’s similar to break. though, so its inclusion in this section isn*L com-
+pletely arbitrary. break transfers control just past the end of a loop., while
+continue transfers control to à point just before the end of the loop body. With
+break, control leaves the loop; with cont inue, control remains inside the loop.
+There's another difference between break and continue: break can be used
+in switch statements and loops (while, do, and for), whereas continue is
+limited to loops.
+
+The following example, which reads a series of numbers and compules their
+sum, illustrates a simple use of cont inue. The loop terminates when 10 nonzero
+numbers have been read. Whenever the number O is read. the continue state-
+ment is executed, skipping the rest of the loop body (the statements sum += i ;
+and n++ ; ) but remaining inside the loop.
+

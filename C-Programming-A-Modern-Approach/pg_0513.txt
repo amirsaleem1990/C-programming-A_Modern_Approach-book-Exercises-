@@ -1,0 +1,77 @@
+488
+
+w>
+
+Chapter 19 Program Design
+
+stack.h
+
+stack1.c
+
+fifndef STACK H
+fdefine STACK H
+
+#include <stdbool .h> /* C99 only */
+
+void make_empty (void) ;
+bool is _ empty (void) ;
+bool is full (void) ;
+void push(int i);
+
+int pop (void) ;
+
+#endif
+
+l’ve included C99's <stdbool .h> header so that the is _ emptyand iis full
+functions can return a bool result rather than an int value.
+Let’s first use an array to implement the stack:
+
+#include <stdio.h>
+#include <stdlib.h>
+#Hinclude "stack.h"
+
+#define STACK SIZE 100
+
+static int contents [STACK SIZE] ;
+static int top = O0;
+
+static void terminate (const char *message)
+
+{
+
+printf("%s\n"', message) ;
+exit (EXIT FAILURE) ;
+
+}
+
+void make _ empty (void)
+
+{
+}
+
+bool is empty (void)
+
+{
+}
+
+bool is full (void)
+
+{
+}
+
+void push(int i)
+
+(
+
+top = 0;
+
+return top == D0;
+
+return top == STACK SIZE;
+
+if (is full())
+terminate ("Error in push: stack is full.");
+contents [top++] = i;
+
+}
+

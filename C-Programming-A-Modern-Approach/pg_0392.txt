@@ -1,0 +1,58 @@
+QaÂ
+
+15.4  Building a Multiple-File Program 367
+
+To make it easier to build large programs. UNIX originatec the concept of the
+makefile, à file containing the information necessary to build à program. À make-
+file not only lists the files that are part of the program, but also describes depen-
+dencies amonsg the files. Suppose that the file £oo. c includes the file bar .h. We
+say that foo .c “depends” on bar .h, because à change to bar .h will require us
+to recompile £oo.c.
+
+Here's a UNIX makefile for the justiE£y program. The makefile uses GCC
+lor compilation and linking:
+
+justify: justify.o word.o line.o
+gcc -o justify justify.o word.o line.o
+
+justify.o: justify.c word.h line.h
+gcc -c justiËÉy.c
+
+word.o: word.c word.h
+gcc -c word.c
+
+line.o: line.c line.h
+gcc -c line.c
+
+Therc are four groups of lines: each group is known as a rule, The first line in cach
+rule sives a farget file. followed by the files on which it depends. The second line
+is a command to be executed if the target should need to be rebuilt because of a
+change to one of its dependent files. Let’s look at the first two rules; the last two
+are similar.
+
+In the first rule, justi £y (the exccutable file) ts the target:
+
+justify: justi£fy.o word.o line.o
+gcc -o justi£fy justify.o word.o line.o
+
+The first line states that justify depends on the files justi£y.o, word.0o,
+and line.o: if any one of these three files has changed since the program was
+last built, then justify needs to be rebuilt. The command on the following line
+shows how the rebuilding is to be done (by using the gcc command to link the
+three object files).
+
+In the second rule, justify. 0 is the target:
+
+justi£fy.o: justify.c word.h line.h
+gcc -c justify.c
+
+The first line indicates that justi£y.o needs to be rebuilt if there's been à
+change to justify.c, word.h, or line.h. (The reason for mentioning
+word.h and line.his that justi£y. c includes both these files. so it's poten-
+tially affected by a change to either one.) The next line shows how to update
+justify.o (by recompiling justi£y.c). The -c option tells the compiler to
+compile justi£y. c into an object file but not attempt to link 1t.
+
+Once we've created a makefile for a program, we can use the make utility to
+build (or rebuild) the program. By checking the time and date associated with cach
+

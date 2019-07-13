@@ -1,0 +1,61 @@
+æ
+
+<stdbool .h> header »21.5
+
+ 
+
+8.1  One-Dimensional Arrays 167
+
+while (n > O) (
+digit = n % 10;
+i£f (digit seen[digit])
+
+break;
+digit_seen[digit] = true:;
+n /= 10;
+}
+if (n > O)
+print£f ("Repeated digit\n") ;
+else
+
+print£ ("No repeated digit\n") ;
+
+return 0;
+
+This program uses the names bool, true, and false. which are defined in
+C99d's <stdboo!1 .h> header. IT your compiler doesn°t support this header. you*Il
+need to define these names yourself. One way to do so is to put the following lines
+above the main function:
+
+#define true 1
+#define false O
+typedef int bool;
+
+Notice that n has type long, allowing the user to enter numbers up to
+2,147.483,647 (or more, on some machines).
+
+Using the sizeof Operator with Arrays
+
+The sizeoË operator can determine the size of an array (in bytes). If à is an array
+of 10 integers, then sizeo£f (a) is typically 40 (assuming that each integer
+requires four bytes).
+
+We can also use sizeof lo measure the size of an array element, such as
+a [0] . Dividing the array size by the element size gives the length of the array:
+
+sizeof (a) / sizeof (a{(0o])
+
+Some programmers use this expression when the length of the array is needed. To
+clear the array a, for example, we could write
+
+for (i = 0; i « sizeof(a) / sizeof(a[0]); i++)
+a[i] = O;
+
+With this technique, the loop doesn't have to be modified if the array length should
+change at à later date. Using a macro to represent the array length has the same
+advantage, of course, but the si zeof technique is slightly better. since there’s no
+macro name to remember (and possibly get wrong).
+
+One minor annoyance is that some compilers produce a warning message for
+the expression i < sizeof (a) / sizeof (a [0] ). The variable i probably has
+

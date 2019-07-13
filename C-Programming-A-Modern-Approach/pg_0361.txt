@@ -1,0 +1,58 @@
+336 Chapter 14  The Preprocessor
+
+#i fndef directive
+
+#elif directive
+
+#else directive
+
+The #i fnde£ directive is similar to #ifdef, but tests whether an identifier
+1S HOf defined as a macro:
+
+#ifnde£ identifier
+
+Writing
+Hifnde£ identifier
+is the same as writing
+
+#Hi£ !defined (identifier)
+
+The #eli f and #e1se Directives
+
+#if, #ifde£, and #ifndef blocks can be nested just like ordinary i £ state-
+ments. When nesting occurs, it’s a good idea to use an increasing amount of inden-
+tation as the level of nesting grows. Some programmers put a comment on each
+closing #endi£ to indicate what condition the matching #i f tests:
+
+#if DEBUG
+
+#endif /* DEBUG */
+
+This technique makes it easier for the reader Lo find the beginning of the #i £ block.
+For additional convenience, the preprocessor supports the #e1 i £ and #else
+directives:
+
+Helif constant-expression
+
+#else
+
+#elif and #else can be used in conjunction with #i f, #i Fde£, or #ifnaef
+to test a series of conditions:
+
+#i£ expr!
+
+Lines 10 be included if exprl is nonzero
+
+Heli£ expr2
+
+Lines to be included if exprl is zero but expr2 is nonzero
+#else
+
+Lines to be included otherwise
+
+tendif
+
+Although the #Hi£ directive is shown above, an #ifdef or #ifndef directive
+can be used instead. Any number of #el i £ directives—but at most one #e1 se—
+may appear between #i f and #endif.
+

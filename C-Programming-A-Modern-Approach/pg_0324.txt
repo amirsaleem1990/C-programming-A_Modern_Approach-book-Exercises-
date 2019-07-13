@@ -1,0 +1,83 @@
+13.6  String |dioms 299
+
+“I
+N
+
+p |c|vwo| | |
+
+C
+
+ 
+
+ 
+
+ 
+
+a
+
+p 1s then incremented as long as it doesn’t point to a null character. When the loop
+terminates, p must be pointing to the null character:
+
+Y. _
+
+w |
+
+b C
+
+Q
+
+ 
+
+ 
+
+ 
+
+The second while stalement implements step (2). The loop body copies one
+character from where s2 points to where p points, then increments both p and s2.
+If s2 originally points to the string "def", here’s what the strings will look like
+after the first loop iteration:
+
+81[Î_| ‘°Î%J sp.[__{:|
+
+a
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+The loop terminates when s2 points to the null character:
+
+|w|ca[e]e] [a [ î1‘îﬁ
+
+After putting à null character where p is pointing, strcat returns.
+By a process similar to the one we used for strlen, we can condense the
+definition of strcat, arriving at the following version:
+
+ 
+
+ 
+
+ 
+
+char *strcat (char *s1, const char *s2)
+
+{
+
+char *p = sl;
+
+while (*p)
+p++;
+while (*p++ = #*s2++)
+
+return sl;
+

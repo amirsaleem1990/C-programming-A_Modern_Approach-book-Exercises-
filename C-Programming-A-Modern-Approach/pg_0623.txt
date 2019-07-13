@@ -1,0 +1,52 @@
+598 Chapter 23 _ Library Support for Numbers and Character Data
+
+numbers are permitted. However, it’s safe to say that the vast majority of C pro-
+grams are executed on systems that support this standard.
+
+=s Provide more control over floating-point arithmetic. Better control over
+floating-point arithmetic may allow programs to achieve greater accuracy and
+speed.
+
+u Make C more attractive to Fortran programmers. The addition of many math
+functions, along with enhancements elsewhere in C99 (such as support for
+complex numbers), was intended to increase C’s appeal to programmers who
+might have used other programming languages (primarily Fortran) in the past.
+
+Another reason that l’ve decided to cover C99’s <math .h> header in a sepa-
+rate section is that it’s not likely to be of much interest to the average C programmer.
+Those using C for its traditional applications, which include systems programming
+and embedded systems. probably won’t need the additional functions that C99 pro-
+vides. However, programmers developing engineering, mathematics, or science
+applications may find these functions to be quite useful.
+
+IFBE Floating-Point Standard
+
+One motivation for the changes to the <math.h> header is better support for
+IEEE Standard 754, the most widely used representation for floating-point num-
+bers. The full title of the standard is “IEEE Standard for Binary Floating-Point
+Arithmetic” (ANSVIEEE Standard 754-1985). Tts also known as IEC 60559,
+which is how the C99 standard refers to it.
+
+Section 7.2 described some of the basic properties of the IEEE standard. We
+saw that the standard provides two primary formats for floating-point numbers:
+single precision (32 bits) and double precision (64 bits). Numbers are stored in à
+form of scientific notation, with each number having three parts: a sign, an expo-
+nent, and a fraction. That limited knowledge of the IEEE standard is enough to use
+the C89 version of <math.h> effectively. Understanding the C99 version. how-
+ever, requires knowing more about the standard. Here’s some additional informa-
+tion that we’Il need:
+
+= Positive/negative zero. One of the bits in the IEEE representation of a float-
+ing-point number represents the number’s sign. As a result, the number zero
+can be either positive or negative, depending on the value of this bit. The fact
+that zero has two representations may sometimes require us to treat it differ-
+ently from other floating-point numbers.
+
+# Subnormal numbers. When a floating-point operation is performed, the result
+may be too small to represent, a condition known as underflow. Think of what
+happens if you repeatedly divide a number using a hand calculator: eventually
+the result is Zero. because it becomes too small to represent using the calcula-
+tor's number representation. The IEEE standard has a way to reduce the
+Impact of this phenomenon. Ordinary floating-point numbers are stored in a
+“normalized” format, in which the number is scaled so that there’s exactly one
+

@@ -1,0 +1,156 @@
+xiv
+
+Contents
+
+17
+
+16.2
+
+16.3
+
+16.4
+
+16.5
+
+Structure Types
+
+Declaring a Structure Tag
+
+Defining a Structure Type
+
+Structures as Arguments and Return Values
+Compound Literals
+
+Nested Arrays and Structures
+
+Nested Structures
+
+Arrays of Structures
+
+Initializing an Array of Structures
+
+Program: Maintaining a Parts Database
+Unions
+
+Using Unions to Save Space
+
+Using Unions to Build Mixed Data Structures
+Adding a “Tag Field” to a Union
+Enumerations
+
+Enumeration Tags and Type Names
+Enumerations as Integers
+
+Using Enumerations to Declare “Tag Fields"
+
+ADVANCED USES OF POINTERS
+
+174
+
+17.2
+
+17.3
+
+17.4
+
+17.5
+
+17.6
+
+Dynamic Storage Allocation
+
+Memory Allocation Functions
+
+Null Pointers
+
+Dynamically Allocated Strings
+
+Using malloc to Allocate Memory for a String
+
+Using Dynamic Storage Allocation in String Functions
+Arrays of Dynamically Allocated Strings
+
+Program: Printing a One-Month Reminder List (Revisited)
+
+Dynamically Allocated Arrays
+
+Using malloc to Allocate Storage for an Array
+The calloc Function
+
+The realloc Function
+
+Deallocating Storage
+
+The £ree Function
+
+The “Dangling Pointer” Problem
+
+Linked Lists
+
+Declaring a Node Type
+
+Creating a Node
+
+The -> Operator
+
+Inserting a Node at the Beginning of a Linked List
+Searching a Linked List
+
+Deleting a Node from a Linked List
+
+Ordered Lists
+
+Program: Maintaining a Parts Database (Revisited)
+
+Pointers to Pointers
+
+382
+383
+384
+384
+386
+386
+387
+387
+388
+389
+
+396
+398
+399
+400
+401
+402
+403
+404
+
+413
+
+414
+414
+414
+416
+416
+417
+418
+418
+
+420
+420
+421
+421
+422
+423
+424
+424
+425
+425
+426
+427
+429
+431
+433
+433
+
+438
+

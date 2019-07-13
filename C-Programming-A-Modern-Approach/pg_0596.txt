@@ -1,0 +1,60 @@
+22.6
+
+Q&À
+fwrite
+
+fread
+
+22.6  Block /0O 571
+
+Block l/O
+
+size t fread(void * restrict ptr,
+size t size, size t nmemb,
+FILE #* restrict stream) ;
+size t fwrite (const void * restrict ptr,
+size t size, size t nmemb,
+FILE * restrict stream) ;
+
+The fread and £write functions allow a program to read and write large
+blocks of data in a single step. £read and fwrite are used primarily with
+binary streams, although—with care—it's possible to use them with text streams
+
+as well.
+
+fwrite is designed to copy an array from memory to a stream. The first
+argument in a call of fwrite 1s the array's address, the second argument 1s the
+size of each array element (in bytes), and the third argument is the number of ele-
+ments to write. The fourth argument 1s a file pointer, indicating where the data
+should be written. To write the entire contents of the array a, for instance, we
+could use the following call of fwrite:
+
+fwrite(a, sizeof (a[0]), sizeof (a) / sizeof (a[0]), fp);
+
+There’s no rule that we have to write the entire array; we could just as easily
+write any portion of it. fwrite returns the number of elements (nor bytes) actu-
+ally written. This number will be less than the third argument if a write error oc-
+CUrs.
+
+fread will read the elements of an array from a stream. fread'’s arguments
+
+are similar to £write's: the array's address, the size of each element (in bytes).
+the number of elements to read, and a file pointer. To read the contents of a file into
+the array a, we might use the following call of fread:
+
+n = fread(a, sizeof(a[0]), sizeof(a) / sizeof(a[0]), Éfp);
+
+It’s important to check £fread’s return value, which indicates the actual number of
+elements (nor bytes) read. This number should equal the third argument unless the
+end of the input file was reached or a read error occurred. The feof and ferror
+functions can be used to determine the reason for any shortage.
+
+ 
+
+Be careful not to confuse fread's second and third arguments. Consider the fol-
+lowing call of £read:
+
+fread(a, 1, 100, Éfp)
+
+We’re asking fread to read 100 one-byte elements, so it will return a value
+

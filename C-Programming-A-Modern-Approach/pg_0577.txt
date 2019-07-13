@@ -1,0 +1,64 @@
+552
+
+Chapter 22
+
+fprintf
+printf
+
+ellipsis »26.1
+
+v.…printf functions » 26.1
+
+Input/Output
+
+The .print£ Functions
+
+int fprintf (FILE * restrict stream,
+const char * restrict £ormat, ...);
+int printf (const char * restrict format, ...);
+
+The fprint£ and print£ functions write a variable number of data items
+to an output stream, using à format string to control the appearance of the output.
+The prototypes for both functions end with the . . . symbol (an ellipsis). which
+indicates a variable number of additional arguments. Both functions return the
+number of characters written: a negative return value indicates that an error
+occurred.
+
+The only difference between print£ and fprintf is that print£ always
+writes to stdout (the standard output stream), whereas fprint£ writes to the
+stream indicated by its first argument:
+
+printf ("Total: %d\n"', total) ; /* writes to stdout */
+{Iprintf (fp, "Total: %d\n', total) ; /* writes to fp */
+
+À call of print£ is equivalent to a call of £print£ with stdout as the first
+argument.
+
+Don't think of fprintf as merely a function that writes data to disk files,
+though. Like many functions in <stdio.h>, fprintf works fine with any out-
+put stream. In fact, onc of the most common uses of fprint f—writing crror
+messages to stderr, the standard error stream—has nothing to do with disk files.
+Here’s what such a call might look like:
+
+Eprintf (stderr, "Error: data file can't be opened.\n") ;
+
+Writine the message to stderr guarantees that it will appear on the screen even
+if the user redirects stdout.
+
+There are two other functions in <stdio.h> that can write formatted output
+{o a stream. These functions, named v£fprint£ and vprintE. are fairly
+obscure. Both rely on the va_list type. which is declared in <stdarg.h>, so
+they're discussed along with that header.
+
+…print£ Conversion Specifications
+
+Both print£ and fprint£ require a format string containing ordinary charac-
+ters and/or conversion specifications. Ordinary characters are printed as is; conver-
+sion specifications describe how the remaining arguments are to be converted to
+character form for display. Section 3.1 described conversion specifications briefly.
+and we added more details in later chapters. We'll now review what we know
+about conversion specifications and fill in the remaining gaps.
+
+À .…print£ conversion specification consists of the % character. followed by
+as many as five distinct items:
+

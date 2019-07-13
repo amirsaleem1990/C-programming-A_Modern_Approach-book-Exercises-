@@ -1,0 +1,72 @@
+ 
+
+17.5  Linked Lists 431
+
+Deleting a Node from a Linked List
+
+À big advantage of storing data in a linked list is that we can easily delete nodes
+that we no longer need. Deleting à node, like creating a node, involves three steps:
+
+1. Locate the node to be deleted.
+2. Alter the previous node so that it ‘“bypasses” the deleted node.
+3. Call £ree to reclaim the space occupied by the deleted node.
+
+Step ! is harder than it looks. If we search the list in the obvious way, we'Il end up
+with a pointer to the node to be deletcd. Unfortunately, we won°t be able to per-
+form step 2, which requires changing the previous node.
+
+There are various solutions to this problem. We'1l use the “trailing pointer”
+technique: as we search the list in step !, we'll keep a pointer to the previous node
+(prev) as well as a pointer to the current node (cur). If 1ist points to the list to
+be searched and n is the integer to be deleted. the following loop implements step
+l:
+
+for (cur = list, prev = NULL;
+cur != NULL && cCur->value != n;
+prev = cur, cur = cur->next)
+
+.
+/
+
+Here we see the power of C’s £or statement. This rather exotic example, with its
+emply body and liberal use of the comma operator, performs all the actions needed
+to search for n. When the loop terminates, cur points to the node to be deleted.
+while prev points to the previous node (if there is one).
+
+To sce how this loop works, let’s assume that 1i st points to a list containing
+30, 40. 20, and 10, in that order:
+
+list | ’—l—’ 30 *—}-_—"; 40 }" 20 u —”I 10 /
+
+Let's say that n is 20, s0 our goal is to delete the third node in the list. After
+cur = list, prev = NULL has been executed, cur points to the first node in
+the list:
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+prev cur
+
+ul
+
+list| °——*3_ij'*"}0 ’_—‘—* 10 l/l
+
+The test cur != NULL && cur->value != nis true, since cur is pointing to a
+node and the node doesn’t contain 20. After prev = cur, cur = cur->next
+has been executed, we begin to see how the prev pointer will trail behind cur:
+
+ 
+
+ 
+
+ 
+

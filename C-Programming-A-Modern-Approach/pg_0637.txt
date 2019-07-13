@@ -1,0 +1,76 @@
+612
+
+Chapter 23  Library Support for Numbers and Character Data
+
+23.5
+
+locales » 25. 1
+
+The <ctype.h> Header: Character Handling
+
+The <ctype .h> header provides two kinds of functions: character-classification
+functions (like isdigit, which tests whether a character is a digit) and character
+case-mapping functions (like toupper, which converts a lower-case letter to
+upper case).
+
+Although C doesn*t require that we use the functions in <ctype .h> to test
+characters and perform case conversions, itl’s a good idea to do so. First, these
+functions have been optimized for speed (in fact, many are implemented as mac-
+ros). Second, we’ll end up with a more portable program, since these functions
+work with any character set. Third, the <ctype .h> functions adjust their behav-
+lor when the locale is changed. which helps us write programs that run properly in
+different parts of the world.
+
+The functions in <ctype .h> all take int arguments and return int val-
+ues. In many cases, the argument 1s already stored in an int variable (often as a
+result of having been read by a call of fgetc, getc, or getchar). If the argu-
+ment has char type, however, we need to be careful. C can automatically con-
+vert a char areument to int type; if char 1s an unsigned type or if we're
+Using a seven-bit character set such as ASCII, the conversion will go smoothly.
+But if char is a signed type and if some characters require eight bits, then con-
+verting such a character from char to int will give a negative result. The be-
+havior of the <ctype .h> functions is undefined for negative arguments (other
+than EOF), potentially' causing serious problems. In such a situation, the argu-
+ment should be cast to unsigned char for safety. (For maximum portability,
+some programmers always cast a char value to unsigned char when pass-
+ing it to a <ctype.h> function.)
+
+Character-Classification Functions
+
+int isalnum(int
+int isalpha (int
+int isblank (aint
+int iscntrl (int
+int isdigit (int
+int isgraph(int
+int islower (int
+int isprint (int
+
+(
+
+(
+
+(
+
+Q QO À
+û SP eF m0 m0 UE C00 700 8 VN m m
+- — . s. — e
+
+. —.
+
+v—e
+
+int ispunct (int
+int isspace (int
+int isupper (int
+int isxdigit (int
+
+—
+
+w.
+
+QO O O QO O Q QO O
+
+— m e
+…
+

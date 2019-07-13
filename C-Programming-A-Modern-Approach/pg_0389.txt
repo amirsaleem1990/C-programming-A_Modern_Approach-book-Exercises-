@@ -1,0 +1,72 @@
+364
+
+Chapter 15
+
+TOF macro » 22,4
+
+line.c
+
+Writing Large Programs
+
+int read _char (void)
+
+{
+
+int ch
+
+getchar () ;
+
+if (ch == '\n' || ch == '\t')
+return ' ‘;
+return ch;
+
+}
+
+void read word(char *word, int len)
+
+{
+
+int ch, pos = OD;
+while ((ch = read char()) == ' *)
+
+while (ch != ! " && ch != EOF) |
+if (pos < len)
+word {pos++] = ch;
+ch = read _char();
+
+}
+
+word[pos] = '\0';
+
+}
+
+Before we discuss read_word. a couple of comments are in order concern-
+Ing the use of getchar in the read_char function. First, getchar returns an
+int value instead of a char valne; that'< why the variable ch in read_char is
+declared to have type int and why the return type of read_char is int. Also,
+getchar returns the value EOF when it‘s unable to continue reading (usually
+because it has reached the end of the input file).
+
+read_word consists of two loops. The first loop skips over spaces. stopping
+at the first nonblank character. (EOF isn°t a blank, so the loop stops if it reaches the
+end of the input file.) The second loop reads characters until encountering a space
+or EOF. The body of the loop stores the characters in word until reaching the len
+limit. After that, the loop continues reading characters but doesn°t store them. The
+final statement in read_word ends the word with a null character, thereby mak-
+ing it à string. I read_word encounters EOF before finding a nonblank charac-
+ter, pos will be 0 at the end. making word an empty strine.
+
+The only file left is 1line.c, which supplies definitions of the functions
+declared in the 1ine .h file. 1ine. c will also need variables to kcep track of the
+state of the line buffer. One variable. 1ine. will store the characters in the current
+linc. Strictly speakine. Line is the only variable we need. For speed and conve-
+nience. however, we’]l use two other variables: line len (the number of char-
+acters in the current line) and num_words (the number of words in the current
+linc).
+
+Here’s the 1ine. c file:
+finclude <stdio.h>
+
+finclude <string.h>
+finclude "line.h"
+

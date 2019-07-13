@@ -1,0 +1,52 @@
+ 
+
+10
+
+Chapter2 C Fundamentals
+
+pun.c
+
+The following program, which we'll name pun.c, displays this message each
+time it iS run.
+
+#include <stdio.h>
+
+int main (void)
+
+{
+
+printf("To C, or not to C: that is the question.\n") ;
+return 0;
+}
+
+Section 2.2 explains the form of this program in some detail. For now, PIl just
+make a few brief observations. The line
+
+#include <stdio.h>
+
+is necessary to “include” information about C’s standard 1/O (inpuVoutput) library.
+The program's executable code goes inside main. which represents the “main”’
+program. The only line inside main is a command to display the desired message.
+print£ is a function from the standard I/O library that can produce nicely for-
+matted output. The \n code tells print£ to advance to the next line after printing
+the message. The line
+
+return 0;
+
+indicates that the program “returns” the value 0 to the operating system when it ter-
+minates.
+
+Compiling and Linking
+
+Despite its brevity, getting pun. c lo run is more involved than you might expeck.
+First, we need to create a file named pun. c containing the program (any text edi-
+tor will do). The name of the file doesn’t matter, but the .c extension is often
+required by compilers.
+
+Next, we've got to convert the program to a form that the machine can exe-
+cute.
+
+ 
+
+ 
+

@@ -1,0 +1,80 @@
+50
+
+ 
+
+Chapter 3  Formatted Input/Output
+
+@ |
+2.
+
+m 3
+4.
+5,
+
+Programming Projects
+
+Write a program that accepts a date from the user in the form »wn/dd/vyvy and then dis-
+plays it in the form vyywmmdd:
+
+Enter a date (mm/dd/yyyy) : 2/17/2011
+You entered the date 20110217
+
+Write a program that formats product information entered by the user. À session with the
+program should look like this:
+
+Enter item number: 583
+
+Enter unit price: 13.5
+Enter purchase date (mm/dd/yyyy) : 10/24/2010
+
+ 
+
+Item Unit Purchase
+Price Date
+583 $ 13.50 10/24/2010
+
+The item number and date should be left justified; the unit pricce should be right justified.
+Allow dotlar amounts up to S9999.99. Hint: Use tabs to line up the columns.
+
+Books are identified by an International Standard Book Number (ISBN). ISBNSs assigned
+after January !, 2007 contain 13 digits, arranged in five groups, such as 978-0-393-97950-3.
+(Older ISBNs use 10 digits.) The first group (the GS7 prefix) is currently either 978 or 9779.
+The group identifier specifies the language or country of origin (for example. O and ! are
+used in English-speaking countries). The publisher code identifies the publisher (393 is the
+code for W. W. Norton). The irem number is assigned by the publisher to identify à specific
+book (97950 is the code for this book). An ISBN ends with a check digit thats used to verify
+the accuracy of the préceding digits. Write a program that breaks down an ISBN entered by
+the user:
+
+Enter ISBN: 978-0-393-97950-3
+GS1 prefix: 978
+
+Group identifier: O
+
+Publisher code: 393
+
+Item number: 97950
+
+Check digit: 3
+
+ 
+
+Note: The number of digits in cach group may vary: you cant assume that groups have the
+lengths shown in this example. Test your program with actual ISBN values (usually found
+on the back cover of à book and on the copyright page).
+
+Write a program that prompts the user to enter a telephone number in the form (xxx) xxx-
+XXxxx and then displays the number in the form xxX.Xxx.xxx:
+
+Enter phone number [(xxx) xxx-xxxx}] : (404) 817-6900
+You entered 404.817.6900
+
+ 
+
+Write a program that asks the user to enter the numbers from | to 16 (in any order) and then
+displays the numbers in a 4 by 4 arrangement, followed by the sums of the rows, columns.
+and ciagonals:
+
+Enter the numbers from 1 to 16 in any order:
+16 3 2 13 5 10 11 896 7 12 & 15 18 1
+

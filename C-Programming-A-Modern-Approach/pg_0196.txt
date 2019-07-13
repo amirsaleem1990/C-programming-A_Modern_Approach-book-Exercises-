@@ -1,0 +1,245 @@
+82  Mullidimensional Arrays
+
+Initializing a Multidimensional Array
+
+171
+
+We can create an initializer for a two-dimensional array by nestine one-dimen-
+
+sional initializers:
+
+int m[(5] [9] = |
+
+I
+
+-—
+
+-—
+
+{
+{
+{
+{
+(
+
+HHoork
+
+/
+
+—
+
+'
+
+bHeepuy…
+
+’
+
+—
+
+—
+
+OOOOH
+
+/
+
+-—
+
+—
+
+Hbeepeu
+
+'
+
+—
+
+-—
+
+OOH:;OH
+
+/
+
+-—
+
+—
+
+OO OH;O
+
+'
+
+-—
+
+-—
+
+HOOOH
+
+/
+
+=—
+
+L d
+
+-—
+
+beunueye
+
+/
+
+l}l
+o},
+o},
+o}.
+
+1}}
+
+/
+
+Each inner initializer provides values for one row of the matrix. Initializers for
+higher-dimensional arrays are constructed in a similar fashion.
+C provides à variety of ways to abbreviate initializers for multüidimensional
+
+arrays:
+
+u |f an initializer isn’t large enough to fill a multidimensional array, the remain-
+ing elements are given the value O. For example, the following initializer fills
+
+only the first three rows of m:
+
+—
+
+—
+
+OOOOH
+
+—
+
+-—
+
+HHHpuyu
+
+l,
+0,
+l,
+
+—
+
+—
+
+O0H0O0tk”+
+
+int m[5) [9] = {{1, 1,
+{o, 1,
+{o0, 1,
+u |f an inner list isn‘t long enough to fill
+row are initialized to 0:
+int m[5] [9] = {{1, 1,
+{o, 1,
+{o, 1,
+{1, 1,
+{1, 1,
+u We can even omit the inner braces:
+
+int m[5] [9]
+
+'
+
+-
+
+—
+
+}HHOoo#H
+
+—
+
+—
+
+beppey
+
+-—
+
+—
+
+OOOOH+
+
+—
+
+—
+
+beHep
+
+-—
+
+—
+
+OOHOH
+
+the last two rows will contain zéros:
+
+o, 1, 1, 1},
+
+1
+
+, 0, 1, O},
+
+o, 0, 1, O}};
+
+a row, the remaining elements in the
+
+—
+
+-
+
+O OO HO
+
+-—
+
+—
+
+O OO HO
+
+— -—
+
+H OOOH
+
+—
+
+=—
+
+—
+
+H OOOHkH
+
+—
+
+-—
+
+—
+
+HeHHey
+
+HOOOH
+
+—
+
+=—
+
+—
+
+E
+
+Once the compiler has seen enough values to fill one row. it begins filline the
+
+next.
+
+ 
+
+Omutting the inner braces in a multidimensional array initializer can be risky, since
+an extra element (or even worse, a missing element) will affect the rest of the ini-
+tializer. Leaving out the braces causes some complilers to produce a warning mes-
+
+sage such as “missine braces around initializer”
+
+ 
+
+C99's designated initializers work with multidimensional arrays. For example.
+we could creale a 2 x 2 identity matrix as follows:
+

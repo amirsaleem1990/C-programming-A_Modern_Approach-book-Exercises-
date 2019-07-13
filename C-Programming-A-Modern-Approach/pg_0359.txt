@@ -1,0 +1,58 @@
+334
+
+Chapter 14  The Preprocessor
+
+#i £ directive
+
+#endi £ directive
+
+The #i f and #endi £ Directives
+
+Suppose we're in the process of debugging a program. We'd like the program to
+print the values of certain variables, so we put calls of print£ in critical parts of
+the program. Once we've located the bugs, it's often a good idea to let the print f
+calls remain, just in casc we need them later. Conditional compilation allows us to
+leave the calls in place, but have the compiler ignore them.
+
+Here’s how we'Il proceed. We'll first define a macro and give it a nonzero
+value:
+
+#define DEBUG 1
+
+The name of the macro doesn't matter. Next. we'll surround cach group of
+print£ calls by an #i f-#endi£ pair:
+
+#Hif DEBUG
+
+print£ ("Value of i: %$d\n", i),;
+print£ ("Value o£f j: %d\n", j);
+tendif
+
+During preprocessing. the #i£ directive will test the value of DEBUG. Since its
+value isn’t zero. the preprocessor will leave the two calls of print£ in the pro-
+gram (the #i£ and #endi£ lines will disappear. though). If we change the value
+of DEBUG to zero and recompile the program, the preprocessor will remove all
+four lines from the program. The compiler won°t see the calls of printf. so they
+won't occupy uny space in the object code and won't cost any time when the pro-
+gram is run. We can leave the #i f-#endi£ blocks in the final program, allowing
+diagnostic information to be produced later (by recompiling with DEBUG set to |)
+if any problems turn up.
+In general, the #1 £ directive has the form
+
+HI£ constant-expression
+
+The #endi£ directive is even simpler:
+
+#endif
+
+When the preprocessor encounters thé #i£ directive, it evaluates the constant
+expression. [[ the value of the expression is zero, the lines between #if and
+tendif will be removed from the program during preprocessing. Otherwise, the
+lines between #i £ and #endi£ will remain in the program to be processed by the
+compiler—the #i£ and tendif will have had no effect on the program.
+
+It's worth noting that the #i £ directive treats undefined identifiers as macros
+that have the value O. Thus, 1f we neglect to define DEBUG, the test
+
+#1i£ DEBUG
+

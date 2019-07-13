@@ -1,0 +1,82 @@
+664 Chapter 25
+
+Table 25.14
+Wide-String Copying
+Functions and Their
+<string.h>
+Equivalents
+
+Table 25.15
+
+Wide-String Concatenation
+Functions and Their
+<string.h> Equivalents
+
+International Features
+
+ 
+
+ 
+
+ 
+
+<wchar.h> Function … <string.h> Equivalent
+WCSCHPY strcpy
+wcSsNncpy strnepy
+wmemcpy memcpy
+wmemmove memmove
+
+ 
+
+ 
+
+Wide-String Concatenation Functions
+
+wchar t *wcscat (wchar t * restrict sl,
+const wchar t * restrict s2);
+wchar E *wvesncat (wchar t * restrict sl,
+const wchar t * restrict s2,
+size t n);
+
+The functions in this group are wide-character versions of the string concatenation
+functions found in <string. h> and described in Section 23.6. The <wchar .h>
+functions have arguments of type wchar t * instead of char *. but their behavior
+is mostly the same as the <string.h> functions. Table 25.15 shows the corre-
+
+spondence between the <string .h> functions and their wide-character counter-
+parts.
+
+ 
+
+<wchar.h> F‘unction — <string.h> Equivalent
+
+ 
+
+wescat strcat
+wcsncat strncat
+
+ 
+
+ 
+
+ 
+
+Wide-String Comparison Functions
+
+int wcscmp (const wchar t *s1, const wchar t *s2);
+int wcscoll (const wchar t *s1, const wchar t *s2);
+int wcsneomp(const wchar t *s1, const wchar t *s2,
+size t n);
+size t wcsxfrm(wchar t * restrict s1l,
+const wchar t * restrict s2,
+size t n);
+int wmemcmp (const wchar t * sl, const wchar t * s2,
+size t n);
+
+The functions in this group are wide-character versions of the string comparison
+functions found in <string.h> and described in Section 23.6. The
+<wchar .h> functions have arguments of type wchar t * instead of char *.
+but their behavior is mostly the same as the <string. h> functions. Table 25.16
+shows the correspondence between the <string.h> functions and their wide-
+character counterparts.
+

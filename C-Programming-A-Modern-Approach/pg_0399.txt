@@ -1,0 +1,77 @@
+374 Chapter 15 Writing Large Programs
+
+Section 15.4
+
+6.
+
+(c) Macro definitions
+(d) Type definitions
+
+We saw that writing #include <file> instead of #include "file" may not work if file is
+onc that we've written. Would there be any problem with writing finclude "file" instead
+of tinclude <file> if file is a system header?
+
+Assume that debug. h is a header file with the following contents:
+
+Hi£def DEBUG
+
+#define PRINT DEBUG(n) print£ ("Value of " #n ": %d\n", n)
+#else
+
+#define PRINT DEBUG(n)
+
+xendif
+
+Let testdebug. c be the following source file:
+
+#include <stdio.hs>
+
+#Hdefine DEBUG
+finclude "debug.h"
+
+int main(void)
+
+-À
+
+int i = 1, j = 2, k = 3;
+
+iifdef DEBUG
+
+print£ ("Output if DEBUG is defined:\n") ;
+#else
+
+print£f("Output if DEBUG is not defined:\n") ;
+#endif
+
+PRINT DEBUG(i) ;
+PRINT DEBUG(j) ;
+PRINT DEBUG (k) ;
+PRINT DEBUG(i + j);
+PRINT _ DEBUG(2 * i + j - k);
+
+return 0;
+
+}
+
+(a) Whatis the output when the program is exccuted?
+
+(b) What is the output if the #de£ine directive is removed from testdebug.c’
+
+(c) Explain why the output is different in parts (a) and (b).
+
+(d) Is it necessary for the DEBUG macro to be defincd before debug . h is included in order
+for PRINT_DEBUG to have the desired effect? Justify vour answer.
+
+Suppose that à program consists of three source files—main.c. f1.c, and f2. c—plus
+two header files. £1 .h and £2 .h. AIl three source files include f1 . h, but only f1.c and
+£2 .c include £2.h. Write à makefile for this program, assuming that the compiler is gcc
+und that the executable file is to be named demo.
+
+The following questions refer to the program described in Exercise 5.
+
+(a) Which files need to be compiled when the program is built for the first time?
+
+(b) If£1.C is changed after the program has bcen built, wvhich files need to be recompiled?
+(c) If £1.his changed after the program has been built, which files need to be recompiled”
+(d) Il £2 .h is changed after the program has bcen built, which files need to be recompiled”
+

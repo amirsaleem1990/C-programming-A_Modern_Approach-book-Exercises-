@@ -1,0 +1,58 @@
+15.4  Building a Multiple-File Program 369
+
+in the program but called as read_cahr, the linker will report that
+read _cahr is missing.
+
+# Missing files. 1f the linker can‘t find the functions that are in file £oo.c, it
+may not know about the file. Check the makefile or project file to make surc
+that foo. c 1s listed therc.
+
+# Missing libraries. The linker may not be able to find all library functions used
+in the program. À classic example oceurs in UNIX programs that use the
+<math.h> header. Simply including the header in à program may not be
+enough: many versions of UNIX require that the -1m option be specified
+wlhen the program is linked, causing the linker to search a system file that con-
+tains compiled versions of the <math. h> functions. Failing to use this option
+may cause “undefined reference” messages during linking.
+
+Rebuilding a Program
+
+During the development of a program. it’s rare that we'Il need to compile all its
+files. Most of the time, we'Il test the program, make a change, then build the pro-
+gram again. To save time, the rebuilding process should recompile only thosc files
+that might be affected by the latest change.
+
+Let's assume that wc‘ve designed our program in the way outlined in Section
+|5.3. with a header file for each source file. To see how many files will need to be
+recompiled after a change, we need to consider two possibilities.
+
+The first possibility is that the change affects a single source file. In that case,
+only that file must be recompiled. (After that. the entire program will need to be
+relinked. of course.) Consider the justify program. Suppose that we decide to
+condense the read_char function in word. c (changes are marked in bold):
+
+int read _ char (void)
+
+(
+
+int ch = getchar();
+
+return (ch == '\n' || ch == '\t') ? !" " : Ch;
+
+}
+
+This modification doesn’t affect word.h. so we need only recompile word.c
+and relink the program.
+
+The second possibility is that the change affects a header file. In that case, we
+should recompile all files that include the hcader file. since they could potentially
+be affected by the change. (Some of them might not be, but it pays to be conserva-
+tive.)
+
+As an example, consider the read_word function in the just i f£y program.
+Notice that main calls strlen immediately after calling reaà_word. in order
+to determine the length of the word that was just read. Since read_word already
+knows the leneth of the word (read_word's pos variable keeps track of the
+length). it seems silly to use strlen. Modifying read_word to rcturn the
+word’s length is easy. First, we change the prototype of read_word in word.h:
+

@@ -1,0 +1,45 @@
+Q&A
+
+@
+
+9.3
+
+9.3  Arguments 193
+
+ 
+
+Arquments
+
+Let's review the difference between a parameter and an argument. -
+
+ 
+
+In C, arguments are passed by value: when a function 1s called, each argument
+Is evaluated and its value assigned to the corresponding parameter. Since the
+parameter contains a copy of the argument's value. any changes made to the
+parameter during the execution of the function don’t affect the argument. In effect,
+each parameter behaves like à variable that’s been initialized to the value of the
+matching argument.
+
+The fact that arguments are passed by value has both advantages and disad-
+vantages. Since a parameter can be modified without affecting the corresponding
+argument, we can use parameters as variables within the function, thereby reduc-
+ing the number of genuine variables neëded. Consider the following function.
+which raises a number x to à power n:
+
+int power (int x, int n)
+
+{
+
+int i, result = 1;
+
+for (i = 1; i <= n; i++)
+result = result * x;
+
+return result;
+
+}
+
+Since n 1s a copy of the original exponent, we can modify it inside the l'unction,
+thus removing the need for i:
+

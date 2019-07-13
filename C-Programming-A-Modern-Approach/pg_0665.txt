@@ -1,0 +1,39 @@
+640 Chapter 24  Error Handling
+
+Section 24.2
+
+Section 24.4
+
+3.
+@ 4.
+® 5.
+
+Modify the stackADT2. c file of Section 19.4 so that it uses assert to test for errors
+instead of using i É statements. (Note that the terminate function is no longer necessary
+and can be removed.)
+
+(a) Write à “wrapper” funclion named try math feon that calls a math function
+(assumed to have a double argument and return a double value) and then checks
+whether the call succeeded. Here’s how we might use try_math_fcen:
+
+y = try _ math fen(sgrt, x, "Error in call of sqrt") ;
+
+Ifthe call sqrt (x) 1s successful. try math _£cn returns the value computed by sart.
+IF the call fails. try_math_fen calls perror to print the message Error in call of
+sqrt. then calls exit to terminate the program.
+
+(b) Write a macro that has the same effect as try_math _ £cen but builds the error mes-
+sage from the function’s name:
+
+y = TRY MATH FCN(sgrt, x);
+
+IF the call of sqrt fails, the message will be Error in call of sart. Hinr: Have
+TRY MATH FCNcall try_math _fen.
+
+In the inventory. c program (see Section 16.3), the main function has a £or loop that
+prompts the user to enter an operation code, reads the code, and then calls either insert.
+search. update, or print. Add à call of setjmp to main in such a way that a subse-
+quent call of longjmp will return to the £or loop. (After the longjmp, the user will be
+prompted for an opcration code, and the program will continue normally.) setjmp vill
+need à jmp_buË variable;: where should it be declared?
+

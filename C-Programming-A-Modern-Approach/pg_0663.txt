@@ -1,0 +1,65 @@
+638 Chapter 24  Error Handling
+
+Q:
+
+À:
+
+æ
+
+_Exit function >26.2
+
+:E:Qz
+
+volatile type qualifier »20.3
+
+My version of <errno.h> defines other macros besides EDOM and ERANGE.
+Is this practice legal? [p. 630]
+
+Yes. The C standard allows macros that represent other error conditions, provided
+that their names begin with the letter E followed by à digit or an upper-case letter.
+UNIX implementations typically define a huge number of such macros.
+
+Some of the macros that represent signals have cryptic names, like SIGFPE
+and SIGSEGV. Where do these names come from? [p. 631]
+
+The names of these signals date back to the early C compilers, which ran on a DEC
+PDP-11. The PDP-11 hardware could detect errors with names like “Floating Point
+Exception” and “Segmentation Violation:
+
+OK, Pl’m curious. Unless it’s invoked by abort or raise, a signal handler
+shouldn?t call a standard library function, but you said there were exceptions
+to this rule. What are they? [p. 632]
+
+À signal handler is allowed to call the signal function, provided that the first
+argument is the signal that it’s handling at the moment. This proviso is important.
+because it allows a signal handler to reinstall itself. In C99, a signal handler may
+also call the abort function orthe _ Exit function.
+
+Following up on the previous question, a signal handler normally isn’t sup-
+posed to access variables with static storage duration. What’s the exception to
+this rule?
+
+That one’s a bit harder. The answer involves a type named sig_atomic t that’s
+declared in the <signal .h> header. sig_atomic t isan integer type that can
+be accessed ‘’as an atomic entity,’ according to the C standard. In other words, the
+CPU can fetch a sig _ atomic_t value from memory or store one in memory
+with a single machine instruction. rather than using two or more machine instruc-
+tions. sig atomic t is often defined to be int, since most CPUs can load or
+store an int value in one instruction.
+
+That brings us to the exception to the rule that a signal-handling function isn’t
+supposed to access static variables. The C standard allows a signal handler to store
+à value in a sig atomic_t variable—even one with static storage duration—
+provided that it’s declared volatile. To see the reason for this arcane rule, con-
+sider what might happen 1f a signal handler were to modify a static variable that’s
+of a type that’s wider than sig_atomic t. If the program had fetched part of
+the variable from memory just before the signal occurred, then completed the fetch
+after the signal is handled, it could end up with a garbage value. sig atomic t
+variables can be fetched in a single step, so this problem doesn’t occur. Declaring
+the variable to be volatile warns the compiler that the variable’s value may
+change at any time. (À signal could suddenly be raised, invoking a signal handler
+that modifies the variable.)
+
+The tsignal .c program calls print£ from inside a signal handier. Isn°t
+that illegal?
+

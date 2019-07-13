@@ -1,0 +1,62 @@
+pun2.c
+
+function definition
+
+9.1  Defining and Calling Functions 187
+
+The word void in parentheses indicates that print pun has no arguments.
+(This time, we*re using void as à placeholder that means “‘nothing goes here.”)
+
+To call à function with no arguments. we write the function’s name, followed
+by parentheses:
+
+print _pun () ;
+
+The parentheses must be present, even though there are no arguments.
+Here’s a tiny program that tests the print pun function:
+
+/* Prints a bad pun */
+#include <stdio.h>
+
+void print _ pun (void)
+
+(
+
+printf ("To C, or not to C: that is the question.\n") ;
+
+}
+
+int main(void)
+
+(
+print_pun () ;
+return 0;
+
+}
+
+The execution of this program begins with the first statement in main, which
+happens to be a call of print pun. When print_pun begins to execute, it in
+turn calls print£ to display a string. When print£ returns, print_pun re-
+turns to main.
+
+Function Definitions
+
+Now that we’ve seen several examples, let’s look at the general form of a function
+definition:
+
+return-type function-name ( paramerers )
+
+{
+
+declarations
+sStatements
+
+The return type of a function is the type of value that the function returns. The
+following rules govern the return type:
+
+u Functions may not return arrays, but there are no other restrictions on the
+return type.
+
+# Specifying that the return type is void indicates that the function doesn't
+return a value.
+

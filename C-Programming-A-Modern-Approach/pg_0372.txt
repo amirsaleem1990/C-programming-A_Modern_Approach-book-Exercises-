@@ -1,0 +1,74 @@
+Exercises 347
+
+Which of the following tests will fail?
+
+(u) Hi£f M
+
+(b) #ifde£ M
+
+(c) #ifndef M
+
+(d) #if defined (M)
+(c) #i£ !defined (M)
+
+(a) Show what the following program will look like after preprocessing. You may ignore
+any lines added to the program as a result of including the <stdio.h> header.
+
+#include <stdio.h>
+
+#define N 100
+void f (void) ;
+
+int main(void)
+{
+
+Ë() ;
+#ifdef N
+#undef N
+#endif
+
+return 0;
+
+}
+
+void f (void)
+{
+#if defined (N)
+
+print£("N is %d\n", N);
+#telse
+
+printf("N is undefined\n") ;
+tendif
+
+}
+
+(b) What will be the output of this program?
+
+Show what the following program will look like after preprocessing. Some lines of the pro-
+sgram may cause compilation errors: find all such errors.
+
+#define N = 10
+
+#define INC(x) x+1
+
+#define SUB (x,y) x-y
+#define SOR(x) ((x)*(x))
+#define CUBE(x) (SOR(x) * (x) )
+tdefine M1(x,y) x#i#y
+#define M2(x,y) #x #y
+
+int main (void)
+
+{
+
+int a[(N], i, j, k, Mm;
+
+#ifdef N
+l = j;
+#else
+}j = à:
+#endif
+
+ji = 10 * INC(3);
+

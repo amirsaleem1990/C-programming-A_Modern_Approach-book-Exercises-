@@ -1,0 +1,101 @@
+ 
+
+Table 22.12
+Conversion Specifiers for
+.….scanf Functions
+
+ 
+
+22.3  Formatited /0 561
+
+=m Conversion specifier. The conversion specifier must be one of the characters
+listed in Table 22.12.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Conversion
+Specifier MVeaninge ;
+d Matches a decimal integer; the corresponding argument is assumed to
+have type int *.
+i Matches an integer; the corresponding argument is assumed to have type
+int *. The integer is assumed to be in base 10 unless it begins with O
+(indicating octal) or with Ox or OX (hexadecimal).
+O Matches an octal integer; the corresponding argument is assumed to have
+type unsigned int *.
+u Matches a decimal integer; the corresponding argument is assumed to {
+have type unsigned int *. Ç
+. ° ° ° î
+x.x Matches a hexadecimal integer: the corresponding argument is assumed
+
+to have type unsigned int *.
+
+Matches a floating-point number; the corresponding argument is
+assumed to have type float *. In C99, the number can be infinity or
+NaN. ;
+
+ 
+
+Matches n characters, where n is the maximum field width. or one char-
+acter if no field width is specified. The corresponding argument is
+assumed to be a pointer to à character array (or à character object. if no
+field width is specified). Doesn't add a null character at the end.
+
+ 
+
+Matches a sequence of non-white-space characters, then adds à null char-
+acter at the end. The corresponding argument is assumed to be à pointer
+to a character array.
+
+ 
+
+Matches à nonempty sequence of characters from a scanset, then adds à
+null character at the end. The corresponding argument is assumed to be a
+pointer to à character array.
+
+ 
+
+Matches à pointer value in the form that ..print£ would have written
+I. The corresponding argument is assumed to be a pointer to a void *
+object.
+
+ 
+
+The corresponding argument must point to an object of type int. Stores
+in this object the number of characters read so far by this call of
+…Scan£. No input is consumed and the return value of …scanf isn’
+affected.
+
+ 
+
+©
+<
+
+ 
+
+Matches the character %.
+
+ 
+
+‘C99 only
+
+Numeric data items can always begin with « sign (+ or -). The o. u. x, and X
+specifiers convert the item to unsigned form, however, so they’re not normally used
+to read negalive numbers.
+
+The [ specifier is a more complicated (and more flexible) version of the s
+specifier. À complete conversion specification using [ has the form % [ser] or
+% [“ser] , where ser can be any set of characters. (If ] is one of the characters in
+set.however, it must come first.) % [se/] matches any sequence of characters in ser
+(the scanset). % [*ser] matches any sequence of characters not in ser (in other
+words, the scanset consists of all characters not in ser). For example. % [abc]
+

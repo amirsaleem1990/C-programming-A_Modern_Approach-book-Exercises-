@@ -1,0 +1,63 @@
+inventory.c
+
+16.3  Nested Arrays and Structures 391
+
+case 'q': ferminate program ;
+default:  print error message ;
+
+It will be convenient to have separate functions perform the insert, search.
+update, and print operations. Since these functions will all need access to
+inventory and num _ parts, we might want to make these variables external.
+Âs an alternative, we could declare the variables inside main, and then pass them
+to the functions as arguments. From à design standpoint, it’s usually better to make
+variables local to à function rather than making them external (see Section 10.2 if
+you’ve forgotten why). In this program, however, putting inventory and
+num _parts Inside main would merely complicate matters.
+
+For reasons that TIl explain later, ’ve decided to split the program into three
+files: inventory.c. which contains the bulk of the program: readline.h,
+which contains the prototype for the read_line function; and readline. c,
+which contains the definition of read_line. We'll discuss the latter two files
+later 1n this section. For now, let’s concentrate on inventory. c.
+
+/* Maintains a parts database (array version) */
+
+#include <stdio.h>
+#include "readline.h"
+
+#define NAME LEN 25
+#define MAX PARTS 100
+
+struct part |
+int number ;
+char name [NAME LEN+1] ;
+int on hand;
+
+} inventory [MAX PARTS] ;
+
+int num parts = 0; /* number of parts currently stored */
+
+int find part (int number) ;
+void insert (void) ;
+
+void search (void) ;
+
+void update (void) ;
+
+void print (void) ;
+
+/********************************—k*************************
+
+* main: Prompts the user to enter an operation code, *
+* then calls a function to perform the requested *
+* action. Repeats until the user enters the *
+* command 'q'. Prints an error message if the user *
+x enters an illegal code. *
+*****—k—k—k*—k—k*********—k***********—k*************************/
+
+int main(void)
+
+(
+
+char code ;
+

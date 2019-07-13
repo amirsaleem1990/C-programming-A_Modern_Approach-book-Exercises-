@@ -1,0 +1,80 @@
+624 Chapter 23  Library Support for Numbers and Character Data
+
+Section 23.4 2.
+3,
+Section 23.5 4.
+5.
+
+Section 23.6 M 6.
+
+7.
+D 8
+
+9,
+@ 10.
+
+return 3.142. Hint: Mulüiply x by 10", round to the nearest integer, then divide by 10". Be
+sure that your function works correctly for both positive and negative values of x.
+
+(C99) Write the following function:
+double evaluate _ polynomial (double a[], int n, double X) ;
+
+The function should return the value of the polynomial a,x" + a, p + ue + G, where the
+a; s are stored in corresponding clements of the array a, which has length n + !. Have the
+function use Horner's Rule to compute the value of the polynomial:
+
+(C MN H An JX 4Æ A 2JN 4 000 )X 4 AIIX + A
+
+Use the £Ema function to perform the multiplications and additions.
+
+(C99) Check the documentation for your compiler to see if it performs contraction on arith-
+metic expressions and, if so, under what circumstances.
+
+Using isalpha and isalnum, write a function that checks whether a string has the syn-
+tax ofa C identifier (it consists of letters, digits, and underscores, with a letter or underscore
+at the beginning).
+
+Using isxdigit, write a l'unction that checks whether a string represents a valid hexadec-
+imal number (it consists solely of hexadecimal digits). IF so. the function returns the value of
+the number as a long int. Otherwise. the function returns —I
+
+In each of the following cases, indicate which function would be the best to use: memcpy.
+memmove, strcpy. or strncpy. Assume that the indicated action is to be performed by a
+single funetion call.
+
+(a) Moving all eclements of an array “down” one position in order to leave room for a new
+element in position 0.
+
+(b) Deleting the first character in a null-terminated string by moving all other characters
+back one position.
+
+(c) Copying a string into a character array that may not be large enough to hold it. If the
+array is too small. assume that the string is to be truncated; no null character is neces-
+sary at the end.
+
+(d) Copying the contents of one array variable into another.
+
+Section 23.6 explains how to call strchr repeatedly to locate all occurrences of a charac-
+ter within a string. Is it possible to locate all occurrences in reverse order by calling
+strrchr repeatedly?
+
+Use strchr to write the following function:
+
+int numchar (const char *s, char ch);
+
+numchar returns the number of times the character ch occurs in the string s.
+
+Replace the test condition in the lollowing i £ statement by à single call of strchr:
+if (ch == ‘'a' || ch == 'b' || ch == "c')
+
+Replace the test condition in the following à £ statement by à single call of strstr:
+
+O || stremp(str, "bar") == O ||
+0)
+
+Hint: Combine the string literals into à single string. separating them with a special charac-
+ter. Does your solution assume anything about the contents of str”
+
+Lif (stromp(str, "foo") =
+stromp(str, "baz")
+

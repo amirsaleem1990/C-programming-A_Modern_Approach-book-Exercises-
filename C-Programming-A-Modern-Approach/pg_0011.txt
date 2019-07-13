@@ -1,0 +1,50 @@
+BRIEF CONTENTS
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Basic Features of C The Standard C Library
+1 Introducing C 1 21 The Standard Library 529
+2 C Fundamentals 9 22 Input/Output 539
+3 Formatted Input/Output 37 23 Library Support for Numbers
+4 Expressions 53 and Character Data 589
+5 Selection Statements 73 24 Error Handling 627
+6 Loops 99 25 International Features 641
+7 Basic Types 125 26 Miscellaneous Library
+8 Arrays 161 Functions 677
+9 Functions 183 27  Additional C99 Support for
+10 Program Organization 219 Mathematics 705
+Advanced Features of C Reference
+11 Pointers 241 A C Operators 735
+12 Pointers and Arrays 257 B C99 versus CB89 737
+13 Strings 211 C  C89 versus K&R C 743
+14 The Preprocessor 315 D Standard Library Functions 747
+15 Writing Large Programs 349 E ASCII Character Set 801
+16 Structures, Unions, and Bibliography 803
+Enumerations 377 Index 807
+17 Advanced Uses of Pointers 413
+18 Declarations 457
+19 Program Design 483
+20 Low-Level Programming 509
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+

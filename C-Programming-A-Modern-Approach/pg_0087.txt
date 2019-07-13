@@ -1,0 +1,57 @@
+62
+
+Chapter4  Expressions
+
+4.4
+
+ 
+
+The - - operator has similar properties:
+
+l = 1;
+print£ ("i is sd\n", --i); /* prints "i is O" */
+printf("i is %“d\n", i); /* prints "i is O" */
+i = 1;
+printf ("i is $d\n", i--); /* prints "i is 1" */
+print£("i is $d\n", i); /* prints "i is O" */
+When ++ or -- is used more than once in the same expression, the result can
+
+often be hard to understand. Consider the following statements:
+
+l = 1;
+
+j = 27
+
+k = ++i + j++;
+
+What are the values of i, , and k after these statements are executed? Since ài is
+
+incremented before its value is used, but j is incremented afrer it is used, the last
+statement 1s equivalent to
+
+i =
+
+Ci. H- }.J.
++ ++
+pu. #
+
+j =
+
+/
+
+so the final values of i, j, and k are 2, 3, and 4, respectively, In contrast, executing
+the statements
+
+i = 1;
+j = 27
+K = i++ + j++;
+
+will give i, j, and k the values 2, 3, and 3, respectively.
+
+ 
+
+Expression Evaluation
+
+Table 4.2 summarizes the opcrators we’ve seen so far. (Appendix A has a similar
+table that shows all operators.) The first column shows the precedence of each
+

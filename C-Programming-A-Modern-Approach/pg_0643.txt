@@ -1,0 +1,78 @@
+618
+
+Chapter 23  Library Support for Numbers and Character Data
+
+locales >25.1
+
+memcmp
+stremp
+strnemp
+
+strcoll
+
+strxfrm
+
+The comparison functions fall into two groups. Functions in the first group (mem-
+cmp, stremp, and strnemp) compare the contents of two character arrays.
+Functions in the second group (strcoll and strx£frm) are used if the locale
+needs to be taken into account.
+
+The memcmp, strcomp, and strnemp functions have much in common. AI
+three expect to be passed pointers to character arrays. The characters in the first
+array are then compared one by one with the characters in (lie second array. AÎl
+three functions return as soon as a mismatch is found. Also, all three return a nega-
+tive, zero, or positive integer, depending on whether the stopping character in the
+first array was less than, equal to, or greater than the stopping character in the sec-
+ond.
+
+The differences among the three functions have to do with when to stop com-
+paring characters if no mismatch is found. The memcomp function is passed a third
+argument, n, that limits the number of comparisons performed: it pays no particu-
+lar attention to null characters. stromp doesn’{ have à preset limit, stopping
+instead when it reaches a null character in either array. (As a result, stromp
+works only with null-terminated strings.) strnemp is a blend of memomp and
+stremp; It stops when n comparisons have been performed or à null character is
+reached in either array.
+
+The following examples 1illustrate memcmp, stremp, and strnemp:
+
+char s1[] = {'b',
+char s2[) = {'b',
+
+‘\o,
+'\0':
+
+|c|'
+
+|ill lgll
+g ‘ lcl'
+
+'a', Irl}'.
+'i': ! }
+
+lall Itl ;
+if (mememp(s1l, s2, o) … /* true */
+if (mememp(s1, s2, 4) == O) … /* true */
+if (memomp(s1, s2, 7) == O) /* false */
+
+if (stromp(s1, s2) == 0) … /* true */
+if (strnemp(s1, s2, 3) == 0O) … /* true */
+if (strnomp(s1, s2, 4) == O) … /* true */
+if (strnomp(s1, s2, 7) == 0) … /* true */
+
+The strcol1 function is similar to stromp, but the outcome of the compar-
+ison depends on the current locale.
+
+Most of the time, strcoll 1s fine for performing a locale-dependent string
+comparison. Occasionally, however, we might need to perform the comparison
+more than once (a potential problem, since strcoll isn't especially fast) or
+change the locale without affecting the outcome of the comparison. In these situa-
+tions, the strx£rm (“string transform”) function is available as an alternative to
+strcoll.
+
+strx£E£rm transforms its second argument (a string), placing the result in the
+array pointed to by the first argument. The third argument limits the number of
+characters written to the array, including the terminating null character. Calling
+strcemp with two transformed strings should produce the same outcome (nega-
+tive, Zero, or positive) as calling strcoll with the original strines.
+

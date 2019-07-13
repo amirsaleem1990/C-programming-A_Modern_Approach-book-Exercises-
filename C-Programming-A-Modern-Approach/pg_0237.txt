@@ -1,0 +1,57 @@
+212
+
+Chapter9 Functions
+
+Combining declarations in this way usually isn't a good idea, though: it can easily
+cause confusion.
+
+What happens if I specify a length for a one-dimensional array parameter?
+[p. 195]
+
+The compiler ignores it. Consider the following example:
+double inner_product (double v[3], double w[3]) ,
+
+Other than documenting that inner _ product's arguments are supposed to be
+arrays of length 3, specifying a length doesn’t buy us much. The compiler won't
+check that the arguments actually have leneth 3. so there’s no added security. In
+fact, the practice is misleading in that it suggests that inner product can only
+be passed arrays of length 3. when in fact we can pass arrays of arbitrary length.
+
+Why can the first dimension in an array parameter be left unspecified, but not
+the other dimensions? [p. 197]
+
+First. we need to discuss how arrays are passed in C. As Section 12.3 explains,
+when an array is passed to à f'unction, the function is given a pointer to the first ele-
+ment In the array.
+
+Next, we need to know how the subscripting operator works. Suppose that à is
+à one-dimensional array passed to a function. When we write
+
+a[i] = 0O;
+
+the compiler generates instructions that compute the address of a [i ] by multiply-
+ing i by the sizc of an array element and adding the result to the address that a rep-
+resents (the pointer passed to the function). This calculation doesn't depend on the
+length of a, which explains why we can omit it when defining the function.
+
+What about multidimensional arrays? Recall that C stores arrays In row-major
+order, with the elements in row O stored first. then the elements in row 1. and so
+forth. Suppose that à is à two-dimensional array parameter and we write
+
+a[i]l[j] = 0;
+
+The compiler generates instructions to do the following: (1) multiply i by the size
+of à single row of a: (2) add this result to the address that a represents; (3) multiply
+j by the size of an array element; and (4) add this result to the address computed in
+step 2. To generate these instructions, the compiler must know the size of a row in
+the array. which is determined by the number of columns. The bottom line: the pro-
+grammer must declare the number of columns in a.
+
+Why do some programmers put parentheses around the expression in a
+return statement?
+
+The examples in the first edition of Kernighan and Ritchie's The C Programming
+Language always have parentheses in return statements, even though they
+aren’t required. Programmers (and authors of subsequent books) picked up the
+habit from K&R. 1 don't use these parentheses, since they’re unnecessary and
+

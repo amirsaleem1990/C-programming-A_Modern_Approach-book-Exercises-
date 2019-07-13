@@ -1,0 +1,65 @@
+#de£ine directive
+(parameterized macro)
+
+/
+
+14.3  Macro Definitions 321
+
+piled in “debugging mode,’ with extra statements included to produce debug-
+ging output:
+
+#define DEBUG
+
+Incidentally. it’s legal for a macro’s replacement list to be empty, as this exam-
+ple shows.
+
+When macros are used as constants, C programmers customarily capitalize all
+letters in their names. However, there’s no consensus as to how to capitalize mac-
+ros used for other purposes. Since macros (especially parameterized macros) can
+be a source of bugs. some programmers like to draw attention to them by using all
+upper-case letters in their names. Others prefer lower-case names, following the
+style of Kernighan and Ritchie’s 7he C Programming Language.
+
+Parameterized Macros
+
+The definition of a parameterized macro (also known as a function-like macro)
+has the form
+
+tdefine identifier( x , X , … , X ) replacement-list
+| 2 N
+
+where x,, Æ, …, X, are identifiers (the macro’s parameters). The parameters may
+appear as many times as desired in the replacement list.
+
+ 
+
+There must be »o space between the macro name and the left parenthesis. If space
+is left, the preprocessor will assume that we*re defining a simple macro; it will
+
+treat (x;, X, , X,) as part of the replacement list.
+
+ 
+
+When the preprocessor encounters the definition of a parameterized macro, it
+stores the definition away for later use. Wherever a macro invocation of the form
+identifier (y;, Va, 1 V,) appears later in the program (where v,. y,. ... }, are
+sequences of tokens). the preprocessor replaces it with rep/acement-list. substitut-
+ing y, for X,. y, for x,, and so forth.
+
+For example. suppose that we've defined the following macros:
+
+>
+
+#define MAX (x, y) ) > (
+) =2
+
+( y) ? (x) : (y))
+Hdefine IS EVEN(n) ( ==
+
+(The number of parentheses in these macros may seem excessive, but there’s a rea-
+son. as we'll see later in this section.) Now suppose that we invoke the two macros
+in the following way:
+
+i = MAX(j+k, m-n) ;
+if (IS EVEN(i)) i++;
+

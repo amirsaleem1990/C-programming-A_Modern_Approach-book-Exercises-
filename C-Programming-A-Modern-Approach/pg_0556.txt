@@ -1,0 +1,60 @@
+Q&ÂÀ
+
+#unde£ directive » 14.3
+
+21.2
+
+ 
+
+212  C89 Library Overview = 531
+
+Functions Hidden by Macros
+
+It’'s common for C programmers to replace small functions by parameterized mac-
+ros. This practice occurs even in the standard library. The C standard allows head-
+ers to define macros that have the same names as library functions, but protects the
+programmer by requirine that a true function be available as well. As a result, tt’s
+not unusual for a library header to declare a function and define a macro with the
+same name.
+
+We’ve already seen an example of a macro duplicating a Hibrary function.
+getchar 1s a library function declared in the <stdio .h> header. It has the fol-
+lowing prototype:
+
+int getchar (void) ;
+<stdio.h> usually defines getchar as a macro as well:
+#define getchar() getc(stdin)
+
+By default, a call of getchar will be treated as a macro invocation (since macro
+names are replaced during preprocessing).
+
+Most of the time, we’re happy using a macro instead of a true function,
+because it will probably make our program run faster. Occasionally, though. we
+want a genuine function, perhaps to minimize the size of the executable code.
+
+[f the need arises, we can remove a macro definition (thus gaining access to
+the true function) by using the #undef directive. For example, we could undefine
+the getchar macro after including <stdio.h>:
+
+#Hinclude <stdio.h>
+fundef getchar
+
+If getchar isn't! a macro, no harm has been done: #undef has no effect when
+given a name that's not defined as a macro.
+
+Âs an alternative, we can disable individual uses of a macro by putting paren-
+theses around its name:
+
+ch = (getchar) (); /* instead of ch = getchar (); */
+
+The preprocessor can’t spot a parameterized macro unless its name is followed by
+a left parenthesis. The compiler isn’t so easily fooled, however; it can still recog-
+nize getchar as a function.
+
+C89 Library Overview
+
+We’ll now take a quick look at the headers in the C89 standard library. This section
+can serve as a ‘“road map” to help you determine which part of the library you
+need. Each header is described in detail later in this chapter or in a subsequent
+chapter.
+

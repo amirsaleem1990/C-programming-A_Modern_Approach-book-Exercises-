@@ -1,0 +1,54 @@
+QaÂÀ
+
+182  Storage Classes 463
+
+This rule prevents multiple extern declarations from initializing à variable in
+different ways.
+
+A variable in an extern declaration always has static storage duration. The
+scope of the variable depends on the declaration’s placement. 1f the declaration 1s
+inside a block, the variable has block scope; otherwise, it has file scope:
+
+_— Static storage duration
+
+extern int i;r— file scope
+? linkage
+void f (void)
+{ static storage duration
+extern int j ; Dlock scope
+? linkage
+}
+
+Determining the linkage of an extern variable is a bit harder. If the variable was
+declared static earlier in the file (outside of any function definition), then it has
+internal linkage. Otherwise (the normal case), the variable has external linkage.
+
+The register Storage Class
+
+Using the register storage class in the declaration of a variable asks the com-
+piler to store the variable in a register instead of keeping it in main memory like
+other variables. (A register is a storage area located in a computer's CPU. Data
+stored in a register can be accessed and updated faster than data stored in ordinary
+memory.) Specifying the storage class of a variable to be register 1s a request.
+not a command. The compiler is free to store a register variable in memory if
+it chooses.
+
+The regisster storage class is legal only for variables declared in a block. À
+register variable has the same storage duration, scope, and linkage as an auto
+variable. However, a register variable lacks one property that an auto vari-
+able has: since registers don’t have addresses, it’s illegal to use the & operator to
+take the address of a register variable. This restriction applies even 1f the com-
+piler has elected to store the variable in memory.
+
+register is best used for variables that are accessed and/or updated fre-
+quently. For example, the loop control variable in a for statement is a good candi-
+date for register treatment:
+
+int sum array(int a[], int n)
+register int i;
+int sum = OD;
+
+for (i = O0; i < n; i++)
+sum += a[ai];
+return sum;
+

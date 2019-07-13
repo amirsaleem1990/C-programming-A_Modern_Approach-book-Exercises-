@@ -1,0 +1,69 @@
+Table 14.1
+Predefined Macros
+
+14.3  Macro Definitions 329
+
+but not statements. The solution 1s to wrap the statements in a do loop whose con-
+dition is false (and which therefore will be executed just once):
+
+do { … } while (o)
+
+Notice that the do statement isn°{ complete—it needs a semicolon at the end. To
+see this trick (ahem, technique) in action, let’s incorporate it into our ECHO macro:
+
+#define ECHO(s) \
+do { \
+gets(s); \
+puts(s); \
+
+} while (0)
+
+When ECHO is used, it must be followed by a semicolon. which completes the do
+statement:
+
+ECHO (str) ;
+/* becomes do { gets(str); puts(str); } while (0); */
+
+Predetfined Macros
+
+C has several predefined macros. Each macro represents an integer constant or
+string literal. As Table 14.1 shows, these macros provide information about the
+current compilation or about the compiler itself.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Name Description
+__ LINE _ Line number of file being compiled
+__ FILE . — Name of file being compiled
+__DATE__  Date of compilation (in the form "Mmm dd yyyy")
+__TIME _ Time of compilation (in the form "hh:mm:ss")
+__STDC___ 1 if the compiler conforms to the C standard (C89 or C99)
+
+ 
+
+The _DATE _and_ TIME _ macros identify when a program was com-
+piled. For example, suppose that a program begins with the following statements:
+
+print£ ("Wacky Windows (c) 2010 Wacky Software, Inc.\n") ;
+printf ("Compiled on %s at %s\n"', __DATE__, __ TIME _ } ;
+
+Each time it begins to cxecute, the program will print two lines of the form
+
+Wacky Windows (c) 2010 Wacky Software, Inc.
+Compiled on Dec 23 2010 at 22:18:48
+
+This information can be helpful for distinguishing among different versions of the
+same program.
+
+We can use the C LINE = and__ FILE — macros to help locate errors.
+Consider the problem of detecting the location of a division by zero. When a C
+program terminates prematurely because it divided by zero, there’s usually no indi-
+cation of which division caused the problem. The following macro can help us pin-
+point the source of the error:
+

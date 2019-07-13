@@ -1,0 +1,53 @@
+502
+
+Chapter 19 Program Design
+
+19.5
+
+assert macro > 24<.1
+
+Note that the destroy function calls make_empty (to release the memory
+occupied by the nodes in the linked list) before it calls £ree (to release the mem-
+ory for the stack_type structure).
+
+Design Issues for Abstract Data Types
+
+Section 19.4 described a stack ADDT and showed several ways to implement it.
+Unfortunately, this ADT suffers from several problems that prevent it from being
+industrial-strength. Let's look at each of these problems and discuss possible solu-
+tions.
+
+Naming Conventions
+
+The stack ADT functions currently have short, easy-to-understand names: cre-
+ate, destroy, make _empty, is_empty. is full, push. and pop. If we
+have more than one ADT in a program. name clashes are likely. with functions
+in two modules having the same name. (Each ADT will need its own create
+function, for example.) Therefore, we’I] probably need to use function names
+that incorporate the name of the ADT itself, such as stack _ create instead of
+create.
+
+Error Handling
+
+The stack ADT deals with errors by displaying an error message and terminating
+the program. That’s not a bad thing to do. The programmer can avoid popping an
+empty stack or pushing data onto a full stack by being careful to call is empty
+prior to each call of pop and is £ull prior to each call of push, so in theory
+there’s no reason for a call of push or pop to fail. (In the linked-list implementa-
+tion. however, calling is £ull 1sn’{ foolproof, a subsequent call of push can
+süûll fail.) Nevertheless, we might want to provide a way for a program to recover
+from these errors rather than terminatine.
+
+An alternative 1s to have the push and pop functions return a bool value to
+indicate whether or not they succeeded. push currently has a void return type, so
+it would be easy to modify it to return true 1f the push operation succeeds and
+false if the stack is full. Modifving the pop function would be more difficult,
+since pop currently returns the value that was popped. However, if pop were to
+return a pointer to this value, instead of the value itself, then pop could return
+NULL to indicate that the stack is empty.
+
+À final comment about error handline: The C standard library contains a
+parameterized macro named assert that can terminate a program if a specified
+condition isn’t satisfied. We could use calls of this macro as replacements for the
+i É statements and calls of terminate that currently appear in the stack ADT.
+

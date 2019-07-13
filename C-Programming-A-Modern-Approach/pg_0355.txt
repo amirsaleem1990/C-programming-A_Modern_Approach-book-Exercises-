@@ -1,0 +1,83 @@
+330 Chapter 14
+
+assert macro >24.,1
+
+æ
+
+Table 14.2
+Additional Predefined
+Macros in C99
+
+complex types > 27.3
+
+QaÂ
+
+The Preprocessor
+
+#define CHECK ZERO(divisor) \
+Lif (divisor == O) \
+print£f("*** Attempt to divide by zero on line %d " \
+"of file %s ***\n"', _ LINE , _ FILE }
+
+The CHECK _ZERO macro would be invoked prior to à division:
+
+CHECK _ZERO(j) ;
+k = i / j;
+
+If j happens to be zero, à message of the following lform will be printed:
+x** Attempt to divide by zero on line 9 of file foo.c ***
+
+Error-detecting macros like this one are quite useful. In fact, the C library has a
+general-purpose error-detecting macro named assert.
+
+The _ STDC _ macro exists and has the value ! 1f the compiler conforms to
+the C standard (either C89 or C99). By having the preprocessor test this macro, a
+program can adapt to a compiler that predates the C89 standard (see Section 14.4
+[or an example).
+
+Additional Predefined Macros in C99
+C99 provides a few additional predefined macros (Table 14.2).
+
+ 
+
+ 
+
+Name Description
+
+__STDC __HOSTED _ | 1F thris 1s a hosted implementation; O 1f it is
+freestanding
+
+__STDC __VERSION _ Version of C standard supported
+
+__STDC IEC 559 | if IEC 60559 floating-point arithmetic is
+supported
+
+_ _STDC IEC 559 COMPLEX ‘ 1 if IEC 60559 complex arithmetic is supported
+
+__STDC _ ISO 1064 6__* yyyymmiL if wchar t values match the ISO
+
+ 
+
+10646 standard of the specified year and month
+
+ 
+
+‘Conditionally defined
+
+To understand the meaning of __ STDC__HOSTED__, we need some new
+vocabulary. An implementation of C consists of the compiler plus other software
+necessary to execute C programs. C99 divides implementations into two catego-
+ries: hosted and freestanding. À hosted implementation must accept any program
+that conforms to the C99 standard. whereas a freestanding ünplementation
+doesn't have to compile programs that use complex types or standard headers
+beyond a few of the most basic. (In particular, a freestanding implementation
+doesn’t have to support the <stdio.h> header.) The _ STDC __HOSTED _
+macro represents the constant 1 if the compiler 1s a hosted implementation: other-
+wise, the macro has the value 0.
+
+The __ STDC__VERSION _ macro provides a way to check which version
+of the C standard is recognized by the compiler. This macro first appeared in
+Amendment ! to the C&9 standard, where its value was specified to be the lons
+
+ 
+

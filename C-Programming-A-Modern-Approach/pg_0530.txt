@@ -1,0 +1,70 @@
+Section 19.1
+
+Section 19.2
+
+œ
+
+flexible array members » 77.9
+
+O
+
+>.
+
+Exercises 505
+
+What other incomplete types are there besides incomplete structure types? [p.
+492]
+
+One of the most common incomplete types occurs when an array 1s declared with
+no specified size:
+
+extern int a(];
+
+After this declaration (which we first encountered in Section 15.2), a has an
+incomplete type. bécause the compiler doesn’t know a’s length. Presumably à 1s
+defined in another file within the program; that definition will supply the missing
+length. Another incomplete type occurs in declarations that specify no length for
+an array but provide an initializer:
+
+int a[) = {1, 2, 3};
+
+In this example. the array a initially has an incomplete type, but the type 1s com-
+pleted by the initializer.
+
+Declaring a union tag without specifying the members of the union also cre-
+ates an incomplete type. Flexible array members (a C99 feature) have an incom-
+plete type. Finally, void is an incomplete type. The void type has the unusual
+property that it can never be completed, thus making it impossible to declare a
+variable of this type.
+
+What other restrictions are there on the use of incomplete types? [p. 492]
+
+The sizeof operator can't be applied to an incomplete type (not surprisingly.
+since the size of an incomplete type is unknown). À member of a structure or
+union (other than a flexible array member) can’t have an incomplete type. Simi-
+larly, the elements of an array can’t have an incomplete type. Finally, a parameter
+in à function definition can’t have an incomplete type (although this 1s allowed in
+a function declaration). The compiler “adjusts” each array parameter in à function
+definition so that it has à pointer type, thus preventing it from having an incom-
+
+plete type.
+
+Exercises
+
+À queue is similar to a stack, except that items are added at one end but removed from the
+other in a FIFO (first-in, first-out) fashion. Operations on a queue might include:
+
+Inserting an item at the end of the queue
+
+Removing an item from the beginnine of the queue
+
+Returning the first item in the queue (without changing the queue)
+
+Returning the last item in the queue (without changing the queue)
+
+Testing whether the queue is empty
+
+Write un interface for a queue module in the form of a header file named queue.h.
+
+Modify the stack2. c file to use the PUBLIC and PRIVATE macros.
+

@@ -1,0 +1,57 @@
+370 Chapter 15 _ Writing Large Programs
+
+/*********'ä:*'ﬂ:*********'À‘*ir‘k**************‘k*‘k******k'k********i‘
+
+* read _ word: Reads the next word from the input and *
+* stores it in word. Makes word empty if no *
+* word could be read because of end-of-file. *
+* Truncates the word if its length exceeds +
+* len. Returns the number of characters *
+* stored. +
+*****'À"k**‘k*********‘k*****‘k‘k*'k*******7‘r*‘k'ﬁ'******—k***********/
+
+int read_word(char *word, int len}) ;
+
+Of course, wc're careful to change the comment that accompanies read _ word.
+Next, we change the definition of read_word in word. c:
+
+int read word(char *word, int len)
+
+{
+int ch, pos = 0;
+while ((ch = read char()) == " ")
+while (ch != ! " && ch != EoF) {
+f (pos < len)
+word [pos++] = ch;
+
+ch = read _ char();
+}
+word{pos] = '\0';
+return pos;
+
+}
+
+Finally, we modify just ify.c by removing the include of <string.h> and
+changing main as follows:
+
+int main (void)
+char word [MAX WORD LEN+2] ;
+int word len;
+
+clear line () ;
+for (::) {
+word _ len = read word(word, MAX WORD LEN+1]) ;
+if (word _ len == O) |
+Elush line();
+return 0;
+}
+if (word _ len > MAX _ WORD LEN)
+word [MAX WORD LEN] = '#*!;
+if (word_len + 1 > space remaining()) |
+write _ line();
+clear line() ;
+
+}
+
+add_word (word) ;
+

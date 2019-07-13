@@ -1,0 +1,56 @@
+PROGRAM
+
+16.3  Nested Arrays and Structures 389
+
+{"Indonesia", 62}, {"Iran", 98},
+{"Italy", 39}, {"Japan", 81},
+( Mexico!, 52}, {"Nigeria", 234},
+{"Pakistan", 92}, {"Philippines", 63},
+{"Poland", 48}, ("Russia", 7},
+{"South Africa", 27}, {"South Korea", 82},
+e 34}/ (vsudant, 249).
+{"Thailand", 66}, {("Turkey", 90},
+{"Ukraine", 380}, {"United Kingdom", . 44},
+{"United States", 1}, {"Vietnam", 84}} ;
+
+The inner braces around each structure value are optional. As a matter of style.
+however, | prefer not to omit them.
+
+Because arrays of structures (and structures containing arrays) are so com-
+mon, C99's designated mnitializers allow an item to have morc than one designator.
+Suppose that we want to imitalize the inventory array to contain a single part.
+The part number 1s 528 and the quantity on hand is 10, but the name is to be left
+empty for now:
+
+struct part inventory [100] =
+{ [0] .number = 528, [0] .on hand = 10, [0] .name[0] = '\o'};
+
+The first two 1tems in the list use two designators (one to select array element O—
+a part structure—and one to select a member within the structure). The last item
+uses three designators: one to select an array element, one to select the name
+member within that element. and one to select element 0 of name.
+
+Maintaining a Parts Database
+
+To illustrate how nested arrays and structures are used in practice. we'll now
+develop a fairly long program that maintains a database of information about parts
+stored in a warehouse. The program 1s built around an array of structures, with
+each structure containing information—part number, name, and quantity—about
+one part, Our program will support the following operations:
+
+u Adda new part number, part name, and initial quantity on hand. The pro-
+gram must print an ecrror message 1f the part 1s already in the database or 1f the
+database 1s fuil.
+
+# Given a part number, print the name of the part and the current quantity on
+hand. The program must print an error message 1f the part number isn’tin the
+database.
+
+u Given à part number, change the quantity on hand. The program must print
+an error message 1f the part number isn°t in the database.
+
+u Print a table showing all information in the database. Parts must be dis-
+played in the order in which they were entered.
+
+u Terminate program execution.
+

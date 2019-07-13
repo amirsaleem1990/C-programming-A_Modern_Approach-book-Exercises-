@@ -1,0 +1,67 @@
+322
+
+Chapter 14  The Preprocessor
+
+<ctype .h> header » 23.5
+
+æ
+
+inline functions > 78.6
+
+The preprocessor will replace these lines by
+
+i = ((j+Kk)>(m-n)?(j+k) : (m-n) ) ;
+if (((i)%2==0)) i++;
+
+Âs this example shows, parameterized macros oflen serve as simple functions. MAX
+
+behaves like a function that computes the larger of two values. IS_EVEN behaves
+
+like a function that returns | if its argument is an even number and 0 otherwise.
+Here's à more complicated macro that behaves like a function:
+
+#define TOUPPER (c) ('a'<=(c)&&(c)<='z'?(c)-'a'+'A':(c))
+
+This macro tests whether the character c is between 'a' and 'z'. IF so, 1t pro-
+duces the upper-case version of c by subtracting 'a' and adding 'A'. If not, it
+leaves c unchanged. (The <ctype .h> header provides a similar function named
+toupper that’s more portable.)
+
+À parameterized macro may have an empty parameter list. Here’s an example:
+
+#define getchar() getc(stdin)
+
+The empty parameter list isn’t really needed, but it makes getchar resemble a
+function. (‘Yes, this is the same getchar that belongs to <stdio.h>. We’ll sec
+in Section 22.4 that getchar 1s usually implemented as a macro as well as a
+function.)
+
+Using a parameterized macro instead of a true function has a couple of advan-
+tages:
+
+u The program may be slightly faster. À function call usually requires some
+overhead during program execution—context information must be saved,
+arguments copied, and so forth. À macro invocation, on the other hand,
+requires no run-time overhead. (Note, however, that C99’s inline functions
+provide a way to avoid this overhead without the use of macros.)
+
+m Macros are “generie.” Macro parameters, unlike function parameters, have
+no particular type. Às à result, a macro can accept arguments of any type, pro-
+vided that the resulting program—after preprocessine—is valid. For example.
+we could use the MAX macro to find the larger of two values of type int.
+long, float, double, and so forth.
+
+But parameterized macros also have disadvantages:
+
+u The compiled code will often be larger. Each macro invocation causes the
+insertion of the macro’s replacement list, thereby increasing the size of the
+source program (and hence the compiled code). The more often the macro 1s
+used, the more pronounced this effect is. The problem is compounded when
+macro invocations are nested. Consider what happens when we use MAX to
+find the largest of three numbers:
+
+n = MAX(i, MAX(], kK));
+Here’s the same statement after preprocessing:
+
+n = ((3)>(((5)>(k)?(5) : (K))) ? (1) : (((9) > (K) ? (5) : (k) ) } ) ;;
+

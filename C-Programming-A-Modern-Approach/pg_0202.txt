@@ -1,0 +1,62 @@
+Section 8.1
+
+Section 8.2
+
+@
+
+ID
+
+9
+
+Exercises 177
+
+memcpy (a, b, sizeof (a)) ;
+
+Many programmers prefer memcopy, especially for large arrays, because it’s poten-
+tially faster than an ordinary loop.
+
+Section 6.4 mentioned that C99 doesn°t allow a goto statement to bypass the
+declaration of a variable-length array. What’s the reason for this restriction?
+
+The memory used to store a variable-length array is usually allocated when the
+declaration of the array is reached during program execution. Bypassing the decla-
+ration using a goto statement could result in a program accessing the elements of
+an array that was never allocated.
+
+Exercises
+
+We discussed using the expression sizeof (a) / sizeof (a [0] ) to calculate the num-
+ber of elements in an array. The expression sizeoË (a) / sizeof (r), where r is the type
+of a's elements. would also work, but il’s considered an inferior technique. Why?
+
+The Q&A section shows how to use a letter as an array subscript. Describe how to use a
+digit (in character form) as a subscript.
+
+Write a declaration of an array named weekend containing seven bool values. Include an
+initializer that makes the first and last values true; all other values should be false.
+
+(C99) Repeat Exercise 3, but this time use a designated initializer. Make the initializer as
+short as possible.
+
+The Fibonacci numbers are O. 1. 1. 2. 3. 5. 8, 13, …, where each number is the sum of the
+two preceding numbers. Write a program fragment that declares an array named
+fib numbers of length 40 and fills the array with the first 40 Fibonacci numbers. Hint:
+Fill in the first two numbers individually, then use a loop to compute the remaining num-
+bers.
+
+Calculators, watches, and other electronic devices often rely on seven-segment displays for
+numerical output. To form a digit, such devices “turn on” some of the seven segments while
+leaving others “off””:
+
+Suppose that we want to set up an array that remembers which segments should be “on” for
+each digit. Let’s number the segments as follows:
+
+L
+5 ê_|1
+s| , [2
+Here’s what the array might look like, with each row representing one digit:
+
+const int segments[10] [7] = {{1, 1, 1, 1, 1, 1, O}, —}:
+
+l’ve given you the first row of the initializer; fill in the rest.
+

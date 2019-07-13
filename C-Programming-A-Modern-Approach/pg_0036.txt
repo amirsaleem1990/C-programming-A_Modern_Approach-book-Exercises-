@@ -1,0 +1,42 @@
+QaA
+
+2.1 Writing a Simple Program 11
+
+Fortunately, this process is often automated, so you won't find it too onerous. In
+fact, the preprocessor is usually integrated with the compiler, so you probably
+won't even notice it at work.
+
+The commands necessary to compile and link vary, depending on the compiler
+and operating system. Under UNIX, the C compiler 1s usually named cc. To com-
+pile and link the pun. c program, enter the following command in a terminal or
+command-line window:
+
+©
+
+% cc pun.c
+
+(The % character 1s the UNIX prompt, not something that you need to enter.) Üi{1k—
+ing 1s automatic when using CC: no separate link command ts necessary.
+
+After compiling and linking the program, cc leaves the executable program in
+a file named a.out by default. cc has many options; one of them (the -o option)
+allows us to choose the name of the file containing the executable program. For
+example, if we want the executable version of pun. c Lo be named pun, we would
+enter the following command:
+
+oe
+
+CC -O Pull pun.c
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+

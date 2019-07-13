@@ -1,0 +1,152 @@
+ 
+
+XIl
+
+Contents
+
+13
+
+14
+
+12.3
+
+12.4
+
+12.5
+
+Using an Array Name as a Pointer
+
+Program: Reversing a Series of Numbers (Revisited)
+Array Arguments (Revisited)
+
+Using a Pointer as an Array Name
+
+Pointers and Multidimensional Arrays
+
+Processing the Elements of a Multidimensional Array
+Processing the Rows of a Multidimensional Array
+Processing the Columns of a Multidimensional Array
+Using the Name of a Multidimensional Array as a Pointer
+Pointers and Variable-Lenath Arrays (C99)
+
+STRINGS
+
+13.1
+
+13.2
+
+13.3
+
+13.4
+13.5
+
+13.6
+
+13.7
+
+String Literals
+
+Escape Sequences in String Literals
+Continuing a String Literal
+
+How String Literals Are Stored
+
+Operations on String Literals
+
+String Literals versus Character Constants
+String Variables
+
+Initializing a String Variable
+
+Character Arrays versus Character Pointers
+Reading and Writing Strings
+
+Writing Strings Using print£ and puts
+Reading Strings Using scanf and gets
+Reading Strings Character by Character
+Accessing the Characters in a String
+
+Using the C String Library
+
+The strcpy (String Copy) Function
+
+The strlen (String Lenath) Function
+
+The strcat (String Concatenation) Function
+The stromp (String Comparison) Function
+Program: Printing a One-Month Reminder List
+String Idioms
+
+Searching for the End of a String
+
+Copying a String
+
+Arrays of Strings
+
+Command-Line Arguments
+
+Program: Ghecking Planet Names
+
+THE PREPROCESSOR
+
+14.1
+14.2
+14.3
+
+How the Preprocessor Works
+Preprocessing Directives
+
+Macro Definitions
+
+Simple Macros
+Parameterized Macros
+
+263
+264
+265
+266
+267
+267
+268
+269
+269
+270
+
+2177
+
+277
+278
+278
+279
+279
+280
+281
+281
+283
+284
+284
+285
+286
+287
+
+289
+290
+291
+291
+292
+293
+296
+296
+298
+300
+302
+303
+
+315
+315
+318
+319
+
+319
+321
+

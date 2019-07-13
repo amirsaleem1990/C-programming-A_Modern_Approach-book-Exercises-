@@ -1,0 +1,52 @@
+66 Chapter 4  Expressions
+
+the first example, 1 1s stored into i, then the new value of i 1s fetched but not used:
+Ll = 1;
+
+In the second example, the value of i 1s fetched but not used; however, i 1s decre-
+mented afterwards:
+
+i--;
+
+In the third example, the value of the expression i * j - 1 1s computed and then
+discarded:
+
+i * j - 1;
+
+Since i and j aren’t changed, this statement has no effect and therefore serves no
+purpose.
+
+ 
+
+Î À slip of the finger can easily create a ‘“do-nothing’’ expression statement. For
+example, instead of entering
+
+i = ;;
+we might accidentally type
+L + J;
+
+(This kind of error is more common than you might expect, since the = and + char-
+acters usually occupy the same key.) Some compilers can detect meaningless
+expression statements; you’Il get a warning such as “statement with no effect.”
+
+ 
+
+Q & À
+
+Â:
+
+povÙ function » 23.3
+
+ 
+
+Q: I want to apply the % operator to a floating-point operand, but my program
+won’t compile. What can I do? [p. 54]
+
+fmod lunction»233  À: The % operator requires integer operands. Try the fmod function instead.
+
+Q: Why are the rules for using the / and % operators with negative operands so
+complicated? [p. 54]
+
+A: The rules aren’t as complicated as they may first appear. In both C89 and C99, the
+goal is to ensure that the value of (a / b) * b + a % b will always be equal to a
+

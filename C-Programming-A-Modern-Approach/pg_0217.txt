@@ -1,0 +1,51 @@
+192 Chapter 9 Functions
+
+default argument promotions > 9.3
+
+function declaration
+
+QaA
+
+ 
+
+#include <stdio.h>
+
+double average (double a, double b); /* DECLARATION */
+
+int main (void)
+
+(
+
+double x, y, Z;
+
+print£f ("Enter three numbers: ") ;
+
+scanftf ("S1£$1lES1£", E&EX, &y, E&Z) ;
+
+print£f ("Average of %g and %g: %g\n"', x, y, average(x, y
+
+print£ ("Average of %g and %g: %g\n", y, z, average(y, z
+( Z
+
+) ) ;
+
+) )
+) ) ;
+
+print£ ("Average of %g and %g: %g\n"', x, z, average (x,
+return 0;
+
+}
+
+double average (double a, double b) /* DEFINITION */
+
+{
+
+return (a + b) / 2;
+
+}
+
+eF3N
+
+ 
+

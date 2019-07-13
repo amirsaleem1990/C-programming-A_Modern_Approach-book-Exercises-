@@ -1,0 +1,80 @@
+532 Chapter 21
+
+<assert.h>
+
+<assert .h> header »24.1
+
+<ctype.h>
+
+<ctype .h> header »23.5
+
+<errno.h>
+
+<errno.h>header >24.2
+
+<float.h>
+
+<float .h> header »23.1
+
+<limits.h>
+
+<limits.h>header »23.2
+
+<locale.h>
+
+<locale.h> header >25, 1
+
+<math.h>
+
+<math.h> header »23.3
+
+<setjmp.h>
+
+<setjmp .h> header > 24.4
+
+The Standard Library
+
+Diagnostics
+
+Contains only the assert macro, which allows us to insert self-checks into a pro-
+gram. If any check fails, the program terminates.
+
+Character Handling
+
+Provides functions for classifying characters and for converting letters from lower
+to upper case or vice versa.
+
+Errors
+
+Provides errno (‘error number”). an Ivalue that can be tested after a call of cer-
+tain library functions to see if an error occurred during the call.
+
+Characteristics of Floating Types
+
+Provides macros that describe the characteristics of floating types, including their
+range and accuracy.
+
+Sizes of Integer Types
+
+Provides macros that describe the characteristics of integer types (including char-
+acter types), including their maximum and minimum values.
+
+Localization
+
+Provides functions to help a program adapt its behavior to a country or other geo-
+graphic region. Locale-specific behavior includes the way numbers are printed
+(such as the character used as the decimal point), the format of monetary values
+(the currency symbol, for example). the character set, and the appearance of the
+date and time.
+
+Mathematics
+
+Provides common mathematical functions. including trigonometric, hyperbolic,
+exponential, logarithmic, power, nearest integer, absolute value, and remainder
+functions.
+
+Nonlocal Jumps
+
+Provides the set jmp and longjmp functions. set-jmp “marks” a place in a pro-
+gram; longjmp can then be used to return to that place later. These functions
+

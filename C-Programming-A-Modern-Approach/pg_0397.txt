@@ -1,0 +1,58 @@
+372
+
+Chapter 15 Writing Large Programs
+
+>.
+
+Q & À
+
+You don’t have any examples that use the #include directive to include a
+source file. What would happen if we were to do this?
+
+That's not a good practice. although it's not illegal. Here’s an example of the kind
+of trouble you can gct into. Suppose that foo. c defines a function f that we'Il
+necd in bar . c and baz. c. so we put the directive
+
+#Hinclude "foo.c"
+
+In both bar.c and baz. c. Each of these files will compile nicely. The problem
+comes later. when the linker discovers two copies of the object code for £. Of
+course. we would have gotten away with includinge foo.c if only bar.c had
+Included it, not baz.c as well. To avoid problems. it’s best to use #include
+only with header files, not source files.
+
+What are the exact search rules for the #include directive” [p. 351]
+
+-
+
+That depends on your compiler. The C standard is delibcrately vague in its descrip-
+tion of #include. If the file name is enclosed in brackets, the preprocessor looks
+in a "sequence of implementation-defined places.” as the standard obliquely puts
+it. If the file name is enclosed in quotation marks. the file “is scarched for in an
+implementation-defined manner” and. if not found. then searched as if its name
+had been enclosed in brackets. The reason for this waff ling is simple: not all oper-
+ating systems have hicrarchical (tree-like) file systems,
+
+To make matters even more interestine. the standard doesn”t require that
+names enclosed in brackets be file names at all. lcaving open the possibility that
+#include directives using <> are handled entircly within the compiler.
+
+! don’t understand why cach source file needs its own header file. Why not
+have one big header file containing macro definitions, type definitions, and
+function prototypes? By including this file, each source file would have access
+to all the shared information it needs. [p. 354]
+
+The “once big header file” approach certainly works; à number of programmers use
+IL. And it does have an advantage: with only one header file, there are fewer files to
+manage. For large programs. however, the disadvantages of this approach tend to
+outweigh its advantages.
+
+Using a single header file provides no useful information to someone reading
+the program later. With multiple header files. the reader can quickly see what other
+parts of the program are used by à particular source file.
+
+But that’s not all. Since each source file depends on the big header file, chang-
+Ing it will cause all source files to be recompiled—a significant drawback in à large
+program. To make matters worse, the header file will probably change frequently
+because of the large amount of information it contains.
+

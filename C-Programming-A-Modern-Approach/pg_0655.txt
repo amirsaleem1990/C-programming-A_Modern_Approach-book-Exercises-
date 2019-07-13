@@ -1,0 +1,72 @@
+ 
+
+630 Chapter 24  Error Handling
+
+exp lunction » 23.3
+
+æ
+
+<wchar .h> header » 25.5
+
+encoding errar »22.3
+
+perror
+
+stderr stream >22.1
+
+The value stored in errno when an error occurs is often either EDOM or
+ERANGE,. (Both are macros defined in <errno..h>.) Thèse macros represent the
+two kinds of errors that can occur when a math function is called:
+
+n Doimnain errors (EDOM): An argument passed to a function is outside the func-
+tion’s domuin. For example, passing a negative number to sqrt causes a
+domain error.
+
+n Range errors (ERANGE): À functlion’s return value is too large to be repre-
+sented in the function’s return type. For example, passing 1000 to the exp
+function usually causes a range error, because e'”” is too large to represent as
+
+a double on most computers.
+
+Some functions can experience both kinds of errors; by comparing errno to
+EDOM or ERANGE, we can determine which error occurred.
+
+C99 adds the EILSEQ macro to <errno ..h> Library functions in certain
+headers—especially the <wchar.h> header—store the value of EILSEQ in
+errno when an encoding error oceurs.
+
+The perror and strerror Functions
+
+void perror (const char *s) ; from <stdio.h>
+char *strerror (int errnum) ; from <string.h>
+
+We'1l now look at two functions that are related to the errno variable, although
+neither function belongs to <errno.h>.
+
+When a library function stores a nonzero value in errno, we may want to
+display a message that indicates the nature of the error. One way to do this is to call
+the perror function (declared in <stdio.h>), which prints the following
+items, in the order shown: (1) its argument, (2) a colon. (3) a space, (4) an error
+message determined by the value of errno, and (5) a new-line character. perror
+writes to the stderr stream, not to standard output.
+
+Here’s how we might use perror:
+
+errno = 0;
+
+y = sgrt(x);
+
+if (errno != O) |
+perror ("sqrt error") ;
+exit (EXIT FAILURE) ;
+
+}
+
+LF the call of sqrt fails because of a domain error, perror will generate the fol-
+lowing output:
+
+sqrt error: Numerical arqgument out of domain
+
+The error message that perror displays after sqrt error is implementation-
+defined. In this example, Numerical argument out of domain is the mes-
+

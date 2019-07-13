@@ -1,0 +1,70 @@
+430
+
+Chapter 17  Advanced Uses of Pointers
+
+advances the p pointer from one node to the next. An assignment of this form is
+invariably used in C when writing a loop that traverses a linked list.
+
+Let's write a function named search _list that searches a list (pointed to
+by the parameter 1i st) for an integer n. If it finds n. search list will return
+a pointer to the node containing n; otherwise, it will return a null pointer. Our first
+version of search_list relies on the “list-traversal” idiom:
+
+struct node *search list (struct node *list, int nD)
+
+(
+
+struct node *p;
+
+for (p = list; p != NULL; p = p->next)
+if (p->value == n)
+return p;
+return NULL;
+
+}
+
+Of course, there are many other ways to write search list. One alterna-
+tive would be to eliminate the p variable, instead using 1i st itself to keep track of
+the current node:
+
+struct node *search list (struct node *list, int n)
+
+(
+
+for (; list != NULL; list = list->next)
+if (list->value == n)
+return list;
+return NULL;
+
+}
+
+Since list is a copy of the original list pointer, there’s no harm in changing it
+within the function.
+
+Another alternative is to combine the list->value == n test with the
+list != NULL test:
+
+struct node *search list (struct node *list, int n)
+
+{
+
+for (; list != NULL && list->value != n; list = list->next)
+return list;
+
+}
+
+Since list 1s NULL if we reach the end of the list, returning 1ist is correct even
+if we don’t find n. This version of search list might be a bit clearer if we
+used a while statement:
+
+struct node *search list (struct node *list, int n)
+
+while (list != NULL && list->value != n)
+list = list->next;
+return list;
+}
+
+-—
+
+ 
+

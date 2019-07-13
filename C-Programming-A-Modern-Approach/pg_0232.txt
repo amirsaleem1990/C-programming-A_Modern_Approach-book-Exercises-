@@ -1,0 +1,64 @@
+PROGRAM
+
+gsort.c
+
+96 Recursion 207
+
+high points to 15, which is greater than 12 l ' ;
+and thus doesn't need to be moved. We 101 3 | 86 15 | 18 p 12
+shift Aigl to the left and continue. î î
+
+low high
+
+——
+
+high points to 7, which is out of position. Z
+10 3 6 7 15 18 y 12
+
+After moving 7 to the hole, we shift /ow to
+
+the right. î
+low, high
+
+low and high are now equal, s0 we move J ; ,
+
+the partitioning element to the hole. 10 | 3 | 6 | 7 |12 | 15 | 18
+
+At this point, we*ve accomplished our objective: all elements to the left of the par-
+titioning element are less than or equal to 12, and all elements to the right are
+grealer than or equal to 12. Now that the array has been partitioned, we can use
+Quicksort recursively to sort the first four elements of the array (10, 3, 6, and 7)
+and the last two (15 and 18).
+
+Quicksort
+
+Let’s develop a recursive function named quicksort that uses the Quicksort
+algorithm to sort an array of integers. To test the function, we’Il have main read 10
+numbers into an array, call quicksort to sort the array, then print the elements
+in the array:
+
+Enter 10 numbers to be sorted: 9 16 47 82 4 66 12 3 25 S1
+In sorted order: 3 4 9 12 16 25 47 51 66 82
+
+ 
+
+Since the code for partitioning the array is a bit lengthy, l’Il put it in a separate
+function named split.
+
+/* Sorts an array of integers using Quicksort algorithm */
+#finclude <stdio.h>
+#define N 10
+
+void quicksort (int a[], int low, int high) ;
+int split (int a[], int low, int high) ;
+
+int main(void)
+
+(
+
+int a[N], 1;
+
+printf ("Enter %d numbers to be sorted: ", N);
+for (i = 0; i < N; i++)
+scanf ("*#d", &a[il);
+

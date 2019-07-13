@@ -1,0 +1,38 @@
+25
+
+International Features
+
+If your computer speaks English
+it was probably made in Japan.
+
+For many years, C wasn’t especially suitable for use in non-English-speaking
+countries. C originally assumed that characters were always single bytes and that
+all computers recognized the characters #, [. \. 1, 7 {, |. }. and —, which are
+nceded to write programs. Unfortunately, these assumptions aren*t valid in all parts
+of the world. As à result, the experts who created C89 added language features and
+libraries in an effort to make C à more international language.
+
+In 1994, Amendment ! to the ISO C standard was approved, creating an
+enhanced version of C89 that’s sometimes known as C94 or C95. This amendment
+provides additional library support for international programming via the digraph
+language feature and the <iso646 .h>, <wchar.h>, and <wctype.h> head-
+ers. C99 adds even more support for internationalization in the form of universal
+character names. This chapter covers all of C’s international features. whether they
+come from C89, Amendment |, or C99. l'II flag the Amendment | changes as C99
+changes, although they actually predate C99.
+
+The <locale .h> header (Section 25.1) provides functions that allow a pro-
+gram to tailor its behavior to a particular “locale”—often a country or orher geo-
+graphical area in which à particular language is spoken. Multibyte characters and
+wide characters (Section 25.2) enable programs to work with large character sets
+such as those found in Asian countries. Digraphs, trigraphs, and the <iso646 .h>
+header (Section 25.3) make it possible to write programs on computers that lack
+some of the characters normally used in C programming. Universal character
+names (Section 25.4) allow programmers to embed characters from the Universal
+Character Set into the source code of a program. The <wchar . h> header (Section
+25.5) supplies functions for wide-character input/output and wide-string manipula-
+tion. Finally, the <wctype.h> header (Section 25.6) provides wide-character
+classification and case-mapping functions.
+
+641
+

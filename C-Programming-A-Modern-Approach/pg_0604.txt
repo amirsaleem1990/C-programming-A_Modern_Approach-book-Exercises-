@@ -1,0 +1,62 @@
+Â:
+
+abort lunction »26.2
+
+> &
+
+Q & À 579
+
+That’s usually true. but not if the program calls abort to terminate. Even when
+abort isn't used. though, there are still good reasons to call Fclose. First, it
+reduces the number of open files. Operating systems limit the number of files that
+à program may have open at the same time: large programs may bump into this
+limit. (The macro FOPEN_MAX, defined in <stdio.h>. specifies the minimum
+number of files that the implementation guarantees can be open simultancously.)
+Sccond, the program becomes easier to understand and modify; by looking for the
+call of £close, it’s easier For the reader to determine the point at which a file is
+no longer in use. Third, there’s the issue of safety. Closing a file ensures that its
+contents and directory entry are updated properly; if the program should crash
+later. at Icast the file will be intact.
+
+l’m writing a program that will prompt the user to enter a file name. How
+long should I make the character array that will store the file name” [p. 546]
+
+That depends on your operating system. Fortunately, you can use the macro
+FILENAME MAX (defined in <stdio.h>) to specify the size of the array.
+FILENAME MAX 1s the length of a string that will hold the longest file name that
+the implementation guarantees can be opened.
+
+Can fflush flush a stream that was opened for both reading and writing?
+[p. 549]
+
+According to the C standard, the effect of calling fflush is defined for à stream
+that (a) was opened for output. or (b) was opened for updating and whose last oper-
+ation was nol à read. In all other cases, the effect of calling £flush is undefined.
+When £flush is passed a null pointer, it flushes all streams that satisfy either (a)
+or (b).
+
+Can the format string in a call of .print£f or ….scanf be a variable?
+
+Sure; it can be any expression of type char *. This property makes the …printF
+and …scan£ functions even more versatile than we’ve had reason to suspect. Con-
+sider the following classic example from Kernighan and Ritchie’s The C Program-
+ning Language, which prints a program’s command-line arguments, separated by
+spaces:
+
+while (--argec > O)
+
+printf ((argc > 1) ? "%s " ; "2g", *+-+argv) ;
+The format string is the expression (argc > 1) ? "2g " - "%s", which evalu-
+ë gG
+
+ates to "3s " for all command-line arguments but the last.
+
+Which library functions other than clearerr clear a stream’s error and
+end-of-file indicators? |p. 565]
+
+Calling rewind clears both indicators, as does opening or reopening the stream.
+Calling ungetc, fseek, or £setpos clears just the end-of-file indicator.
+
+[ can°t get £eo£ to work; it seems to return zero even at end-of-file. What am
+I doing wrong? [p. 565]
+

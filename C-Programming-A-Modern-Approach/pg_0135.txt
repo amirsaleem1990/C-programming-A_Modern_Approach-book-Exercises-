@@ -1,0 +1,66 @@
+110
+
+Chapter6 Loops
+
+PROGRAM
+
+square2.c
+
+square3.c
+
+for (sum = O, i = 1; i <= N; i+<)
+sum += i;
+
+The expression sum = O, i = 1 first assigns O to sum, then assigns 1 to i. With
+additional commas, the £or statement could initialize more than two variables.
+
+Printing a Table of Squares (Revisited)
+
+The square. c program (Section 6.1) can be improved by converting its while
+loop to a £or loop:
+
+/* Prints a table of squares using a for statement */
+#include <stdio.h>
+
+int main (void)
+
+{
+
+int i, n;
+
+print£ ("This program prints a table of squares.\n") ;
+printf ("Enter number of entries in table: "),
+scanf ("$d", &n);
+
+Éor (i = 1; i <= n; i++)
+printf("310d%10d\n", i, i * i),
+
+return 0;
+
+We can use this program to illustrate an important point about the for state-
+ment: C places no restrictions on the three expressions that control its behavior.
+Although these expressions usually initialize, test, and update the same variable.
+there's no requirement that they be related in any way. Consider the following ver-
+sion of the same program:
+
+/* Prints a table of squares using an odd method */
+#include <stdio.h>
+
+int main(void)
+
+(
+
+int i, n, odd, square;
+
+print£("This program prints a table of squares.\n") ;
+print£ ("Enter number of entries in table: "),
+scanf ("3d", &n}) ;
+
+i = 1;
+
+odd = 3;
+
+for (square = 1; i <= n; odd += 2) |{
+print£ ("%10d%10d\n", i, square) ;
+++i;
+

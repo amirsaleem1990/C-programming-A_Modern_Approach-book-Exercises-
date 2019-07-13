@@ -1,0 +1,65 @@
+PROGRAM
+
+trand.c
+
+26.2 The <stdlib.h> Header: General Utilities 687
+
+Testing the Pseudo-Random Sequence Generation Functions
+
+The following program displays the first five values returned by the rand func-
+tion. then allows the user to choose a new seed value. The process repeats until the
+user enters zero as the seed.
+
+/* Tests the pseudo-random sequence generation functions */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void)
+
+{
+
+int i, seed;
+
+printf ("This program displays the first five values of "
+"rand.\n") ;
+
+for (;;) |
+for (i = O; i < 5; i++)
+printf("%$d ", rand());
+print£ ("\n\n") ;
+
+printf ("Enter new seed value (0 to terminate) : ");
+scanf ("%d", &seed) ;
+L1f (seed == O)
+
+break ;
+
+srand (seed) ;
+
+}
+
+return 0;
+
+Here’s how a session with the program might look:
+
+This program displays the first five values of rand.
+1804289383 8846930886 1681692777 1714636915 1957747793
+
+Enter new seed value (0 to terminate) : 100
+6777411240 6119111301 5166877479 1039653884 8070098556
+
+Enter new seed value (O to terminate): 1
+1804289383 8846930886 1681692777 1714636915 1957747793
+
+Enter new seed value (0 to terminate): O
+
+There are many ways to write the rand function, so there’s no guarantee that
+every version of rand will generate the numbers shown here. Note that choosing l
+as the seed gives the same sequence of numbers as not specifying the seed at all.
+
+Communication with the Environment
+
+void abort (void) ;
+int atexit (void (*func) (void) ) ;
+

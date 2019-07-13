@@ -1,0 +1,61 @@
+> .&
+
+Q & À 119
+
+When the body of a £or loop contains a continue statement, the while pat-
+tern shown in Section 6.3 is no longer valid. Consider the following example from
+Section 6.4:
+
+n = 0;
+
+sum = OD;
+
+while (n < 10) |
+scanf£ ("%d"', &i) ;
+if (i == O)
+
+continue ;
+
+sum += i;
+n++;
+
+}
+
+At first glance, it looks as though we could convert the while loop into a £or
+loop:
+
+sum = O0;
+fFor (n = 0; n < 10; n++) |
+scanf ("$d", &i) ;
+if (i == O)
+continue ;
+sum += i;
+
+}
+
+Unfortunately, this loop isn’t equivalent to the original. When i 1s equal to O. the
+original loop doesn’t increment n. but the new loop does.
+
+Which form of infinite loop is preferable, while (1) or £or (; ; ) ? [p. 108]
+
+C programmers have traditionally preferred for (; ; ) for reasons of efficiency;
+older compilers would often force programs to test the 1 condition each time
+through the while loop. With modern compilers, however, there should be no dif-
+ference in performance.
+
+l’ve heard that programmers should never use the continue statement. Is
+this true?
+
+It’s true that continue statements are rare. Still, continue 1s handy once in a
+while. Suppose we’re writing a loop that reads some input data, checks that 1t’s
+valid, and, if so, processes the input in some way. If there are a number of validity
+tests, or 1f they’re complex, continue can be helpful. The loop would look
+something like this:
+
+for (;;) |{
+read data ;
+Lf£ (data fails first test)
+continue ;
+if (data fails second test)
+continue ;
+
