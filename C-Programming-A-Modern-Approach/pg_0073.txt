@@ -1,12 +1,0 @@
-48 Chapter 3  Formatted Input/Output
-
-Â:
-
-detecting errors in scan£ » 22.3
-
-It’s easy for scan£ to put charac-
-ters back into the buffer for subsequent reading. Chapter 22 discusses input buffer-
-ing in more detail.
-
- 
-

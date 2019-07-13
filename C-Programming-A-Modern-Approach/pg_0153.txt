@@ -1,12 +1,0 @@
-128 Chapter 7  Basic Types
-
-æ
-
-signed char type » 7.3
-
-unsigned char type > 7.3
-
-_Bool type »5.2
-
- 
-

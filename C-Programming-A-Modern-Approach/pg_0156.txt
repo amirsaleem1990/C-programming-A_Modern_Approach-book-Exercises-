@@ -1,17 +1,0 @@
-/.1 _ Integer Types 131
-
- 
-
-PROGRAM
-
- 
-
-Sum2.C /* Sums a series of numbers (using long variables) */
-#include <stdio.h>
-int main (void)
-{
-
-long n, sum = O;
-
-print£f("This program sums a series of integers.\n'") ;
-

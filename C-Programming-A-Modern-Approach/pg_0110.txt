@@ -1,14 +1,0 @@
-52  The it Statement 85
-
-type definitions » 7.5
-
-enumerations » 16.5
-
-œ
-
-unsigned integer types > 7.7
-
-<stdbool .h> header » 21.5
-
- 
-
