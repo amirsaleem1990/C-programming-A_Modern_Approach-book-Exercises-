@@ -1,0 +1,63 @@
+690
+
+Chapter 26  Miscellaneous Library Functions
+
+qsort
+
+PROGRAM
+
+airmiles.c
+
+Although the C standard doesn°t require it to, bsearch normally uses the
+binary search algorithm to search the array. bsearch first compares the key with
+the element in the middle of the array; if there’s a match, the function returns. If
+the key 1s smaller than the middle element, bsearch limits its search to the first
+half of the array; 1f the key is larger, bsearch searches only the last half of the
+array. bsearch repeats this strategy until it finds the key or runs out of elements
+to search. Thanks to this technique, bsearch is quite fast—searching an array of
+1000 elements requires only 10 comparisons at most; searching an array of
+1,000,000 elements requires no more than 20 comparisons.
+
+Section 17.7 discusses the qsort function, which can sort any array.
+bsearch works only for sorted arrays, but we can always use qsort to sort an
+array prior to asking bsearch to search it.
+
+Determining Air Mileage
+
+Our next program computes the air mileage from New York City to various inter-
+national cities. The program first asks the user to enter a city name, then displays
+the mileage to that city:
+
+Enter city name: Shanghai
+Shanghai is 7371 miles from New York City.
+
+The program will store city/mileage pairs in an array. By using bsearch to
+search the array for a city name, the program can easily find the corresponding
+mileage. (Mileages are from /nfoplease.com.)
+
+/* Determines air mileage from New York to other cities */
+
+#finclude <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct city _ info |
+char *city;
+int miles;
+
+}7
+
+int compare _cities (const void *key _ ptr,
+const void *element ptr) ;
+
+int main (void)
+char city _name (81] ;
+struct city info *ptr;
+const struct city info mileage[] =
+
+{{"Berlin", 3965}, {"Buenos Aires", 5297},
+{"Cairo", 5602}, {"Calceutta", 7918},
+{"Cape Town", 7764}, {"Caracas", 2132},
+{"Chicago", 713}, {"Hong Kong", 8054 },
+{"Honolulu", 4964}, {"Istanbul", 4975},
+

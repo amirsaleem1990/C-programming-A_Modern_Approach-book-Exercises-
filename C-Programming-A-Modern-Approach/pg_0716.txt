@@ -1,0 +1,64 @@
+abs
+labs
+
+div
+
+26.2 The <stdlib.h> Header: General Utilities 691
+
+{"Lisbon", 3364}, {"London", 3458},
+{"Los Angeles", 2451}, {"Manila", 8498},
+{"Mexico City", 2094}, {"Montreal", 320},
+{"Moscow", 4665}, {"Paris", 3624 },
+{"Rio de Janeiro", 4817}, {"Rome", 4281},
+{"San Francisco", 2571}, {"Shanghai", 7371},
+{"Stockholm", 3924}, {"Sydney", 9933},
+{"Tokyo", 6740}, {"Warsaw", 4344},
+{"Washington", 205 } } ;
+
+print£f ("Enter city name: ") ;
+
+scan£ ("%80[*\n]", city name) ;
+
+ptr = bsearch(city name, mileage,
+sizeof (mileage) / sizeof (mileage [0]),
+sizeof (mileage [0]), compare cities) ;
+if (ptr != NULL)
+print£("%s is %d miles from New York City.\n",
+city name, ptr->miles) ;
+else
+print£("%s wasn't found.\n", city name) ;
+
+return 0;
+
+;
+
+int compare _cities(const void *key ptr,
+const void *element ptr)
+
+return stromp((char *) key ptr,
+((struct city info *) element ptr) ->city) ;
+}
+
+Integer Arithmetic Functions
+
+int abs (int ]) ;
+long int labs (long int y);
+long long int llabs(long long int j);
+
+div t div(int numer, int denom) ;
+ldiv _ t ldiv(long int numer, long int denom) ;
+lldiv t 11ldiv(long long int numer,
+
+long long int denom) ;
+
+The abs function returns the absolute value of an int value; the 1abs function
+returns the absolute value of a long int value.
+
+The div function divides its first argument by its second, returning a div t
+value. div t 1s a structure that contains both a quotient member (named quot)
+and a remainder member (rem). For example, if ans is a div t variable, we
+could write
+
+ans = div(5, 2);
+print£ ("Quotient: %d Remainder: %d\n', ans.quot, ans.rem) ;
+

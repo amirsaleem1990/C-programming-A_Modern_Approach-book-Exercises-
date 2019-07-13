@@ -1,0 +1,65 @@
+clock
+
+time
+
+26.3  The <time.h> Header: Date and Time 693
+
+Time Manipulation Functions
+
+clock t clock (void) ;
+
+double difftime (time t timel, time t timeO);
+time t mktime(struct tm *timeptr) ;
+
+time t time(time t *timer) ;
+
+The clock function returns a clock t value representing the processor time
+used by the program since execution began. To convert this value to seconds, we
+can divide it by CLOCKS PER SEC, a macro defined in <time.h>.
+
+When clock is used to determine how long a program has been running, il°s
+customary to call it twice: once at the beginning of main and once just before the
+program terminates:
+
+#include <stdio.h>
+#Hinclude <time.h>
+
+int main(void)
+
+(
+
+clock t start_clock = clock();
+
+printf ("Processor time used: %g sec.\n",
+(clock() - start clock) / (double) CLOCKS PER _ SEC) ;
+return 0;
+
+}
+
+The reason for the initial call of clock is that the program will use some proces-
+sor time before it reaches main, thanks to hidden “start-up” code. Calling clock
+at the beginning of main determines how much time the start-up code requires so
+that we can subtract it later.
+
+The C89 standard says only that clock t is an arithmetic type; the type of
+CLOCKS PER SEC is unspecified. As a result, the type of the expression
+
+(clock() - start clock) / CLOCKS PER SEC
+
+may vary from one implementation to another, making it difficult to display using
+print£. To solve the problem. our example converts CLOCKS_PER SEC lo
+double, forcing the entirc expression to have type double. In C99, the type of
+CLOCKS PER SEC is specified to be clock_t. but clock_t is still an imple-
+mentation-defined type.
+
+The time function returns the current calendar time. If its argument isn't a
+null pointer, time also stores the calendar time in the object that the argument
+points to. time’s ability to return a time in two different ways is an historical
+quirk, but it gives us the option of writing either
+
+l
+
+cur_time time (NULL) ;
+
+OT
+

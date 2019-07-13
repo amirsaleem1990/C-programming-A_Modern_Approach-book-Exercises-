@@ -1,0 +1,82 @@
+ 
+
+692
+
+Chapter 26  Miscellaneous Library Functions
+
+|div
+
+Le F4 AN
+
+Ilabs
+Ildiv
+
+æ
+
+26.3
+
+Table 26.1
+Members of the
+tm Structure
+
+The 1div function is similar but works with long integers: it returns an 1div t
+structure. which also has quot and rem members. (The div_ t and1div t types
+are declared in <stdlib.h>.)
+
+C99 provides two additional functions. The 11abs function returns the abso-
+lute value of a long long int value. 11div 1s similar to div and 1div, except
+that it divides two long long int values and returns an 11div t structure.
+(The 11div t type was also added in C99.)
+
+The <time.h> Header: Date and Time
+
+The <time .h> header provides functions for determining the time (including the
+date), performing arithmetic on time values, and formatting times for display.
+Before we explore these functions, however, we need to discuss how times are
+stored. <time .h> provides three types, each of which represents a different way
+to store a time:
+
+# clock t: À time value measured in “clock ticks.”
+= time t: À compact, encoded time and date (a calendar time).
+
+u struct tm: À time that has been divided into seconds. minutes. hours, and
+so on. À value of type struct tm is often called a broken-down time. Table
+26.1 shows the members of the tm structure. AIl members are of type int.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Minimuim — Maximum
+Name Description Value Value
+tm_sec Seconds after the minute 0 61*
+tm_min Minutes after the hour 0 59
+tm_hour Hours since midnight 0 23
+tm_mday Day of the month l 31
+tm_mon Months since January 0 |l
+tm year Years since 1900 0 —
+tm_wday Days since Sunday 0 6
+tm_yday Days since January | 0 365
+tm_isdst = Daylight Saving Time flag r ri
+
+ 
+
+* Allows for two extra ‘’leap seconds.” In C99, the maximum value 1s 60.
+*Positive if Dayhight Saving Time is in effect, zero if it's not in effect, and
+negative if this information 1s unknown.
+
+These Lypes are used for different purposes. À clock_t value is good only
+for representing a time duration; time_t and struct tm values can store an
+entire date and time. time t values are tightly encoded, so they occupy little
+space. struct tm values require much more space, but they’re often easier Lo
+work with. The C standard states that clock_t and time_t must be “’arithmetic
+types, ‘ but leaves it at that. We don’t even know if clock_t and time_ t values
+are stored as integers or floating-point numbers.
+
+We're now ready to look at the functions in <time.h>. which fall into two
+groups: time manipulation functions and time conversion funcetions.
+
