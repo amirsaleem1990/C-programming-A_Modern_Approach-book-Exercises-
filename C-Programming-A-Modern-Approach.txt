@@ -3324,13 +3324,13 @@ Author: K. N. King
 */
 Even better, we can form a “box” around the comment to make it stand out:
 
-/************************‘k*‘k**‘k‘k*********‘k******‘k**********
+/****************************************************************
 
 * Name: pun.c *
 * Purpose: Prints a bad pun. *
 * Author: K. N. King *
 
-*******‘k******‘k*********‘k*******************‘k*****‘k*******/
+***************************************************************/
 
 Programmers often simplify boxed comments by omitting three of the sides:
 
@@ -14580,7 +14580,7 @@ return 0;
 
 225
 
-/********'À‘*********‘k***‘k*****‘k******k***********************
+/********'À‘*****************************************************
 
 * initialize number generator: Initializes the random
 
@@ -14594,7 +14594,7 @@ the time of day.
 *
 *
 
-'À'**************—k*—k—k***—k—k****'k‘k****k*****—k********—k**—k******/
+'À'**************—k*—k—k***—k—k****'k‘k**********—k********—k**—k******/
 
 void initialize number generator (void)
 
@@ -14604,7 +14604,7 @@ srand ( (unsigned) time (NULL) ) ;
 
 }
 
-/*******—k******‘k*****—k**************“k*‘k*****************‘k**
+/*******—k*************—k**************“k************************
 
 * choose_new secret _numbe
 *
@@ -14632,7 +14632,7 @@ secret_number = rand() %
 
 MAX NUMBER + 1;
 
-/*‘k‘k‘k**********‘k*****‘k***'k**************‘k***%‘************‘k'k
+/*‘k‘k‘k*******************************************%‘**************'k
 
 * read guesses:
 
@@ -14754,13 +14754,13 @@ return 0;
 
 10.3  Blocks 221
 
-/************************—k*******'k*‘k*‘k******'k**‘k***********
+/************************—k**************************************
 
 * initialize number generator: Initializes the random *
 * number generator using *
 * the time of day. *
 
-**'k************'k*****************************************-k/
+***********************************************************-k/
 
 void initialize number generator (void)
 
@@ -14785,7 +14785,7 @@ return rand() % MAX NUMBER + 1;
 
 }
 
-/*'k********************************************************
+/***********************************************************
 
 * read guesses: Repeatedly reads user guesses and tells *
 * the user whether each guess is too low, *
@@ -15106,7 +15106,7 @@ void read _ cards (void) ;
 void analyze _hand (void) ;
 void print result (void) ;
 
-/*'k'k***************—k********************‘f:***'k*‘k‘k‘k**‘k*******
+/*'k'k***************—k********************‘f:******‘k‘k‘k***********
 
 * main: Calls read cards, analyze hand, and print result *
 * repeatedly. *
@@ -15122,7 +15122,7 @@ print _result () ;
 * read cards:  Reads the cards into external variables; *
 * checks for bad cards and duplicate cards. *
 
-**‘k*****************‘k*******‘:‘:*****************************/
+******************************‘:‘:*****************************/
 
 void read_cards (void)
 
@@ -15134,25 +15134,25 @@ poker.c
 
 10.5 Organizing a C Program 233
 
-/'k**-k********************‘k**'k**1‘r*‘********1‘:*****************
+/'k**-k****************************1‘r*‘********1‘:*****************
 
 * analyze hand: Determines whether the hand contains a *
 x straight, a flush, four-of-a-kind, *
 * and/or three-of-a-kind; determines the *
 * number of pairs; stores the results into *
 * external variables. +
-‘k*‘k***********‘k************************************—k******/
+‘k****************************************************—k******/
 
 void analyze hand (void)
 
 {
 
-/***********‘k*******‘k******‘k******************—h—k***—k******—k
+/************************************************—h—k***—k******—k
 * print result: Notifies the user of the result, using *
 * the external variables set by *
 * analyze _hand. *
 
-****k*-k*****************‘k*****—k*************—k**-k——k*****—k—k*—k*/
+******-k************************—k*************—k**-k——k*****—k—k*—k*/
 
 void print result (void)
 
@@ -15214,7 +15214,7 @@ void print result (void) ;
 
 * main: Calls read cards, analyze hand, and print result *
 * repeatedly. *
-***'k**********‘k‘k******‘k**‘k*****************************‘k**/
+****************************************************************/
 
 int main(void)
 (
@@ -15226,13 +15226,13 @@ print result () ;
 }
 }
 
-/*******‘k************À‘**‘k****‘k*********‘k*******‘k‘k**'k*‘k*'k****
+/*********************************************************************
 
 * read cards: Reads the cards into the external *
 * variables num in rank and num in suit; *
 * checks for bad cards and duplicate cards. *
 
-*****************‘*****************‘*********'À'****‘k*********/
+***************************************************************/
 
 void read cards (void)
 
@@ -15321,7 +15321,7 @@ true;
 }
 }
 
-/'À"k'k‘k‘A“k*****‘k***‘k*‘k**'k‘k*'k**********************************
+/'À"k'k*****k*****************'k‘k*************************************
 
 * analyze _hand:
 * straight,
@@ -15395,14 +15395,14 @@ if (num in rank [rank] 3) three = true;
 
 }
 
-/—k*-k******‘k*****‘k*****‘k*****‘k‘k‘k*—k**************************
+/—k*-k*****************************‘k‘k*—k**************************
 
 * print_result: Prints the classification of the hand, *
 * based on the values of the external *
 * variables straight, flush, four, three, *
 * and pairs. *
 
-****************************‘k*******************'ﬁ:*********/
+*************************************************'ﬁ:*********/
 
 void print result (void)
 
@@ -23372,7 +23372,7 @@ small one:
 #ifndef WORD H
 idefine WORD_H
 
-/*****************‘k*‘x****‘.«'r**“k**'k*‘k****************‘k****9r—k**
+/********************‘x****‘.«'r**“k*****************************9r—k**
 
 * read word: Reads the next word from the input and *
 * stores it in word. Makes word empty iËÉ no *
@@ -23418,46 +23418,46 @@ like:
 Hifnde£f LINE H
 #define LINE H
 
-/‘k‘k******‘k************‘k****************—k**—k**********—k**—k**
+/‘k‘k**************************************—k**—k**********—k**—k**
 
 * clear line: Clears the current line. *
-'k***********‘k****‘k***‘k******‘k**-fc****v‘:**********'î:****:&?‘:****/
+'k**********************************-fc****v‘:**********'î:****:&?‘:****/
 
 void clear line (void) ;
 
-/******"Â'***********'ä'*******'k‘k**'k*********'À'**k****'k*****%“k’k*’ä’
+/******"Â'***********'ä'*******'k‘k******************************%“k’k*’ä’
 
 * add word: Adds word to the end of the current line. #
 * If this is not the first word on the line, *
 * puts one space before word. *
 
-*****—k******************i*******—k******—k**********‘k*******/
+*****—k******************i*******—k******—k*******************/
 
 void add word(const char *word}) ;
 
-/**'k********‘k****‘k********'À’*******'ä'************************
+/****************************'À’*******'ä'************************
 
 * space _remaining: Returns the number of characters left *
 
 + in the current line. *
-****************%‘$*‘k'k‘k*:Æ‘k*****i<**+:**—k********—k********k*****/
+****************%‘$*‘k'k‘k*:Æ‘k*****i<**+:**—k********—k**************/
 
 int space remaining (void) ;
 
-/‘k*******************************—k-k***—k***********k****Ÿ:*‘k**
+/‘k*******************************—k-k***—k****************Ÿ:*****
 * write line: Writes the current line with *
 * jJustification. *
-*******‘k*********:‘:*k****‘k‘k****—k************k*i'**7':***‘k****'k*'k/
+******************:‘:**************—k**************i'**7':************'k/
 
 void write line (void) ;
 
-/*********‘k******‘k**********'k***************%‘**‘k*‘k‘k*****'ä"ä'*
+/**********************************************%‘**‘k*‘k‘k*****'ä"ä'*
 
 * flush line: Writes the current line without *
 * justification. I£ the line is empty, does *
 * nothing. *
 
-*‘À'************'.ë**+:—k*'k***'k***'À'***‘k**'k*'}\‘*******Ÿ:************/
+*‘À'************'.ë**+:—k************************'}\‘*******Ÿ:************/
 
 void flush _ line (void) ;
 #endif
@@ -23924,7 +23924,7 @@ word’s length is easy. First, we change the prototype of read_word in word.h:
 ***************************page_395***************************
 370 Chapter 15 _ Writing Large Programs
 
-/*********'ä:*'ﬂ:*********'À‘*ir‘k**************‘k*‘k******k'k********i‘
+/*********'ä:*'ﬂ:*********'À‘*ir‘k*************************k'k********i‘
 
 * read _ word: Reads the next word from the input and *
 * stores it in word. Makes word empty if no *
@@ -23932,7 +23932,7 @@ word’s length is easy. First, we change the prototype of read_word in word.h:
 * Truncates the word if its length exceeds +
 * len. Returns the number of characters *
 * stored. +
-*****'À"k**‘k*********‘k*****‘k‘k*'k*******7‘r*‘k'ﬁ'******—k***********/
+*****'À"k**********************************7‘r*‘k'ﬁ'******—k***********/
 
 int read_word(char *word, int len}) ;
 
@@ -25214,7 +25214,7 @@ print£("\n") ;
 * array. Returns the array index if the part *
 * number is found; otherwise, returns -1. *
 
-***'À'***'k****—k************'ä"ä:************+**Ë+*******‘k**'.‘.“k**/
+***************—k************'ä"ä:************+**Ë+***********'.‘.“k**/
 
 int find_part(int number )
 
@@ -25229,14 +25229,14 @@ return -;
 
 }
 
-/‘k*******-k*'k'k*****'k********:‘r*****************************#$:
+/‘k*******-k*'k'k***************:‘r*****************************#$:
 
 * insert: Prompts the user for information about a new *
 * part and then inserts the part into the *
 * database. Prints an error message and returns *
 * prematurelyv if the part already exists or the *
 * database is full. *
-*****‘k'æ\‘*‘k‘*‘k**‘k***‘k*+*‘P‘k********‘k‘:‘\‘****************‘k********/
+*******'æ\‘*‘k‘*************+*‘P‘k**********‘:‘\‘**************************/
 
 void insert (void)
 
@@ -25274,7 +25274,7 @@ num _parts++;
 
 }
 
-/*'k*******************‘k*****************************‘k**‘k***
+/**************************************************************
 
 * search: Prompts the user to enter a part number, then *
 
@@ -25282,7 +25282,7 @@ num _parts++;
 * exists, prints the name and quantity on hand; *
 * if not, prints an error message. *
 
-***********-k****'k***‘k***%‘****************************‘k****/
+***********-k**************%‘**********************************/
 
 void search(void)
 
@@ -25301,7 +25301,7 @@ print£f ("Part not found.\n") ;
 
 }
 
-/—k***—k***********‘à‘****************************************‘k
+/—k***—k***********‘à‘******************************************
 
 * update: Prompts the user to enter a part number.
 
@@ -25332,7 +25332,7 @@ print£f ("Part not found.\n") ;
 ***************************page_419***************************
 394 Chapter 16  Strucitures, Unions, and Enumerations
 
-/******‘k‘***‘k**‘k*******'k**‘k****‘k**'k***'k***‘k‘k****'ﬁ"Â'*‘k‘k******'ﬂ.‘
+/********‘************************************************'ﬁ"Â'*‘k‘k******'ﬂ.‘
 
 * print: Prints a listing of all parts in the database, *
 
@@ -25341,7 +25341,7 @@ print£f ("Part not found.\n") ;
 * order in which they were entered into the *
 * database. *
 
-**‘k****—k*—k**k*****k******'k'k****-k*—k***'k***+******—k******—k—k—k**/
+********—k*—k***************'k'k****-k*—k********+******—k******—k—k—k**/
 
 void print (void)
 
@@ -25418,7 +25418,7 @@ header file:
 #ifndef READLINE H
 iidefine READLINE H
 
-/*k****‘k*k'k‘k%‘**‘k*k****‘k*‘k****‘k‘k***+******‘k‘**************—k-k*—k**
+/*********k'k‘k%‘**************************+********‘**************—k-k*—k**
 
 * read _ line: Skips leading white-space characters, then
 
@@ -28032,7 +28032,7 @@ void print (void) ;
 * action. Repeats until the user enters the *
 * command 'q'. Prints an error message if the user *
 * enters an illegal code. *
-***********************************'À'**************—k*—k*****
+****************************************************—k*—k*****
 
 int main (void)
 
@@ -28069,14 +28069,14 @@ print£ ("\n") ;
 
 }
 
-/********************************‘k*‘k*************'k'k********k
+/**************************************************'k'k********k
 
 * find part: Looks up a part number in the inventory *
 * list. Returns a pointer to the node *
 * containing the part number; if the part *
 * number is not found, returns NULL. *
 
-‘k**‘k*********‘k******‘k*************‘k*****:‘:*****************
+‘k*******************************************:‘:*****************
 
 /
 
@@ -28101,7 +28101,7 @@ return NULL;
 
 }
 
-/—k**********‘k**********‘k***********************************
+/—k***********************************************************
 
 * insert: Prompts the user for information about a new *
 * part and then inserts the part into the *
@@ -28161,7 +28161,7 @@ prev->next = new node;
 
 437
 
-/**—k**********—k******—k******‘****************—k***********—k*—k
+/**—k**********—k******—k***********************—k***********—k*—k
 
 *
 *
@@ -28181,7 +28181,7 @@ exists, prints the name and quantity on hand;
 *
 *
 
-*************:‘c***********‘k**************1‘:*****************/
+*************:‘c***************************1‘:*****************/
 
 void search(void)
 
@@ -28259,7 +28259,7 @@ ascending order.
 *
 *
 
-***‘A"À'************‘k***‘k*‘k*‘k**‘k‘k*****‘k**‘À'***'k***‘k*****‘k'k**‘k*/
+***‘A"À'****************************************‘À'*********************‘k*/
 
 void print (void)
 
