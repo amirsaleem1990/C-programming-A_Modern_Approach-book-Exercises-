@@ -1,8 +1,11 @@
-
+/* Reverses a series of numbers */
 #include <stdio.h>
-int main(void){
-    int i, j;
-    for (i=5, j=i-1; i>0, j>0; --i, j = i - 1)
-        printf("%d ", i);
-    return 0;
+int main(volid){
+	int input[10];
+	for (i =0; i < 10; i++)
+		scanf("%d", &input[i])
+
+	
+
+	return 0;
 }
